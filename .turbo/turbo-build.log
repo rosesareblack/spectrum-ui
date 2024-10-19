@@ -1,0 +1,62 @@
+[?25l[2J[m[H]0;C:\Windows\system32\cmd.exe [?25h]0;npm]0;npm run build[?25l
+> docs-template@0.1.0 build
+> next build[5;1H[K[?25h]0;C:\Windows\system32\cmd.exe [?25l  [38;2;173;127;168m[1m▲ Next.js 14.2.6[7;1H[?25h[m [37m[1m [m Creating an optimized production build ...
+ [32m[1m✓[m Compiled successfully
+ [37m[1m [m Linting and checking validity of ty[?25l
+[8;38Hypes  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H[K[36m
+./components/ui/cover.tsx[K[?25h[m
+[33m34[m:[33m6  [1mWarning[m: React Hook useEffect ha
+[8;38Has an unnecessary dependency: 'ref.curr
+[8;38Hrent'. Either exclude it or remove the 
+[8;38H dependency array. Mutable values like 
+[8;38H 'ref.current' aren't valid dependencie
+[8;38Hes because mutating them doesn't re-ren
+[8;38Hnder the component.  [90m[1mreact-hooks/exhaus[m
+[90m[1m[8;38Hstive-deps[22m[K[m
+
+[36minfo  [m- Need to disable some ESLint ru
+[8;38Hules? Learn more here: https://nextjs.o
+[8;38Horg/docs/basic-features/eslint#disablin
+[8;38Hng-rules
+ [37m[1m [m Linting and checking validity of ty[?25l
+[8;38Hypes  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m..[K[31C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m...[K[30C[m[8;1H [37m[1m [m Linting and checking validity of types  [36m.[K[32C[m[8;1H [37m[1m [m Linting and checking validity of ty [32m[1m✓[m Linting and checking validity of ty[?25h
+[8;38Hypes
+ [37m[1m [m Collecting page data  [36m.[K[?25l[12C[m [37m[1m [m Collecting page data  [36m..[K[11C[m [37m[1m [m Collecting page data  [36m...[K[10C[m [37m[1m [m Collecting page data  [36m.[K[12C[m [37m[1m [m Collecting page data  [36m..[K[11C[m [37m[1m [m Collecting page data  [36m...[K[10C[m [37m[1m [m Collecting page data  [36m.[K[12C[m [37m[1m [m Collecting page data  [36m..[K[11C[m [37m[1m [m Collecting page data  [36m...[K[10C[m [37m[1m [m Collecting page data  [36m.[K[12C[m [37m[1m [m Collecting page data  [36m..[K[11C[m [37m[1m [m Collecting page data  [36m...[K[10C[m [32m[1m✓[m Collecting page data[K[?25h
+ [37m[1m [m Generating static pages (0/32)  [36m[  [?25l[m
+[36m[8;38H   ][35C[m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (0/32)  [36m[=   ][m[K[38C[8;1H [37m[1m [m Generating static pages (3/32)  [36m[==  ][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (7/32)  [36m[=== ][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (8/32)  [36m[ ===][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (9/32)  [36m[  ==][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (9/32)  [36m[   =][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (10/32)  [36m[    ][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (15/32)  [36m[   =][m[K[38C[8;1H[K[38C [37m[1m [m Generating static pages (18/32)  [36m[  ==][m[K[38C[8;1H [37m[1m [m Generating static pages (21/32)  [36m[ ===][m[8;1H [32m[1m✓[m Generating static pages (32/32)    
+[K[?25h [37m[1m [m Finalizing page optimization  [36m. [37m[1m [m C[?25l
+[8;1H [32m[1m✓[m Finalizing page optimization       
+[?25h
+[4mRoute (app)[24m                           [K[9;66H
+[4m[9CSize[24m     [4mFirst Load JS[24m       [9;1H
+┌ ○ /                                 [9;72H
+         85.6 kB[37m[1m[9C179 kB[m       [9;1H
+├ ○ /_not-found                       [9;62H
+         138 B[37m[1m[10C87.2 kB[m       [9;1H
+├ ● /docs/[[...slug]]                 [9;56H
+         2.95 kB[37m[1m[9C112 kB[m       [9;1H
+├   ├ /docs/getting-started/introducti
+[8;38Hion
+├   ├ /docs/getting-started/installati
+[8;38Hion
+├   ├ /docs/getting-started/quick-star
+[8;38Hrt-guide
+├   └ [+23 more paths]
+└ ○ /opengraph-image.jpg              [9;53H
+         0 B[37m[1m[16C0 B[m       [9;1H
++ First Load JS shared by all         [9;48H
+[37m[1m[9C87.1 kB[m[K
+  ├ chunks/1dd3208c-247441a1a747449a.j
+[8;38Hjs        53.6 kB
+  ├ chunks/286-a61d72cba7bb7639.js    
+[8;38H          31.5 kB
+  └ other shared chunks (total)       
+[8;38H          1.9 kB
+
+
+○  (Static)  prerendered as static con
+[8;38Hntent
+●  (SSG)     prerendered as static HTM
+[8;38HML (uses [36mgetStaticProps[m)[K
+
+[K
