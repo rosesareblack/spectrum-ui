@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Footer } from "@/components/footer";
+import  Footer  from "@/components/footer";
 import "./globals.css";
 import { inject } from '@vercel/analytics';
 import { siteConfig } from "@/config/site"
@@ -91,7 +91,7 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[85vw] h-auto">
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
 
       

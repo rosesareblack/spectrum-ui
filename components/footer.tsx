@@ -1,56 +1,108 @@
+"use client";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
-import { Coffee, HeartIcon, HexagonIcon, Linkedin, TriangleIcon } from "lucide-react";
-import Image from "next/image";
 
-export function Footer() {
+import { Icons } from "./icon";
+
+export default function Footer() {
   return (
-    <footer className="border-t w-full h-16">
-      <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3">
-        <div className="flex items-center gap-3">
-          <HexagonIcon className="sm:block hidden w-5 h-5 text-muted-foreground fill-current" />
-          <p className="text-center">
-            Build by{" "}
-            <Link
-              className="px-1 underline underline-offset-2"
-              href="https://arihant.us"
-            >
-              Arihant jain
+    <footer className=" py-12 px-4 md:px-6">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="mb-8 md:mb-0">
+            <Link href="/" className="flex items-center gap-2">
+              <Icons.logo className="icon-class w-2" />
+              <h2 className="text-lg font-bold">Spectrum/UI</h2>
             </Link>
            
-            
-          </p>
+            <h1 className="dark:text-gray-300 mt-4">
+              Build by <span className="dark:text-[#039ee4]">
+                <Link href="https://x.com/arihantCodes">
+                
+                @Arihantjain
+                </Link>
+
+              </span>
+            </h1>
+            <p className="text-sm dark:text-gray-400 mt-5">
+              © {new Date().getFullYear()} Spectrum UI. All rights reserved.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-semibold mb-4">Pages</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/products" className="hover:text-gray-300">
+                    All Products
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/studio" className="hover:text-gray-300">
+                    Studio
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/clients" className="hover:text-gray-300">
+                    Clients
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="hover:text-gray-300">
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-gray-300">
+                    Blog
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Socials</h3>
+              <ul className="space-y-2">
+               
+                <li>
+                  <Link href="#" className="hover:text-gray-300">
+                    Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-gray-300">
+                  LinkedIn
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-gray-300">
+                   X
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/privacy" className="hover:text-gray-300">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="hover:text-gray-300">
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cookie-policy" className="hover:text-gray-300">
+                    Cookie Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
           
-        </div>
-      <div>
-        <p>
-        © 2024-25 All rights reserved
-        </p>
-      </div>
-        <div className="gap-4 items-center hidden md:flex">
-          <FooterButtons />
+          </div>
         </div>
       </div>
     </footer>
   );
 }
-
-export function FooterButtons() {
-  return (
-    <>
-      <Link
-        href="https://www.linkedin.com/in/arihantdotcom/"
-        className={buttonVariants({ variant: "outline", size: "sm" })}
-      >
-        <Linkedin className="h-[0.9rem] w-4 mr-2 text-primary fill-current" />
-        Linkedin
-      </Link>
-      <Link href="https://www.buymeacoffee.com/jainari1202" target="_blank" className={buttonVariants({ variant: "outline", size: "sm" })}>
-       <Coffee className="h-[0.9rem] w-4 mr-3 text-primary fill-current" />
-       Buy me a coffee
-        </Link>
-    </>
-  );
-}
-
-

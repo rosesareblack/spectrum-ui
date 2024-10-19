@@ -14,7 +14,7 @@ import Search from "./search";
 export const NAVLINKS = [
   {
     title: "Docs",
-    href: "/docs",
+    href: `/docs/${page_routes[0].href}`,
   },
   {
     title: "Components",
@@ -31,7 +31,7 @@ export const NAVLINKS = [
   },
   {
     title: "Blog",
-    href: `/docs/${page_routes[0].href}`,
+    href:"/blog"
   },
 ];
 
@@ -81,8 +81,9 @@ export function Navbar() {
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5">
-      <h2 className="text-md font-bold">Spectrum/ui</h2>
+    <Link href="/" className="flex items-center gap-2">
+      <Icons.logo className="icon-class w-2" />
+      <h2 className="text-lg font-bold">Spectrum/UI</h2>
     </Link>
   );
 }

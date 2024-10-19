@@ -1,3 +1,5 @@
+"use client"
+
 import { ROUTES } from "@/lib/routes-config";
 import Anchor from "./anchor";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -11,7 +13,7 @@ import {
 import { Logo, NavMenu } from "./navbar";
 import { Button } from "./ui/button";
 import { AlignLeftIcon } from "lucide-react";
-import { FooterButtons } from "./footer";
+
 
 export function Leftbar() {
   return (
@@ -27,7 +29,7 @@ export function SheetLeftbar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="lg:hidden flex">
+        <Button variant="ghost" size="icon" className="md:hidden flex">
           <AlignLeftIcon />
         </Button>
       </SheetTrigger>
@@ -45,7 +47,7 @@ export function SheetLeftbar() {
             <Menu isSheet />
           </div>
           <div className="p-6 pb-4 flex gap-2">
-            <FooterButtons />
+          
           </div>
         </ScrollArea>
       </SheetContent>
