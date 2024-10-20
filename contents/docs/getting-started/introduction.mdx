@@ -1,71 +1,29 @@
 ---
-title: Introduction
-description: This section provides an overview of Introduction.
+title: Introduction to Spectrum UI
+description: This section provides an overview of Spectrum UI, a comprehensive UI component library for modern web development.
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iste dolorum tempore consectetur explicabo tempora provident quia maxime, molestiae, facilis aperiam et, error illum vel ullam? Quis architecto dolore ullam
+Welcome to Spectrum UI, your all-in-one solution for building beautiful, responsive, and accessible web interfaces. Spectrum UI offers a wide range of customizable components, live previews, and comprehensive documentation, all designed to streamline your UI development process and elevate your web projects.
 
 ## Getting Started
 
-To begin using the Documentation Template, follow these simple steps:
+To begin using Spectrum UI, follow these simple steps:
 
-1. **Clone the Repository**: Start by cloning the repository to your local machine.
-2. **Install Dependencies**: If any dependencies are required, follow the installation instructions provided.
-3. **Customize**: Replace placeholder content with your actual documentation.
-4. **Publish**: Once customized, publish your documentation for others to access.
+1. **Create project**
 
-## Blockquotes
-
-Blockquotes are useful for emphasizing key points or quoting external sources:
-
-> "Documentation is a love letter that you write to your future self." - Damian Conway
-
-Feel free to use blockquotes to highlight important information or quotes relevant to your documentation.
-
-## Code Examples with switch
-
-Here a custom tab component from shadcn ui is used.
-
-<Tabs defaultValue="js" className="pt-5 pb-1">
-  <TabsList className="">
-    <TabsTrigger value="js">layout.jsx</TabsTrigger>
-    <TabsTrigger value="ts">layout.tsx</TabsTrigger>
-  </TabsList>
-  <TabsContent value="js">
-  ```jsx {7} showLineNumbers
-import ThemeProvider from './theme-provider'
- 
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <body className="container">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )}
-````
-  </TabsContent>
-  <TabsContent value="ts">
-```tsx {11} showLineNumbers
-import ThemeProvider from './theme-provider'
- 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html>
-      <body className="container">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )
-}
+Run the init command to create a new Next.js project or to setup an existing one:.
+```bash
+npx shadcn@latest init
 ```
-  </TabsContent>
-</Tabs>
+2. **Configure components.json**
 
-## Conclusion
+You will be asked a few questions to configure `components.json`:
 
-Thank you for choosing the Documentation Template for your project. Whether you're documenting software, APIs, or processes, we're here to support you in creating clear and effective documentation. Happy documenting!
+```txt showLineNumbers
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › no / yes
+```
+3. **That's it**
+
+You can now start adding components to your project.

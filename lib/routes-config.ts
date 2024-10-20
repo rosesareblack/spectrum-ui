@@ -5,7 +5,7 @@ export const ROUTES = [
     href: "getting-started",
     items: [
       { title: "Introduction", href: "/introduction" },
-      { title: "Installation", href: "/installation" },
+      { title: "Dashboard", href: "/dashboardblock" },
       { title: "Quick Start Guide", href: "/quick-start-guide" },
       { title: "Project Structure", href: "/project-structure" },
       { title: "Changelog", href: "/changelog" },

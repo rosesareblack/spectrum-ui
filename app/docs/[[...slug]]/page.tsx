@@ -27,6 +27,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
+          
           <Pagination pathname={pathName} />
         </Markdown>
       </div>

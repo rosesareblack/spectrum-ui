@@ -67,7 +67,7 @@ function Menu({ isSheet = false }) {
                 const key = `/docs/${href}${subItem.href}`;
                 const Comp = (
                   <Anchor
-                    activeClassName="font-medium text-primary"
+                    activeClassName="font-medium text-green-400"
                     key={key}
                     href={key}
                   >
