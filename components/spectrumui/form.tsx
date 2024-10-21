@@ -1,338 +1,475 @@
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Slider } from "@/components/ui/slider"
-import { Switch } from "@/components/ui/switch"
-import { Checkbox } from "@/components/ui/checkbox"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+import React from "react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Switch } from "@/components/ui/switch";
+import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Slider } from "@/components/ui/slider";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Card } from "../ui/card";
+import { Check, Eye, EyeOff, X } from "lucide-react";
+import { useMemo, useState } from "react";
 
-export default function ResponsiveInputShowcase() {
+export default function Component() {
+  const [isVisible, setIsVisible] = useState(false);
+const [password, setPassword] = useState("");
+
+  const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const checkStrength = (pass: string) => {
+    const requirements = [
+      { regex: /.{8,}/, text: "At least 8 characters" },
+      { regex: /[0-9]/, text: "At least 1 number" },
+      { regex: /[a-z]/, text: "At least 1 lowercase letter" },
+      { regex: /[A-Z]/, text: "At least 1 uppercase letter" },
+    ];
+
+    return requirements.map((req) => ({
+      met: req.regex.test(pass),
+      text: req.text,
+    }));
+  };
+
+  const strength = checkStrength(password);
+
+  const strengthScore = useMemo(() => {
+    return strength.filter((req) => req.met).length;
+  }, [strength]);
+
+  const getStrengthColor = (score: number) => {
+    if (score === 0) return "bg-border";
+    if (score <= 1) return "bg-red-500";
+    if (score <= 2) return "bg-orange-500";
+    if (score === 3) return "bg-amber-500";
+    return "bg-emerald-500";
+  };
+
+  const getStrengthText = (score: number) => {
+    if (score === 0) return "Enter a password";
+    if (score <= 2) return "Weak password";
+    if (score === 3) return "Medium password";
+    return "Strong password";
+  };
   return (
-    <Card className="w-full max-w-[95vw] mx-auto my-8">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">50 Responsive Input Field Designs</CardTitle>
-      </CardHeader>
-      <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Text Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Text Inputs</h3>
-          
+    <Card>
+      <div className="w-full max-w-4xl mx-auto p-6  rounded-lg shadow-lg">
+        <h1 className="text-3xl font-bold text-center mb-6">Pre-designed Components</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* 1. Simple Text Input */}
           <div className="space-y-2">
-            <Label htmlFor="default">Default</Label>
-            <Input id="default" placeholder="Default input" />
+            <Label htmlFor="simple">Simple Text Input</Label>
+            <Input id="simple" placeholder="Enter text" />
           </div>
 
+          {/* 2. Required Input */}
           <div className="space-y-2">
-            <Label htmlFor="focused">Focused</Label>
-            <Input id="focused" placeholder="Focused input" className="focus:ring-2 focus:ring-blue-500" />
+            <Label htmlFor="required">
+              Required Input <span className="text-red-500">*</span>
+            </Label>
+            <Input id="required" required placeholder="Required field" />
           </div>
 
+          {/* 3. Disabled Input */}
           <div className="space-y-2">
-            <Label htmlFor="disabled">Disabled</Label>
-            <Input id="disabled" placeholder="Disabled input" disabled />
+            <Label htmlFor="disabled">Disabled Input</Label>
+            <Input id="disabled" disabled placeholder="Disabled input" />
           </div>
 
+          {/* 4. Input with Helper Text */}
           <div className="space-y-2">
-            <Label htmlFor="error">Error</Label>
-            <Input id="error" placeholder="Error input" className="border-red-500" />
-            <p className="text-sm text-red-500">Error message</p>
+            <Label htmlFor="helper">Input with Helper Text</Label>
+            <Input id="helper" placeholder="Enter email" />
+            <p className="text-sm text-gray-500">
+              We'll never share your email.
+            </p>
           </div>
 
+          {/* 5. Input with Error */}
           <div className="space-y-2">
-            <Label htmlFor="success">Success</Label>
-            <Input id="success" placeholder="Success input" className="border-green-500" />
-            <p className="text-sm text-green-500">Success message</p>
-          </div>
-        </div>
-
-        {/* Number Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Number Inputs</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="number">Number</Label>
-            <Input id="number" type="number" placeholder="Enter a number" />
+            <Label htmlFor="error">Input with Error</Label>
+            <Input
+              id="error"
+              className="border-red-500"
+              placeholder="Invalid input"
+            />
+            <p className="text-sm text-red-500">This field is required.</p>
           </div>
 
+          {/* 6. Input with Success */}
           <div className="space-y-2">
-            <Label htmlFor="range">Range</Label>
-            <Slider defaultValue={[50]} max={100} step={1} />
-          </div>
-            {/* Validation States */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Validation States</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="warning">Warning</Label>
-            <Input id="warning" placeholder="Warning input" className="border-yellow-500" />
-            <p className="text-sm text-yellow-500">Warning message</p>
+            <Label htmlFor="success">Input with Success</Label>
+            <Input
+              id="success"
+              className="border-green-500"
+              placeholder="Valid input"
+            />
+            <p className="text-sm text-green-500">Looks good!</p>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="info">Info</Label>
-            <Input id="info" placeholder="Info input" className="border-blue-500" />
-            <p className="text-sm text-blue-500">Info message</p>
-          </div>
-        </div>
-        </div>
+         
 
-        {/* Date and Time Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Date and Time</h3>
-          
+          {/* 8. Number Input */}
           <div className="space-y-2">
-            <Label htmlFor="date">Date</Label>
-            <Input id="date" type="date" />
+            <Label htmlFor="number">Number Input</Label>
+            <Input id="number" type="number" placeholder="Enter number" />
           </div>
 
+          {/* 9. Email Input */}
           <div className="space-y-2">
-            <Label htmlFor="time">Time</Label>
-            <Input id="time" type="time" />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="datetime-local">DateTime-Local</Label>
-            <Input id="datetime-local" type="datetime-local" />
-          </div>
-          <div className="space-y-4">
-            <Label>Rating</Label>
-            <div className="flex space-x-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Button key={star} type="button" variant="ghost" className="p-0 w-8 h-8">
-                  <span className="text-2xl text-yellow-400">★</span>
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Color and File Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Color and File</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="color">Color</Label>
-            <Input id="color" type="color" className="h-10 w-full" />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="file">File</Label>
-            <Input id="file" type="file" />
-          </div>
-            {/* Additional Input Types */}
-         <div className="">
-          <h3 className="text-lg font-semibold">Additional Types</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="Enter password" />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Email Input</Label>
             <Input id="email" type="email" placeholder="Enter email" />
           </div>
 
+          {/* 10. URL Input */}
           <div className="space-y-2">
-            <Label htmlFor="url">URL</Label>
+            <Label htmlFor="url">URL Input</Label>
             <Input id="url" type="url" placeholder="Enter URL" />
           </div>
 
+          {/* 11. Tel Input */}
           <div className="space-y-2">
-            <Label htmlFor="tel">Telephone</Label>
+            <Label htmlFor="tel">Telephone Input</Label>
             <Input id="tel" type="tel" placeholder="Enter phone number" />
           </div>
 
+          {/* 12. Search Input */}
           <div className="space-y-2">
-            <Label htmlFor="search">Search</Label>
+            <Label htmlFor="search">Search Input</Label>
             <Input id="search" type="search" placeholder="Search..." />
           </div>
-        </div>
-        </div>
 
-        {/* Checkbox and Radio */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Checkbox and Radio</h3>
-          
+          {/* 13. Date Input */}
+          <div className="space-y-2">
+            <Label htmlFor="date">Date Input</Label>
+            <Input id="date" type="date" />
+          </div>
+
+          {/* 14. Time Input */}
+          <div className="space-y-2">
+            <Label htmlFor="time">Time Input</Label>
+            <Input id="time" type="time" />
+          </div>
+
+          {/* 15. DateTime-Local Input */}
+          <div className="space-y-2">
+            <Label htmlFor="datetime">DateTime-Local Input</Label>
+            <Input id="datetime" type="datetime-local" />
+          </div>
+
+          {/* 16. Month Input */}
+          <div className="space-y-2">
+            <Label htmlFor="month">Month Input</Label>
+            <Input id="month" type="month" />
+          </div>
+
+          {/* 17. Week Input */}
+          <div className="space-y-2">
+            <Label htmlFor="week">Week Input</Label>
+            <Input id="week" type="week" />
+          </div>
+
+          {/* 18. Color Input */}
+          <div className="space-y-2">
+            <Label htmlFor="color">Color Input</Label>
+            <Input id="color" type="color" className="h-10" />
+          </div>
+
+          {/* 19. File Input */}
+          <div className="space-y-2">
+            <Label htmlFor="file">File Input</Label>
+            <Input id="file" type="file" />
+          </div>
+
+          {/* 20. Range Input */}
+          <div className="space-y-2">
+            <Label htmlFor="range">Range Input</Label>
+            <Input id="range" type="range" />
+          </div>
+
+          {/* 21. Textarea */}
+          <div className="space-y-2">
+            <Label htmlFor="textarea">Textarea</Label>
+            <Textarea id="textarea" placeholder="Enter long text" />
+          </div>
+
+          {/* 22. Checkbox */}
           <div className="flex items-center space-x-2">
-            <Checkbox id="terms" />
-            <Label htmlFor="terms">Accept terms and conditions</Label>
+            <Checkbox id="checkbox" />
+            <Label htmlFor="checkbox">Checkbox</Label>
           </div>
 
-          <RadioGroup defaultValue="option1">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option1" id="option1" />
-              <Label htmlFor="option1">Option 1</Label>
+          <div>
+            {/* Password input field with toggle visibility button */}
+            <div className="space-y-2">
+              <Label htmlFor="input-51">
+                Input with password strength indicator
+              </Label>
+              <div className="relative">
+                <Input
+                  id="input-51"
+                  className="pr-9"
+                  placeholder="Password"
+                  type={isVisible ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  aria-invalid={strengthScore < 4}
+                  aria-describedby="password-strength"
+                />
+                <button
+                  className="absolute inset-y-px right-px flex h-full w-9 items-center justify-center rounded-r-lg text-muted-foreground/80 transition-shadow hover:text-foreground focus-visible:border focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+                  type="button"
+                  onClick={toggleVisibility}
+                  aria-label={isVisible ? "Hide password" : "Show password"}
+                  aria-pressed={isVisible}
+                  aria-controls="password"
+                >
+                  {isVisible ? (
+                    <EyeOff
+                      size={16}
+                      strokeWidth={2}
+                      aria-hidden="true"
+                      role="presentation"
+                    />
+                  ) : (
+                    <Eye
+                      size={16}
+                      strokeWidth={2}
+                      aria-hidden="true"
+                      role="presentation"
+                    />
+                  )}
+                </button>
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option2" id="option2" />
-              <Label htmlFor="option2">Option 2</Label>
+
+            {/* Password strength indicator */}
+            <div
+              className="mb-4 mt-3 h-1 w-full overflow-hidden rounded-full bg-border"
+              role="progressbar"
+              aria-valuenow={strengthScore}
+              aria-valuemin={0}
+              aria-valuemax={4}
+              aria-label="Password strength"
+            >
+              <div
+                className={`h-full ${getStrengthColor(
+                  strengthScore
+                )} transition-all duration-500 ease-out`}
+                style={{ width: `${(strengthScore / 4) * 100}%` }}
+              ></div>
             </div>
-          </RadioGroup>
-        </div>
 
-        {/* Toggle and Select */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Toggle and Select</h3>
-          
-          <div className="flex items-center space-x-2">
-            <Switch id="airplane-mode" />
-            <Label htmlFor="airplane-mode">Airplane Mode</Label>
+            {/* Password strength description */}
+            <p
+              id="password-strength"
+              className="mb-2 text-sm font-medium text-foreground"
+            >
+              {getStrengthText(strengthScore)}. Must contain:
+            </p>
+
+            {/* Password requirements list */}
+            <ul className="space-y-1.5" aria-label="Password requirements">
+              {strength.map((req, index) => (
+                <li key={index} className="flex items-center space-x-2">
+                  {req.met ? (
+                    <Check
+                      size={16}
+                      className="text-emerald-500"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <X
+                      size={16}
+                      className="text-muted-foreground/80"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span
+                    className={`text-xs ${
+                      req.met ? "text-emerald-600" : "text-muted-foreground"
+                    }`}
+                  >
+                    {req.text}
+                    <span className="sr-only">
+                      {req.met
+                        ? " - Requirement met"
+                        : " - Requirement not met"}
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* 24. Radio Group */}
+          <div className="space-y-2">
+            <Label>Radio Group</Label>
+            <RadioGroup defaultValue="option1">
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option1" id="option1" />
+                <Label htmlFor="option1">Option 1</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option2" id="option2" />
+                <Label htmlFor="option2">Option 2</Label>
+              </div>
+            </RadioGroup>
           </div>
 
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select an option" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="option1">Option 1</SelectItem>
-              <SelectItem value="option2">Option 2</SelectItem>
-              <SelectItem value="option3">Option 3</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        {/* Textarea */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Textarea</h3>
-          
+          {/* 25. Select */}
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" placeholder="Type your message here." />
-          </div>
-          
-        </div>
-
-       
-
-        {/* Input Sizes */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Input Sizes</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="small">Small</Label>
-            <Input id="small" placeholder="Small input" className="h-8 text-sm" />
+            <Label htmlFor="select">Select</Label>
+            <Select>
+              <SelectTrigger id="select">
+                <SelectValue placeholder="Select an option" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="option1">Option 1</SelectItem>
+                <SelectItem value="option2">Option 2</SelectItem>
+                <SelectItem value="option3">Option 3</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
+          {/* 26. Slider */}
           <div className="space-y-2">
-            <Label htmlFor="large">Large</Label>
-            <Input id="large" placeholder="Large input" className="h-12 text-lg" />
+            <Label htmlFor="slider">Slider</Label>
+            <Slider defaultValue={[50]} max={100} step={1} />
           </div>
-        </div>
 
-        {/* Input with Icons */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Inputs with Icons</h3>
-          
+          {/* 27. Input with Left Icon */}
           <div className="space-y-2">
-            <Label htmlFor="left-icon">Left Icon</Label>
+            <Label htmlFor="left-icon">Input with Left Icon</Label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-                </svg>
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                @
               </span>
-              <Input id="left-icon" placeholder="Search" className="pl-10" />
+              <Input id="left-icon" className="pl-10" placeholder="username" />
             </div>
           </div>
 
+          {/* 28. Input with Right Icon */}
           <div className="space-y-2">
-            <Label htmlFor="right-icon">Right Icon</Label>
+            <Label htmlFor="right-icon">Input with Right Icon</Label>
             <div className="relative">
-              <Input id="right-icon" placeholder="Enter email" className="pr-10" />
-              <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
+              <Input id="right-icon" className="pr-10" placeholder="Search" />
+              <span className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                🔍
               </span>
             </div>
           </div>
-        </div>
 
-        {/* Input Groups */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Input Groups</h3>
-          
+          {/* 29. Input with Prefix */}
           <div className="space-y-2">
             <Label htmlFor="prefix">Input with Prefix</Label>
             <div className="flex">
               <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                 http://
               </span>
-              <Input id="prefix" placeholder="example.com" className="rounded-l-none" />
+              <Input
+                id="prefix"
+                className="rounded-l-none"
+                placeholder="example.com"
+              />
             </div>
           </div>
 
+          {/* 30. Input with Suffix */}
           <div className="space-y-2">
             <Label htmlFor="suffix">Input with Suffix</Label>
             <div className="flex">
-              <Input id="suffix" placeholder="0.00" className="rounded-r-none" />
+              <Input
+                id="suffix"
+                className="rounded-r-none"
+                placeholder="0.00"
+              />
               <span className="inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                 USD
               </span>
             </div>
           </div>
-        </div>
 
-        {/* Fancy Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Fancy Inputs</h3>
-          
+          {/* 31. Underlined Input */}
           <div className="space-y-2">
             <Label htmlFor="underlined">Underlined Input</Label>
-            <Input id="underlined" placeholder="Underlined input" className="border-t-0 border-l-0 border-r-0 rounded-none px-0 border-b-2 focus:ring-0" />
+            <Input
+              id="underlined"
+              className="border-t-0 border-x-0 rounded-none px-0 border-b-2 focus:ring-0"
+              placeholder="Underlined input"
+            />
           </div>
 
+          {/* 32. Animated Label Input */}
           <div className="relative">
             <Input id="animated" placeholder=" " className="peer pt-8" />
-            <Label htmlFor="animated" className="absolute left-2 top-2 text-gray-500 transition-all peer-placeholder-shown:top-4 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500">Animated Label</Label>
+            <Label
+              htmlFor="animated"
+              className="absolute left-2 top-2 text-gray-500 transition-all peer-placeholder-shown:top-4 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
+            >
+              Animated Label
+            </Label>
           </div>
-        </div>
 
-      
-
-        {/* Masked Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Masked Inputs</h3>
-          
+          {/* 33. OTP Input */}
           <div className="space-y-2">
-            <Label htmlFor="credit-card">Credit Card</Label>
-            <Input id="credit-card" placeholder="0000 0000 0000 0000" className="[&::-webkit-inner-spin-button]:appearance-none" />
+            <Label>OTP Input</Label>
+            <div className="flex space-x-2">
+              <Input className="w-12 text-center" maxLength={1} />
+              <Input className="w-12 text-center" maxLength={1} />
+              <Input className="w-12 text-center" maxLength={1} />
+              <Input className="w-12 text-center" maxLength={1} />
+            </div>
           </div>
 
+          {/* 34. Clearable Input */}
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" placeholder="(000) 000-0000" className="[&::-webkit-inner-spin-button]:appearance-none" />
+            <Label htmlFor="clearable">Clearable Input</Label>
+            <div className="relative">
+              <Input id="clearable" placeholder="Type something..." />
+              <Button
+                type="button"
+                variant="ghost"
+                className="absolute inset-y-0 right-0 px-3 flex items-center"
+              >
+                ✕
+              </Button>
+            </div>
           </div>
-        </div>
 
-        {/* Accessibility Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Accessibility</h3>
-          
+          {/* 35. Password with Strength Meter */}
           <div className="space-y-2">
-            <Label htmlFor="aria-described">Input with Description</Label>
-            <Input id="aria-described" aria-describedby="description" />
-            <p id="description" className="text-sm text-gray-500">This is a description for the input above.</p>
+            <Label htmlFor="password-strength">
+              Password with Strength Meter
+            </Label>
+            <Input id="password-strength" type="password" />
+            <div className="h-2 bg-gray-200 rounded-full mt-2">
+              <div className="h-full w-1/4 bg-red-500 rounded-full"></div>
+            </div>
           </div>
 
+          {/* 36. Input with Character Count */}
           <div className="space-y-2">
-            <Label htmlFor="required">Required Input</Label>
-            <Input id="required" required aria-required="true" />
+            <Label htmlFor="char-count">Input with Character Count</Label>
+            <div className="relative">
+              <Input id="char-count" maxLength={50} className="pr-16" />
+              <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">
+                0/50
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Advanced Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Advanced Inputs</h3>
-          
-          <div  className="space-y-2">
-            <Label htmlFor="autocomplete">Autocomplete</Label>
+          {/* 37. Autocomplete Input */}
+          <div className="space-y-2">
+            <Label htmlFor="autocomplete">Autocomplete Input</Label>
             <Input id="autocomplete" list="fruits" placeholder="Type a fruit" />
             <datalist id="fruits">
               <option value="Apple" />
@@ -343,106 +480,204 @@ export default function ResponsiveInputShowcase() {
             </datalist>
           </div>
 
+          {/* 38. Credit Card Input */}
           <div className="space-y-2">
-            <Label htmlFor="char-count">Character Count</Label>
+            <Label htmlFor="credit-card">Credit Card Input</Label>
+            <Input
+              id="credit-card"
+              placeholder="0000 0000 0000 0000"
+              className="[&::-webkit-inner-spin-button]:appearance-none"
+            />
+          </div>
+
+          {/* 39. Phone Number Input */}
+          <div className="space-y-2">
+            <Label htmlFor="phone">Phone Number Input</Label>
+            <Input
+              id="phone"
+              placeholder="(000) 000-0000"
+              className="[&::-webkit-inner-spin-button]:appearance-none"
+            />
+          </div>
+
+          {/* 40. Currency Input */}
+          <div className="space-y-2">
+            <Label htmlFor="currency">Currency Input</Label>
             <div className="relative">
-              <Input id="char-count" maxLength={50} className="pr-16" />
-              <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">
-                <span className="character-count">0</span>/50
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Specialized Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Specialized Inputs</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="password-strength">Password with Strength Meter</Label>
-            <Input id="password-strength" type="password" />
-            <div className="h-2 bg-gray-200 rounded-full mt-2">
-              <div className="h-full w-1/4 bg-red-500 rounded-full"></div>
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                $
+              </span>
+              <Input
+                id="currency"
+                type="number"
+                step="0.01"
+                min="0"
+                placeholder="0.00"
+                className="pl-7"
+              />
             </div>
           </div>
 
+          {/* 41. Tag Input */}
           <div className="space-y-2">
-            <Label htmlFor="otp">OTP Input</Label>
-            <div className="flex space-x-2">
-              <Input className="w-12 text-center" maxLength={1} />
-              <Input className="w-12 text-center" maxLength={1} />
-              <Input className="w-12 text-center" maxLength={1} />
-              <Input className="w-12 text-center" maxLength={1} />
+            <Label htmlFor="tag">Tag Input</Label>
+            <div className="flex flex-wrap gap-2 p-2 border rounded">
+              <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                Tag 1
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                Tag 2
+              </span>
+              <Input
+                id="tag"
+                placeholder="Add a tag"
+                className="flex-grow border-0 focus:ring-0"
+              />
             </div>
           </div>
-        </div>
 
-        {/* Internationalization */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Internationalization</h3>
-          
+          {/* 42. Quantity Input */}
           <div className="space-y-2">
-            <Label htmlFor="rtl">RTL Input</Label>
-            <Input id="rtl" dir="rtl" placeholder="أدخل النص هنا" />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="non-latin">Non-Latin Script</Label>
-            <Input id="non-latin" placeholder="输入文本" />
-          </div>
-        </div>
-
-        {/* Experimental Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Experimental</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="speech">Speech Recognition</Label>
+            <Label htmlFor="quantity">Quantity Input</Label>
             <div className="flex">
-              <Input id="speech" placeholder="Speak now" className="rounded-r-none" />
-              <Button type="button" className="rounded-l-none">🎤</Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-r-none"
+              >
+                -
+              </Button>
+              <Input
+                id="quantity"
+                type="number"
+                defaultValue={1}
+                min={1}
+                className="rounded-none text-center w-20"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-l-none"
+              >
+                +
+              </Button>
             </div>
           </div>
 
+          {/* 43. Rich Text Editor (simplified) */}
+          <div className="space-y-2">
+            <Label htmlFor="rich-text">Rich Text Editor</Label>
+            <div className="border rounded">
+              <div className="flex border-b p-2 gap-2">
+                <Button variant="outline" size="sm">
+                  B
+                </Button>
+                <Button variant="outline" size="sm">
+                  I
+                </Button>
+                <Button variant="outline" size="sm">
+                  U
+                </Button>
+              </div>
+              <Textarea
+                id="rich-text"
+                placeholder="Enter rich text"
+                className="border-0"
+              />
+            </div>
+          </div>
+
+          {/* 44. Emoji Picker (simplified) */}
           <div className="space-y-2">
             <Label htmlFor="emoji">Emoji Picker</Label>
             <div className="flex">
-              <Input id="emoji" placeholder="Choose an emoji" className="rounded-r-none" />
-              <Button type="button" variant="outline" className="rounded-l-none">😊</Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Input Combinations */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Input Combinations</h3>
-          
-          <div className="space-y-2">
-            <Label>Search with Filters</Label>
-            <div className="flex space-x-2">
-              <Select>
-                <SelectTrigger className="w-[120px]">
-                  <SelectValue placeholder="Filter" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All</SelectItem>
-                  <SelectItem value="users">Users</SelectItem>
-                  <SelectItem value="posts">Posts</SelectItem>
-                </SelectContent>
-              </Select>
-              <div className="relative flex-grow">
-                <Input placeholder="Search..." className="pl-10 w-full" />
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </div>
+              <Input
+                id="emoji"
+                placeholder="Choose an emoji"
+                className="rounded-r-none"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-l-none"
+              >
+                😊
+              </Button>
             </div>
           </div>
 
+          {/* 45. Date Range Picker */}
+
+          {/* 46. Time Zone Picker */}
           <div className="space-y-2">
-            <Label>Date Range</Label>
+            <Label htmlFor="timezone">Time Zone Picker</Label>
+            <Select>
+              <SelectTrigger id="timezone">
+                <SelectValue placeholder="Select time zone" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="utc">UTC</SelectItem>
+                <SelectItem value="est">EST</SelectItem>
+                <SelectItem value="pst">PST</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* 47. Signature Pad (simplified) */}
+          <div className="space-y-2">
+            <Label htmlFor="signature">Signature Pad</Label>
+            <div className="border rounded p-4 text-center">Sign here</div>
+          </div>
+
+          {/* 48. Star Rating */}
+          <div className="space-y-2">
+            <Label>Star Rating</Label>
+            <div className="flex space-x-1">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Button
+                  key={star}
+                  type="button"
+                  variant="ghost"
+                  className="p-0 w-8 h-8"
+                >
+                  <span className="text-2xl text-yellow-400">★</span>
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* 49. Toggle Group */}
+          <div className="space-y-2">
+            <Label>Toggle Group</Label>
+            <div className="flex rounded-lg shadow-sm">
+              <Button variant="outline" className="rounded-r-none">
+                Left
+              </Button>
+              <Button variant="outline" className="rounded-none border-x-0">
+                Middle
+              </Button>
+              <Button variant="outline" className="rounded-l-none">
+                Right
+              </Button>
+            </div>
+          </div>
+
+          {/* 50. Multi-select Dropdown */}
+          <div className="space-y-2">
+            <Label htmlFor="multi-select">Multi-select Dropdown</Label>
+            <Select>
+              <SelectTrigger id="multi-select">
+                <SelectValue placeholder="Select options" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="option1">Option 1</SelectItem>
+                <SelectItem value="option2">Option 2</SelectItem>
+                <SelectItem value="option3">Option 3</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label>Date Range Picker</Label>
             <div className="flex space-x-2">
               <Input type="date" className="w-full" />
               <span className="flex items-center">to</span>
@@ -450,49 +685,7 @@ export default function ResponsiveInputShowcase() {
             </div>
           </div>
         </div>
-
-        {/* Contextual Inputs */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Contextual Inputs</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="quantity">Quantity</Label>
-            <div className="flex">
-              <Button type="button" variant="outline" className="rounded-r-none">-</Button>
-              <Input id="quantity" type="number" defaultValue={1} min={1} className="rounded-none text-center w-20" />
-              <Button type="button" variant="outline" className="rounded-l-none">+</Button>
-            </div>
-          </div>
-
-          
-        </div>
-
-        {/* Miscellaneous */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Miscellaneous</h3>
-          
-          <div className="space-y-2">
-            <Label htmlFor="clearable">Clearable Input</Label>
-            <div className="relative">
-              <Input id="clearable" placeholder="Type something..." />
-              <Button type="button" variant="ghost" className="absolute inset-y-0 right-0 px-3 flex items-center">
-                ✕
-              </Button>
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="limited-textarea">Textarea with Limit</Label>
-            <div className="relative">
-              <Textarea id="limited-textarea" placeholder="Type your message..." maxLength={200} />
-              <div className="absolute bottom-2 right-2 text-sm text-gray-500">
-                0/200
-              </div>
-            </div>
-          </div>
-        </div>
-       
-      </CardContent>
+      </div>
     </Card>
-  )
+  );
 }
