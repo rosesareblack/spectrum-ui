@@ -156,8 +156,8 @@ export function ProfileCard() {
       <CardHeader>
         <div className="flex items-center space-x-4">
           <Avatar>
-            <AvatarImage src="./avtar.png" alt="@arihantcodes" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarImage src="https://github.com/arihantcodes/spectrum-ui/blob/main/public/avtar.png" alt="@arihantcodes" />
+            <AvatarFallback>SU</AvatarFallback>
           </Avatar>
           <div>
             <CardTitle>Spectrum UI</CardTitle>
