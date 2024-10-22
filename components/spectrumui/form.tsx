@@ -20,7 +20,7 @@ import { Card } from "../ui/card";
 import { Check, Eye, EyeOff, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
-export default function Component() {
+export default function Inputcollection() {
   const [isVisible, setIsVisible] = useState(false);
 const [password, setPassword] = useState("");
 
