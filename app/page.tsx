@@ -40,7 +40,9 @@ export default function Home() {
             />
           </div>
           <div className="flex gap-6 flex-col md:flex-row items-center justify-center">
+            <Link href="/components">
             <RainbowButton>Browse Components</RainbowButton>
+            </Link>
             <Link href="https://github.com/arihantcodes/spectrum-ui">
               <RainbowButton className="gap-4 dark:bg-black">
                 {" "}
