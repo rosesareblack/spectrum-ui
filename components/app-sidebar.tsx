@@ -26,11 +26,11 @@ const data = {
       url: "/components", // Main components page
       items: [
         {
-          title: "Input Fields",
+          title: "Input Designs",
           url: "/components/input-fields", // Correct relative path
         },
         {
-          title: "Buttons",
+          title: "Buttons Designs",
           url: "/components/buttons", // Correct relative path
         },
         {
@@ -70,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           {/* We create a SidebarGroup for each parent. */}
           {data.navMain.map((item) => (
             <SidebarGroup key={item.title}>
-              <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+              <SidebarGroupLabel  className="text-teal-300">{item.title}</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
                   {item.items.map((subItem) => (
@@ -78,7 +78,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       <SidebarMenuButton
                         asChild
                         className={
-                          activeItem === subItem.title ? "active-class" : ""
+                          activeItem === subItem.title ? "active-class " : ""
                         }
                         onClick={() => handleItemClick(subItem.title)} // Handle click
                       >
