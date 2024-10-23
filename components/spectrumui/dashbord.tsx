@@ -34,3 +34,6 @@ const AllComponents: React.FC<AllComponentsProps> = ({ slug }) => {
 };
 
 export default AllComponents;
+
+
+
