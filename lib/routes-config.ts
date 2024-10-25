@@ -1,26 +1,35 @@
 // for page navigation & to sort on leftbar
 export const ROUTES = [
   {
-    title: "Getting Started",
-    href: "getting-started",
+    category: 'Getting Started',
     items: [
-      { title: "Introduction", href: "/introduction" },
-      { title: "Dashboard", href: "/dashboardblock" },
-      { title: "Quick Start Guide", href: "/quick-start-guide" },
-      { title: "Project Structure", href: "/project-structure" },
-      { title: "Changelog", href: "/changelog" },
-      { title: "FAQ", href: "/faq" },
+      { name: 'Introduction', href: '/introduction' }, // Removed '/docs'
+      { name: 'Installation', href: '/installation' },  // Removed '/docs'
     ],
   },
-
-  
+  {
+    category: 'Components',
+    items: [
+      { name: 'Button', href: '/button' },
+      { name: 'Input', href: '/input' },
+      { name: 'Card', href: '/card' },
+      { name: 'Tabs', href: '/tabs' },
+    ],
+  },
+  {
+    category: 'Hooks',
+    items: [
+      { name: 'useToggle', href: '/use-toggle' },
+      { name: 'useMediaQuery', href: '/use-media-query' },
+    ],
+  },
 ];
 
-export const page_routes = ROUTES.map(({ href, items }) => {
+export const page_routes = ROUTES.map(({  items }) => {
   return items.map((link) => {
     return {
-      title: link.title,
-      href: href + link.href,
+      title: link.name,
+      href:  link.href,
     };
   });
 }).flat();

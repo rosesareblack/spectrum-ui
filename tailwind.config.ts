@@ -111,13 +111,19 @@ const config = {
   				'100%': {
   					'background-position': '200%'
   				}
+  			},
+  			'border-beam': {
+  				'100%': {
+  					'offset-distance': '100%'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
-  			rainbow: 'rainbow var(--speed, 2s) infinite linear'
+  			rainbow: 'rainbow var(--speed, 2s) infinite linear',
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
   		}
   	}
   },

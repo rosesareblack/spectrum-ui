@@ -13,6 +13,12 @@ import Search from "./search";
 
 export const NAVLINKS = [
 
+
+  {
+    title: "Docs",
+    href: "/docs/introduction",
+  },
+
   {
     title: "Components",
     href: "/components",

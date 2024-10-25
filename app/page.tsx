@@ -12,6 +12,7 @@ import ShinyButton from "@/components/ui/shiny-button";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
+
 export default function Home() {
   return (
     <div className="flex items-center justify-center flex-col">
@@ -70,6 +71,7 @@ export default function Home() {
         <InputShowcase />
         </Card>
       </div>
+
 
       <Link href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SpectrumUI%20 share%20yourtought%20%40arihantCodes%20">
         <Button className="">Share Your Thoughts On
