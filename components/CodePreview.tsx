@@ -3,7 +3,7 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
-
+import { Input } from "@/components/ui/input";
 interface CodePreviewProps {
   code: string;
   children: React.ReactNode;

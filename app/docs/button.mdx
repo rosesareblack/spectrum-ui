@@ -1,5 +1,5 @@
-import { CodePreview } from '@/components/CodePreview'
-import { Button } from '@/components/ui/button'
+import { CodePreview } from "@/components/CodePreview";
+import { Button } from "@/components/ui/button";
 
 # Button Component
 
@@ -11,7 +11,7 @@ The Button component is a versatile and customizable button for your UI.
 export function ButtonExample() {
   return (
     <div className="flex flex-wrap gap-4">
-      <Button variant="default">Madar</Button>
+      <Button variant="default">button</Button>
       <Button variant="destructive">Destructive</Button>
       <Button variant="outline">Outline</Button>
       <Button variant="secondary">Secondary</Button>
@@ -22,7 +22,7 @@ export function ButtonExample() {
 }`}
 >
   <div className="flex flex-wrap gap-4">
-    <Button variant="default">madar</Button>
+    <Button variant="default">button</Button>
     <Button variant="destructive">Destructive</Button>
     <Button variant="outline">Outline</Button>
     <Button variant="secondary">Secondary</Button>
@@ -31,11 +31,16 @@ export function ButtonExample() {
   </div>
 </CodePreview>
 
+## Installation
+
+```bash
+npx shadcn@latest add button
+```
+
 ## Usage
 
 To use the Button component in your project, import it from your components directory:
 
-```bash
-import { Button } from '@/components/ui/button'
-
+```tsx
+import { Button } from "@/components/ui/button";
 ```

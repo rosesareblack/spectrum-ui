@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import { CodePreview } from '@/components/CodePreview'
 import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 
 const components = { CodePreview, Button }
 
@@ -29,8 +30,12 @@ export default async function MDXPage({ params }: { params: { slug: string } }) 
   }
 
   return (
-    <article className="max-w-3xl mx-auto prose prose-slate lg:prose-lg dark:prose-invert">
+ <div>
+  <Card className='p-12'>
+  <article className="max-w-3xl  prose prose-neutral dark:text-white dark:prose-invert ">
       <MDXRemote source={source} components={components} />
     </article>
+  </Card>
+ </div>
   )
 }

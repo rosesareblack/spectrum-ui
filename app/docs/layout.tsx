@@ -16,23 +16,7 @@ const components = [
       { name: 'Installation', href: '/docs/installation' },
     ],
   },
-  {
-    category: 'Components',
-    items: [
-      { name: 'Button', href: '/docs/button' },
-      { name: 'Input', href: '/docs/input' },
-      { name: 'Card', href: '/docs/card' },
-      { name: 'Tabs', href: '/docs/tabs' },
-      // Add more components here
-    ],
-  },
-  {
-    category: 'Hooks',
-    items: [
-      { name: 'useToggle', href: '/docs/use-toggle' },
-      { name: 'useMediaQuery', href: '/docs/use-media-query' },
-    ],
-  },
+ 
 ]
 
 export default function DocsLayout({
@@ -88,7 +72,7 @@ export default function DocsLayout({
           </nav>
         </ScrollArea>
       </aside>
-      <main className="flex-grow p-6 md:p-8 lg:p-12 md:ml-64">{children}</main>
+      <main className=" p-6 md:p-8 lg:p-12 md:ml-52">{children}</main>
     </div>
   )
 }

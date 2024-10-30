@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Card } from "../ui/card";
-import { Button } from "../ui/button";
-import Copy from "../copy";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Copy from "@/components/copy";
 import {
   RiCloseCircleLine,
   RiDeleteBin5Fill,
@@ -802,3 +802,5 @@ export function LoginGithub() {
     </Button>
   );
 }
+
+
