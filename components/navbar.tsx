@@ -34,7 +34,7 @@ export const NAVLINKS = [
   },
   {
     title: "Blog",
-    href:"/blog"
+    href:"https://blog.arihant.us/"
   },
 ];
 
