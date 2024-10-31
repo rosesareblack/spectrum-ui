@@ -32,10 +32,7 @@ export const NAVLINKS = [
     title: "Colors",
     href: "/colors",
   },
-  {
-    title: "Blog",
-    href:"https://blog.arihant.us/"
-  },
+
 ];
 
 export function Navbar() {
