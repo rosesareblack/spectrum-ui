@@ -6,7 +6,7 @@ import { Button, buttonVariants } from "./ui/button";
 import { Icons } from "./icon";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
-import { page_routes } from "@/lib/routes-config";
+
 import { SheetClose } from "@/components/ui/sheet";
 
 import Search from "./search";
@@ -16,7 +16,7 @@ export const NAVLINKS = [
 
   {
     title: "Docs",
-    href: "/docs/introduction",
+    href: "/docs",
   },
 
   {

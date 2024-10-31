@@ -13,14 +13,11 @@ export default function Footer() {
               <Icons.logo className="icon-class w-2" />
               <h2 className="text-lg font-bold">Spectrum/UI</h2>
             </Link>
-           
-            <h1 className="dark:text-gray-300 mt-4">
-              Build by <span className="dark:text-[#039ee4]">
-                <Link href="https://x.com/arihantCodes">
-                
-                @Arihantjain
-                </Link>
 
+            <h1 className="dark:text-gray-300 mt-4">
+              Build by{" "}
+              <span className="dark:text-[#039ee4]">
+                <Link href="https://x.com/arihantCodes">@Arihantjain</Link>
               </span>
             </h1>
             <p className="text-sm dark:text-gray-400 mt-5">
@@ -61,7 +58,6 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Socials</h3>
               <ul className="space-y-2">
-               
                 <li>
                   <Link href="#" className="hover:text-gray-300">
                     Instagram
@@ -69,12 +65,12 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="#" className="hover:text-gray-300">
-                  LinkedIn
+                    LinkedIn
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-gray-300">
-                   X
+                    X
                   </Link>
                 </li>
               </ul>
@@ -99,9 +95,13 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-          
           </div>
         </div>
+        <div className=" w-full flex mt-4 items-center justify-center  ">
+      <h1 className="text-center text-5xl md:text-9xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
+        SPECTRUM UI
+      </h1>
+    </div>
       </div>
     </footer>
   );

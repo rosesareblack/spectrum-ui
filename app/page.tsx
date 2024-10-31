@@ -11,6 +11,7 @@ import Link from "next/link";
 import ShinyButton from "@/components/ui/shiny-button";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SparklesPreview } from "@/components/sparshine";
 
 
 export default function Home() {
@@ -73,11 +74,14 @@ export default function Home() {
       </div>
 
 
-      <Link href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SpectrumUI%20 share%20yourtought%20%40arihantCodes%20">
+    <div className="mt-7">
+    <Link href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SpectrumUI%20 share%20yourtought%20%40arihantCodes%20">
         <Button className="">Share Your Thoughts On
         <Icons.twitter className="icon-class ml-1 w-3.5 " />
         </Button>
       </Link>
+    </div>
+    
     </div>
   );
 }
