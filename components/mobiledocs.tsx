@@ -17,7 +17,7 @@ import {
 // Assuming DOCS is imported from your constant file
 import { DOCS } from "@/app/(docs)/layout-parts/documentation.constant";
 
-export default function EnhancedSidebar() {
+export default function Mobiledocs() {
   const [openGroups, setOpenGroups] = useState<string[]>(
     DOCS.map((group) => group.groupKey)
   );
@@ -50,7 +50,7 @@ export default function EnhancedSidebar() {
   })).filter((group) => group.children.length > 0);
 
   return (
-    <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800">
+    <aside className="flex lg:hidden flex-col items-center   top-0 ">
       <ScrollArea className="flex-1">
         <nav className="p-4 space-y-2">
           {filteredDocs.map((group) => (
