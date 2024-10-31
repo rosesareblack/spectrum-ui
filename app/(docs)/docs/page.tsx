@@ -15,7 +15,7 @@ export default function IntroductionPage() {
       <div className="space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">Spectrum UI</h1>
         <p className="text-xl text-muted-foreground">
-          Beautifully designed components built with Aceternity UI and ShadCN UI that you can copy and
+          Beautifully designed components built with Aceternity UI ,ShadCN UI and MAGIC UI a that you can copy and
           paste into your apps. Accessible. Customizable. Open Source.
         </p>
         <div className="flex gap-4">
@@ -41,6 +41,9 @@ export default function IntroductionPage() {
             Spectrum UI is a collection of re-usable components built using{" "}
             <Link href="https://ui.aceternity.com/" className="font-medium underline underline-offset-4">
               Aceternity UI
+            </Link>{" "}
+            <Link href="https://magicui.design/" className="font-medium underline underline-offset-4">
+              Magic UI
             </Link>{" "}
             and{" "}
             <Link href="https://ui.shadcn.com" className="font-medium underline underline-offset-4">
@@ -109,6 +112,9 @@ export default function IntroductionPage() {
           Built with{" "}
           <Link href="https://ui.aceternity.com/" className="font-medium underline underline-offset-4">
             Aceternity UI
+          </Link>
+          <Link href="https://magicui.design/" className="font-medium underline underline-offset-4">
+            Magic UI
           </Link>
           ,{" "}
           <Link href="https://ui.shadcn.com" className="font-medium underline underline-offset-4">
