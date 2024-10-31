@@ -20,12 +20,12 @@ export default function IntroductionPage() {
         </p>
         <div className="flex gap-4">
           <Button asChild>
-            <Link href="/docs">
+            <Link href="/docs/card">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="https://github.com/your-repo">
+            <Link href="https://github.com/arihantcodes/spectrum-ui">
               <Github className="mr-2 h-4 w-4" />
               GitHub
             </Link>

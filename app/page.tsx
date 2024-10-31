@@ -42,7 +42,7 @@ export default function Home() {
             />
           </div>
           <div className="flex gap-6 flex-col md:flex-row items-center justify-center">
-            <Link href="/components">
+            <Link href="/docs">
             <RainbowButton>Browse Components</RainbowButton>
             </Link>
             <Link href="https://github.com/arihantcodes/spectrum-ui">

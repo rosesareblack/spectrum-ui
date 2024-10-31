@@ -34,10 +34,7 @@ const Anchor = ({
         anchorVisibility === "hover" && "invisible group-hover:visible"
       )}
     >
-      {/* modify `Link` to `a` if you are not using Next.js */}
-      <Link href={`#${anchor}`} onClick={copyToClipboard}>
-        <LinkIcon className="text-gray-600 hover:text-gray-400" />
-      </Link>
+   
     </div>
   );
 };

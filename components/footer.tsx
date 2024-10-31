@@ -49,7 +49,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="hover:text-gray-300">
+                  <Link href="https://blog.arihant.us/" className="hover:text-gray-300">
                     Blog
                   </Link>
                 </li>
@@ -59,17 +59,17 @@ export default function Footer() {
               <h3 className="font-semibold mb-4">Socials</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="hover:text-gray-300">
-                    Instagram
+                  <Link href="https://github.com/arihantcodes/spectrum-ui" className="hover:text-gray-300">
+                    Github
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-gray-300">
+                  <Link href="https://www.linkedin.com/in/arihantcodes" className="hover:text-gray-300">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-gray-300">
+                  <Link href="https://x.com/arihantcodes" className="hover:text-gray-300">
                     X
                   </Link>
                 </li>

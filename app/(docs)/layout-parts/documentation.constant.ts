@@ -28,6 +28,21 @@ export const DOCS: Documentation[] = [
     groupValue: 'Components',
     children: [
       {
+        label:'Card',
+        value:'card',
+        url:'/docs/card',
+      },
+      {
+        label:'Input',
+        value:'input',
+        url:'/docs/input',
+      },
+      {
+        label:'Button',
+        value:'button',
+        url:'/docs/button',
+      },
+      {
         label: 'Autosize Textarea',
         value: 'autosize-textarea',
         url: '/docs/autosize-textarea',

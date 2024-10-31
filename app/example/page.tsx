@@ -33,7 +33,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts"
-import { Moon, Sun, DollarSign, Users, Activity, Send } from "lucide-react"
+import { Moon, Sun, DollarSign, Users, Activity, Send, Palette, Check } from "lucide-react"
 
 const revenueData = [
   { month: "Jan", amount: 12000 },
@@ -59,11 +59,44 @@ const exerciseData = [
   { name: "Sat", minutes: 40 },
   { name: "Sun", minutes: 35 },
 ]
-
 const COLORS = ['#8b5cf6', '#6366f1', '#a78bfa']
 
+const styles = [
+  { name: "Default", value: "default" },
+  { name: "New York", value: "new-york" },
+]
+
+const colors = [
+  { name: "Zinc", value: "zinc", class: "bg-zinc-500" },
+  { name: "Slate", value: "slate", class: "bg-slate-500" },
+  { name: "Stone", value: "stone", class: "bg-stone-500" },
+  { name: "Gray", value: "gray", class: "bg-gray-500" },
+  { name: "Neutral", value: "neutral", class: "bg-neutral-500" },
+  { name: "Red", value: "red", class: "bg-red-500" },
+  { name: "Rose", value: "rose", class: "bg-rose-500" },
+  { name: "Orange", value: "orange", class: "bg-orange-500" },
+  { name: "Green", value: "green", class: "bg-green-500" },
+  { name: "Blue", value: "blue", class: "bg-blue-500" },
+  { name: "Yellow", value: "yellow", class: "bg-yellow-500" },
+  { name: "Violet", value: "violet", class: "bg-violet-500" },
+]
+
+const radiusOptions = [
+  { name: "0", value: "0" },
+  { name: "0.3", value: "0.3" },
+  { name: "0.5", value: "0.5" },
+  { name: "0.75", value: "0.75" },
+  { name: "1.0", value: "1.0" },
+]
 export default function Component() {
   const [date, setDate] = React.useState<Date | undefined>(new Date())
+  const [selectedStyle, setSelectedStyle] = React.useState("default")
+  const [selectedColor, setSelectedColor] = React.useState("zinc")
+  const [selectedRadius, setSelectedRadius] = React.useState("0.5")
+  const [mode, setMode] = React.useState("dark")
+  function cn(...classes: (string | boolean | undefined)[]): string {
+    return classes.filter(Boolean).join(' ');
+  }
 
   return (
     <Card className="min-h-screen  text-gray-100 p-8">
@@ -319,6 +352,115 @@ export default function Component() {
                 <Send className="h-4 w-4" />
                 <span className="sr-only">Send message</span>
               </Button>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="md:col-span-1 lg:col-span-1  border-gray-800">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Customize</CardTitle>
+            <Palette className="h-4 w-4 " />
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs ">Style</span>
+              </div>
+              <div className="flex gap-2">
+                {styles.map((style) => (
+                  <Button
+                    key={style.value}
+                    variant="outline"
+                    size="sm"
+                    className={cn(
+                      "h-7  c ",
+                      selectedStyle === style.value && "border-white"
+                    )}
+                    onClick={() => setSelectedStyle(style.value)}
+                  >
+                    {style.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs ">Color</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {colors.map((color) => (
+                  <Button
+                    key={color.value}
+                    variant="outline"
+                    size="sm"
+                    className={cn(
+                      "  ",
+                      selectedColor === color.value && ""
+                    )}
+                    onClick={() => setSelectedColor(color.value)}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className={cn("h-4 w-4 rounded-full", color.class)} />
+                      <span className="text-sm">{color.name}</span>
+                    </div>
+                    {selectedColor === color.value && (
+                      <Check className=" " />
+                    )}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs ">Radius</span>
+              </div>
+              <div className="flex gap-2">
+                {radiusOptions.map((radius) => (
+                  <Button
+                    key={radius.value}
+                    variant="outline"
+                    size="sm"
+                    className={cn(
+                      "flex-1 h-7  border-gray-800",
+                      selectedRadius === radius.value && "border-white"
+                    )}
+                    onClick={() => setSelectedRadius(radius.value)}
+                  >
+                    {radius.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-gray-400">Mode</span>
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className={cn(
+                    "flex-1 h-7  border-gray-800",
+                    mode === "light" && "border-white"
+                  )}
+                  onClick={() => setMode("light")}
+                >
+                  Light
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className={cn(
+                    "flex-1 h-7  border-gray-800",
+                    mode === "dark" && "border-white"
+                  )}
+                  onClick={() => setMode("dark")}
+                >
+                  Dark
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>

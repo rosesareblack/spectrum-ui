@@ -21,7 +21,7 @@ export const NAVLINKS = [
 
   {
     title: "Components",
-    href: "/components",
+    href: "/docs",
   },
 
   {
@@ -59,7 +59,7 @@ export function Navbar() {
             <div className="flex">
               <Search />
               <Link
-                href="https://github.com/arihantcodes"
+                href="https://github.com/arihantcodes/spectrum-ui"
                 className={buttonVariants({ variant: "ghost", size: "icon" })}
               >
                 <Icons.gitHub className="icon-class w-4" />
