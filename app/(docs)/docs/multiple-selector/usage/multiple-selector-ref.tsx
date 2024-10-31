@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import MultipleSelector, { MultipleSelectorRef, Option } from '@/components/ui/multiple-selector';
+import MultipleSelector, { type MultipleSelectorRef, Option } from '@/components/ui/multiple-selector';
 import { LoadingButton } from '@/components/ui/loading-button';
 import { toast } from '@/components/ui/use-toast';
 
