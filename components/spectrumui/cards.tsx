@@ -1469,7 +1469,7 @@ function QuickNoteCard() {
         <div key={name} className="relative">
           
           <CardComponent />
-          <div className="absolute top-2 right-0">
+          <div className="absolute top-2 right-4">
             <Copy content={code} />
           </div>
         </div>

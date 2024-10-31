@@ -1,5 +1,5 @@
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import InputShowcase from "@/components/spectrumui/form";
+
 
 import Cube from "@/components/testing";
 import { Cover } from "@/components/ui/cover";
@@ -10,8 +10,9 @@ import { Icons } from "@/components/icon";
 import Link from "next/link";
 import ShinyButton from "@/components/ui/shiny-button";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { SparklesPreview } from "@/components/sparshine";
+import { Card, CardTitle } from "@/components/ui/card";
+
+import CardCollection from "@/components/spectrumui/cards";
 
 
 export default function Home() {
@@ -68,8 +69,8 @@ export default function Home() {
 
       <div className="mt-16">
         <Card>
-
-        <InputShowcase />
+        <CardTitle className="mt-5 text-center mb-8">Explore Our Cards</CardTitle>
+        <CardCollection />
         </Card>
       </div>
 
