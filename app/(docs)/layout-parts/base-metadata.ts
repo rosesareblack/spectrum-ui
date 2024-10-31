@@ -6,8 +6,8 @@ interface BaseMetadataProps {
 }
 export function baseMetadata({ title, description }: BaseMetadataProps): Metadata {
   return {
-    title: `${title} - shadcnui expansions`,
-    description: `shadcnui expansion: ${description}`,
-    authors: [{ name: 'typeart.cc' }, { url: 'https://blog.typeart.cc/', name: 'Hsuan-Yi, Chou' }],
+    title: `${title} Spectrum UI`,
+    description: `Spectrum UI: ${description}`,
+    authors: [{ name: 'Aruhant Jain' }, { url: 'https://arihant.us/', name: 'Arihant' }],
   };
 }
