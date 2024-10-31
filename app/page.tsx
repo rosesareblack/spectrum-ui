@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       <div className="mt-16">
-        <Card>
+        <Card className="hidden md:flex md:flex-col">
         <CardTitle className="mt-5 text-center mb-8">Explore Our Cards</CardTitle>
         <CardCollection />
         </Card>
