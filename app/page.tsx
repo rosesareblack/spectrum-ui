@@ -18,18 +18,18 @@ export default function Home() {
     <div className="flex items-center justify-center flex-col">
       <div className="flex items-center justify-center mt-12">
         <div className="flex flex-col">
-          <h1 className="md:text-6xl text-center md:mt-12 font-bold ">
+          <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold ">
             Instant UI Components <br /> Just <Cover >
               <span className="text-neutral-100">
                 Copy, Paste & Done
               </span>
               </Cover>{" "}
           </h1>
-          <p className="text-xs md:text-lg text-center mt-6 mb-5 text-gray-400">Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality</p>
+          <p className="text-md md:text-lg text-center mt-6 mb-5 text-gray-400">Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality</p>
           <h1 className="text-center font-bold mt-6 text-2xl text-gray-400">
-            Build With
+            Built With
           </h1>
-          <div className="flex flex-col  md:flex-row items-center justify-center mt-4 gap-5">
+          <div className="flex flex-col  mb-4 md:flex-row items-center justify-center mt-4 gap-5">
             <Image src="./nextjs.svg" height={40} width={90} alt="next js" />
             <Image src="./shadcn.svg" height={40} width={140} alt="shadcn ui" />
             <Image
