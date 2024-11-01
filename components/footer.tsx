@@ -2,6 +2,7 @@
 import Link from "next/link";
 
 import { Icons } from "./icon";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
@@ -20,6 +21,14 @@ export default function Footer() {
                 <Link href="https://x.com/arihantCodes">@Arihantjain</Link>
               </span>
             </h1>
+            <div className="mt-2">
+            <Link  href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SpectrumUI%20 share%20yourtought%20%40arihantCodes%20">
+              <Button variant='secondary'>
+                Share Your Thoughts On
+                <Icons.twitter className="icon-class ml-1 w-3.5 " />
+              </Button>
+            </Link>
+            </div>
             <p className="text-sm dark:text-gray-400 mt-5">
               © {new Date().getFullYear()} Spectrum UI. All rights reserved.
             </p>
@@ -98,10 +107,10 @@ export default function Footer() {
           </div>
         </div>
         <div className=" w-full flex mt-4 items-center justify-center  ">
-      <h1 className="text-center text-3xl md:text-5xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
-        SPECTRUM UI
-      </h1>
-    </div>
+          <h1 className="text-center text-3xl md:text-5xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
+            SPECTRUM UI
+          </h1>
+        </div>
       </div>
     </footer>
   );
