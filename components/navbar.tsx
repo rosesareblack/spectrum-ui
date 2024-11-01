@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="flex items-center gap-5">
           <SheetLeftbar />
           <div className="flex items-center gap-8">
-            <div className="sm:flex hidden">
+            <div className="sm:flex ">
               <Logo />
             </div>
             <div className="lg:flex hidden items-center gap-5 text-sm font-medium text-muted-foreground">
@@ -50,8 +50,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="flex">
-              <Search />
+            <div className="flex items-center">
+              <div className='hidden md:flex'>
+                <Search />
+              </div>
               <Link
                 href="https://github.com/arihantcodes/spectrum-ui"
                 className={buttonVariants({ variant: "ghost", size: "icon" })}
