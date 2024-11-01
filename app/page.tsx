@@ -25,7 +25,7 @@ export default function Home() {
               </span>
               </Cover>{" "}
           </h1>
-          <p className="text-lg text-center mt-6 mb-5 text-gray-400">Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality</p>
+          <p className="text-xs md:text-lg text-center mt-6 mb-5 text-gray-400">Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality</p>
           <h1 className="text-center font-bold mt-6 text-2xl text-gray-400">
             Build With
           </h1>
@@ -53,7 +53,7 @@ export default function Home() {
               <Button className="gap-4 " variant={"secondary"} size={"lg"}>
                 
                 <Icons.gitHub className="icon-class w-4 " />
-                Give a Star
+                Give a Star ⭐
               </Button>
             </Link>
           </div>

@@ -31,6 +31,21 @@ export const DOCS: Documentation[] = [
         label:'Card',
         value:'card',
         url:'/docs/card',
+        
+      },
+      {
+        label:'Navbar',
+        value:'navbar',
+        url:'/docs/navbar',
+        new:true,
+  
+      },
+      {
+        label:'Footer',
+        value:'footer',
+        url:'/docs/footer',
+        new:true,
+  
       },
       {
         label:'Input',

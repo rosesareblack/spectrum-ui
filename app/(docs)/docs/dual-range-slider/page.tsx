@@ -8,11 +8,10 @@ import DualRangeSliderDemo from '@/app/(docs)/docs/dual-range-slider/dual-range-
 import DualRangeSliderCustomLabel from '@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-custom-label';
 import Usage from '@/app/(docs)/docs/components/usage';
 import DualRangeSliderLabelPosition from '@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-label-position';
-import { Reference, ReferenceBorder } from '@/app/(docs)/docs/components/reference';
 import DualRangeSliderSingle from '@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-single';
 
 export const metadata: Metadata = baseMetadata({
-  title: 'Dual Range Slider',
+  title: 'Spectrum UI-Dual Range Slider',
   description: 'An enhancement slider that allows you to select a range of values.',
 });
 
@@ -22,9 +21,7 @@ const DualRangeSliderPage = () => {
       title="Dual Range Slider"
       description="An enhancement slider that allows you to select a range of values."
     >
-      <ReferenceBorder>
-        <Reference href="https://www.radix-ui.com/themes/docs/components/slider" />
-      </ReferenceBorder>
+      
       <PreviewCodeCard path="app/(docs)/docs/dual-range-slider/dual-range-slider-demo.tsx">
         <DualRangeSliderDemo />
       </PreviewCodeCard>
