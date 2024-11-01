@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Highlight from "react-highlight";
-import "highlight.js/styles/ir-black.css";
+import "highlight.js/styles/github-dark.css";
 
 
 import { Button } from "@/components/ui/button";
