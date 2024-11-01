@@ -12,8 +12,6 @@ import { SheetClose } from "@/components/ui/sheet";
 import Search from "./search";
 
 export const NAVLINKS = [
-
-
   {
     title: "Docs",
     href: "/docs",
@@ -32,7 +30,6 @@ export const NAVLINKS = [
     title: "Colors",
     href: "/colors",
   },
-
 ];
 
 export function Navbar() {
@@ -83,7 +80,11 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2">
       <Icons.logo className="icon-class w-2" />
-      <h2 className="text-lg font-bold">Spectrum/UI</h2>
+
+      <h2 className="text-lg font-bold">
+       Spectrum UI
+      </h2>
+      
     </Link>
   );
 }

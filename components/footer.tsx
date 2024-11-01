@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="mb-8 md:mb-0">
             <Link href="/" className="flex items-center gap-2">
               <Icons.logo className="icon-class w-2" />
-              <h2 className="text-lg font-bold">Spectrum/UI</h2>
+              <h2 className="text-lg font-bold">Spectrum UI</h2>
             </Link>
 
             <h1 className="dark:text-gray-300 mt-4">

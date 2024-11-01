@@ -1,5 +1,5 @@
 export const siteConfig = {
-    name: "spectrum/ui",
+    name: "Spectrum UI",
     url: "https://spectrumui.arihant.us",
     ogImage: "https://spectrumui.arihant.us/og.jpg",
     description:
