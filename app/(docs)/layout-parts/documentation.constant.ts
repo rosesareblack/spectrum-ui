@@ -13,6 +13,17 @@ interface DocumentationChild {
 
 export const DOCS: Documentation[] = [
   {
+    groupKey: 'Follow for more updates',
+    groupValue: 'Follow for more updates',
+    children: [
+      {
+        label: 'Twitter @arihantcodes',
+        value: 'Twitter @arihantcodes',
+        url: 'https://x.com/arihantCodes',
+      },
+    ],
+  },
+  {
     groupKey: 'gettingStart',
     groupValue: 'Getting Started',
     children: [

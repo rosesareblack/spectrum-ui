@@ -1,16 +1,14 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import Cube from "@/components/testing";
 import { Cover } from "@/components/ui/cover";
 import { Spotlight } from "@/components/ui/Spootlight";
 import Image from "next/image";
 import { Icons } from "@/components/icon";
 import Link from "next/link";
-import ShinyButton from "@/components/ui/shiny-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import CardCollection from "@/components/spectrumui/cards";
+import Requestcomponents from "@/components/shinebutton";
 
 export default function Home() {
   // Motion configuration for staggered animations
@@ -24,12 +22,11 @@ export default function Home() {
       },
     },
   };
-  
+
   const staggerItem = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-  
 
   return (
     <motion.div
@@ -38,17 +35,22 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="flex items-center justify-center mt-12" variants={staggerItem}>
-        <div className="flex flex-col">
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="gray" />
+      <motion.div
+        className="flex items-center justify-center mt-12"
+        variants={staggerItem}
+      >
+        <div className="flex flex-col items-center">
+          <Requestcomponents />
           <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold">
-            Instant UI Components <br /> Just <Cover>
-              <span className="text-neutral-100">
-                Copy, Paste & Done
-              </span>
+            Instant UI Components <br /> Just{" "}
+            <Cover>
+              <span className=" dark:text-neutral-100">Copy, Paste & Done</span>
             </Cover>
           </h1>
           <p className="text-md md:text-lg text-center mt-6 mb-5 text-gray-400">
-            Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality
+            Accelerate your project’s growth with ready-to-use UI components{" "}
+            <br /> that save time and elevate quality
           </p>
           <h1 className="text-center font-bold mt-6 text-2xl text-gray-400">
             Built With
@@ -59,18 +61,34 @@ export default function Home() {
           >
             <Image src="./nextjs.svg" height={40} width={90} alt="next js" />
             <Image src="./shadcn.svg" height={40} width={140} alt="shadcn ui" />
-            <Image src="./tailwind.svg" height={40} width={120} alt="tailwind css" />
-            <Image src="./aceternity.svg" height={40} width={160} alt="acternity ui" />
+            <Image
+              src="./tailwind.svg"
+              height={40}
+              width={120}
+              alt="tailwind css"
+            />
+            <Image
+              src="./aceternity.svg"
+              height={40}
+              width={160}
+              alt="acternity ui"
+            />
           </motion.div>
           <motion.div
             className="flex gap-6 flex-col md:flex-row items-center justify-center"
             variants={staggerItem}
           >
             <Link href="/docs">
-              <Button size={"lg"}>Explore Components</Button>
+              <Button size={"lg"} className="rounded-2xl">
+                Explore Components
+              </Button>
             </Link>
             <Link href="https://github.com/arihantcodes/spectrum-ui">
-              <Button className="gap-4 " variant={"secondary"} size={"lg"}>
+              <Button
+                className="gap-4 rounded-2xl"
+                variant={"secondary"}
+                size={"lg"}
+              >
                 <Icons.gitHub className="icon-class w-4 " />
                 Give a Star ⭐
               </Button>
@@ -79,15 +97,11 @@ export default function Home() {
         </div>
 
         <div className="">
-          <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
           <div className="md:ml-5 h-full w-full"></div>
         </div>
       </motion.div>
 
-      <motion.div
-        className="mt-16"
-        variants={staggerItem}
-      >
+      <motion.div className="mt-16" variants={staggerItem}>
         <Card className="hidden md:flex md:flex-col">
           <CardTitle className="mt-5 text-center mb-8">
             Explore Our Cards
