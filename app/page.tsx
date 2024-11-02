@@ -1,83 +1,100 @@
+"use client"
+import { motion } from "framer-motion";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-
 import Cube from "@/components/testing";
 import { Cover } from "@/components/ui/cover";
 import { Spotlight } from "@/components/ui/Spootlight";
 import Image from "next/image";
-
 import { Icons } from "@/components/icon";
 import Link from "next/link";
 import ShinyButton from "@/components/ui/shiny-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
-
 import CardCollection from "@/components/spectrumui/cards";
 
 export default function Home() {
+  // Motion configuration for staggered animations
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.15,
+      },
+    },
+  };
+  
+  const staggerItem = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+  
+
   return (
-    <div className="flex items-center justify-center flex-col">
-      <div className="flex items-center justify-center mt-12">
+    <motion.div
+      className="flex items-center justify-center flex-col"
+      variants={staggerContainer}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="flex items-center justify-center mt-12" variants={staggerItem}>
         <div className="flex flex-col">
-          <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold ">
-            Instant UI Components <br /> Just <Cover >
+          <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold">
+            Instant UI Components <br /> Just <Cover>
               <span className="text-neutral-100">
                 Copy, Paste & Done
               </span>
-              </Cover>{" "}
+            </Cover>
           </h1>
-          <p className="text-md md:text-lg text-center mt-6 mb-5 text-gray-400">Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality</p>
+          <p className="text-md md:text-lg text-center mt-6 mb-5 text-gray-400">
+            Accelerate your project’s growth with ready-to-use UI components <br/> that save time and elevate quality
+          </p>
           <h1 className="text-center font-bold mt-6 text-2xl text-gray-400">
             Built With
           </h1>
-          <div className="flex flex-col  mb-4 md:flex-row items-center justify-center mt-4 gap-5">
+          <motion.div
+            className="flex flex-col mb-4 md:flex-row items-center justify-center mt-4 gap-5"
+            variants={staggerItem}
+          >
             <Image src="./nextjs.svg" height={40} width={90} alt="next js" />
             <Image src="./shadcn.svg" height={40} width={140} alt="shadcn ui" />
-            <Image
-              src="./tailwind.svg"
-              height={40}
-              width={120}
-              alt="tailwind css"
-            />
-            <Image
-              src="./aceternity.svg"
-              height={40}
-              width={160}
-              alt="acternity ui"
-            />
-          </div>
-          <div className="flex gap-6 flex-col md:flex-row items-center justify-center">
+            <Image src="./tailwind.svg" height={40} width={120} alt="tailwind css" />
+            <Image src="./aceternity.svg" height={40} width={160} alt="acternity ui" />
+          </motion.div>
+          <motion.div
+            className="flex gap-6 flex-col md:flex-row items-center justify-center"
+            variants={staggerItem}
+          >
             <Link href="/docs">
               <Button size={"lg"}>Explore Components</Button>
             </Link>
             <Link href="https://github.com/arihantcodes/spectrum-ui">
               <Button className="gap-4 " variant={"secondary"} size={"lg"}>
-                
                 <Icons.gitHub className="icon-class w-4 " />
                 Give a Star ⭐
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         <div className="">
-          <Spotlight
-            className="-top-40 left-0 md:left-60 md:-top-20"
-            fill="white"
-          />
+          <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
           <div className="md:ml-5 h-full w-full"></div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="mt-16">
+      <motion.div
+        className="mt-16"
+        variants={staggerItem}
+      >
         <Card className="hidden md:flex md:flex-col">
           <CardTitle className="mt-5 text-center mb-8">
             Explore Our Cards
           </CardTitle>
           <CardCollection />
         </Card>
-      </div>
-
-      
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
