@@ -1,63 +1,59 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-'use client'
+"use client";
 
-import React, { useState, useEffect } from "react"
-import { usePathname } from "next/navigation"
-import Link from "next/link"
-import { ChevronDown, ChevronRight, Search } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { ChevronDown, ChevronRight, Search } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
 
 // Assuming DOCS is imported from your constant file
-import { DOCS } from "@/app/(docs)/layout-parts/documentation.constant"
+import { DOCS } from "@/app/(docs)/layout-parts/documentation.constant";
 
 export default function EnhancedSidebar() {
   const [openGroups, setOpenGroups] = useState<string[]>(
     DOCS.map((group) => group.groupKey)
-  )
-  const [searchTerm, setSearchTerm] = useState("")
-  const pathname = usePathname()
+  );
+  const [searchTerm, setSearchTerm] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     // Ensure the group of the active link is open
     const activeGroup = DOCS.find((group) =>
       group.children.some((child) => child.url === pathname)
-    )
+    );
     if (activeGroup && !openGroups.includes(activeGroup.groupKey)) {
-      setOpenGroups((prev) => [...prev, activeGroup.groupKey])
+      setOpenGroups((prev) => [...prev, activeGroup.groupKey]);
     }
-  }, [pathname])
+  }, [pathname]);
 
   const toggleGroup = (groupKey: string) => {
     setOpenGroups((prev) =>
       prev.includes(groupKey)
         ? prev.filter((key) => key !== groupKey)
         : [...prev, groupKey]
-    )
-  }
+    );
+  };
 
-
-  const filteredDocs = DOCS
-  .map((group) => ({
+  const filteredDocs = DOCS.map((group) => ({
     ...group,
     children: group.children
       .filter((child) =>
         child.label.toLowerCase().includes(searchTerm.toLowerCase())
       )
       .sort((a, b) => a.label.localeCompare(b.label)),
-  }))
-  .filter((group) => group.children.length > 0)
+  })).filter((group) => group.children.length > 0);
 
   return (
     <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800">
-      
       <ScrollArea className="flex-1">
         <nav className="p-4 space-y-2">
           {filteredDocs.map((group) => (
@@ -105,5 +101,5 @@ export default function EnhancedSidebar() {
         </nav>
       </ScrollArea>
     </aside>
-  )
+  );
 }
