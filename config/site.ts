@@ -1,11 +1,9 @@
-// siteConfig.ts
 export const siteConfig = {
   name: "Spectrum UI",
   url: "https://spectrumui.arihant.us",
   ogImage: {
     url: "https://spectrumui.arihant.us/og.png",
-    width: 1200,
-    height: 630,
+
     alt: "Spectrum UI - Beautiful and accessible React components",
   },
   description:
@@ -14,7 +12,7 @@ export const siteConfig = {
     twitter: "https://x.com/arihantcodes",
     github: "https://github.com/arihantcodes",
     linkedin: "https://www.linkedin.com/in/arihantcodes", // Update with your actual LinkedIn profile
-  // Update if you have a Facebook page
+    // Update if you have a Facebook page
     instagram: "https://www.instagram.com/arihantjainn18", // Update with your actual Instagram profile
   },
   author: {
@@ -36,7 +34,6 @@ export const siteConfig = {
   locale: "en-US",
   version: "1.0.0",
   license: "MIT",
-  themeColor: "#000000", // Replace with your actual theme color
-}
+};
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
