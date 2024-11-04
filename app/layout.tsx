@@ -1,4 +1,3 @@
-// layout.tsx
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
@@ -11,9 +10,7 @@ import { siteConfig } from "@/config/site"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
-import Image from 'next/image';
 
-// Inject Vercel Analytics
 inject();
 
 export const metadata: Metadata = {
@@ -72,11 +69,7 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage.url],
     creator: "@arihantcodes",
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
+
   manifest: `${siteConfig.url}/site.webmanifest`,
   robots: {
     index: true,
@@ -100,7 +93,7 @@ export const metadata: Metadata = {
     initialScale: 1,
     maximumScale: 1,
   },
-  themeColor: siteConfig.themeColor,
+
 }
 
 export default function RootLayout({
