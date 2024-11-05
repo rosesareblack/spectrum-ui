@@ -38,18 +38,18 @@ export default function Footer() {
               <h3 className="font-semibold mb-4">Pages</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/products" className="hover:text-gray-300">
-                    All Products
+                  <Link href="/docs" className="hover:text-gray-300">
+                    Docs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/studio" className="hover:text-gray-300">
-                    Studio
+                  <Link href="/docs" className="hover:text-gray-300">
+                    Components
                   </Link>
                 </li>
                 <li>
-                  <Link href="/clients" className="hover:text-gray-300">
-                    Clients
+                  <Link href="/example" className="hover:text-gray-300">
+                    Example
                   </Link>
                 </li>
                 <li>
@@ -97,20 +97,17 @@ export default function Footer() {
                     Terms of Service
                   </Link>
                 </li>
-                <li>
-                  <Link href="/cookie-policy" className="hover:text-gray-300">
-                    Cookie Policy
-                  </Link>
-                </li>
+              
               </ul>
             </div>
           </div>
         </div>
-        <div className=" w-full flex mt-4 items-center justify-center  ">
+        <div className=" w-full flex mt-4 items-center justify-center   ">
           <h1 className="text-center text-3xl md:text-5xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
             SPECTRUM UI
           </h1>
         </div>
+      
       </div>
     </footer>
   );

@@ -5,11 +5,11 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import Footer from "@/components/footer";
 import "./globals.css";
-import { inject } from '@vercel/analytics';
-import { siteConfig } from "@/config/site"
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import Script from 'next/script';
+import { inject } from "@vercel/analytics";
+import { siteConfig } from "@/config/site";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 inject();
 
@@ -77,24 +77,23 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
     canonical: siteConfig.url,
     languages: {
-      'en-US': siteConfig.url,
+      "en-US": siteConfig.url,
     },
   },
   viewport: {
-    width: 'device-width',
+    width: "device-width",
     initialScale: 1,
     maximumScale: 1,
   },
-
-}
+};
 
 export default function RootLayout({
   children,
@@ -102,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={siteConfig.locale.split('-')[0]} suppressHydrationWarning>
+    <html lang={siteConfig.locale.split("-")[0]} suppressHydrationWarning>
       <head>
         <link rel="canonical" href={siteConfig.url} />
         <Script
@@ -122,7 +121,7 @@ export default function RootLayout({
               },
               license: siteConfig.license,
               version: siteConfig.version,
-            })
+            }),
           }}
         />
       </head>

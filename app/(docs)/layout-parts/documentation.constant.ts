@@ -39,6 +39,13 @@ export const DOCS: Documentation[] = [
     groupValue: 'Components',
     children: [
       {
+        label:'HTTP Status Code',
+        value:'statuscode',
+        url:'/docs/statuscode',
+        new:true,
+        
+      },
+      {
         label:'Card',
         value:'card',
         url:'/docs/card',
@@ -48,25 +55,27 @@ export const DOCS: Documentation[] = [
         label:'Navbar',
         value:'navbar',
         url:'/docs/navbar',
-        new:true,
+        
   
       },
       {
         label:'Footer',
         value:'footer',
         url:'/docs/footer',
-        new:true,
+       
   
       },
       {
         label:'Input',
         value:'input',
         url:'/docs/input',
+
       },
       {
         label:'Button',
         value:'button',
         url:'/docs/button',
+        new:true,
       },
       {
         label: 'Autosize Textarea',
@@ -96,6 +105,7 @@ export const DOCS: Documentation[] = [
         label: 'Progress With Value',
         value: 'progress-with-value',
         url: '/docs/progress-with-value',
+        new:true,
       },
       {
         label: 'Responsive Modal',

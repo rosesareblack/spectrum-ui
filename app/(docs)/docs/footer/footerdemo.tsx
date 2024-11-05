@@ -15,7 +15,7 @@ import {
 import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
 
 export default function Footerdemo() {
-  const [isDarkMode, setIsDarkMode] = React.useState(false)
+  const [isDarkMode, setIsDarkMode] = React.useState(true)
   const [isChatOpen, setIsChatOpen] = React.useState(false)
 
   React.useEffect(() => {
