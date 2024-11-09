@@ -31,9 +31,9 @@ interface SteppersBaseProps {
 }
 
 interface SteppersWithInstallProps extends SteppersBaseProps {
-  withInstall: true;
+  withInstall?: true;
   /** 要複製的程式碼 */
-  codePath: string;
+  codePath?: string;
   /** npm install script */
   installScript?: string;
 }

@@ -4,7 +4,7 @@ import createMDX from "@next/mdx"
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
     images: {
-        domains: ['lh3.googleusercontent.com'],
+        domains: ['lh3.googleusercontent.com','img.freepik.com'],
       },
       eslint:{
         ignoreDuringBuilds: true,

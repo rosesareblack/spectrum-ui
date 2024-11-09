@@ -83,8 +83,8 @@ export default function EnhancedSidebar() {
                     className={cn(
                       "flex items-center gap-2 px-4 py-2 text-sm rounded-md transition-colors",
                       pathname === child.url
-                        ? "dark:text-lime-200"
-                        : "hover:text-lime-500 dark:hover:text-lime-200"
+                        ? "dark:text-gray-200"
+                        : "hover:text-gray-500 dark:hover:text-gray-200"
                     )}
                   >
                     {child.label}

@@ -52,7 +52,7 @@ const DatetimePickerPage = () => {
         </PropLink>
         for creating this.
       </P>
-      <ol className="list-disc p-5 text-lg font-normal leading-5 text-muted-foreground lg:text-xl">
+      <ol className="list-disc p-7 text-lg  leading-5 text-muted-foreground">
         <li>
           All logics exposed. No additional library. Only <InlineCode>DayPicker</InlineCode> that
           shadcn-ui already uses.

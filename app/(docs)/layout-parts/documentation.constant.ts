@@ -13,107 +13,95 @@ interface DocumentationChild {
 
 export const DOCS: Documentation[] = [
   {
-    groupKey: 'Follow for more updates',
-    groupValue: 'Follow for more updates',
+    groupKey: "Follow for more updates",
+    groupValue: "Follow for more updates",
     children: [
       {
-        label: 'Twitter @arihantcodes',
-        value: 'Twitter @arihantcodes',
-        url: 'https://x.com/arihantCodes',
+        label: "Twitter @arihantcodes",
+        value: "Twitter @arihantcodes",
+        url: "https://x.com/arihantCodes",
       },
     ],
   },
   {
-    groupKey: 'gettingStart',
-    groupValue: 'Getting Started',
+    groupKey: "gettingStart",
+    groupValue: "Getting Started",
     children: [
       {
-        label: 'Introduction',
-        value: 'introduction',
-        url: '/docs',
+        label: "Introduction",
+        value: "introduction",
+        url: "/docs",
       },
     ],
   },
   {
-    groupKey: 'components',
-    groupValue: 'Components',
+    groupKey: "components",
+    groupValue: "Components",
     children: [
+      { label: "Alert", value: "alert", url: "/docs/alert",new:true },
       {
-        label:'HTTP Status Code',
-        value:'statuscode',
-        url:'/docs/statuscode',
-        new:true,
-        
+        label: "Animated SVG Chart",
+        value: "animatedchart",
+        url: "/docs/animatedchart",
+        new:true
       },
       {
-        label:'Card',
-        value:'card',
-        url:'/docs/card',
-        
+        label: "Autosize Textarea",
+        value: "autosize-textarea",
+        url: "/docs/autosize-textarea",
+      },
+      { label: "Button", value: "button", url: "/docs/button" },
+      { label: "Card", value: "card", url: "/docs/card" },
+      {
+        label: "Datetime Picker",
+        value: "datetime-picker",
+        url: "/docs/datetime-picker",
       },
       {
-        label:'Navbar',
-        value:'navbar',
-        url:'/docs/navbar',
-        
-  
+        label: "Dual Range Slider",
+        value: "dual-range-slider",
+        url: "/docs/dual-range-slider",
+      },
+      { label: "Feadback Card", value: "feadback", url: "/docs/feadback" ,new:true},
+      {
+        label: "Floating Label Input",
+        value: "floating-label-input",
+        url: "/docs/floating-label-input",
+      },
+      { label: "Footer", value: "footer", url: "/docs/footer" },
+      {
+        label: "HTTP Status Code",
+        value: "statuscode",
+        url: "/docs/statuscode",
       },
       {
-        label:'Footer',
-        value:'footer',
-        url:'/docs/footer',
-       
-  
+        label: "Infinite Scroll",
+        value: "infiniteScroll",
+        url: "/docs/infinite-scroll",
+      },
+      { label: "Input", value: "input", url: "/docs/input" },
+      {
+        label: "Loading Button",
+        value: "loading-button",
+        url: "/docs/loading-button",
       },
       {
-        label:'Input',
-        value:'input',
-        url:'/docs/input',
-
+        label: "Multiple Selector",
+        value: "multipleSelector",
+        url: "/docs/multiple-selector",
+      },
+      { label: "Navbar", value: "navbar", url: "/docs/navbar" },
+      {
+        label: "Progress With Value",
+        value: "progress-with-value",
+        url: "/docs/progress-with-value",
       },
       {
-        label:'Button',
-        value:'button',
-        url:'/docs/button',
-        new:true,
+        label: "Responsive Modal",
+        value: "responsive-modal",
+        url: "/docs/responsive-modal",
       },
-      {
-        label: 'Autosize Textarea',
-        value: 'autosize-textarea',
-        url: '/docs/autosize-textarea',
-      },
-      
-      { label: 'Datetime Picker', value: 'datetime-picker', url: '/docs/datetime-picker' },
-      {
-        label: 'Dual Range Slider',
-        value: 'dual-range-slider',
-        url: '/docs/dual-range-slider',
-      },
-      {
-        label: 'Floating Label Input',
-        value: 'floating-label-input',
-        url: '/docs/floating-label-input',
-      },
-   
-      { label: 'Infinite Scroll', value: 'infiniteScroll', url: '/docs/infinite-scroll' },
-      {
-        label: 'Loading Button',
-        value: 'loading-button',
-        url: '/docs/loading-button',
-      },
-      {
-        label: 'Progress With Value',
-        value: 'progress-with-value',
-        url: '/docs/progress-with-value',
-        new:true,
-      },
-      {
-        label: 'Responsive Modal',
-        value: 'responsive-modal',
-        url: '/docs/responsive-modal',
-      },
-      { label: 'Multiple Selector', value: 'multipleSelector', url: '/docs/multiple-selector' },
-      { label: 'Spinner', value: 'spinner', url: '/docs/spinner' },
+      { label: "Spinner", value: "spinner", url: "/docs/spinner" },
     ],
   },
 ];
