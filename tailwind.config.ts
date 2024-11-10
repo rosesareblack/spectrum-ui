@@ -85,6 +85,14 @@ const config = {
         regular: ["var(--font-geist-sans)"],
       },
       keyframes: {
+        slideOutToTopFull: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+        slideOutToLeftFull: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -128,9 +136,19 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-out-to-top-full":
+          "slideOutToTopFull 3s cubic-bezier(.405, 0, .025, 1) forwards",
+        "slide-out-to-left-full":
+          "slideOutToLeftFull 3s cubic-bezier(.405, 0, .025, 1) forwards",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         rainbow: "rainbow var(--speed, 2s) infinite linear",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+      },
+      transitionTimingFunction: {
+        slow: "cubic-bezier(.405, 0, .025, 1)",
+      },
+      transitionDuration: {
+        mid: "4s",
       },
     },
   },

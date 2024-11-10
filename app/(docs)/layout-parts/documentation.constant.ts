@@ -32,6 +32,11 @@ export const DOCS: Documentation[] = [
         value: "introduction",
         url: "/docs",
       },
+      {
+        label:"Installation",
+        value:"installation",
+        url:"/docs/installation"
+      }
     ],
   },
   {
@@ -57,6 +62,11 @@ export const DOCS: Documentation[] = [
         value: "datetime-picker",
         url: "/docs/datetime-picker",
       },
+      // {
+      //   label: "Disclose Image",
+      //   value: "discloseimage",
+      //   url: "/docs/discloseimage",
+      // },
       {
         label: "Dual Range Slider",
         value: "dual-range-slider",
