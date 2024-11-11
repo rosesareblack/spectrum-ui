@@ -13,7 +13,7 @@ const page = () => {
   return (
     <div>
       <PageTemplate title="Animated Alert" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/animatedchart/animateddemo.tsx">
+        <PreviewCodeCard path="app/(docs)/docs/alert/alertdemo.tsx">
           <Alertdemo />
         </PreviewCodeCard>
 
