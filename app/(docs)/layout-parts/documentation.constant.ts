@@ -48,7 +48,7 @@ export const DOCS: Documentation[] = [
         label: "Animated SVG Chart",
         value: "animatedchart",
         url: "/docs/animatedchart",
-        new:true
+       
       },
       {
         label: "Autosize Textarea",
@@ -83,6 +83,12 @@ export const DOCS: Documentation[] = [
         label: "HTTP Status Code",
         value: "statuscode",
         url: "/docs/statuscode",
+      },
+      {
+        label: "Image Preview",
+        value: "imagepreview",
+        url: "/docs/imagepreview",
+        new:true
       },
       {
         label: "Infinite Scroll",

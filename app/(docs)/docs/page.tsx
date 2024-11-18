@@ -20,7 +20,7 @@ export default function IntroductionPage() {
         </p>
         <div className="flex gap-4">
           <Button asChild>
-            <Link href="/docs/card">
+            <Link href="/docs/installation">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -106,15 +106,16 @@ export default function IntroductionPage() {
       </div>
 
       {/* Credits Section */}
-      <div className="space-y-4">
+      <div className="space-y-4 ">
         <h2 className="text-3xl font-bold tracking-tight">Credits</h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground gap-4">
           Built with{" "}
-          <Link href="https://ui.aceternity.com/" className="font-medium underline underline-offset-4">
-            Aceternity UI
+          <Link href="https://ui.aceternity.com/" className="font-medium underline underline-offset-4 mr-2">
+            Aceternity UI 
           </Link>
+          ,{" "}
           <Link href="https://magicui.design/" className="font-medium underline underline-offset-4">
-            Magic UI
+             Magic UI
           </Link>
           ,{" "}
           <Link href="https://ui.shadcn.com" className="font-medium underline underline-offset-4">

@@ -17,8 +17,8 @@ export default function Component() {
         {/* Warning Box */}
         <div className="bg-zinc-100 dark:bg-zinc-950  border rounded-lg p-4">
           <p className="text-sm">
-            If you&apos;re using Next.js 13, see the{" "}
-            <a href="#" className="text-blue-400 hover:underline">
+            If you&apos;re using Next.js 15, see the{" "}
+            <a href="https://ui.shadcn.com/docs/react-19" className="text-blue-400 hover:underline">
               Next.js 15 + React 19 guide
             </a>
             .
