@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
-import createMDX from "@next/mdx"
+import createMDX from "@next/mdx";
 
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-    images: {
-        domains: ['lh3.googleusercontent.com','img.freepik.com','images.pexels.com'],
-      },
-      eslint:{
-        ignoreDuringBuilds: true,
-      }
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  images: {
+ 
+    domains: [
+      "lh3.googleusercontent.com",
+      "img.freepik.com",
+      "images.pexels.com",
+      "source.unsplash.com",
+      
+    ],
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 const withMDX = createMDX({
@@ -17,7 +24,6 @@ const withMDX = createMDX({
     remarkPlugins: [],
     rehypePlugins: [],
   },
-})
-
+});
 
 export default nextConfig;

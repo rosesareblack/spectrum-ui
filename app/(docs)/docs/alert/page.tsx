@@ -8,6 +8,7 @@ import Usage from "../components/usage";
 import Alert02 from "./usage/alerttwo";
 import Alert03 from "./usage/alertthree";
 import Alert04 from "./usage/alertfour";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -42,6 +43,12 @@ const page = () => {
         <Usage path="app/(docs)/docs/alert/usage/alertfour.tsx">
           <Alert04 />
         </Usage>
+        <div className="font-bold text-neutral-500 flex gap-4">
+          <h1>Credits -</h1>
+          <Link href="https://kokonut.dev/">
+          kokonut UI
+          </Link>
+        </div>
       </PageTemplate>
     </div>
   );

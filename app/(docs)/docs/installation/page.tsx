@@ -18,7 +18,10 @@ export default function Component() {
         <div className="bg-zinc-100 dark:bg-zinc-950  border rounded-lg p-4">
           <p className="text-sm">
             If you&apos;re using Next.js 15, see the{" "}
-            <a href="https://ui.shadcn.com/docs/react-19" className="text-blue-400 hover:underline">
+            <a
+              href="https://ui.shadcn.com/docs/react-19"
+              className="text-blue-400 hover:underline"
+            >
               Next.js 15 + React 19 guide
             </a>
             .
@@ -36,7 +39,8 @@ export default function Component() {
               <h2 className="text-lg font-semibold">Create project</h2>
             </div>
             <p className="text-gray-400">
-              Run the <code className=" dark:bg-zinc-800 px-1 rounded">init</code>{" "}
+              Run the{" "}
+              <code className=" dark:bg-zinc-800 px-1 rounded">init</code>{" "}
               command to create a new Next.js project or to setup an existing
               one:
             </p>
@@ -59,12 +63,22 @@ export default function Component() {
                 <Card className="flex flex-col gap-7 p-6">
                   <p className="text-sm text-gray-400">
                     You can use the{" "}
-                    <code className="bg-gray-200 dark:bg-zinc-800 px-1 rounded">-d</code> flag
-                    for defaults i.e.{" "}
-                    <code className=" dark:bg-zinc-800 px-1 rounded">new-york</code>,{" "}
-                    <code className="bg-gray-200 dark:bg-zinc-800 px-1 rounded">zinc</code> and{" "}
-                    <code className="bg-gray-200 dark:bg-zinc-800 px-1 rounded">yes</code> for
-                    the css variables.
+                    <code className="bg-gray-200 dark:bg-zinc-800 px-1 rounded">
+                      -d
+                    </code>{" "}
+                    flag for defaults i.e.{" "}
+                    <code className=" dark:bg-zinc-800 px-1 rounded">
+                      new-york
+                    </code>
+                    ,{" "}
+                    <code className="bg-gray-200 dark:bg-zinc-800 px-1 rounded">
+                      zinc
+                    </code>{" "}
+                    and{" "}
+                    <code className="bg-gray-200 dark:bg-zinc-800 px-1 rounded">
+                      yes
+                    </code>{" "}
+                    for the css variables.
                   </p>
                   <Snippet text="npx shadcn@latest init -d" width="600px" />
                 </Card>
@@ -84,7 +98,9 @@ export default function Component() {
             </div>
             <p className="text-gray-400">
               You will be asked a few questions to configure{" "}
-              <code className=" bg-gray-200 dark:bg-zinc-800 px-1 rounded">components.json</code>
+              <code className=" bg-gray-200 dark:bg-zinc-800 px-1 rounded">
+                components.json
+              </code>
               :
             </p>
             <Card className="bg-gray-200 dark:bg-zinc-800  p-4">
@@ -125,4 +141,3 @@ export default function Component() {
     </div>
   );
 }
-

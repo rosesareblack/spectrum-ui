@@ -33,22 +33,26 @@ export const DOCS: Documentation[] = [
         url: "/docs",
       },
       {
-        label:"Installation",
-        value:"installation",
-        url:"/docs/installation"
-      }
+        label: "Installation",
+        value: "installation",
+        url: "/docs/installation",
+      },
     ],
   },
   {
     groupKey: "components",
     groupValue: "Components",
     children: [
-      { label: "Alert", value: "alert", url: "/docs/alert",new:true },
+      { label: "Alert", value: "alert", url: "/docs/alert", new: true },
       {
         label: "Animated SVG Chart",
         value: "animatedchart",
         url: "/docs/animatedchart",
-       
+      },
+      {
+        label: "Animated Testimonials",
+        value: "animatedtestimonials",
+        url: "/docs/animatedtestimonials",
       },
       {
         label: "Autosize Textarea",
@@ -72,7 +76,12 @@ export const DOCS: Documentation[] = [
         value: "dual-range-slider",
         url: "/docs/dual-range-slider",
       },
-      { label: "Feadback Card", value: "feadback", url: "/docs/feadback" ,new:true},
+      {
+        label: "Feadback Card",
+        value: "feadback",
+        url: "/docs/feadback",
+        new: true,
+      },
       {
         label: "Floating Label Input",
         value: "floating-label-input",
@@ -88,7 +97,7 @@ export const DOCS: Documentation[] = [
         label: "Image Preview",
         value: "imagepreview",
         url: "/docs/imagepreview",
-        new:true
+        new: true,
       },
       {
         label: "Infinite Scroll",
