@@ -43,7 +43,7 @@ export const DOCS: Documentation[] = [
     groupKey: "components",
     groupValue: "Components",
     children: [
-      { label: "Alert", value: "alert", url: "/docs/alert", new: true },
+      { label: "Alert", value: "alert", url: "/docs/alert",  },
       {
         label: "Animated SVG Chart",
         value: "animatedchart",
@@ -77,10 +77,16 @@ export const DOCS: Documentation[] = [
         url: "/docs/dual-range-slider",
       },
       {
+        label: "Event Calendar",
+        value: "eventcalendar",
+        url: "/docs/eventcalendar",
+        new: true
+      },
+      {
         label: "Feadback Card",
         value: "feadback",
         url: "/docs/feadback",
-        new: true,
+        
       },
       {
         label: "Floating Label Input",
