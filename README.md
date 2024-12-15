@@ -16,6 +16,12 @@ Follow these steps to contribute to Spectrum UI:
    git clone https://github.com/your-username/spectrum-ui.git
 
   ```
+  ```
+   npm install 
+  ```
+  ```
+   npm run dev
+  ```
     git checkout -b feature-name
 
   ```
