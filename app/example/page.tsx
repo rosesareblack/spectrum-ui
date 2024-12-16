@@ -120,9 +120,9 @@ export default function Component() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                  <XAxis dataKey="month" stroke="#9ca3af" />
+                  <XAxis dataKey="month" stroke="#9ca3af" tick={{ fill: "#8b5cf6", fontSize: 12 }} />
                   <YAxis stroke="#9ca3af" />
-                  <Tooltip contentStyle={{ backgroundColor: '#111827', border: 'none' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#111827', border: 'none' ,color:'white'}} />
                   <Area type="monotone" dataKey="amount" stroke="#8b5cf6" fillOpacity={1} fill="url(#colorRevenue)" />
                 </AreaChart>
               </ResponsiveContainer>
