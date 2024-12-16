@@ -122,7 +122,7 @@ export default function Component() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                   <XAxis dataKey="month" stroke="#9ca3af" />
                   <YAxis stroke="#9ca3af" />
-                  <Tooltip contentStyle={{ backgroundColor: '#111827', border: 'none' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#111827', border: 'none' ,color:'white'}} />
                   <Area type="monotone" dataKey="amount" stroke="#8b5cf6" fillOpacity={1} fill="url(#colorRevenue)" />
                 </AreaChart>
               </ResponsiveContainer>
