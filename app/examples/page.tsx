@@ -170,16 +170,16 @@ export default function Component() {
         </Card>
 
         {/* Calendar Card */}
-        <Card className="md:col-span-1  border-gray-800">
+        <Card className="md:col-span-1 flex flex-col items-start pb-6  border-gray-800">
           <CardHeader>
             <CardTitle className="text-sm font-medium">Schedule</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="w-[93%] mx-auto rounded-md border border-gray-800">
             <Calendar
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="rounded-md border border-gray-800"
+              className=""
             />
           </CardContent>
         </Card>
