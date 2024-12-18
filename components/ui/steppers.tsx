@@ -1,9 +1,8 @@
-import React from 'react';
-import { H4 } from '@/components/ui/heading-with-anchor';
-import { cn } from '@/lib/utils';
-import CodeHighlight from '@/app/(docs)/docs/components/code-card/parts/code-highlight';
-import fs from 'fs/promises';
-
+import React from "react";
+import { H4 } from "@/components/ui/heading-with-anchor";
+import { cn } from "@/lib/utils";
+import CodeHighlight from "@/app/(docs)/docs/components/code-card/parts/code-highlight";
+import fs from "fs/promises";
 
 interface StepperProps {
   children?: React.ReactNode;
@@ -19,13 +18,15 @@ const Stepper = ({ title, children, step }: StepperProps) => {
         </span>
         <H4>{title}</H4>
       </div>
-      <div className="my-3 ml-5 border-l-2 border-l-gray-200 pl-8">{children}</div>
+      <div className="my-3 ml-5 border-l-2 border-l-gray-200 pl-8">
+        {children}
+      </div>
     </div>
   );
 };
 
 interface SteppersBaseProps {
-  steps?: Omit<StepperProps, 'step'>[];
+  steps?: Omit<StepperProps, "step">[];
   className?: string;
   withEnd?: boolean;
 }
@@ -47,9 +48,9 @@ type SteppersProps = SteppersWithInstallProps | SteppersWithoutInstallProps;
 export const Steppers = async (props: SteppersProps) => {
   const { steps, className, withEnd, withInstall } = props;
 
-  let installCode = '';
+  let installCode = "";
   if (withInstall && props.codePath) {
-    installCode = await fs.readFile(props.codePath, 'utf8');
+    installCode = await fs.readFile(props.codePath, "utf8");
   }
   const withInstallOffset = withInstall ? (props.installScript ? 2 : 1) : 0;
   return (
@@ -69,12 +70,16 @@ export const Steppers = async (props: SteppersProps) => {
               title="Copy and paste the following code into your project."
               step={withInstallOffset}
             >
-              <CodeHighlight code={installCode} withExpand />
+              <CodeHighlight code={installCode} withExpand={false} />
             </Stepper>
           </>
         )}
         {steps?.map((props, index) => (
-          <Stepper key={props.title} {...props} step={index + 1 + withInstallOffset} />
+          <Stepper
+            key={props.title}
+            {...props}
+            step={index + 1 + withInstallOffset}
+          />
         ))}
         {withEnd && (
           <Stepper
@@ -83,7 +88,6 @@ export const Steppers = async (props: SteppersProps) => {
           />
         )}
       </div>
-
     </>
   );
 };
