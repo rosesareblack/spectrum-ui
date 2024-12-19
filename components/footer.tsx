@@ -38,27 +38,27 @@ export default function Footer() {
               <h3 className="font-semibold mb-4">Pages</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/docs" className="hover:text-gray-300">
+                  <Link href="/docs" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Docs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs" className="hover:text-gray-300">
+                  <Link href="/docs" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Components
                   </Link>
                 </li>
                 <li>
-                  <Link href="/examples" className="hover:text-gray-300">
+                  <Link href="/examples" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Examples
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing" className="hover:text-gray-300">
+                  <Link href="/pricing" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://blog.arihant.us/" className="hover:text-gray-300">
+                  <Link href="https://blog.arihant.us/" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Blog
                   </Link>
                 </li>
@@ -68,17 +68,17 @@ export default function Footer() {
               <h3 className="font-semibold mb-4">Socials</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="https://github.com/arihantcodes/spectrum-ui" className="hover:text-gray-300">
+                  <Link href="https://github.com/arihantcodes/spectrum-ui" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Github
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.linkedin.com/in/arihantcodes" className="hover:text-gray-300">
+                  <Link href="https://www.linkedin.com/in/arihantcodes" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://x.com/arihantcodes" className="hover:text-gray-300">
+                  <Link href="https://x.com/arihantcodes" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     X
                   </Link>
                 </li>
@@ -88,12 +88,12 @@ export default function Footer() {
               <h3 className="font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/privacy-policy" className="hover:text-gray-300">
+                  <Link href="/privacy-policy" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tos" className="hover:text-gray-300">
+                  <Link href="/tos" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
                     Terms of Service
                   </Link>
                 </li>
