@@ -43,7 +43,7 @@ export const DOCS: Documentation[] = [
     groupKey: "components",
     groupValue: "Components",
     children: [
-      { label: "Alert", value: "alert", url: "/docs/alert",  },
+      { label: "Alert", value: "alert", url: "/docs/alert" },
       {
         label: "Animated SVG Chart",
         value: "animatedchart",
@@ -80,13 +80,12 @@ export const DOCS: Documentation[] = [
         label: "Event Calendar",
         value: "eventcalendar",
         url: "/docs/eventcalendar",
-        new: true
+        new: true,
       },
       {
         label: "Feadback Card",
         value: "feadback",
         url: "/docs/feadback",
-        
       },
       {
         label: "Floating Label Input",
@@ -133,6 +132,12 @@ export const DOCS: Documentation[] = [
         url: "/docs/responsive-modal",
       },
       { label: "Spinner", value: "spinner", url: "/docs/spinner" },
+      {
+        label: "Skeleton",
+        value: "skeleton",
+        url: "/docs/skeleton",
+        new: true,
+      },
     ],
   },
 ];
