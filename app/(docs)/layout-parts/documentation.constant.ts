@@ -138,6 +138,12 @@ export const DOCS: Documentation[] = [
         url: "/docs/skeleton",
         new: true,
       },
+      {
+        label: "Accordion",
+        value: "accordion",
+        url: "/docs/accordion",
+        new: true,
+      },
     ],
   },
 ];

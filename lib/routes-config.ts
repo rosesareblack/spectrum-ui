@@ -65,6 +65,7 @@ export const ROUTES = [
       },
       { label: "Spinner", value: "spinner", url: `${BASE_PATH}/spinner` },
       { label: "Skeleton", value: "skeleton", url: `${BASE_PATH}/skeleton` },
+      { label: "Accordion", value: "accordion", url: `${BASE_PATH}/accordion` },
     ],
   },
 ];
