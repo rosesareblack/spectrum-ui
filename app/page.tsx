@@ -43,7 +43,7 @@ export default function Home() {
         variants={staggerItem}
       >
         <div className="flex flex-col items-center">
-          {/* <Requestcomponents /> */}
+        
           <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold">
             Instant UI Components <br /> Just{" "}
             <Cover>
