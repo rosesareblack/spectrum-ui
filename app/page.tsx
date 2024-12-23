@@ -8,10 +8,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import CardCollection from "@/components/spectrumui/cards";
-// import Requestcomponents from "@/components/shinebutton";
-import RequestComponents from "@/components/requestcomponets";
+
+import Requestcomponents from "@/components/shinebutton";
+import { Axis3DIcon } from "lucide-react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
+  const[star, setStar] = useState(0);
   // Motion configuration for staggered animations
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -28,7 +33,21 @@ export default function Home() {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+  const fetchGithubData = () => {
+    axios
+      .get("https://api.github.com/repos/arihantcodes/spectrum-ui")
+      .then((response) => {
+        const star = response.data.stargazers_count;
+        setStar(star);
+      })
+      .catch((error) => {
+        console.error("Error fetching GitHub data:", error);
+      });
+  };
 
+  useEffect(() => {
+    fetchGithubData();
+  }, []);
   return (
     <motion.div
       className="flex items-center justify-center flex-col"
@@ -92,7 +111,7 @@ export default function Home() {
                 size={"lg"}
               >
                 <Icons.gitHub className="icon-class w-4 " />
-                Give a Star ⭐
+                Give a Star ⭐ {star}
               </Button>
             </Link>
           </motion.div>
