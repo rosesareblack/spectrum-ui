@@ -2,9 +2,9 @@ import LeftSide from "@/app/(docs)/layout-parts/left-side/left-side";
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 
-import Requestcomponets from "@/components/requestcomponets";
+
 import type { Viewport } from "next";
-import RequestComponents from "@/components/requestcomponets";
+// import RequestComponents from "@/components/requestcomponets";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -26,7 +26,7 @@ export default function DocsLayout({
   <section className="flex flex-1 flex-col overflow-auto px-6" role="main" aria-label="Main content">
     <div className="flex-1">
       <div className="mb-4">
-        <RequestComponents />
+        {/* <RequestComponents /> */}
       </div>
       {children}
     </div>
