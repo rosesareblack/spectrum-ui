@@ -150,6 +150,9 @@ const config = {
       transitionDuration: {
         mid: "4s",
       },
+      screens: {
+        "mid-lg": "1200px",
+      },
     },
   },
   plugins: [
