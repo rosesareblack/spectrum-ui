@@ -16,10 +16,10 @@ const CodeCard = ({ children, code, className }: CodeCardProps) => {
         <TabsTrigger value="preview" className="font-semibold font-regular">Preview</TabsTrigger>
         <TabsTrigger value="code"  className="font-semibold font-regular">Code</TabsTrigger>
       </TabsList>
-      <TabsContent value="preview" className="rounded-md border-2 mt-2">
+      <TabsContent value="preview" className="rounded-md border-2 mt-4">
         {children}
       </TabsContent>
-      <TabsContent value="code" className="rounded-md  border-2 mt-2">
+      <TabsContent value="code" className="rounded-md  border-2 mt-4">
         <CodeHighlight code={code} inTab />
       </TabsContent>
     </Tabs>
