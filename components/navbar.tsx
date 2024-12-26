@@ -54,6 +54,7 @@ export function Navbar() {
               <div className='hidden md:flex'>
                 <Search />
               </div>
+              <div>
               <Link
                 href="https://github.com/arihantcodes/spectrum-ui"
                 className={buttonVariants({ variant: "ghost", size: "icon" })}
@@ -70,6 +71,7 @@ export function Navbar() {
                 <Icons.twitter className="icon-class w-3" />
               </Link>
               <ModeToggle />
+              </div>
             </div>
           </div>
         </div>
