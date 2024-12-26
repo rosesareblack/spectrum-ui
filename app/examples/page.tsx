@@ -99,8 +99,8 @@ export default function Component() {
   }
 
   return (
-    <Card className="min-h-screen  text-gray-100  md:p-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <Card className="min-h-screen mt-7 text-gray-100  md:p-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 mid-lg:grid-cols-4 gap-3 xl:gap-6">
         {/* Revenue Card */}
         <Card className="md:col-span-2  border-gray-800">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -131,7 +131,7 @@ export default function Component() {
         </Card>
 
         {/* Subscriptions Card */}
-        <Card className="md:row-span-`  border-gray-800">
+        <Card className="md:col-span-1  border-gray-800">
           <CardHeader>
             <CardTitle className="text-sm font-medium">Subscriptions</CardTitle>
           </CardHeader>
@@ -174,7 +174,7 @@ export default function Component() {
           <CardHeader>
             <CardTitle className="text-sm font-medium">Schedule</CardTitle>
           </CardHeader>
-          <CardContent className="w-[93%] mx-auto rounded-md border border-gray-800">
+          <CardContent className="p-2 mx-auto w-[93%] rounded-md border border-gray-800">
             <Calendar
               mode="single"
               selected={date}
@@ -191,7 +191,7 @@ export default function Component() {
             <Users className="h-4 w-4 text-purple-400" />
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[200px]">
+            <ScrollArea className="pt-5 h-[240px]" >
               <div className="space-y-4">
                 {[
                   { name: "Sofia Davis", role: "Product Manager", image: "/placeholder.svg?height=32&width=32" },
@@ -207,7 +207,7 @@ export default function Component() {
                     </Avatar>
                     <div>
                       <div className="font-medium">{member.name}</div>
-                      <div className="text-sm text-gray-400">{member.role}</div>
+                      <div className="text-xs text-gray-400">{member.role}</div>
                     </div>
                   </div>
                 ))}
@@ -222,27 +222,20 @@ export default function Component() {
             <CardTitle className="text-sm font-medium">App Settings</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
-                <Label>Dark Mode</Label>
-                <div className="text-xs text-gray-400">Toggle dark mode on/off</div>
+            {[
+              { label: "Dark Mode", description: "Toggle dark mode on/off" },
+              { label: "Notifications", description: "Receive push notifications" },
+              { label: "Data Saver", description: "Reduce data usage" },
+              { label: "Auto Updates", description: "Automatically install updates" },
+            ].map((setting, index) => {
+              return <div key={index} className="flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <Label>{setting.label}</Label>
+                  <div className="text-[11px] text-gray-400">{setting.description}</div>
+                </div>
+                <Switch />
               </div>
-              <Switch />
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
-                <Label>Notifications</Label>
-                <div className="text-xs text-gray-400">Receive push notifications</div>
-              </div>
-              <Switch />
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
-                <Label>Data Saver</Label>
-                <div className="text-xs text-gray-400">Reduce data usage</div>
-              </div>
-              <Switch />
-            </div>
+            })}
           </CardContent>
         </Card>
 
@@ -354,7 +347,7 @@ export default function Component() {
             </div>
           </CardContent>
         </Card>
-        <Card className="md:col-span-1 lg:col-span-1  border-gray-800">
+        <Card className="md:col-span-1 lg:col-span-2  border-gray-800">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Customize</CardTitle>
             <Palette className="h-4 w-4 " />
