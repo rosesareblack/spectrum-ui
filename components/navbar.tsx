@@ -50,7 +50,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <div className='hidden md:flex'>
                 <Search />
               </div>
