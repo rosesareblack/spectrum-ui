@@ -43,7 +43,7 @@ export const DOCS: Documentation[] = [
     groupKey: "components",
     groupValue: "Components",
     children: [
-      { label: "Alert", value: "alert", url: "/docs/alert" },
+      { label: "Alert", value: "alert", url: "/docs/alert", new: true },
       {
         label: "Animated SVG Chart",
         value: "animatedchart",
@@ -59,8 +59,8 @@ export const DOCS: Documentation[] = [
         value: "autosize-textarea",
         url: "/docs/autosize-textarea",
       },
-      { label: "Button", value: "button", url: "/docs/button" },
-      { label: "Card", value: "card", url: "/docs/card" },
+      { label: "Button", value: "button", url: "/docs/button", },
+      { label: "Card", value: "card", url: "/docs/card" ,    },
       {
         label: "Datetime Picker",
         value: "datetime-picker",
@@ -80,19 +80,20 @@ export const DOCS: Documentation[] = [
         label: "Event Calendar",
         value: "eventcalendar",
         url: "/docs/eventcalendar",
-        new: true,
+   
       },
       {
         label: "Feadback Card",
         value: "feadback",
         url: "/docs/feadback",
+        new: true,
       },
       {
         label: "Floating Label Input",
         value: "floating-label-input",
         url: "/docs/floating-label-input",
       },
-      { label: "Footer", value: "footer", url: "/docs/footer" },
+      { label: "Footer", value: "footer", url: "/docs/footer" ,},
       {
         label: "HTTP Status Code",
         value: "statuscode",
@@ -102,14 +103,14 @@ export const DOCS: Documentation[] = [
         label: "Image Preview",
         value: "imagepreview",
         url: "/docs/imagepreview",
-        new: true,
+
       },
       {
         label: "Infinite Scroll",
         value: "infiniteScroll",
         url: "/docs/infinite-scroll",
       },
-      { label: "Input", value: "input", url: "/docs/input" },
+      { label: "Input", value: "input", url: "/docs/input", },
       {
         label: "Loading Button",
         value: "loading-button",
@@ -120,7 +121,7 @@ export const DOCS: Documentation[] = [
         value: "multipleSelector",
         url: "/docs/multiple-selector",
       },
-      { label: "Navbar", value: "navbar", url: "/docs/navbar" },
+      { label: "Navbar", value: "navbar", url: "/docs/navbar" ,    new: true,},
       {
         label: "Progress With Value",
         value: "progress-with-value",
@@ -136,13 +137,7 @@ export const DOCS: Documentation[] = [
         label: "Skeleton",
         value: "skeleton",
         url: "/docs/skeleton",
-        new: true,
-      },
-      {
-        label: "Accordion",
-        value: "accordion",
-        url: "/docs/accordion",
-        new: true,
+     
       },
     ],
   },
