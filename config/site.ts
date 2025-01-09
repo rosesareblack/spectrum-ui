@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Spectrum UI",
-  url: "https://spectrumui.arihant.us",
+  url: "https://spectrumui.arihantcodes.in/",
   ogImage: {
-    url: "https://spectrumui.arihant.us/og.png",
+    url: "https://spectrumui.arihantcodes.in/og.png",
 
     alt: "Spectrum UI - Beautiful and accessible React components",
   },
@@ -17,7 +17,7 @@ export const siteConfig = {
   },
   author: {
     name: "Arihant Jain",
-    url: "https://arihant.us",
+    url: "https://arihantcodes.in",
   },
   keywords: [
     "UI components",
