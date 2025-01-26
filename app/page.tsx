@@ -9,15 +9,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import CardCollection from "@/components/spectrumui/cards";
 
-import Requestcomponents from "@/components/shinebutton";
-import { Axis3DIcon } from "lucide-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import RequestComponents from "@/components/requestcomponets";
 
-
 export default function Home() {
-  const[star, setStar] = useState(0);
+  const [star, setStar] = useState(0);
   // Motion configuration for staggered animations
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -57,13 +54,14 @@ export default function Home() {
       animate="visible"
     >
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="gray" />
-      <div className="pt-3"><RequestComponents/></div>
+      <div className="pt-3">
+        <RequestComponents />
+      </div>
       <motion.div
         className="flex items-center justify-center mt-12"
         variants={staggerItem}
       >
         <div className="flex flex-col items-center">
-        
           <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold">
             Instant UI Components <br /> Just{" "}
             <Cover>

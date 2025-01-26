@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Spectrum UI",
+  name: "Spectrum UI - Arihant Jain",
   url: "https://spectrumui.arihantcodes.in/",
   ogImage: {
     url: "https://spectrumui.arihantcodes.in/og.png",
 
-    alt: "Spectrum UI - Beautiful and accessible React components",
+    alt: "Spectrum UI -Instant UI Components Just Copy,Paste & Done",
   },
   description:
     "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
