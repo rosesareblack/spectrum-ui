@@ -51,7 +51,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
-              <div>
+              <div className="md:block hidden">
                 <Link  href="mailto:hey@arihantcodes.in">
                 <Button className="rounded-xl" >
                   Work With Me ✨
