@@ -30,6 +30,10 @@ export const NAVLINKS = [
     title: "Colors",
     href: "/colors",
   },
+  {
+    title: "Gift a Component",
+    href: "/giftacomponent",
+  },
 ];
 
 export function Navbar() {
