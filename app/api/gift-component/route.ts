@@ -9,6 +9,7 @@ type component = {
     tags: string[];
     description: string;
     author: string;
+    status: string;
     installationGuide: string | null;
     usageGuide: string | null;
     props: string | null;
@@ -38,6 +39,7 @@ export  async function POST(req:NextRequest,res:NextResponse){
             tags:reqBody.tags,
             description:reqBody.description,
             author:reqBody.author,
+            status:"pending",
             installationGuide:reqBody.installationGuide || null,
             usageGuide:reqBody.usageGuide || null,
             props:reqBody.props || null
