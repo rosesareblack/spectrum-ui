@@ -30,6 +30,14 @@ export const NAVLINKS = [
     title: "Colors",
     href: "/colors",
   },
+  {
+    title: "Gift a Component",
+    href: "/giftacomponent",
+  },
+  {
+    title: "Admin",
+    href: "/view-pending",
+  },
 ];
 
 export function Navbar() {
