@@ -36,7 +36,7 @@ export default function PendingComponentsPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
 
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   // Store pending components in Redis
 
