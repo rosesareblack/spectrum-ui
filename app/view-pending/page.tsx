@@ -36,8 +36,7 @@ export default function PendingComponentsPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
 
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-
+ 
   // Store pending components in Redis
 
   const storePendingComponents = async (components: PendingComponent[]) => {
@@ -74,7 +73,7 @@ export default function PendingComponentsPage() {
         throw new Error("Admin credentials not configured")
       }
 
-      const response = await axios.get(`${baseUrl}/api/get-all-pending-components`, {
+      const response = await axios.get(`/api/get-all-pending-components`, {
         params: { email: adminEmail, password: adminPassword },
       })
 
@@ -132,7 +131,7 @@ export default function PendingComponentsPage() {
       }
 
       await axios.patch(
-        `${baseUrl}/api/dashboard`,
+        `/api/dashboard`,
         { id, status },
         { params: { email: adminEmail, password: adminPassword } }
       )
