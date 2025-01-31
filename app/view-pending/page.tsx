@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog"
 import { X } from "lucide-react"
 import OTPInput from "@/components/otp-input"
+import Image from "next/image"
 
 interface PendingComponent {
   _id: string
@@ -16,6 +17,7 @@ interface PendingComponent {
   tags: string[]
   author: string
   status: string
+  previewUrl: string
   code: string
   installationGuide: string | null
   usageGuide: string | null
@@ -28,6 +30,7 @@ export default function PendingComponentsPage() {
   const [error, setError] = useState<string | null>(null)
   const [selectedComponent, setSelectedComponent] = useState<PendingComponent | null>(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
 
   const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
 
@@ -39,15 +42,32 @@ export default function PendingComponentsPage() {
 
   const fetchPendingComponents = async () => {
     try {
+      setIsLoading(true)
+      setError(null)
+      
+      const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL
+      const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD
+      
+      if (!adminEmail || !adminPassword) {
+        throw new Error("Admin credentials not configured")
+      }
+
       const response = await axios.get(`${baseUrl}/api/get-all-pending-components`, {
         params: {
-          email: process.env.NEXT_PUBLIC_ADMIN_EMAIL || "",
-          password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "",
+          email: adminEmail,
+          password: adminPassword,
         },
       })
+
+      if (!response.data?.pendingComponents) {
+        throw new Error("Invalid response format")
+      }
+      console.log(response);
+      
       setPendingComponents(response.data.pendingComponents)
     } catch (err) {
-      setError("Failed to fetch pending components")
+      const errorMessage = err instanceof Error ? err.message : "Failed to fetch pending components"
+      setError(errorMessage)
       console.error("Error fetching pending components:", err)
     } finally {
       setIsLoading(false)
@@ -55,33 +75,62 @@ export default function PendingComponentsPage() {
   }
 
   const handleAction = async (id: string, status: "approve" | "reject") => {
+    if (isProcessing) return
+
     try {
+      setIsProcessing(true)
+      setError(null)
+
+      const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL
+      const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD
+
+      if (!adminEmail || !adminPassword) {
+        throw new Error("Admin credentials not configured")
+      }
+
       await axios.patch(
         `${baseUrl}/api/dashboard`,
-        {
-          id,
-          status,
-        },
+        { id, status },
         {
           params: {
-            email: "aman@gmail.com",
-            password: "aman123",
+            email: adminEmail,
+            password: adminPassword,
           },
         },
       )
-      // Refresh the list after action
-      fetchPendingComponents()
+      
+      // Update local state optimistically
+      setPendingComponents(prev => 
+        prev.filter(component => component._id !== id)
+      )
     } catch (err) {
-      setError(`Failed to ${status} component`)
+      const errorMessage = err instanceof Error ? err.message : `Failed to ${status} component`
+      setError(errorMessage)
       console.error(`Error ${status}ing component:`, err)
+      // Refresh the list to ensure consistency
+      fetchPendingComponents()
+    } finally {
+      setIsProcessing(false)
     }
   }
 
-  const handleAdminAuth = (code: string) => {
-    if (code === process.env.NEXT_PUBLIC_ADMIN_CODE) {
-      setIsAuthenticated(true)
-    } else {
-      setError("Invalid admin code")
+  const handleAdminAuth = async (code: string) => {
+    try {
+      setError(null)
+      const adminCode = process.env.NEXT_PUBLIC_ADMIN_CODE
+      
+      if (!adminCode) {
+        throw new Error("Admin code not configured")
+      }
+
+      if (code === adminCode) {
+        setIsAuthenticated(true)
+      } else {
+        setError("Invalid admin code")
+      }
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Authentication failed"
+      setError(errorMessage)
     }
   }
 
@@ -89,62 +138,85 @@ export default function PendingComponentsPage() {
     return (
       <div className="min-h-screen container mx-auto p-4 flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold mb-4">Admin Authentication</h1>
-        <OTPInput length={4} onComplete={handleAdminAuth} />
+        <OTPInput length={6} onComplete={handleAdminAuth} />
         {error && <p className="text-red-500 mt-2">{error}</p>}
       </div>
     )
   }
 
-  if (isLoading) return <div className="text-center p-4">Loading...</div>
-  if (error) return <div className="text-center p-4 text-red-500">{error}</div>
+  if (isLoading) {
+    return (
+      <div className="min-h-screen container mx-auto p-4 flex items-center justify-center">
+        <div className="text-center">Loading...</div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Pending Components</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {pendingComponents.map((component) => (
-          <Card key={component._id} className="cursor-pointer" onClick={() => setSelectedComponent(component)}>
-            <CardHeader>
-              <CardTitle>{component.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-2">{component.description}</p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                {component.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-              <p className="text-sm mb-2">Author: {component.author}</p>
-              <p className="text-sm mb-4">Status: {component.status}</p>
-              <div className="flex justify-between">
-                <Button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    handleAction(component._id, "approve")
-                  }}
-                  variant="default"
-                >
-                  Approve
-                </Button>
-                <Button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    handleAction(component._id, "reject")
-                  }}
-                  variant="destructive"
-                >
-                  Reject
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      {error && <div className="text-red-500 mb-4">{error}</div>}
+      
+      {pendingComponents.length === 0 ? (
+        <div className="text-center text-gray-500">No pending components to review</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {pendingComponents.map((component) => (
+            <Card key={component._id} className="cursor-pointer" onClick={() => setSelectedComponent(component)}>
+              <CardHeader>
+                <CardTitle>{component.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-2">{component.description}</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {component.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <p className="text-sm mb-2">Author: {component.author}</p>
+                <p className="text-sm mb-4">Status: {component.status}</p>
+
+                <Image
+                  src={component.previewUrl}
+                  alt={component.title}
+                  width={400}
+                  height={400}
+                  className="rounded-md object-cover"
+                  
+                />
+                
+                <div className="flex justify-between mt-4">
+                  <Button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleAction(component._id, "approve")
+                    }}
+                    variant="default"
+                    disabled={isProcessing}
+                  >
+                    {isProcessing ? "Processing..." : "Approve"}
+                  </Button>
+                  <Button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleAction(component._id, "reject")
+                    }}
+                    variant="destructive"
+                    disabled={isProcessing}
+                  >
+                    {isProcessing ? "Processing..." : "Reject"}
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
 
       <Dialog open={!!selectedComponent} onOpenChange={() => setSelectedComponent(null)}>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{selectedComponent?.title}</DialogTitle>
             <DialogClose asChild>
@@ -156,14 +228,14 @@ export default function PendingComponentsPage() {
           <div className="mt-4">
             <h3 className="text-lg font-semibold mb-2">Code:</h3>
             <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto">
-              <code className="p-2">{selectedComponent?.code}</code>
+              <code>{selectedComponent?.code}</code>
             </pre>
 
             {selectedComponent?.installationGuide && (
               <>
                 <h3 className="text-lg font-semibold mb-2 mt-4">Installation Guide:</h3>
                 <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto">
-                  <code className="p-2">{selectedComponent.installationGuide}</code>
+                  <code>{selectedComponent.installationGuide}</code>
                 </pre>
               </>
             )}
@@ -172,7 +244,7 @@ export default function PendingComponentsPage() {
               <>
                 <h3 className="text-lg font-semibold mb-2 mt-4">Usage Guide:</h3>
                 <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto">
-                  <code className="p-2">{selectedComponent.usageGuide}</code>
+                  <code>{selectedComponent.usageGuide}</code>
                 </pre>
               </>
             )}
@@ -181,7 +253,7 @@ export default function PendingComponentsPage() {
               <>
                 <h3 className="text-lg font-semibold mb-2 mt-4">Props:</h3>
                 <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto">
-                  <code className="p-2">{selectedComponent.props}</code>
+                  <code>{selectedComponent.props}</code>
                 </pre>
               </>
             )}
@@ -191,4 +263,3 @@ export default function PendingComponentsPage() {
     </div>
   )
 }
-

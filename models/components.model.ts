@@ -6,6 +6,7 @@ export interface IComponent extends Document {
   title: string;
   tags: string[];
   description: string;
+  previewUrl: string;
   author: string;
   status: "pending" | "approved" | "rejected"; // Enum for valid statuses
   installationGuide?: string | null;
@@ -34,6 +35,10 @@ const componentSchema = new Schema<IComponent>({
     maxlength: 300,
   },
   author: {
+    type: String,
+    required: true,
+  },
+  previewUrl: {
     type: String,
     required: true,
   },

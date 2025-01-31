@@ -22,7 +22,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
     // Show all pending components
     await connectDb();
     const pendingComponents = await Component.find({ status: "pending" })
-      .select("_id code title tags description author status installationGuide usageGuide props");
+      console.log(pendingComponents);
       
     const count = pendingComponents.length;
 
