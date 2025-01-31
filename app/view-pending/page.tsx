@@ -74,7 +74,7 @@ export default function PendingComponentsPage() {
         throw new Error("Admin credentials not configured")
       }
 
-      const response = await axios.get(`${baseUrl}/api/get-all-pending-components`, {
+      const response = await axios.get(`/api/get-all-pending-components`, {
         params: { email: adminEmail, password: adminPassword },
       })
 
