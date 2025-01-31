@@ -1,24 +1,16 @@
 "use client";
 import { ModeToggle } from "@/components/theme-toggle";
-
 import Link from "next/link";
 import { Button, buttonVariants } from "./ui/button";
 import { Icons } from "./icon";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
-
 import { SheetClose } from "@/components/ui/sheet";
-
 import Search from "./search";
 
 export const NAVLINKS = [
   {
     title: "Docs",
-    href: "/docs",
-  },
-
-  {
-    title: "Components",
     href: "/docs",
   },
 
@@ -33,10 +25,6 @@ export const NAVLINKS = [
   {
     title: "Gift a Component",
     href: "/giftacomponent",
-  },
-  {
-    title: "Admin",
-    href: "/view-pending",
   },
 ];
 
@@ -60,32 +48,30 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               <div className="md:block hidden">
-                <Link  href="mailto:hey@arihantcodes.in">
-                <Button className="rounded-xl" >
-                  Work With Me ✨
-                </Button>
+                <Link href="mailto:hey@arihantcodes.in">
+                  <Button className="rounded-xl">Work With Me ✨</Button>
                 </Link>
               </div>
-              <div className='hidden md:flex'>
+              <div className="hidden md:flex">
                 <Search />
               </div>
               <div>
-              <Link
-                href="https://github.com/arihantcodes/spectrum-ui"
-                className={buttonVariants({ variant: "ghost", size: "icon" })}
-              >
-                <Icons.gitHub className="icon-class w-4" />
-              </Link>
-              <Link
-                href="https://x.com/arihantcodes"
-                className={buttonVariants({
-                  variant: "ghost",
-                  size: "icon",
-                })}
-              >
-                <Icons.twitter className="icon-class w-3" />
-              </Link>
-              <ModeToggle />
+                <Link
+                  href="https://github.com/arihantcodes/spectrum-ui"
+                  className={buttonVariants({ variant: "ghost", size: "icon" })}
+                >
+                  <Icons.gitHub className="icon-class w-4" />
+                </Link>
+                <Link
+                  href="https://x.com/arihantcodes"
+                  className={buttonVariants({
+                    variant: "ghost",
+                    size: "icon",
+                  })}
+                >
+                  <Icons.twitter className="icon-class w-3" />
+                </Link>
+                <ModeToggle />
               </div>
             </div>
           </div>
@@ -100,10 +86,7 @@ export function Logo() {
     <Link href="/" className="flex items-center gap-2">
       <Icons.logo className="icon-class w-2" />
 
-      <h2 className="text-base md:text-lg font-bold">
-       Spectrum UI
-      </h2>
-      
+      <h2 className="text-base md:text-lg font-bold">Spectrum UI</h2>
     </Link>
   );
 }
