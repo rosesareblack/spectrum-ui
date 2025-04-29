@@ -9,12 +9,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import CardCollection from "@/components/spectrumui/cards";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+
 import RequestComponents from "@/components/requestcomponets";
 
 export default function Home() {
-  const [star, setStar] = useState(0);
+
   // Motion configuration for staggered animations
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -27,25 +26,12 @@ export default function Home() {
     },
   };
 
+
   const staggerItem = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-  const fetchGithubData = () => {
-    axios
-      .get("https://api.github.com/repos/arihantcodes/spectrum-ui")
-      .then((response) => {
-        const star = response.data.stargazers_count;
-        setStar(star);
-      })
-      .catch((error) => {
-        console.error("Error fetching GitHub data:", error);
-      });
-  };
-
-  useEffect(() => {
-    fetchGithubData();
-  }, []);
+  
   return (
     <motion.div
       className="flex items-center justify-center flex-col"
@@ -103,16 +89,16 @@ export default function Home() {
                 Explore Components
               </Button>
             </Link>
-            <Link href="https://github.com/arihantcodes/spectrum-ui">
-              <Button
-                className="gap-4 rounded-2xl"
+            <Link href="https://cal.com/arihantjain/15min?overlayCalendar=true">
+            <Button
+                className="gap-4 rounded-2xl h-12"
                 variant={"secondary"}
-                size={"lg"}
+                
               >
-                <Icons.gitHub className="icon-class w-4 " />
-                Give a Star ⭐ {star}
-              </Button>
-            </Link>
+                    <Image src="/arihant.jpeg" alt="Arihant" width={30} height={30} className="rounded-full" />
+                    Book a Call With Arihant</Button>
+                </Link>
+           
           </motion.div>
         </div>
 

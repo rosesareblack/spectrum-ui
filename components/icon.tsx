@@ -3,34 +3,9 @@ type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
   logo: (props: IconProps) => (
-    <svg
-      width="25"
-      height="25"
-      viewBox="0 0 32 32"
-      fill="white"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="32" height="32" rx="6"  />
-      <g opacity="0.8">
-        <rect x="8" y="10" width="2" height="12" fill="black" />
-        <rect x="12" y="8" width="2" height="16"  fill="black" />
-        <rect x="16" y="6" width="2" height="20" fill="black" />
-        <rect x="20" y="8" width="2" height="16" fill="black" />
-        <rect x="24" y="10" width="2" height="12" fill="black"/>
-      </g>
-      <defs>
-        <linearGradient
-          id="gradient"
-          x1="0"
-          y1="0"
-          x2="32"
-          y2="32"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="hsl(var(--primary))" />
-          <stop offset="1" stopColor="hsl(var(--primary) / 0.8)" />
-        </linearGradient>
-      </defs>
+    <svg width="23" height="23" viewBox="0 0 300 251" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 125.5C0 98.5297 10.2499 73.5543 27.6806 53.1316H102.632V64.8351C78.8668 77.7476 63.1579 100.095 63.1579 125.5C63.1579 165.468 102.038 197.868 150 197.868V250.5C67.1573 250.5 0 194.536 0 125.5Z" fill="currentColor"/>
+    <path d="M272.319 197.868C289.75 177.446 300 152.47 300 125.5C300 56.4644 232.843 0.5 150 0.5V53.1316C197.962 53.1316 236.842 85.532 236.842 125.5C236.842 150.905 221.133 173.252 197.368 186.165V197.868H272.319Z"  fill="currentcolor"/>
     </svg>
   ),
   twitter: (props: IconProps) => (

@@ -7,6 +7,9 @@ import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
 import { SheetClose } from "@/components/ui/sheet";
 import Search from "./search";
+import Image from "next/image";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export const NAVLINKS = [
   {
@@ -29,6 +32,22 @@ export const NAVLINKS = [
 ];
 
 export function Navbar() {
+  const [star, setStar] = useState(0);
+  const fetchGithubData = () => {
+    axios
+      .get("https://api.github.com/repos/arihantcodes/spectrum-ui")
+      .then((response) => {
+        const star = response.data.stargazers_count;
+        setStar(star);
+      })
+      .catch((error) => {
+        console.error("Error fetching GitHub data:", error);
+      });
+  };
+
+  useEffect(() => {
+    fetchGithubData();
+  }, []);
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 lg:px-4 px-2 backdrop-filter backdrop-blur-xl bg-opacity-5">
       <div className="sm:p-3 p-2 max-w-[1530px] mx-auto h-full flex items-center justify-between gap-2">
@@ -48,9 +67,16 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               <div className="md:block hidden">
-                <Link href="mailto:hey@arihantcodes.in">
-                  <Button className="rounded-xl">Work With Me ✨</Button>
-                </Link>
+              <Link href="https://github.com/arihantcodes/spectrum-ui">
+              <Button
+                className="gap-4 rounded-2xl"
+                variant={"secondary"}
+                size={"lg"}
+              >
+                <Icons.gitHub className="icon-class w-4 " />
+                Give a Star ⭐  {star}
+              </Button>
+            </Link>
               </div>
               <div className="hidden md:flex">
                 <Search />
