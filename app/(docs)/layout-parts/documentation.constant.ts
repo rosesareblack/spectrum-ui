@@ -121,7 +121,13 @@ export const DOCS: Documentation[] = [
         value: "multipleSelector",
         url: "/docs/multiple-selector",
       },
-      { label: "Navbar", value: "navbar", url: "/docs/navbar" ,    new: true,},
+      { label: "Navbar", value: "navbar", url: "/docs/navbar" ,},
+      {
+        label:"Profile Dropdown",
+        value: "profile-dropdown",
+        url: "/docs/profile",
+        new: true,
+      },
       {
         label: "Progress With Value",
         value: "progress-with-value",
