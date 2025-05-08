@@ -93,7 +93,7 @@ export const DOCS: Documentation[] = [
         label: "Feadback Card",
         value: "feadback",
         url: "/docs/feadback",
-        new: true,
+
       },
       {
         label: "Floating Label Input",
@@ -127,6 +127,12 @@ export const DOCS: Documentation[] = [
         label: "Multiple Selector",
         value: "multipleSelector",
         url: "/docs/multiple-selector",
+      },
+      {
+        label: "Multistep Form",
+        value: "multistepform",
+        url: "/docs/multistepform",
+        new: true,
       },
       { label: "Navbar", value: "navbar", url: "/docs/navbar" ,},
       {

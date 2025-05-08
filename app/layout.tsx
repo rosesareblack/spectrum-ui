@@ -10,6 +10,7 @@ import { siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/sonner";
 
 
 inject();
@@ -141,6 +142,7 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[90vw] md:w-[85vw] h-auto">
             {children}
           </main>
+          <Toaster />
           <Footer />
         </ThemeProvider>
         <SpeedInsights />

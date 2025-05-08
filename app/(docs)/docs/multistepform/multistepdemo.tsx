@@ -14,7 +14,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 
-// Define the steps
+
 const steps = [
   { id: "personal", title: "Personal Info" },
   { id: "professional", title: "Professional" },
@@ -24,7 +24,7 @@ const steps = [
   { id: "requirements", title: "Requirements" }
 ]
 
-// Define the form data interface for type safety
+
 interface FormData {
   name: string;
   email: string;
@@ -44,7 +44,7 @@ interface FormData {
   additionalInfo: string;
 }
 
-// Animation variants
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
@@ -145,7 +145,7 @@ const OnboardingForm = () => {
     }
   }
 
-  // Prevent default for any button that might trigger form submission
+
   const preventDefault = (e: React.MouseEvent) => {
     e.preventDefault()
   }

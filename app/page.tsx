@@ -95,7 +95,7 @@ export default function Home() {
                 variant={"secondary"}
                 
               >
-                    <Image src="/arihant.jpeg" alt="Arihant" width={30} height={30} className="rounded-full" />
+                    <Image src="/arihanticon.jpg" alt="Arihant" width={30} height={30} className="rounded-full" />
                     Book a Call With Arihant</Button>
                 </Link>
            
