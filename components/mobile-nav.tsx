@@ -2,7 +2,7 @@
 
 import Link, { LinkProps } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import posthog from "posthog-js";
+
 import * as React from "react";
 
 import { Icons } from "@/components/icon";
