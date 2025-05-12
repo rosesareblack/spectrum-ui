@@ -1,20 +1,52 @@
-"use client";
-import { motion } from "framer-motion";
-import { Cover } from "@/components/ui/cover";
-import { Spotlight } from "@/components/ui/Spootlight";
-import Image from "next/image";
-import { Icons } from "@/components/icon";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardTitle } from "@/components/ui/card";
-import CardCollection from "@/components/spectrumui/cards";
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import Spline from "@splinetool/react-spline/next"
+
+import { Cover } from "@/components/ui/cover"
+import { Announcement } from "@/components/announcement"
+// import { CardsDemo } from "@/components/cards"
+
+import {
+  PageActions,
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/page-header"
+import { Button } from "@/components/ui/button"
+import CardCollection from "@/components/spectrumui/cards"
+import { CardsDemo } from "@/components/cards"
 
 
-import RequestComponents from "@/components/requestcomponets";
+const title = "Spectrum UI"
+const description =
+  "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code."
 
-export default function Home() {
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+}
 
-  // Motion configuration for staggered animations
+export default function IndexPage() {
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,47 +56,30 @@ export default function Home() {
         staggerChildren: 0.15,
       },
     },
-  };
-
+  }
 
   const staggerItem = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-  
+  }
   return (
-    <motion.div
-      className="flex items-center justify-center flex-col"
-      variants={staggerContainer}
-      initial="hidden"
-      animate="visible"
-    >
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="gray" />
-      <div className="pt-3">
-        <RequestComponents />
-      </div>
-      <motion.div
-        className="flex items-center justify-center mt-12"
-        variants={staggerItem}
-      >
-        <div className="flex flex-col items-center">
-          <h1 className="md:text-6xl text-2xl text-center md:mt-12 font-bold">
+    <>
+      {/* <Homepage /> */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 container-wrapper">
+        <div className=" py-5 flex flex-col items-center justify-center">
+
+          <h1 className="text-center text-2xl font-bold md:mt-12 md:text-5xl">
             Instant UI Components <br /> Just{" "}
             <Cover>
-              <span className=" dark:text-neutral-100">Copy, Paste & Done</span>
+              <span className="dark:text-neutral-100">
+                Copy, Paste &amp; Done
+              </span>
             </Cover>
           </h1>
-          <p className="text-md md:text-lg text-center mt-6 mb-5 text-gray-400">
-            Accelerate your project’s growth with ready-to-use UI components{" "}
-            <br /> that save time and elevate quality
-          </p>
-          <h1 className="text-center font-bold mt-6 text-2xl text-gray-400">
+          <h1 className="mt-6 text-center text-2xl font-bold text-gray-400">
             Built With
           </h1>
-          <motion.div
-            className="flex flex-col mb-4 md:flex-row items-center justify-center mt-4 gap-5"
-            variants={staggerItem}
-          >
+          <div className="my-4 flex flex-col items-center justify-center gap-5 md:flex-row ml-8">
             <Image src="./nextjs.svg" height={40} width={90} alt="next js" />
             <Image src="./shadcn.svg" height={40} width={140} alt="shadcn ui" />
             <Image
@@ -79,42 +94,63 @@ export default function Home() {
               width={160}
               alt="acternity ui"
             />
-          </motion.div>
-          <motion.div
-            className="flex gap-6 flex-col md:flex-row items-center justify-center"
-            variants={staggerItem}
-          >
-            <Link href="/docs">
-              <Button size={"lg"} className="rounded-2xl">
+          </div>
+
+          <div className="my-5 flex items-center gap-4 flex-col md:flex-row">
+            <Link href="/docs/installation">
+              <Button size="lg" className="rounded-2xl">
                 Explore Components
               </Button>
             </Link>
             <Link href="https://cal.com/arihantjain/15min?overlayCalendar=true">
-            <Button
-                className="gap-4 rounded-2xl h-12"
-                variant={"secondary"}
-                
-              >
-                    <Image src="/arihanticon.jpg" alt="Arihant" width={30} height={30} className="rounded-full" />
-                    Book a Call With Arihant</Button>
-                </Link>
-           
-          </motion.div>
+              <Button className="h-12 gap-4 rounded-2xl" variant="secondary">
+                <Image
+                  src="/arihanticon.jpg"
+                  alt="Arihant"
+                  width={30}
+                  height={30}
+                  className="rounded-full"
+                />
+                Book a Call With Arihant
+              </Button>
+            </Link>
+          </div>
         </div>
-
-        <div className="">
-          <div className="md:ml-5 h-full w-full"></div>
+        <div>
+          <Spline scene="https://prod.spline.design/WtLbdYm-Wsiv4k7T/scene.splinecode" />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div className="mt-16" variants={staggerItem}>
-        <Card className="hidden md:flex md:flex-col">
-          <CardTitle className="mt-5 text-center mb-8">
-            Explore Our Cards
-          </CardTitle>
-          <CardCollection />
-        </Card>
-      </motion.div>
-    </motion.div>
-  );
+      <div className="container-wrapper mt-20">
+        <div className="container py-6">
+          <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
+            <Image
+              src="/examples/cards-light.png"
+              width={1280}
+              height={1214}
+              alt="Cards"
+              className="block dark:hidden"
+            />
+            <Image
+              src="/examples/cards-dark.png"
+              width={1280}
+              height={1214}
+              alt="Cards"
+              className="hidden dark:block"
+            />
+          </section>
+          <section
+            className="hidden md:block [&>div]:p-0"
+            style={
+              {
+                "--radius": "0.75rem",
+              } as React.CSSProperties
+            }
+          >
+             <CardsDemo />
+          </section>
+        </div>
+      </div>
+    </>
+  )
 }

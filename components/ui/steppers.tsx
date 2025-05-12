@@ -15,10 +15,10 @@ const Stepper = ({ title, children, step }: StepperProps) => {
   return (
     <div>
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-800 text-white p-3">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-black dark:bg-neutral-800 dark:text-neutral-200 p-3">
           {step}
         </span>
-        <H4>
+        <H4 className="text-[16px] font-semibold">
           {title === "Extend tailwind.config.js" ? (
             <span>
               Extend <InlineCode>tailwind.config.js</InlineCode>
@@ -28,7 +28,7 @@ const Stepper = ({ title, children, step }: StepperProps) => {
           )}
         </H4>
       </div>
-      <div className="my-3 ml-5 border-l-2 border-l-gray-200 pl-8">
+      <div className="my-3 ml-5 border-l border-l-neutral-300 dark:border-l-neutral-600 pl-8">
         {children}
       </div>
     </div>

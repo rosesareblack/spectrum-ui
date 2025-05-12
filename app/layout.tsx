@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/navbar";
+import { SiteHeader } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import Footer from "@/components/footer";
@@ -138,10 +138,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Analytics />
-          <Navbar />
-          <main className="sm:container mx-auto w-[90vw] md:w-[85vw] h-auto">
-            {children}
-          </main>
+          <SiteHeader />
+          <main className="flex flex-1 flex-col">{children}</main>
+
           <Toaster />
           <Footer />
         </ThemeProvider>

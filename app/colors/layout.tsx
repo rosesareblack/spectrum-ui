@@ -33,7 +33,7 @@ export default function ChartsLayout({
             <a href="#colors">Browse Colors</a>
           </Button>
           <Button asChild variant="ghost" size="sm">
-            <Link href="/components">Components</Link>
+            <Link href="/docs">Components</Link>
           </Button>
         </PageActions>
       </PageHeader>

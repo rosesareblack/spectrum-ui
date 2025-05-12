@@ -9,7 +9,9 @@ const page = () => {
   return (
     <div>
       <PageTemplate title="Animated SVG Chart" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/animatedchart/animateddemo.tsx">
+        <PreviewCodeCard
+        className=""
+        path="app/(docs)/docs/animatedchart/animateddemo.tsx">
           <Chart/> 
         </PreviewCodeCard>
 

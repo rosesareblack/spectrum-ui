@@ -23,7 +23,7 @@ const PageTemplate = ({ title, description, children, className }: PageTemplateP
 
 const PageSubTitle = ({ children }: { children: React.ReactNode }) => {
   return (
-    <H2 className="mb-2 border-b border-b-gray-600 pb-2" anchor={children?.toString()}>
+    <H2 className="mb-2 border-b border-b-gray-600 pb-2 text-[18px]" anchor={children?.toString()}>
       {children}
     </H2>
   );

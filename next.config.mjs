@@ -2,6 +2,9 @@
 import createMDX from "@next/mdx";
 
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
 

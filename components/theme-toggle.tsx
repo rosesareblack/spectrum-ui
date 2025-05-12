@@ -1,40 +1,63 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Moon, Sun, SunMoon } from "lucide-react";
-import { useTheme } from "next-themes";
+import type React from "react"
 
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import { Moon, Sun, Monitor } from "lucide-react"
 
-export function ModeToggle() {
-  const { setTheme } = useTheme();
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" >
-          <Sun className="h-[1.1rem] w-[1.1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <SunMoon  className="absolute h-[1.1rem] w-[1.1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
+    <motion.div
+      className="flex items-center justify-between p-1 rounded-full bg-neutral-100 dark:bg-black/90 w-fit"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <ThemeButton active={theme === "light"} onClick={() => setTheme("light")} icon={<Sun size={16} />} />
+      <ThemeButton active={theme === "system"} onClick={() => setTheme("system")} icon={<Monitor size={16} />} />
+      <ThemeButton active={theme === "dark"} onClick={() => setTheme("dark")} icon={<Moon size={16} />} />
+    </motion.div>
+  )
+}
+
+interface ThemeButtonProps {
+  active: boolean
+  onClick: () => void
+  icon: React.ReactNode
+}
+
+function ThemeButton({ active, onClick, icon }: ThemeButtonProps) {
+  return (
+    <motion.button
+      className={`relative flex items-center justify-center w-8 h-8 rounded-full ${
+        active ? "text-neutral-800 dark:text-neutral-100" : "text-neutral-500"
+      }`}
+      onClick={onClick}
+      whileTap={{ scale: 0.95 }}
+    >
+      {active && (
+        <motion.div
+          className="absolute inset-0 bg-neutral-200 dark:bg-neutral-800 rounded-full"
+          layoutId="activeTheme"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        />
+      )}
+      <span className="relative z-10">{icon}</span>
+    </motion.button>
+  )
 }

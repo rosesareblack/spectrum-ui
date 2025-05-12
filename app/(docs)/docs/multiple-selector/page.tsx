@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+
 import React from 'react';
 import { PageSubTitle, PageTemplate } from '@/app/(docs)/docs/components/page-template';
 import PreviewCodeCard from '@/app/(docs)/docs/components/preview-code-card';

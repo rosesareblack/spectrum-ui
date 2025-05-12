@@ -53,7 +53,7 @@ export default function EnhancedSidebar() {
   })).filter((group) => group.children.length > 0);
 
   return (
-    <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800">
+    <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-neutral-200 dark:border-neutral-700">
       <ScrollArea className="flex-1">
         <nav className="p-4 space-y-2">
           {filteredDocs.map((group) => (
@@ -75,7 +75,7 @@ export default function EnhancedSidebar() {
                   )}
                 </Button>
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-1 ml-2 dark:text-gray-400">
+              <CollapsibleContent className="space-y-1 ml-2 dark:text-neutral-400">
                 {group.children.map((child) => (
                   <Link
                     key={child.value}
@@ -83,8 +83,8 @@ export default function EnhancedSidebar() {
                     className={cn(
                       "flex items-center gap-2 px-4 py-2 text-sm rounded-md transition-colors",
                       pathname === child.url
-                        ? "dark:text-gray-200"
-                        : "hover:text-gray-500 dark:hover:text-gray-200"
+                        ? "dark:text-neutral-200"
+                        : "hover:text-neutral-500 dark:hover:text-neutral-100"
                     )}
                   >
                     {child.label}
