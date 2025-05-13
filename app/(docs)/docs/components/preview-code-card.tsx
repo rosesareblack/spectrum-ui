@@ -1,7 +1,12 @@
 import React from 'react';
-import CodeCard from '@/app/(docs)/docs/components/code-card/code-card';
 import fs from 'fs/promises';
+import dynamic from 'next/dynamic';
 import { cn } from '@/lib/utils';
+
+// ✅ Dynamically import the client component (no SSR)
+const CodeCardWrapper = dynamic(() => import('@/app/(docs)/docs/components/code-card-wrapper'), {
+  ssr: false,
+});
 
 interface PreviewCodeCardProps {
   className?: string;
@@ -18,9 +23,9 @@ const PreviewCodeCard = async ({ className, path, children }: PreviewCodeCardPro
   }
 
   return (
-    <CodeCard code={demoCode} className={cn('mb-14 mt-5', className)}>
+    <CodeCardWrapper code={demoCode} className={cn('mb-14 mt-5', className)}>
       <div className="flex items-center justify-center py-10">{children}</div>
-    </CodeCard>
+    </CodeCardWrapper>
   );
 };
 

@@ -1,7 +1,7 @@
 import { PageTemplate } from "@/app/(docs)/docs/components/page-template";
 import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
 import React from "react";
-import Dashboardblock from "./dashboard";
+import Dashboardblock from "@/app/(blocks)/blocks/dashboard";
 
 const page = () => {
   return (

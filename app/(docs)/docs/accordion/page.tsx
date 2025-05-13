@@ -45,10 +45,7 @@ const SkeletonLoadingPage = () => {
       <PageSubTitle>Installation</PageSubTitle>
       <Steppers
         withInstall
-        tailwindConfig={{
-          tailwindConfig: true,
-          code: tailwindConfigCode,
-        }}
+        
         codePath="components/ui/accordion.tsx"
         withEnd
       />

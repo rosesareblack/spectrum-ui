@@ -1,127 +1,88 @@
+// components/Steppers.tsx
+
 import React from "react";
-import { H4 } from "@/components/ui/heading-with-anchor";
-import { cn } from "@/lib/utils";
-import CodeHighlight from "@/app/(docs)/docs/components/code-card/parts/code-highlight";
 import fs from "fs/promises";
-import { InlineCode } from "./inline-code";
 
 interface StepperProps {
-  children?: React.ReactNode;
   title?: string;
-  step?: number;
+  step: number;
+  children?: React.ReactNode;
 }
 
-const Stepper = ({ title, children, step }: StepperProps) => {
+function Stepper({ title, step, children }: StepperProps) {
   return (
     <div>
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-black dark:bg-neutral-800 dark:text-neutral-200 p-3">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white">
           {step}
         </span>
-        <H4 className="text-[16px] font-semibold">
-          {title === "Extend tailwind.config.js" ? (
-            <span>
-              Extend <InlineCode>tailwind.config.js</InlineCode>
-            </span>
-          ) : (
-            title
-          )}
-        </H4>
+        <h4 className="text-base font-semibold">{title}</h4>
       </div>
-      <div className="my-3 ml-5 border-l border-l-neutral-300 dark:border-l-neutral-600 pl-8">
-        {children}
-      </div>
+      {children && (
+        <div className="ml-11 mt-2 border-l pl-4 text-sm dark:border-neutral-600">
+          {children}
+        </div>
+      )}
     </div>
   );
-};
+}
 
-interface SteppersBaseProps {
-  steps?: Omit<StepperProps, "step">[];
+interface SteppersProps {
   className?: string;
+  installScript?: string;
+  codePath?: string;
+  steps?: { title: string; children?: React.ReactNode }[];
+  withInstall?: boolean;
   withEnd?: boolean;
 }
 
-interface TailwindConfigStep {
-  tailwindConfig?: boolean;
-  code?: string;
-}
+export  async function Steppers({
+  className,
+  installScript,
+  codePath,
+  steps = [],
+  withInstall = false,
+  withEnd = false,
+}: SteppersProps) {
+  let codeFromFile = "";
 
-interface SteppersWithInstallProps extends SteppersBaseProps {
-  withInstall?: true;
-  codePath?: string;
-  installScript?: string;
-  tailwindConfig?: TailwindConfigStep;
-}
-
-interface SteppersWithoutInstallProps extends SteppersBaseProps {
-  withInstall?: false;
-  tailwindConfig?: TailwindConfigStep;
-}
-
-type SteppersProps = SteppersWithInstallProps | SteppersWithoutInstallProps;
-
-export const Steppers = async (props: SteppersProps) => {
-  const { steps, className, withEnd, withInstall, tailwindConfig } = props;
-
-  let installCode = "";
-  if (withInstall && props.codePath) {
-    installCode = await fs.readFile(props.codePath, "utf8");
+  if (withInstall && codePath) {
+    try {
+      codeFromFile = await fs.readFile(codePath, "utf8");
+    } catch (error) {
+      console.error("Failed to read file:", error);
+      codeFromFile = "// Could not load file";
+    }
   }
 
-  // Calculate the offset based on install steps and tailwind config
-  const installStepsCount = withInstall ? (props.installScript ? 2 : 1) : 0;
-  const tailwindStepCount = tailwindConfig?.tailwindConfig ? 1 : 0;
-  const totalOffset = installStepsCount + tailwindStepCount;
+  let stepCounter = 1;
 
   return (
-    <>
-      <div className={cn(className)}>
-        {withInstall && (
-          <>
-            {props.installScript && (
-              <Stepper
-                title="Install the package if you do not have it."
-                step={1}
-              >
-                <CodeHighlight lang="shell" code={props.installScript} />
-              </Stepper>
-            )}
-            <Stepper
-              title="Copy and paste the following code into your project."
-              step={props.installScript ? 2 : 1}
-            >
-              <CodeHighlight code={installCode} withExpand={false} />
+    <div className={className}>
+      {withInstall && (
+        <>
+          {installScript && (
+            <Stepper title="Install the package" step={stepCounter++} >
+              <pre className=" bg-neutral-100 h-12 p-12 rounded-md text-sm dark:bg-neutral-800">{installScript}</pre>
             </Stepper>
-          </>
-        )}
-
-        {tailwindConfig?.tailwindConfig && (
-          <Stepper
-            title="Extend tailwind.config.js"
-            step={installStepsCount + 1}
-          >
-            <CodeHighlight
-              code={tailwindConfig.code || ""}
-              withExpand={false}
-            />
+          )}
+          <Stepper title="Paste this code into your project" step={stepCounter++}>
+            <pre className="rounded bg-neutral-100 p-2 text-sm dark:bg-neutral-800 whitespace-pre-wrap">
+              {codeFromFile}
+            </pre>
           </Stepper>
-        )}
+        </>
+      )}
 
-        {steps?.map((props, index) => (
-          <Stepper
-            key={props.title}
-            {...props}
-            step={index + 1 + totalOffset}
-          />
-        ))}
+      {steps.map((s) => (
+        <Stepper key={s.title} title={s.title} step={stepCounter++}>
+          {s.children}
+        </Stepper>
+      ))}
 
-        {withEnd && (
-          <Stepper
-            title="Update the import paths to match your project setup."
-            step={(steps?.length || 0) + 1 + totalOffset}
-          />
-        )}
-      </div>
-    </>
+      {withEnd && (
+        <Stepper title="Update import paths as needed" step={stepCounter++} />
+      )}
+    </div>
   );
-};
+}
