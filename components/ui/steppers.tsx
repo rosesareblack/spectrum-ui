@@ -63,11 +63,11 @@ export  async function Steppers({
         <>
           {installScript && (
             <Stepper title="Install the package" step={stepCounter++} >
-              <pre className=" bg-neutral-100 h-12 p-12 rounded-md text-sm dark:bg-neutral-800">{installScript}</pre>
+              <pre className=" bg-neutral-100 h-12 p-12 rounded-md text-sm dark:bg-[#101010] ">{installScript}</pre>
             </Stepper>
           )}
           <Stepper title="Paste this code into your project" step={stepCounter++}>
-            <pre className="rounded bg-neutral-100 p-2 text-sm dark:bg-neutral-800 whitespace-pre-wrap">
+            <pre className="rounded bg-neutral-100 p-2 text-sm dark:bg-[#101010] whitespace-pre-wrap">
               {codeFromFile}
             </pre>
           </Stepper>

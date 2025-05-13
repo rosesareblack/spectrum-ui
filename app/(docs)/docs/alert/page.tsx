@@ -26,10 +26,7 @@ const page = () => {
         <Steppers
           installScript="npm i framer-motion lucide-react"
           codePath="lib/utils.ts"
-          steps={[
-            { title: "Create feedback component and paste the code" },
-            { title: "Customize styles if needed" },
-          ]}
+        
           withInstall
           withEnd
         />
