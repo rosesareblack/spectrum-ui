@@ -43,25 +43,16 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
-                    Components
+                  <Link href="/blocks" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
+                    Blocks
                   </Link>
                 </li>
                 <li>
-                  <Link href="/examples" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
-                    Examples
+                  <Link href="/colors" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
+                    Colors
                   </Link>
                 </li>
-                <li>
-                  <Link href="/pricing" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://blog.arihant.us/" className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
-                    Blog
-                  </Link>
-                </li>
+               
               </ul>
             </div>
             <div>
