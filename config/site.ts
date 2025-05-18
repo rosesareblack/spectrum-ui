@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Spectrum UI - Arihant Jain",
   url: "https://ui.spectrumhq.in/",
   ogImage: {
-    url: "https://ui.spectrumhq.in//og.png",
+    url: "https://ui.spectrumhq.in/og.png",
 
     alt: "Spectrum UI -Instant UI Components Just Copy,Paste & Done",
   },
