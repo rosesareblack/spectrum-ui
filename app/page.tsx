@@ -1,50 +1,43 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import Spline from "@splinetool/react-spline/next"
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import Spline from "@splinetool/react-spline/next";
 
-import { Cover } from "@/components/ui/cover"
-import { Announcement } from "@/components/announcement"
-// import { CardsDemo } from "@/components/cards"
+import { Cover } from "@/components/ui/cover";
 
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
-import { Button } from "@/components/ui/button"
-import CardCollection from "@/components/spectrumui/cards"
-import { CardsDemo } from "@/components/cards"
+import { Button } from "@/components/ui/button";
 
+import { CardsDemo } from "@/components/cards";
 
-const title = "Spectrum UI"
+const title = "Spectrum UI";
 const description =
-  "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code."
+  "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
-    images: [
-      {
-        url: `/og?title=${encodeURIComponent(
-          title
-        )}&description=${encodeURIComponent(description)}`,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: `/og?title=${encodeURIComponent(
-          title
-        )}&description=${encodeURIComponent(description)}`,
-      },
-    ],
-  },
-}
+  export const metadata: Metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: "https://ui.spectrumhq.in/og.png",
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [
+        {
+          url: `https://ui.spectrumhq.in/og.png`,
+          alt: title,
+        },
+      ],
+    },
+  };
 
 export default function IndexPage() {
   const staggerContainer = {
@@ -56,18 +49,17 @@ export default function IndexPage() {
         staggerChildren: 0.15,
       },
     },
-  }
+  };
 
   const staggerItem = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
   return (
     <>
       {/* <Homepage /> */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 container-wrapper">
         <div className=" py-5 flex flex-col items-center justify-center">
-
           <h1 className="text-center text-2xl font-bold md:mt-12 md:text-5xl">
             Instant UI Components <br /> Just{" "}
             <Cover>
@@ -147,10 +139,10 @@ export default function IndexPage() {
               } as React.CSSProperties
             }
           >
-             <CardsDemo />
+            <CardsDemo />
           </section>
         </div>
       </div>
     </>
-  )
+  );
 }
