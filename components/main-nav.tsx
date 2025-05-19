@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { siteConfig } from "@/config/site"
+
 import { cn } from "@/lib/utils"
 import { Icons } from "./icon"
 
@@ -11,14 +11,14 @@ export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="mr-4 hidden md:flex">
+    <div className="mr-4  md:flex">
       <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
         <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold lg:inline-block">
+        <span className=" font-bold lg:inline-block">
           Spectrum UI
         </span>
       </Link>
-      <nav className="flex items-center gap-4 text-sm xl:gap-6">
+      <nav className=" items-center gap-4 text-sm xl:gap-6 hidden md:flex">
         <Link
           href="/docs/installation"
           className={cn(

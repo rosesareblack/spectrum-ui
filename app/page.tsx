@@ -62,7 +62,7 @@ export default function IndexPage() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 container-wrapper">
         <div className=" py-5 flex flex-col items-center justify-center">
           <Sponserbutton/>
-          <h1 className="text-center text-2xl font-bold md:mt-12 md:text-5xl">
+          <h1 className="text-center text-2xl font-bold  mt-4 md:mt-12 md:text-5xl">
             Instant UI Components <br /> Just{" "}
             <Cover>
               <span className="dark:text-neutral-100">
@@ -73,7 +73,7 @@ export default function IndexPage() {
           <h1 className="mt-6 text-center text-2xl font-bold text-gray-400">
             Built With
           </h1>
-          <div className="my-4 flex flex-col items-center justify-center gap-5 md:flex-row ml-8">
+          <div className="my-4 flex flex-col items-center justify-center gap-5 md:flex-row md:ml-8">
             <Image src="./nextjs.svg" height={40} width={90} alt="next js" />
             <Image src="./shadcn.svg" height={40} width={140} alt="shadcn ui" />
             <Image
