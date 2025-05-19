@@ -40,35 +40,7 @@ const DatetimePickerPage = () => {
         <Reference href="https://ui.shadcn.com/docs/components/calendar" />
       </ReferenceBorder>
 
-      <PageSubTitle>About</PageSubTitle>
-      <P className="text-muted-foreground">
-        This component is inspired by{' '}
-        <PropLink href="https://time.openstatus.dev/">
-          <InlineCode>Time Picker</InlineCode>
-        </PropLink>{' '}
-        and thanks to{' '}
-        <PropLink href="https://www.openstatus.dev/">
-          <InlineCode>OpenStatus</InlineCode>
-        </PropLink>
-        for creating this.
-      </P>
-      <ol className="list-disc p-7 text-lg  leading-5 text-muted-foreground">
-        <li>
-          All logics exposed. No additional library. Only <InlineCode>DayPicker</InlineCode> that
-          shadcn-ui already uses.
-        </li>
-        <li>Everything is built on top of shadcn-ui.</li>
-        <li>
-          Locale supported by <InlineCode>date-fns</InlineCode>.
-        </li>
-        <li>Supports year, Month dropdown menu for quick navigation to a specific date.</li>
-        <li>Listens to keydown events.</li>
-        <li>Supports arrow navigation.</li>
-        <li>Format date values.</li>
-        <li>
-          Supports <InlineCode>react-day-picker 9</InlineCode>.
-        </li>
-      </ol>
+     
 
       <PreviewCodeCard path="app/(docs)/docs/datetime-picker/datetime-picker-demo.tsx">
         <DatetimePickerDemo />
