@@ -4,10 +4,10 @@
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ChevronDown, ChevronRight, Search } from "lucide-react";
+import { ChevronDown, ChevronRight,  } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
+import Search from "@/components/search";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Collapsible,
@@ -55,6 +55,10 @@ export default function EnhancedSidebar() {
   return (
     <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-neutral-200 dark:border-neutral-700">
       <ScrollArea className="flex-1">
+    <div className="px-4 mr-3 mt-4">
+    <Search/>
+
+    </div>
         <nav className="p-4 space-y-2">
           {filteredDocs.map((group) => (
             <Collapsible

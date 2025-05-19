@@ -8,6 +8,7 @@ import { Cover } from "@/components/ui/cover";
 import { Button } from "@/components/ui/button";
 
 import { CardsDemo } from "@/components/cards";
+import Sponserbutton from "@/components/sponserbutton";
 
 const title = "Spectrum UI";
 const description =
@@ -60,6 +61,7 @@ export default function IndexPage() {
       {/* <Homepage /> */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 container-wrapper">
         <div className=" py-5 flex flex-col items-center justify-center">
+          <Sponserbutton/>
           <h1 className="text-center text-2xl font-bold md:mt-12 md:text-5xl">
             Instant UI Components <br /> Just{" "}
             <Cover>

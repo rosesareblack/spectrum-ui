@@ -53,14 +53,11 @@ export default function Search() {
           <div className="relative flex-1 max-w-md cursor-pointer">
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500 dark:text-neutral-400" />
             <Input
-              className="w-full rounded-md bg-muted border h-9 pl-10 pr-4 text-sm shadow-sm "
-              placeholder="Search documentation..."
+              className="w-full rounded-md bg-muted border h-9 pl-10 pr-4 text-sm shadow-sm dark:bg-neutral-900"
+              placeholder="Search Components..."
               type="search"
             />
-            <div className="sm:flex hidden absolute top-1/2 -translate-y-1/2 right-2 text-xs font-medium font-mono items-center gap-0.5 dark:bg-neutral-700 bg-zinc-200 p-1 rounded-sm">
-              <CommandIcon className="w-3 h-3" />
-              <span>k</span>
-            </div>
+           
           </div>
         </DialogTrigger>
         <DialogContent className="p-0 max-w-[650px] sm:top-[38%] top-[45%]">
