@@ -60,7 +60,7 @@ export function SiteHeader() {
                   variant="secondary"
                   className="
                
-                h-8 px-2 font-medium text-sm"
+                h-9 px-2 font-medium text-sm"
                 >
                   <div className="flex items-center">
                     <Icons.gitHub className="size-4" />
