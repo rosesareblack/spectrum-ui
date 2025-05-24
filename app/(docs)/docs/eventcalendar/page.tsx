@@ -16,7 +16,7 @@ const page = () => {
         </PreviewCodeCard>
 
         <PageSubTitle>Installation</PageSubTitle>
-        <div className="p-4 ">
+        <div className="p-0 md:p-4">
         <p className="mb-4">
           Create a new file called <code>Eventcalendar.tsx</code> in the
           {" components"} & install the following components
