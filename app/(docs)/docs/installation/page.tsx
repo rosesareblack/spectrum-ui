@@ -45,7 +45,7 @@ export default function Component() {
               one:
             </p>
 
-            <div className="p-4 space-y-4">
+            <div className="p-0 md:p-4 space-y-4">
               <Snippet text="npx create-next-app@latest" width="740px" />
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Component() {
               <h2 className="text-lg font-semibold">Install Shadcn UI</h2>
             </div>
 
-            <div className="p-4 space-y-4">
+            <div className="p-0 md:p-4 space-y-4">
               <Snippet text="npx shadcn@latest init" width="740px" />
               <div>
                 <Card className="flex flex-col gap-7 p-6">
