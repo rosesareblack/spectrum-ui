@@ -1,6 +1,6 @@
 "use client";
 
-import { CommandIcon, FileTextIcon, SearchIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
@@ -9,7 +9,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import { page_routes } from "@/lib/routes-config";
+import { ROUTES } from "@/lib/routes-config";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useEffect, useMemo, useState } from "react";
 import Anchor from "./anchor";
@@ -32,13 +32,18 @@ export default function Search() {
     };
   }, []);
 
-  const filteredResults = useMemo(
-    () =>
-      page_routes.filter((item) =>
-        item.title.toLowerCase().includes(searchedInput.toLowerCase())
-      ),
-    [searchedInput]
-  );
+  const filteredResults = useMemo(() => {
+    return ROUTES.map((group) => {
+      const matchingChildren = group.children.filter((item) =>
+        item.label.toLowerCase().includes(searchedInput.toLowerCase())
+      );
+
+      return {
+        ...group,
+        children: matchingChildren,
+      };
+    }).filter((group) => group.children.length > 0);
+  }, [searchedInput]);
 
   return (
     <div>
@@ -57,7 +62,6 @@ export default function Search() {
               placeholder="Search Components..."
               type="search"
             />
-           
           </div>
         </DialogTrigger>
         <DialogContent className="p-0 max-w-[650px] sm:top-[38%] top-[45%]">
@@ -78,22 +82,36 @@ export default function Search() {
           )}
           <ScrollArea className="max-h-[350px]">
             <div className="flex flex-col items-start overflow-y-auto sm:px-3 px-1 pb-4 gap-0.5">
-              {filteredResults.map((item) => (
-                <DialogClose
-                  onChange={(val) => console.log(val)}
-                  key={item.href}
-                  asChild
-                >
-                  <Anchor
-                    className="dark:hover:bg-neutral-900 hover:bg-neutral-100 w-full p-2.5 px-3 rounded-sm text-[15px] flex items-center gap-2.5"
-                    href={`/docs/${item.href}`}
-                    activeClassName="dark:bg-neutral-900 bg-neutral-100"
-                  >
-                    <FileTextIcon className="h-[1.1rem] w-[1.1rem]" />{" "}
-                    {item.title}
-                  </Anchor>
-                </DialogClose>
-              ))}
+              {filteredResults.map((group) => {
+                const Icon = group.icon;
+                return (
+                  <div key={group.groupKey} className="w-full">
+                    <p className="text-xs text-muted-foreground my-2">
+                      {group.groupValue}
+                    </p>
+                    {group.children.map((child) => (
+                      <DialogClose key={child.url} asChild>
+                        <Anchor
+                          className="dark:hover:bg-neutral-900 hover:bg-neutral-100 w-full p-2.5 px-3 rounded-sm text-[14px] flex items-center gap-2.5"
+                          href={`${child.url}`}
+                          activeClassName="dark:bg-neutral-900 bg-neutral-100"
+                        >
+                          <Icon className="h-[1.1rem] w-[1.1rem]" />
+                          {child.label}
+                          {child.tag && child.tag.label && (
+                            <span
+                              className={`text-xs text-black ${child.tag.color} px-1.5 py-0.5 rounded-full`}
+                            >
+                              {child.tag.label.charAt(0).toUpperCase() +
+                                child.tag.label.slice(1)}
+                            </span>
+                          )}
+                        </Anchor>
+                      </DialogClose>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
           </ScrollArea>
         </DialogContent>
