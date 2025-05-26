@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { RoutesProps } from "@/types";
 import { Component, FileText, ShieldUser } from "lucide-react";
 
@@ -180,7 +181,7 @@ export const ROUTES: RoutesProps[] = [
       {
         label: "Arihant Jain",
         value: "arihant-jain",
-        url: `https://x.com/arihantCodes`
+        url: siteConfig.links.twitter
       }
     ]
   }

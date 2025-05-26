@@ -55,14 +55,14 @@ const AnimatedTestimonialsDemo = () => {
                   z: isActive(index) ? 0 : -100,
                   rotate: isActive(index) ? 0 : randomRotateY(),
                   zIndex: isActive(index)
-                    ? 999
+                    ? 25
                     : testimonials.length + 2 - index,
                   y: isActive(index) ? [0, -80, 0] : 0,
                 }}
                 exit={{
                   opacity: 0,
                   scale: 0.9,
-                  z: 100,
+                  z: 50,
                   rotate: randomRotateY(),
                 }}
                 transition={{
@@ -84,7 +84,7 @@ const AnimatedTestimonialsDemo = () => {
             ))}
           </AnimatePresence>
         </div>
-        <div>
+        <div className="relative">
           <div className="flex justify-between flex-col py-4">
             <motion.div
               key={active.name}
@@ -138,7 +138,7 @@ const AnimatedTestimonialsDemo = () => {
               </motion.p>
             </motion.div>
           </div>
-          <div className="flex gap-6 pt-5">
+          <div className="flex gap-6 pt-5 absolute bottom-0 left-0">
             <Button className="h-8  rounded" onClick={handleprev}>
               <ArrowLeft />
             </Button>
