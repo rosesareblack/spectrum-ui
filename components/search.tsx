@@ -64,7 +64,7 @@ export default function Search() {
             />
           </div>
         </DialogTrigger>
-        <DialogContent className="p-0 max-w-[650px] sm:top-[38%] top-[45%]">
+        <DialogContent className="p-2 max-w-[650px] sm:top-[38%] top-[45%] z-[5000]">
           <DialogHeader>
             <input
               value={searchedInput}
