@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import Spline from "@splinetool/react-spline/next";
@@ -9,53 +10,34 @@ import { Button } from "@/components/ui/button";
 
 import { CardsDemo } from "@/components/cards";
 import Sponserbutton from "@/components/sponserbutton";
+import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/icon";
+import { NumberTicker } from "@/components/magicui/number-ticker";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Roboat from "@/components/roboat";
 
-const title = "Spectrum UI";
-const description =
-  "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.";
 
-  export const metadata: Metadata = {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      images: [
-        {
-          url: "https://ui.spectrumhq.in/og.png",
-          alt: title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [
-        {
-          url: `https://ui.spectrumhq.in/og.png`,
-          alt: title,
-        },
-      ],
-    },
+
+const Homepage = () =>{
+  const [star, setStar] = useState(0);
+  const fetchGithubData = () => {
+    axios
+      .get("https://api.github.com/repos/arihantcodes/spectrum-ui")
+      .then((response) => {
+        const star = response.data.stargazers_count;
+        setStar(star);
+      })
+      .catch((error) => {
+        console.error("Error fetching GitHub data:", error);
+      });
   };
 
-export default function IndexPage() {
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const staggerItem = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
+ 
+ 
+  useEffect(() => {
+    fetchGithubData();
+  }, []);
   return (
     <>
       {/* <Homepage /> */}
@@ -99,22 +81,30 @@ export default function IndexPage() {
                 </Button>
               </Link>
 
-              <Link href="https://cal.com/arihantjain/15min?overlayCalendar=true" className="w-full sm:w-auto">
-                <Button className="h-12 gap-3 rounded-2xl w-full sm:w-auto px-6" variant="secondary">
-                  <Image
-                    src="/arihanticon.jpg"
-                    alt="Arihant"
-                    width={24}
-                    height={24}
-                    className="rounded-full flex-shrink-0"
-                  />
-                  <span className="truncate">Book a Call With Arihant</span>
+              <div className="w-full sm:w-auto">
+              <Link target="_blank" href={siteConfig.links.github}>
+                <Button
+                variant="secondary"
+               className="rounded-2xl w-full sm:w-auto px-8 h-11"
+                >
+                  <div className="flex items-center">
+                    <Icons.gitHub className="size-4" />
+
+                    <span className="ml-1 ">
+                      Star on GitHub
+                    </span>
+                  </div>
+                  <div className="ml-1 flex items-center gap-1 text-sm md:flex">
+                    🌟
+                    <NumberTicker value={star} className="font-display" />
+                  </div>
                 </Button>
               </Link>
             </div>
+            </div>
         </div>
         <div className="hidden md:block">
-          <Spline scene="https://prod.spline.design/WtLbdYm-Wsiv4k7T/scene.splinecode" />
+          <Roboat/>
         </div>
       </div>
 
@@ -151,3 +141,6 @@ export default function IndexPage() {
     </>
   );
 }
+
+
+export default Homepage;

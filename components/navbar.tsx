@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 import { usePathname } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
@@ -15,23 +14,7 @@ import { NumberTicker } from "./magicui/number-ticker";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [star, setStar] = useState(0);
-
-  const fetchGithubData = () => {
-    axios
-      .get("https://api.github.com/repos/arihantcodes/spectrum-ui")
-      .then((response) => {
-        const star = response.data.stargazers_count;
-        setStar(star);
-      })
-      .catch((error) => {
-        console.error("Error fetching GitHub data:", error);
-      });
-  };
-
-  useEffect(() => {
-    fetchGithubData();
-  }, []);
+ 
 
   return (
     <header className="border-grid sticky top-0 z-[50]  w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -56,23 +39,14 @@ export function SiteHeader() {
               </Link>
             )}
 
-            <div className="md:block hidden">
-              <Link target="_blank" href={siteConfig.links.github}>
-                <Button
-                  className="h-9 px-2 text-w font-medium text-sm border dark:bg-secondary dark:hover:bg-secondary/80 bg-neutral-100 hover:bg-neutral-200 transition-colors"
-                >
-                  <div className="flex items-center">
-                    <Icons.gitHub className="size-4" />
-                    <span className="ml-1 lg:hidden">Star</span>
-                    <span className="ml-1 hidden lg:inline">
-                      Star on GitHub
-                    </span>
-                  </div>
-                  <div className="ml-1 flex items-center gap-1 text-sm md:flex">
-                    🌟
-                    <NumberTicker value={star} className="font-display" />
-                  </div>
-                </Button>
+            <div className="flex items-center gap-2">
+              <Link href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
+              <Icons.gitHub className="h-5 w-4 mr-2" />
+              
+              </Link>
+              <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer">
+              <Icons.twitter className="h-3 w-4 mr-2" />
+              
               </Link>
             </div>
 
