@@ -39,7 +39,7 @@ export function SiteHeader() {
               </Link>
             )}
 
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <Link href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
               <Icons.gitHub className="h-5 w-4 mr-2" />
               
