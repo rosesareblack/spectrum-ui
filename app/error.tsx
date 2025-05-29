@@ -1,6 +1,7 @@
 "use client"; // Error components must be Client Components
 
 import { Button } from "@/components/ui/button";
+import { NotFound } from "@/components/ui/ghost-404-page";
 import { useEffect } from "react";
 
 export default function Error({
@@ -16,19 +17,10 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-[99vh] px-2 py-8 flex flex-col gap-3 items-center">
-      <div>
-        <h2 className="text-6xl font-bold">Oops!</h2>
-        <p className="text-muted-foreground">Something went wrong!</p>
-      </div>
-      <Button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </Button>
+   <>
+   <div className="min-h-screen w-full bg-white">
+      <NotFound />
     </div>
+   </>
   );
 }

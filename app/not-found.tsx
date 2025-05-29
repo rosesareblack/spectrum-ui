@@ -1,17 +1,12 @@
-import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
+import { NotFound } from "@/components/ui/ghost-404-page"
 
-export default function NotFound() {
+
+const Page = () => {
   return (
-    <div className="min-h-[99vh] px-2 py-8 flex flex-col gap-3 justify-center items-center">
-      <div>
-        <h2 className="text-6xl font-bold">404</h2>
-        <p className="text-muted-foreground">Page not found</p>
-      </div>
-
-      <Link href="/" className={buttonVariants({})}>
-        Back to homepage
-      </Link>
+    <div className="min-h-screen w-full bg-white">
+      <NotFound />
     </div>
   );
 }
+
+export default Page
