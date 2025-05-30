@@ -1,9 +1,13 @@
-import Spline from '@splinetool/react-spline'
+
 import React from 'react'
+import { SplineScene } from './ui/splite'
 
 const Roboat = () => {
   return (
- <Spline scene="https://prod.spline.design/WtLbdYm-Wsiv4k7T/scene.splinecode" /> 
+    <SplineScene 
+    scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+    className="w-full h-full"
+  />
 
   )
 }
