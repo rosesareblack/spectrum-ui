@@ -1,12 +1,11 @@
-
 import React from "react";
 import fs from "fs/promises";
+import dynamic from "next/dynamic";
 
 
-import CodeHighlight from "@/app/(docs)/docs/components/code-card/parts/code-highlight";
-
-
-
+const CodeHighlight = dynamic(() => import('@/app/(docs)/docs/components/code-card/parts/code-highlight'), {
+  ssr: false,
+});
 
 
 
@@ -23,7 +22,9 @@ function Stepper({ title, step, children }: StepperProps) {
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 font-medium shadow-sm transition-colors group-hover:bg-neutral-200 dark:bg-neutral-900/30 dark:text-neutral-400 dark:group-hover:bg-neutral-800/40">
           {step}
         </span>
-        <h4 className="text-base font-semibold text-neutral-800 dark:text-neutral-200">{title}</h4>
+        <h4 className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+          {title}
+        </h4>
       </div>
       {children && (
         <div className="ml-11 mt-2 border-l-2 border-neutral-100 pl-4 text-sm dark:border-neutral-800">
@@ -63,9 +64,6 @@ export async function Steppers({
       codeFromFile = "// Could not load file";
     }
   }
-  
-
-  
 
   let stepCounter = 1;
 
@@ -73,24 +71,23 @@ export async function Steppers({
     <div className={`space-y-6 py-2 ${className || ""}`}>
       {withInstall && installScript && (
         <Stepper title="Install the package" step={stepCounter++}>
-          
-      
-          <CodeHighlight code={installScript} lang="bash" title="Terminal" inTab />
-
+          <CodeHighlight
+            code={installScript}
+            lang="bash"
+            title="Terminal"
+            inTab
+          />
         </Stepper>
       )}
 
       {withInstall && codePath && (
         <Stepper title="Paste this code into your project" step={stepCounter++}>
-           
-          
           <CodeHighlight
             code={codeFromFile}
             title={codePath}
             withExpand={true}
             inTab={false}
           />
-        
         </Stepper>
       )}
 
@@ -100,7 +97,9 @@ export async function Steppers({
         </Stepper>
       ))}
 
-      {withEnd && <Stepper title="Update import paths as needed" step={stepCounter++} />}
+      {withEnd && (
+        <Stepper title="Update import paths as needed" step={stepCounter++} />
+      )}
     </div>
   );
 }

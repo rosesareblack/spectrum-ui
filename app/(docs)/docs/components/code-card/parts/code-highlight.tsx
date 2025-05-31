@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react"
 import { type Highlighter, createHighlighter } from "shiki"
 import { useTheme } from "next-themes"
-
 import { Button } from "@/components/ui/button"
 import { Clipboard, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -16,7 +15,7 @@ interface CodeHighlightProps {
   lang?: string
 }
 
-const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "tsx" ,title}: CodeHighlightProps) => {
+const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "tsx" ,title=""}: CodeHighlightProps) => {
   const [copied, setCopied] = useState(false)
   const [expand, setExpanded] = useState(!withExpand)
   const [highlighter, setHighlighter] = useState<Highlighter | null>(null)
@@ -32,7 +31,7 @@ const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "t
   useEffect(() => {
     const loadHighlighter = async () => {
       const highlighter = await createHighlighter({
-        themes: ["vesper", "min-light"], // Load both themes
+        themes: ["vesper", "min-light"], 
         langs: ["typescript", "tsx", "javascript", "jsx", "shell", "bash"],
       })
       setHighlighter(highlighter)

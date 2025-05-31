@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import PackageManagerTabs from "@/components/packageMangers";
 import { AppWindowMac, Command, FileCode,} from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
+
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import {
   Tabs,
