@@ -90,7 +90,7 @@ export const ROUTES: RoutesProps[] = [
       {
         label: "Feedback Card",
         value: "feedback-card",
-        url: `${BASE_PATH}/feadback`,
+        url: `${BASE_PATH}/feedback`,
       },
       {
         label: "Floating Label Input",

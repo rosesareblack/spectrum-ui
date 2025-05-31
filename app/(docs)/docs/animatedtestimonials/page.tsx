@@ -6,10 +6,12 @@ import AnimatedTestimonialsDemo from "./demoanimatedtest";
 import  Link  from "next/link";
 
 const page = () => {
+  const baseurl =  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"   : "https://ui.spectrumhq.in/";
   return (
     <div>
       <PageTemplate title="Animated Testimonials" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/animatedtestimonials/usages/demousages.tsx">
+        <PreviewCodeCard path="app/(docs)/docs/animatedtestimonials/usages/demousages.tsx" cli={`${baseurl}/r/animated_testimonials.json`}>
           <AnimatedTestimonialsDemo />
         </PreviewCodeCard>
 

@@ -22,7 +22,8 @@ const DualRangeSliderPage = () => {
       description="An enhancement slider that allows you to select a range of values."
     >
       
-      <PreviewCodeCard path="app/(docs)/docs/dual-range-slider/dual-range-slider-demo.tsx">
+      <PreviewCodeCard path="app/(docs)/docs/dual-range-slider/dual-range-slider-demo.tsx"
+      cli='http://localhost:3000/r/dual_range_slider_demo.json'>
         <DualRangeSliderDemo />
       </PreviewCodeCard>
 
@@ -38,18 +39,21 @@ const DualRangeSliderPage = () => {
       <Usage
         title="Custom Label"
         path="app/(docs)/docs/dual-range-slider/usage/dual-range-slider-custom-label.tsx"
+        cli='http://localhost:3000/r/dual_range_slider_custom_label.json'
       >
         <DualRangeSliderCustomLabel />
       </Usage>
       <Usage
         title="Label Position"
         path="app/(docs)/docs/dual-range-slider/usage/dual-range-slider-label-position.tsx"
+        cli='http://localhost:3000/r/dual_range_slider_label_position.json'
       >
         <DualRangeSliderLabelPosition />
       </Usage>
       <Usage
         title="Single Slider"
         path="app/(docs)/docs/dual-range-slider/usage/dual-range-slider-single.tsx"
+        cli='http://localhost:3000/r/dual_range_slider_single.json'
       >
         <DualRangeSliderSingle />
       </Usage>

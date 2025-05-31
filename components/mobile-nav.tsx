@@ -122,8 +122,8 @@ const sidebarNav: NavSection[] = [
       },
       {
         label: "Feedback Card",
-        value: "feadback",
-        url: "/docs/feadback",
+        value: "feedback",
+        url: "/docs/feedback",
         items: [],
       },
       {

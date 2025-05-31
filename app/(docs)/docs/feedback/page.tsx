@@ -1,14 +1,15 @@
 import React from "react";
 import { PageSubTitle, PageTemplate } from "../components/page-template";
 import PreviewCodeCard from "../components/preview-code-card";
-import { Feedback } from "./feadbackdemo";
+import { Feedback } from "./feedbackdemo";
 import { Steppers } from "@/components/ui/steppers";
 
 const page = () => {
   return (
     <div>
-      <PageTemplate title="Feadback" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/feadback/feadbackdemo.tsx">
+      <PageTemplate title="Feedback" className="mt-5">
+        <PreviewCodeCard path="app/(docs)/docs/feedback/feedbackdemo.tsx"
+        cli="http://localhost:3000/r/feedback_demo.json">
           <Feedback />
         </PreviewCodeCard>
 

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading_button_demo",
+  "type": "registry:ui",
+  "title": "Loading Button Demo",
+  "description": "component for the Loading Button Demo",
+  "registryDependencies": [
+    "http://localhost:3000/r/loading_button_dependencies.json"
+  ],
+  "files": [
+    {
+      "path": "app/registry/loading-button/loading-button-demo.tsx",
+      "content": "import React from 'react';\r\n// import { LoadingButton } from '@/components/ui/loading-button';\r\nimport { LoadingButton } from '@/app/registry/spectrumui/loading-button-dependencies';\r\n\r\nconst LoadingButtonDemo = () => {\r\n  return <LoadingButton loading>loading button</LoadingButton>;\r\n};\r\n\r\nexport default LoadingButtonDemo;\r\n",
+      "type": "registry:ui",
+      "target": "components/spectrumui/loading-button-demo.tsx"
+    }
+  ]
+}

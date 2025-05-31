@@ -20,7 +20,8 @@ export const metadata: Metadata = baseMetadata({
 const DualRangeSliderPage = () => {
   return (
     <PageTemplate title="Vercel 3D Event Badge">
-      <PreviewCodeCard path="app/(docs)/docs/badge/badgedemo.tsx">
+      <PreviewCodeCard path="app/(docs)/docs/badge/badgedemo.tsx"
+      cli="http://localhost:3000/r/event_badge_3d.json">
        <EventBadge/>
       </PreviewCodeCard>
 

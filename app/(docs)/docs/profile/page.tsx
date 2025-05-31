@@ -20,7 +20,8 @@ export const metadata: Metadata = baseMetadata({
 const DualRangeSliderPage = () => {
   return (
     <PageTemplate title="Profile Dropdown">
-      <PreviewCodeCard path="app/(docs)/docs/profile/profiledemo.tsx">
+      <PreviewCodeCard path="app/(docs)/docs/profile/profiledemo.tsx"
+      cli='http://localhost:3000/r/profile_dropdown.json'>
        <WalletProfile/>
       </PreviewCodeCard>
 
