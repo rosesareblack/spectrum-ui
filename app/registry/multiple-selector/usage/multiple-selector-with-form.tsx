@@ -12,9 +12,9 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { toast } from '@/components/ui/use-toast';
-import { LoadingButton } from '@/components/ui/loading-button';
-import MultipleSelector, { Option } from '@/components/ui/multiple-selector';
+import { toast } from '@/app/registry/spectrumui/use-toast';
+import { LoadingButton } from '@/app/registry/spectrumui/loading-button-dependencies';
+import MultipleSelector, { Option } from '@/app/registry/spectrumui/multiple-selector-dependencies';
 
 const OPTIONS: Option[] = [
   { label: 'nextjs', value: 'Nextjs' },

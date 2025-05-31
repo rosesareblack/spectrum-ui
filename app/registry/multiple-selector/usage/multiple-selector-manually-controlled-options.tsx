@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import MultipleSelector, { Option } from '@/components/ui/multiple-selector';
-import { LoadingButton } from '@/components/ui/loading-button';
+import MultipleSelector, { Option } from '@/app/registry/spectrumui/multiple-selector-dependencies';
+
+import { LoadingButton } from '@/app/registry/spectrumui/loading-button-dependencies';
 
 const REACT_OPTIONS: Option[] = [
   { label: 'nextjs', value: 'nextjs' },

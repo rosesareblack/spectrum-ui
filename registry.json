@@ -1187,6 +1187,21 @@
     
 
     },{
+       "name":"inline-code",
+      "type":"registry:ui",
+      "title":"Inline Code",
+      "description": "component for the Inline Code",
+      "files":[
+          {
+              "path":"app/registry/spectrumui/inline-code.tsx",
+              "type": "registry:ui",
+              "target": "components/spectrumui/inline-code.tsx"
+          }
+      ]
+      
+     
+
+    },{
       "name":"multiple-selector-demo",
       "type":"registry:ui",
       "title":"Multiple Selector Demo",
@@ -1200,7 +1215,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1219,7 +1236,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1238,7 +1257,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1257,7 +1278,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1276,7 +1299,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1295,7 +1320,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1314,7 +1341,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1333,7 +1362,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
       ]
       
     
@@ -1352,7 +1384,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
       ]
       
     
@@ -1371,7 +1406,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
       ]
       
     
@@ -1390,26 +1427,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
-      ]
-      
-    
 
-    },{
-      "name":"multiple-selector-with-async-search-and-creatable-and-group",
-      "type":"registry:ui",
-      "title":"Multiple Selector With Async Search And Creatable And Group",
-      "description": "component for the Multiple Selector With Async Search And Creatable And Group",
-      "files":[
-          {
-              "path":"app/registry/multiple-selector/usage/multiple-selector-with-async-search-and-creatable-and-group.tsx",
-              "type": "registry:ui",
-              "target": "components/spectrumui/multiple-selector-with-async-search-and-creatable-and-group.tsx"
-          }
-      ],
-      
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
       ]
       
     
@@ -1449,8 +1470,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json",
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
         "https://ui.spectrumhq.in/r/heading_with_anchor.json"
+
       ]
       
     
@@ -1469,8 +1492,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json",
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
         "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
+
         
       ]
       
@@ -1490,7 +1515,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
       ]
 
@@ -1523,8 +1550,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json",
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
         "https://ui.spectrumhq.in/r/use-toast.json"
+
         
       ]
 
@@ -1542,7 +1571,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
         
       ]
@@ -1561,7 +1592,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
         
       ]
@@ -1580,7 +1613,9 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
         
       ]
@@ -1599,26 +1634,14 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json",
-        "https://ui.spectrumhq.in/r/use-toast.json"
-        
-        
-      ]
 
-    },{
-       "name":"inline-code",
-      "type":"registry:ui",
-      "title":"Inline Code",
-      "description": "component for the Inline Code",
-      "files":[
-          {
-              "path":"app/registry/spectrumui/inline-code.tsx",
-              "type": "registry:ui",
-              "target": "components/spectrumui/inline-code.tsx"
-          }
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/use-toast.json",
+        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
+
+        
+        
       ]
-      
-     
 
     },{
        "name":"multiple-selector-commandprops",
@@ -1634,8 +1657,10 @@
       ],
       
       "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json",
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
         "https://ui.spectrumhq.in/r/inline-code.json"
+
         
         
       ]
@@ -1655,10 +1680,11 @@
       
       "registryDependencies": [
         "form",
+
         "https://ui.spectrumhq.in/r/use-toast.json",
         "https://ui.spectrumhq.in/r/loading-button.json",
         "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
-        ""
+
 
         
         
@@ -2170,6 +2196,7 @@
       ]
 
     }
+    
 
 
 
