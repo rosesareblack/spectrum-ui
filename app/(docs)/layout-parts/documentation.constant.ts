@@ -90,9 +90,9 @@ export const DOCS: Documentation[] = [
    
       },
       {
-        label: "Feadback Card",
-        value: "feadback",
-        url: "/docs/feadback",
+        label: "Feedback Card",
+        value: "feedback",
+        url: "/docs/feedback",
 
       },
       {

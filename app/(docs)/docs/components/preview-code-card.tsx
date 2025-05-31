@@ -12,9 +12,10 @@ interface PreviewCodeCardProps {
   className?: string;
   path: string;
   children?: React.ReactNode;
+  cli?:string;
 }
 
-const PreviewCodeCard = async ({ className, path, children }: PreviewCodeCardProps) => {
+const PreviewCodeCard = async ({ className, path, children,cli }: PreviewCodeCardProps) => {
   const demoCode = await fs.readFile(path, 'utf8');
 
   if (!demoCode) {
@@ -23,7 +24,7 @@ const PreviewCodeCard = async ({ className, path, children }: PreviewCodeCardPro
   }
 
   return (
-    <CodeCardWrapper code={demoCode} className={cn('mb-14 mt-5', className)}>
+    <CodeCardWrapper code={demoCode} className={cn('mb-14 mt-5', className)} CLI={cli}>
       <div className="flex items-center justify-center py-10">{children}</div>
     </CodeCardWrapper>
   );

@@ -8,7 +8,8 @@ const page = () => {
   return (
     <div>
       <PageTemplate title="Image Preview" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/imagepreview/usages/useone.tsx">
+        <PreviewCodeCard path="app/(docs)/docs/imagepreview/usages/useone.tsx" 
+        cli="http://localhost:3000/r/image_preview.json">
         <Demoimages/>
         </PreviewCodeCard>
 

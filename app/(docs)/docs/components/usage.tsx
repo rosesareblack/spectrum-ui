@@ -9,13 +9,14 @@ interface UsageProps {
   description?: React.ReactNode;
   children?: React.ReactNode;
   path: string;
+  cli?: string;
 }
-const Usage = ({ className, children, title, path, description }: UsageProps) => {
+const Usage = ({ className, children, title, path, description,cli }: UsageProps) => {
   return (
     <div className={cn(className)}>
       {title && <H3 anchor={title}>{title}</H3>}
       {description && <div className="my-3">{description}</div>}
-      <PreviewCodeCard path={path}>{children}</PreviewCodeCard>
+      <PreviewCodeCard path={path} cli={cli}>{children}</PreviewCodeCard>
     </div>
   );
 };

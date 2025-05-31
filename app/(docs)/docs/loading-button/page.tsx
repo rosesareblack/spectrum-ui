@@ -27,7 +27,8 @@ const LoadingButtonPage = () => {
         <Reference href="https://ui.shadcn.com/docs/components/button" />
       </ReferenceBorder>
 
-      <PreviewCodeCard path="app/(docs)/docs/loading-button/loading-button-demo.tsx">
+      <PreviewCodeCard path="app/(docs)/docs/loading-button/loading-button-demo.tsx" 
+        cli='http://localhost:3000/r/loading_button_demo.json'>
         <LoadingButtonDemo />
       </PreviewCodeCard>
 
@@ -40,10 +41,12 @@ const LoadingButtonPage = () => {
       />
 
       <PageSubTitle>Usage</PageSubTitle>
-      <Usage path="app/(docs)/docs/loading-button/loading-button-usage.tsx">
+      <Usage path="app/(docs)/docs/loading-button/loading-button-usage.tsx"
+      cli='http://localhost:3000/r/loading_button_usage.json'>
         <LoadingButtonUsage />
       </Usage>
-      <Usage title="asChild" path="app/(docs)/docs/loading-button/loading-button-as-child.tsx">
+      <Usage title="asChild" path="app/(docs)/docs/loading-button/loading-button-as-child.tsx"
+      cli='http://localhost:3000/r/loading_button_as_child.json'>
         <LoadingButtonAsChild />
       </Usage>
     </PageTemplate>

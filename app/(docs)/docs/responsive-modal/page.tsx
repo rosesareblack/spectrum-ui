@@ -19,7 +19,8 @@ const ResponsiveModalPage = () => {
       title="Responsive Modal"
       description="A dialog that pops up in the center of the screen on desktop and slide up on mobile."
     >
-      <PreviewCodeCard path="app/(docs)/docs/responsive-modal/responsive-modal-demo.tsx">
+      <PreviewCodeCard path="app/(docs)/docs/responsive-modal/responsive-modal-demo.tsx"
+      cli='http://localhost:3000/r/responsive_modal.json'>
         <ResponsiveModalDemo />
       </PreviewCodeCard>
 
@@ -27,7 +28,8 @@ const ResponsiveModalPage = () => {
       <Steppers withInstall codePath="components/ui/responsive-modal.tsx" withEnd />
 
       <PageSubTitle>Usage</PageSubTitle>
-      <Usage title="Side" path="app/(docs)/docs//responsive-modal/usage/responsive-modal-side.tsx">
+      <Usage title="Side" path="app/(docs)/docs//responsive-modal/usage/responsive-modal-side.tsx"
+      cli='http://localhost:3000/r/responsive_modal_side.json'>
         <ResponsiveModalSide />
       </Usage>
     </PageTemplate>

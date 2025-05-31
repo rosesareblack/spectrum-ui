@@ -6,12 +6,14 @@ import { Steppers } from "@/components/ui/steppers";
 import { Chart } from "./animateddemo";
 
 const page = () => {
+    let baseurl = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://ui.spectrumhq.in/";
+
   return (
     <div>
       <PageTemplate title="Animated SVG Chart" className="mt-5">
         <PreviewCodeCard
         className=""
-        path="app/(docs)/docs/animatedchart/animateddemo.tsx">
+        path="app/(docs)/docs/animatedchart/animateddemo.tsx"  cli={`${baseurl}/r/animated_SVG_Chart.json`}>
           <Chart/> 
         </PreviewCodeCard>
 

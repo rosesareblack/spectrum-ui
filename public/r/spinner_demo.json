@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner_demo",
+  "type": "registry:ui",
+  "title": "Spinner Demo",
+  "description": "component for the Spinner Demo",
+  "registryDependencies": [
+    "http://localhost:3000/r/spinner_dependencies.json"
+  ],
+  "files": [
+    {
+      "path": "app/registry/spinner/spinner-demo.tsx",
+      "content": "import React from 'react';\r\nimport { Spinner } from '@/components/ui/spinner';\r\n\r\nconst SpinnerDemo = () => {\r\n  return <Spinner />;\r\n};\r\n\r\nexport default SpinnerDemo;\r\n",
+      "type": "registry:ui",
+      "target": "components/spectrumui/spinner-demo.tsx"
+    }
+  ]
+}

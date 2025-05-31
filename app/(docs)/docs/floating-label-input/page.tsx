@@ -25,7 +25,8 @@ const FloatingLabelPage = () => {
       <ReferenceBorder>
         <Reference href="https://ui.shadcn.com/docs/components/input" />
       </ReferenceBorder>
-      <PreviewCodeCard path="app/(docs)/docs/floating-label-input/floating-label-input-demo.tsx">
+      <PreviewCodeCard path="app/(docs)/docs/floating-label-input/floating-label-input-demo.tsx"
+      cli='http://localhost:3000/r/floating_label_input_demo.json'>
         <FloatingLabelInputDemo />
       </PreviewCodeCard>
 
@@ -41,6 +42,7 @@ const FloatingLabelPage = () => {
       <Usage
         title="Customize"
         path="app/(docs)/docs//floating-label-input/usage/floating-label-customize.tsx"
+        cli='http://localhost:3000/r/floating_label_customize.json'
         description={
           <p className="text-muted-foreground">
             You have fully control of the <InlineCode>FloatingLabel</InlineCode> and the{' '}
@@ -54,6 +56,7 @@ const FloatingLabelPage = () => {
       <Usage
         title="Form"
         path="app/(docs)/docs//floating-label-input/usage/floating-label-input-form.tsx"
+        cli='http://localhost:3000/r/floating_label_form.json'
       >
         <FloatingLabelInputForm />
       </Usage>
