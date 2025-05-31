@@ -16,7 +16,7 @@ interface CodeHighlightProps {
   lang?: string
 }
 
-const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "tsx" ,title}: CodeHighlightProps) => {
+const InstallCommand = ({ code = "", inTab = false, withExpand = false, lang = "tsx" ,title}: CodeHighlightProps) => {
   const [copied, setCopied] = useState(false)
   const [expand, setExpanded] = useState(!withExpand)
   const [highlighter, setHighlighter] = useState<Highlighter | null>(null)
@@ -72,17 +72,13 @@ const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "t
   return (
     <div
     className=
-      "relative mt- rounded-lg border border-neutral-200 dark:border-neutral-800 transition-all"
+      "relative  rounded-lg border border-neutral-200 dark:border-neutral-800 transition-all"
      
     
   >
-    
-      <div className="bg-neutral-50 dark:bg-neutral-900 px-4 py-2 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800">
-        <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">{title || ""}</span>
-        <div className="flex items-center space-x-3">
-        <Button
+    <Button
         className={cn(
-          " h-8 w-8 z-10",
+          "absolute h-8 w-8 z-10",
           "bg-background/80 hover:bg-background/90 border border-border",
           (inTab || lang === "shell") && "right-3 top-3",
         )}
@@ -98,10 +94,7 @@ const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "t
       >
         {copied ? <Check className="h-4 w-4" /> : <Clipboard className="h-3 w-3" />}
       </Button>
-        
-          
-        </div>
-      </div>
+    
      
       <div className={cn("max-h-[130px]  overflow-hidden rounded-md ", expand && "max-h-[400px] overflow-auto")}>
         {highlightedCode ? (
@@ -132,4 +125,4 @@ const CodeHighlight = ({ code = "", inTab = false, withExpand = false, lang = "t
   )
 }
 
-export default CodeHighlight
+export default InstallCommand

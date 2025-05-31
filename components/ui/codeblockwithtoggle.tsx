@@ -37,16 +37,7 @@ export default function CodeBlockWithToggle({ htmlCode, fileName }: CodeBlockWit
         <div className="bg-neutral-50 dark:bg-neutral-900 px-4 py-2 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800">
           <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">{fileName}</span>
           <div className="flex items-center space-x-3">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
-              onClick={handleCopy}
-              title="Copy code"
-            >
-                {isCopied ? <Check size={16} /> : <Clipboard size={16} />}
-
-            </Button>
+          
             <div className="flex space-x-1.5">
               <div className="w-3 h-3 rounded-full bg-red-400"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-400"></div>

@@ -182,16 +182,11 @@ pre > code {
   display: grid;
   max-width: inherit !important;
   padding: 18px 0;
-  font-size: 13px;
-  font-family: 
-    "Fira Code",
-    "JetBrains Mono",
-    "Source Code Pro",
-    "Cascadia Code",
-    "Menlo",
-    "Monaco",
-    "Courier New",
-    monospace;
+  font-size: 14px;
+  font-family: "Geist Mono", monospace;
+
+
+
 }
 
 
@@ -301,8 +296,9 @@ pre > code {
 .shiki {
   border-radius: 0.375rem;
   overflow: auto;
-  font-family: "Menlo", "Monaco", "Courier New", monospace; /* Better code font */
-  line-height: 1.5; /* Improved line height for readability */
+  font-family: "Geist Mono", monospace;
+
+  line-height: 1.6; /* Improved line height for readability */
 }
 
 /* Add a subtle line number effect */

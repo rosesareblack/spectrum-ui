@@ -18,9 +18,7 @@ const page = () => {
         </PreviewCodeCard>
 
         <PageSubTitle>Installation</PageSubTitle>
-        <p className="text-gray-400">
-        Edit tailwind.config.ts to add background grid
-        </p>
+        
         <Steppers
           className=""
           

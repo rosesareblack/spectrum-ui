@@ -1,19 +1,14 @@
+
 import React from "react";
 import fs from "fs/promises";
-import { createHighlighter, Highlighter } from "shiki";
-import CodeBlockWithToggle from "./codeblockwithtoggle";
 
-let highlighterPromise: Promise<Highlighter> | null = null;
 
-const getShikiHighlighter = async () => {
-  if (!highlighterPromise) {
-    highlighterPromise = createHighlighter({
-      themes: ["vesper"],
-      langs: ["bash", "typescript", "javascript", "tsx", "jsx", "html", "css", "json"],
-    });
-  }
-  return highlighterPromise;
-};
+import CodeHighlight from "@/app/(docs)/docs/components/code-card/parts/code-highlight";
+
+
+
+
+
 
 interface StepperProps {
   title?: string;
@@ -57,23 +52,20 @@ export async function Steppers({
   withEnd = false,
 }: SteppersProps) {
   let codeFromFile = "";
-  let fileExtension = "";
+  let fileName = "";
 
   if (withInstall && codePath) {
     try {
       codeFromFile = await fs.readFile(codePath, "utf8");
-      fileExtension = codePath.split(".").pop() || "ts";
+      fileName = codePath.split(".").pop() || "ts";
     } catch (error) {
       console.error("Failed to read file:", error);
       codeFromFile = "// Could not load file";
     }
   }
+  
 
-  const highlighter = await getShikiHighlighter();
-  const highlightedCode = highlighter.codeToHtml(codeFromFile, {
-    lang: fileExtension,
-    theme: "vesper",
-  });
+  
 
   let stepCounter = 1;
 
@@ -81,13 +73,24 @@ export async function Steppers({
     <div className={`space-y-6 py-2 ${className || ""}`}>
       {withInstall && installScript && (
         <Stepper title="Install the package" step={stepCounter++}>
-          <CodeBlockWithToggle htmlCode={highlighter.codeToHtml(installScript, { lang: "bash", theme: "vesper" })} fileName="Terminal" />
+          
+      
+          <CodeHighlight code={installScript} lang="bash" title="Terminal" inTab />
+
         </Stepper>
       )}
 
       {withInstall && codePath && (
         <Stepper title="Paste this code into your project" step={stepCounter++}>
-          <CodeBlockWithToggle htmlCode={highlightedCode} fileName={codePath.split("/").pop()} />
+           
+          
+          <CodeHighlight
+            code={codeFromFile}
+            title={codePath}
+            withExpand={true}
+            inTab={false}
+          />
+        
         </Stepper>
       )}
 
