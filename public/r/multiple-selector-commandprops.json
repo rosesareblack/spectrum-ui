@@ -5,8 +5,10 @@
   "title": "Multiple Selector Command Props",
   "description": "component for the Multiple Selector Command Props",
   "registryDependencies": [
-    "http://localhost:3000/r/multiple-selector-dependencies.json",
-    "http://localhost:3000/r/inline-code.json"
+
+    "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+    "https://ui.spectrumhq.in/r/inline-code.json"
+
   ],
   "files": [
     {

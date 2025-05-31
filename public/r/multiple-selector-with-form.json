@@ -11,10 +11,13 @@
   ],
   "registryDependencies": [
     "form",
-    "http://localhost:3000/r/use-toast.json",
-    "http://localhost:3000/r/loading_button_dependencies.json",
-    "http://localhost:3000/r/multiple-selector-dependencies.json",
-    ""
+
+
+    "https://ui.spectrumhq.in/r/use-toast.json",
+    "https://ui.spectrumhq.in/r/loading_button_dependencies.json",
+    "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+
+    
   ],
   "files": [
     {

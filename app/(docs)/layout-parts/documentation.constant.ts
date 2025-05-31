@@ -158,6 +158,12 @@ export const DOCS: Documentation[] = [
         url: "/docs/skeleton",
      
       },
+      {
+        label:"Status Badge",
+        value: "status-badge",
+        url: "/docs/status-badge",
+        new: true,
+      }
     ],
   },
 ];

@@ -17,7 +17,7 @@ const page = () => {
   return (
     <div>
       <PageTemplate title="Animated Alert" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/alert/alertdemo.tsx" cli='http://localhost:3000/r/alert-demo.json'>
+        <PreviewCodeCard path="app/(docs)/docs/alert/alertdemo.tsx" cli='https://ui.spectrumhq.in/r/alert-demo.json'>
           <Alertdemo />
         </PreviewCodeCard>
         <PageSubTitle>Installation</PageSubTitle>
@@ -38,13 +38,13 @@ const page = () => {
 
         <PageSubTitle>Usage</PageSubTitle>
 
-        <Usage path="app/(docs)/docs/alert/usage/alertthree.tsx" cli="http://localhost:3000/r/alert-2.json">
+        <Usage path="app/(docs)/docs/alert/usage/alertthree.tsx" cli="https://ui.spectrumhq.in/r/alert-2.json">
           <Alert02 />
         </Usage>
-        <Usage path="app/(docs)/docs/alert/usage/alertthree.tsx" cli="http://localhost:3000/r/alert-3.json">
+        <Usage path="app/(docs)/docs/alert/usage/alertthree.tsx" cli="https://ui.spectrumhq.in/r/alert-3.json">
           <Alert03 />
         </Usage>
-        <Usage path="app/(docs)/docs/alert/usage/alertfour.tsx" cli="http://localhost:3000/r/alert-4.json">
+        <Usage path="app/(docs)/docs/alert/usage/alertfour.tsx" cli="https://ui.spectrumhq.in/r/alert-4.json">
           <Alert04 />
         </Usage>
         <div className="font-bold text-neutral-500 flex gap-4">

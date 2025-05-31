@@ -24,7 +24,7 @@ const AutosizeTextareaPage = () => {
       title="Autosize Textarea"
       description="Auto resize textarea height based on content."
     >
-      <PreviewCodeCard path="app/(docs)/docs/autosize-textarea/autosize-textarea-demo.tsx" cli='http://localhost:3000/r/autosize_textarea_demo.json'>
+      <PreviewCodeCard path="app/(docs)/docs/autosize-textarea/autosize-textarea-demo.tsx" cli='https://ui.spectrumhq.in/r/autosize_textarea_demo.json'>
         <AutosizeTextareaDemo />
       </PreviewCodeCard>
 
@@ -35,19 +35,19 @@ const AutosizeTextareaPage = () => {
       <Usage
         title="Max height"
         path="app/(docs)/docs/autosize-textarea/usage/autosize-textarea-with-max-height.tsx"
-        cli='http://localhost:3000/r/autosize_textarea_max_height.json'
+        cli='https://ui.spectrumhq.in/r/autosize_textarea_max_height.json'
       >
         <AutosizeTextareaWithMaxHeight />
       </Usage>
       <Usage
         title="ref"
         path="app/(docs)/docs/autosize-textarea/usage/autosize-textarea-with-ref.tsx"
-        cli='http://localhost:3000/r/autosize_textarea_ref.json'
+        cli='https://ui.spectrumhq.in/r/autosize_textarea_ref.json'
       >
         <AutosizeTextareaWithRef />
       </Usage>
       <Usage title="Form" path="app/(docs)/docs/autosize-textarea/usage/autosize-textarea-form.tsx"
-      cli='http://localhost:3000/r/autosize_textarea_form.json'>
+      cli='https://ui.spectrumhq.in/r/autosize_textarea_form.json'>
         <AutosizeTextareaForm />
       </Usage>
       <Usage
@@ -66,7 +66,7 @@ const AutosizeTextareaPage = () => {
           </>
         }
         path="app/(docs)/docs/autosize-textarea/usage/autosize-textarea-customize.tsx"
-        cli='http://localhost:3000/r/autosize_textarea_customize.json'
+        cli='https://ui.spectrumhq.in/r/autosize_textarea_customize.json'
       >
         <AutosizeTextareaCustomize />
       </Usage>

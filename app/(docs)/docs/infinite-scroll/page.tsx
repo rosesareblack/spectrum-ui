@@ -20,7 +20,7 @@ const InfiniteScrollPage = () => {
       description="Simple infinite scroll component. You have fully control over the loading spinner and IntersectionObserver API."
     >
       <PreviewCodeCard path="app/(docs)/docs/infinite-scroll/infinite-scroll-demo.tsx"
-      cli='http://localhost:3000/r/infinite_scroll_demo.json'>
+      cli='https://ui.spectrumhq.in/r/infinite_scroll_demo.json'>
         <InfiniteScrollDemo />
       </PreviewCodeCard>
 

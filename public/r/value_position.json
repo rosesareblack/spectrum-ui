@@ -5,7 +5,7 @@
   "title": "Progress With Value Position",
   "description": "component for the Progress With Value Position",
   "registryDependencies": [
-    "http://localhost:3000/r/progress_with_value_dependencies.json"
+    "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
   ],
   "files": [
     {

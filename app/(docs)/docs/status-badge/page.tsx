@@ -7,41 +7,33 @@ import { Steppers } from "@/components/ui/steppers";
 import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
 import { Metadata } from "next";
 import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
-import Link from "next/link";
-import WalletProfile from "./profiledemo";
+
+import StatusDemo from "./statusdemo";
+
 
 
 export const metadata: Metadata = baseMetadata({
-  title: "Spectrum UI-Navbar",
+  title: "Spectrum UI- Status Badge",
   description:
     "An enhancement slider that allows you to select a range of values.",
 });
 
 const DualRangeSliderPage = () => {
   return (
-    <PageTemplate title="Profile Dropdown">
-      <PreviewCodeCard path="app/(docs)/docs/profile/profiledemo.tsx"
-      cli='https://ui.spectrumhq.in/r/profile_dropdown.json'>
-       <WalletProfile/>
+    <PageTemplate title="Status Badge">
+      <PreviewCodeCard path="app/(docs)/docs/status-badge/statusdemo.tsx">
+       <StatusDemo/>
       </PreviewCodeCard>
 
       <PageSubTitle>Installation</PageSubTitle>
       <Steppers
         withInstall
-        codePath="app/(docs)/docs/profile/profiledemo.tsx"
+        codePath="app/(docs)/docs/status-badge/statusdemo.tsx"
         withEnd
-        installScript="npm i lucide-react framer-motion"
+        installScript="npm i lucide-react"
       />
 
-    <div className="flex items-center gap-2">
-
    
-    <h1 className="text-neutral-700 dark:text-neutral-400">Design Credit -</h1>
-    <Link href=
-    "https://x.com/_heyrico">
-    @heyrico
-    </Link>
-    </div>
       
     </PageTemplate>
   );

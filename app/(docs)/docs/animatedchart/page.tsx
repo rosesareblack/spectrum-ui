@@ -6,7 +6,7 @@ import { Steppers } from "@/components/ui/steppers";
 import { Chart } from "./animateddemo";
 
 const page = () => {
-    let baseurl = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://ui.spectrumhq.in/";
+    let baseurl = process.env.NODE_ENV === "development" ? "https://ui.spectrumhq.in" : "https://ui.spectrumhq.in";
 
   return (
     <div>

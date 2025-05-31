@@ -144,7 +144,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/autosize_textarea_dependecies.json"
+        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
 
         
         
@@ -165,7 +165,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/autosize_textarea_dependecies.json"
+        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
 
         
         
@@ -186,7 +186,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/autosize_textarea_dependecies.json"
+        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
 
         
         
@@ -207,7 +207,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/autosize_textarea_dependecies.json"
+        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
 
         
         
@@ -228,7 +228,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/autosize_textarea_dependecies.json"
+        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
 
         
         
@@ -248,7 +248,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/autosize_textarea_dependecies.json"
+        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
 
         
         
@@ -579,7 +579,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/dual_range_slider_dependecies.json"
+        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
 
         
         
@@ -603,7 +603,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/dual_range_slider_dependecies.json"
+        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
 
         
         
@@ -627,7 +627,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/dual_range_slider_dependecies.json"
+        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
 
         
         
@@ -651,7 +651,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/dual_range_slider_dependecies.json"
+        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
 
         
         
@@ -767,7 +767,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/floating_label_input.json"
+        "https://ui.spectrumhq.in/r/floating_label_input.json"
       ]
       
     
@@ -786,7 +786,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/floating_label_input.json"
+        "https://ui.spectrumhq.in/r/floating_label_input.json"
       ]
       
     
@@ -805,7 +805,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/floating_label_input.json"
+        "https://ui.spectrumhq.in/r/floating_label_input.json"
       ]
       
     
@@ -972,7 +972,7 @@
       "registryDependencies": [
         
         "button",
-        "http://localhost:3000/r/icon_dependencies.json"
+        "https://ui.spectrumhq.in/r/icon_dependencies.json"
         
       ]
       
@@ -1041,7 +1041,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/image_preview_dependencies.json"
+        "https://ui.spectrumhq.in/r/image_preview_dependencies.json"
         
        
         
@@ -1080,7 +1080,7 @@
           }
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/infinite_scroll_dependecies.json"
+        "https://ui.spectrumhq.in/r/infinite_scroll_dependecies.json"
 
 
       ]
@@ -1120,7 +1120,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/loading_button_dependencies.json"
+        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
       ]
       
 
@@ -1139,7 +1139,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/loading_button_dependencies.json"
+        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
       ]
       
 
@@ -1158,7 +1158,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/loading_button_dependencies.json"
+        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
       ]
       
 
@@ -1215,7 +1215,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1234,7 +1236,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1253,7 +1257,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1272,7 +1278,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1291,7 +1299,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1310,7 +1320,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1329,7 +1341,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
       ]
       
     
@@ -1348,8 +1362,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/inline-code.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
       ]
       
     
@@ -1368,8 +1384,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/inline-code.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
       ]
       
     
@@ -1388,8 +1406,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/inline-code.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
       ]
       
     
@@ -1408,8 +1427,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/inline-code.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
       ]
       
     
@@ -1449,8 +1470,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/heading_with_anchor.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/heading_with_anchor.json"
+
       ]
       
     
@@ -1469,8 +1492,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/loading_button_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
+
         
       ]
       
@@ -1490,7 +1515,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
       ]
 
@@ -1523,8 +1550,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/use-toast.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/use-toast.json"
+
         
       ]
 
@@ -1542,7 +1571,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
         
       ]
@@ -1561,7 +1592,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
         
       ]
@@ -1580,7 +1613,9 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
+
         
         
       ]
@@ -1599,9 +1634,11 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/use-toast.json",
-        "http://localhost:3000/r/loading_button_dependencies.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/use-toast.json",
+        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
+
         
         
       ]
@@ -1620,8 +1657,10 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        "http://localhost:3000/r/inline-code.json"
+
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+        "https://ui.spectrumhq.in/r/inline-code.json"
+
         
         
       ]
@@ -1641,10 +1680,11 @@
       
       "registryDependencies": [
         "form",
-        "http://localhost:3000/r/use-toast.json",
-        "http://localhost:3000/r/loading_button_dependencies.json",
-        "http://localhost:3000/r/multiple-selector-dependencies.json",
-        ""
+
+        "https://ui.spectrumhq.in/r/use-toast.json",
+        "https://ui.spectrumhq.in/r/loading-button.json",
+        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json",
+
 
         
         
@@ -1895,7 +1935,7 @@
      
      
       "registryDependencies": [
-        "http://localhost:3000/r/progress_with_value_dependencies.json"
+        "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
       ]
 
     },{
@@ -1914,7 +1954,7 @@
      
      
       "registryDependencies": [
-        "http://localhost:3000/r/progress_with_value_dependencies.json"
+        "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
       ]
 
     },{
@@ -1933,7 +1973,7 @@
      
      
       "registryDependencies": [
-        "http://localhost:3000/r/progress_with_value_dependencies.json"
+        "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
       ]
 
     },{
@@ -1976,7 +2016,7 @@
       
       
       "registryDependencies": [
-        "http://localhost:3000/r/responsive_modal_dependencies.json",
+        "https://ui.spectrumhq.in/r/responsive_modal_dependencies.json",
         "button"
       ]
 
@@ -1998,7 +2038,7 @@
       
       
       "registryDependencies": [
-        "http://localhost:3000/r/responsive_modal_dependencies.json",
+        "https://ui.spectrumhq.in/r/responsive_modal_dependencies.json",
         "button"
       ]
 
@@ -2086,7 +2126,7 @@
       
       
       "registryDependencies": [
-        "http://localhost:3000/r/spinner_dependencies.json"
+        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
       ]
 
     },{
@@ -2108,7 +2148,7 @@
       
       
       "registryDependencies": [
-        "http://localhost:3000/r/spinner_dependencies.json"
+        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
       ]
 
     },{
@@ -2130,7 +2170,7 @@
       
       
       "registryDependencies": [
-        "http://localhost:3000/r/spinner_dependencies.json"
+        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
       ]
 
     },{
@@ -2152,7 +2192,7 @@
       
       
       "registryDependencies": [
-        "http://localhost:3000/r/spinner_dependencies.json"
+        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
       ]
 
     }

@@ -20,7 +20,7 @@ const ResponsiveModalPage = () => {
       description="A dialog that pops up in the center of the screen on desktop and slide up on mobile."
     >
       <PreviewCodeCard path="app/(docs)/docs/responsive-modal/responsive-modal-demo.tsx"
-      cli='http://localhost:3000/r/responsive_modal.json'>
+      cli='https://ui.spectrumhq.in/r/responsive_modal.json'>
         <ResponsiveModalDemo />
       </PreviewCodeCard>
 
@@ -29,7 +29,7 @@ const ResponsiveModalPage = () => {
 
       <PageSubTitle>Usage</PageSubTitle>
       <Usage title="Side" path="app/(docs)/docs//responsive-modal/usage/responsive-modal-side.tsx"
-      cli='http://localhost:3000/r/responsive_modal_side.json'>
+      cli='https://ui.spectrumhq.in/r/responsive_modal_side.json'>
         <ResponsiveModalSide />
       </Usage>
     </PageTemplate>

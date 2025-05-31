@@ -5,7 +5,7 @@
   "title": "Dual Range Slider Label Position",
   "description": "component for the Dual Range Slider Label Position",
   "registryDependencies": [
-    "http://localhost:3000/r/dual_range_slider_dependecies.json"
+    "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
   ],
   "files": [
     {

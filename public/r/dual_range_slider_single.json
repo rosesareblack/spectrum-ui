@@ -5,7 +5,7 @@
   "title": "Dual Range Slider Single",
   "description": "component for the Dual Range Slider Single",
   "registryDependencies": [
-    "http://localhost:3000/r/dual_range_slider_dependecies.json"
+    "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
   ],
   "files": [
     {

@@ -23,7 +23,7 @@ const SkeletonLoadingPage = () => {
       description="Use to show a placeholder while content is loading."
     >
       <PreviewCodeCard path="app/(docs)/docs/skeleton/skeleton-demo.tsx" 
-      cli='http://localhost:3000/r/skeleton.json'>
+      cli='https://ui.spectrumhq.in/r/skeleton.json'>
         <SkeletonDemo />
       </PreviewCodeCard>
 
@@ -34,7 +34,7 @@ const SkeletonLoadingPage = () => {
       <Usage
         title="Card"
         path="app/(docs)/docs//skeleton/usage/skeleton-card.tsx"
-        cli="http://localhost:3000/r/skeleton_card.json"
+        cli="https://ui.spectrumhq.in/r/skeleton_card.json"
       >
         <SkeletonCard />
       </Usage>

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-import { Icons } from "@/app/registry/icon";
+
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
             <Link href="/" className="flex items-center gap-2">
-              <Icons.logo className="icon-class w-2" />
+
               <h2 className="text-lg font-bold">Spectrum UI</h2>
             </Link>
 
@@ -25,7 +25,7 @@ export default function Footer() {
             <Link  href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SpectrumUI%20 share%20yourtought%20%40arihantCodes%20">
               <Button variant='secondary'>
                 Share Your Thoughts On
-                <Icons.twitter className="icon-class ml-1 w-3.5 " />
+
               </Button>
             </Link>
             </div>

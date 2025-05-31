@@ -7,7 +7,7 @@ import  Link  from "next/link";
 
 const page = () => {
   const baseurl =  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"   : "https://ui.spectrumhq.in/";
+    ? "https://ui.spectrumhq.in"   : "https://ui.spectrumhq.in";
   return (
     <div>
       <PageTemplate title="Animated Testimonials" className="mt-5">

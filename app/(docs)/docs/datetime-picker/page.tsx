@@ -42,7 +42,7 @@ const DatetimePickerPage = () => {
 
      
 
-      <PreviewCodeCard path="app/(docs)/docs/datetime-picker/datetime-picker-demo.tsx" cli='http://localhost:3000/r/datetime_picker_demo.json'>
+      <PreviewCodeCard path="app/(docs)/docs/datetime-picker/datetime-picker-demo.tsx" cli='https://ui.spectrumhq.in/r/datetime_picker_demo.json'>
         <DatetimePickerDemo />
       </PreviewCodeCard>
 
@@ -59,14 +59,14 @@ const DatetimePickerPage = () => {
       <Usage
         title="Hour cycle - 12H / 24H"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-hour-cycle.tsx"
-        cli='http://localhost:3000/r/datetime_picker_hour_cycle.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_hour_cycle.json'
       >
         <DatetimePickerHourCycle />
       </Usage>
       <Usage
         title="Date picker or Time picker"
         path="app/(docs)/docs/datetime-picker/usage/date-picker-and-time-input.tsx"
-        cli='http://localhost:3000/r/date_picker_and_time_input.json'
+        cli='https://ui.spectrumhq.in/r/date_picker_and_time_input.json'
       >
         <DatePickerAndTimeInput />
       </Usage>
@@ -75,7 +75,7 @@ const DatetimePickerPage = () => {
         title="Year Dropdown Range"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-year-range.tsx"
         description={<YearDropdownDesc />}
-        cli='http://localhost:3000/r/datetime_year_range.json'
+        cli='https://ui.spectrumhq.in/r/datetime_year_range.json'
       >
         <DatetimePickerYearRange />
       </Usage>
@@ -83,7 +83,7 @@ const DatetimePickerPage = () => {
       <Usage
         title="Locale"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-locale.tsx"
-        cli='http://localhost:3000/r/datetime_picker_locale.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_locale.json'
         description={
           <>
             <P className="text-muted-foreground">
@@ -101,7 +101,7 @@ const DatetimePickerPage = () => {
       <Usage
         title="Week start on Monday, Show week number, Disable outside days"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-calendar-settings.tsx"
-        cli='http://localhost:3000/r/datetime_picker_calendar_settings.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_calendar_settings.json'
       >
         <DatetimePickerCalendarSettings />
       </Usage>
@@ -109,7 +109,7 @@ const DatetimePickerPage = () => {
       <Usage
         title="Display Format"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-display-format.tsx"
-        cli='http://localhost:3000/r/datetime_picker_display_format.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_display_format.json'
         description={
           <>
             <P className="text-muted-foreground">
@@ -128,7 +128,7 @@ const DatetimePickerPage = () => {
       <Usage
         title="Placeholder"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-placeholder.tsx"
-        cli='http://localhost:3000/r/datetime_picker_placeholder.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_placeholder.json'
       >
         <DatetimePickerPlaceholder />
       </Usage>
@@ -136,7 +136,7 @@ const DatetimePickerPage = () => {
       <Usage
         title="Granularity"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-granularity.tsx"
-        cli='http://localhost:3000/r/datetime_picker_granularity.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_granularity.json'
       >
         <DatetimePickerGranularity />
       </Usage>
@@ -144,18 +144,18 @@ const DatetimePickerPage = () => {
       <Usage
         title="Disabled"
         path="app/(docs)/docs/datetime-picker/usage/datetime-picker-disabled.tsx"
-        cli='http://localhost:3000/r/datetime_picker_disabled.json'
+        cli='https://ui.spectrumhq.in/r/datetime_picker_disabled.json'
       >
         <DatetimePickerDisabled />
       </Usage>
 
       <Usage title="Ref" path="app/(docs)/docs/datetime-picker/usage/datetime-picker-ref.tsx"
-      cli='http://localhost:3000/r/datetime_picker_ref.json'>
+      cli='https://ui.spectrumhq.in/r/datetime_picker_ref.json'>
         <DatetimePickerRef />
       </Usage>
 
       <Usage title="Form" path="app/(docs)/docs/datetime-picker/usage/datetime-picker-form.tsx"
-      cli='http://localhost:3000/r/datetime_picker_form.json'>
+      cli='https://ui.spectrumhq.in/r/datetime_picker_form.json'>
         <DatetimePickerForm />
       </Usage>
 

@@ -25,7 +25,7 @@ const DualRangeSliderPage = () => {
         <Reference href="https://www.radix-ui.com/themes/docs/components/progress" />
       </ReferenceBorder>
       <PreviewCodeCard path="app/(docs)/docs/progress-with-value/progress-with-value-demo.tsx"
-      cli='http://localhost:3000/r/progress_with_value.json'>
+      cli='https://ui.spectrumhq.in/r/progress_with_value.json'>
         <ProgressWithValueDemo />
       </PreviewCodeCard>
 
@@ -41,14 +41,14 @@ const DualRangeSliderPage = () => {
       <Usage
         title="Value Position"
         path="app/(docs)/docs/progress-with-value/usage/progress-with-value-position.tsx"
-        cli='http://localhost:3000/r/value_position.json'
+        cli='https://ui.spectrumhq.in/r/value_position.json'
       >
         <ProgressWithValuePosition />
       </Usage>
       <Usage
         title="Custom Label"
         path="app/(docs)/docs/progress-with-value/usage/progress-with-value-label.tsx"
-        cli='http://localhost:3000/r/custom_label.json'
+        cli='https://ui.spectrumhq.in/r/custom_label.json'
       >
         <ProgressWithValueLabel />
       </Usage>

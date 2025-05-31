@@ -5,7 +5,7 @@
   "title": "Floating Label Customize",
   "description": "component for the Floating Label Customize",
   "registryDependencies": [
-    "http://localhost:3000/r/floating_label_input.json"
+    "https://ui.spectrumhq.in/r/floating_label_input.json"
   ],
   "files": [
     {
