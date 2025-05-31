@@ -26,7 +26,7 @@ const DualRangeSliderPage = () => {
   return (
     <PageTemplate title="Footers">
       <PreviewCodeCard path="app/(docs)/docs/footer/footerdemo.tsx"
-      cli="http://localhost:3000/r/footer_demo.json">
+      cli="https://ui.spectrumhq.in/r/footer_demo.json">
         <Footerdemo />
       </PreviewCodeCard>
 
@@ -48,21 +48,21 @@ const DualRangeSliderPage = () => {
       <Usage
         title="StackedCircular Footer"
         path="app/(docs)/docs/footer/usage/stackedfooter.tsx"
-        cli="http://localhost:3000/r/stackedcircular_footer.json"
+        cli="https://ui.spectrumhq.in/r/stackedcircular_footer.json"
       >
         <StackedCircularFooter />
       </Usage>
       <Usage
         title="FloatingParticle Footer"
         path="app/(docs)/docs/footer/usage/particlefooter.tsx"
-        cli="http://localhost:3000/r/floatingparticle_footer.json"
+        cli="https://ui.spectrumhq.in/r/floatingparticle_footer.json"
       >
         <ParticleAnimationFooter />
       </Usage>
       <Usage
         title="Footer"
         path="components/footer.tsx"
-        cli="http://localhost:3000/r/footer.json"
+        cli="https://ui.spectrumhq.in/r/footer.json"
       >
         <Footer />
       </Usage>

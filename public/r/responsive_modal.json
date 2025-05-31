@@ -5,7 +5,7 @@
   "title": "Responsive Modal",
   "description": "component for the Responsive Modal",
   "registryDependencies": [
-    "http://localhost:3000/r/responsive_modal_dependencies.json",
+    "https://ui.spectrumhq.in/r/responsive_modal_dependencies.json",
     "button"
   ],
   "files": [

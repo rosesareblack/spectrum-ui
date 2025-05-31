@@ -9,7 +9,7 @@ const page = () => {
     <div>
       <PageTemplate title="Image Preview" className="mt-5">
         <PreviewCodeCard path="app/(docs)/docs/imagepreview/usages/useone.tsx" 
-        cli="http://localhost:3000/r/image_preview.json">
+        cli="https://ui.spectrumhq.in/r/image_preview.json">
         <Demoimages/>
         </PreviewCodeCard>
 

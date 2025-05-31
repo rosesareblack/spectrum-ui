@@ -5,7 +5,7 @@
   "title": "Autosize Textarea Customize",
   "description": "component for the Autosize Textarea Customize",
   "registryDependencies": [
-    "http://localhost:3000/r/autosize_textarea_dependecies.json"
+    "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
   ],
   "files": [
     {

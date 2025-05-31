@@ -5,7 +5,7 @@
   "title": "Infinite Scroll Demo",
   "description": "component for the Infinite Scroll Demo",
   "registryDependencies": [
-    "http://localhost:3000/r/infinite_scroll_dependecies.json"
+    "https://ui.spectrumhq.in/r/infinite_scroll_dependecies.json"
   ],
   "files": [
     {

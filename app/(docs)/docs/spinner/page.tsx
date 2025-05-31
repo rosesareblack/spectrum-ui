@@ -21,7 +21,7 @@ const SpinnerPage = () => {
   return (
     <PageTemplate title="Spinner" description="A simple spinner for displaying loading state">
       <PreviewCodeCard path="app/(docs)/docs/spinner/spinner-demo.tsx"
-      cli='http://localhost:3000/r/spinner_demo.json'>
+      cli='https://ui.spectrumhq.in/r/spinner_demo.json'>
         <SpinnerDemo />
       </PreviewCodeCard>
 
@@ -30,19 +30,19 @@ const SpinnerPage = () => {
 
       <PageSubTitle>Usage</PageSubTitle>
       <Usage title="Size" path="app/(docs)/docs//spinner/usage/spinner-size.tsx"
-      cli='http://localhost:3000/r/spinner_size.json'>
+      cli='https://ui.spectrumhq.in/r/spinner_size.json'>
         <SpinnerSize />
       </Usage>
       <Usage
         title="With text and custom style"
         path="app/(docs)/docs//spinner/usage/spinner-with-text.tsx"
-        cli='http://localhost:3000/r/spinner_with_text.json'
+        cli='https://ui.spectrumhq.in/r/spinner_with_text.json'
       >
         <SpinnerWithText />
       </Usage>
 
       <Usage title="Toggle spinner" path="app/(docs)/docs//spinner/usage/spinner-toggle.tsx"
-      cli='http://localhost:3000/r/spinner_toggle.json'>
+      cli='https://ui.spectrumhq.in/r/spinner_toggle.json'>
         <SpinnerToggle />
       </Usage>
 

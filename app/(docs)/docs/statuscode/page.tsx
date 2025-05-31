@@ -8,7 +8,7 @@ const page = () => {
     <div>
    <PageTemplate title="HTTP Status Code" className='mt-5'>
        
-   <PreviewCodeCard path="app/(docs)/docs/statuscode/demostatus.tsx" cli='http://localhost:3000/r/http_status_code'>
+   <PreviewCodeCard path="app/(docs)/docs/statuscode/demostatus.tsx" cli='https://ui.spectrumhq.in/r/http_status_code'>
         <Ststuscodelist />
       </PreviewCodeCard>
    </PageTemplate>

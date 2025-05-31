@@ -5,7 +5,7 @@
   "title": "Spinner Size",
   "description": "component for the Spinner Size",
   "registryDependencies": [
-    "http://localhost:3000/r/spinner_dependencies.json"
+    "https://ui.spectrumhq.in/r/spinner_dependencies.json"
   ],
   "files": [
     {

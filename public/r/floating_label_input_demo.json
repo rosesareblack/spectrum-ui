@@ -5,7 +5,7 @@
   "title": "Floating Label Input Demo",
   "description": "component for the Floating Label Input Demo",
   "registryDependencies": [
-    "http://localhost:3000/r/floating_label_input.json"
+    "https://ui.spectrumhq.in/r/floating_label_input.json"
   ],
   "files": [
     {

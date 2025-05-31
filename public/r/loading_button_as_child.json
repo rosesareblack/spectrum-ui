@@ -5,7 +5,7 @@
   "title": "Loading Button As Child",
   "description": "component for the Loading Button As Child",
   "registryDependencies": [
-    "http://localhost:3000/r/loading_button_dependencies.json"
+    "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
   ],
   "files": [
     {

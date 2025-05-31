@@ -5,8 +5,8 @@
   "title": "Multiple Selector Ref",
   "description": "component for the Multiple Selector Ref",
   "registryDependencies": [
-    "http://localhost:3000/r/multiple_selector_dependencies.json",
-    "http://localhost:3000/r/use-toast.json"
+    "https://ui.spectrumhq.in/r/multiple_selector_dependencies.json",
+    "https://ui.spectrumhq.in/r/use-toast.json"
   ],
   "files": [
     {

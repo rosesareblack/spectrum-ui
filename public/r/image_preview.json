@@ -5,7 +5,7 @@
   "title": "Image Preview",
   "description": "component for the Image Preview",
   "registryDependencies": [
-    "http://localhost:3000/r/image_preview_dependencies.json"
+    "https://ui.spectrumhq.in/r/image_preview_dependencies.json"
   ],
   "files": [
     {

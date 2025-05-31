@@ -28,7 +28,7 @@ const LoadingButtonPage = () => {
       </ReferenceBorder>
 
       <PreviewCodeCard path="app/(docs)/docs/loading-button/loading-button-demo.tsx" 
-        cli='http://localhost:3000/r/loading_button_demo.json'>
+        cli='https://ui.spectrumhq.in/r/loading_button_demo.json'>
         <LoadingButtonDemo />
       </PreviewCodeCard>
 
@@ -42,11 +42,11 @@ const LoadingButtonPage = () => {
 
       <PageSubTitle>Usage</PageSubTitle>
       <Usage path="app/(docs)/docs/loading-button/loading-button-usage.tsx"
-      cli='http://localhost:3000/r/loading_button_usage.json'>
+      cli='https://ui.spectrumhq.in/r/loading_button_usage.json'>
         <LoadingButtonUsage />
       </Usage>
       <Usage title="asChild" path="app/(docs)/docs/loading-button/loading-button-as-child.tsx"
-      cli='http://localhost:3000/r/loading_button_as_child.json'>
+      cli='https://ui.spectrumhq.in/r/loading_button_as_child.json'>
         <LoadingButtonAsChild />
       </Usage>
     </PageTemplate>

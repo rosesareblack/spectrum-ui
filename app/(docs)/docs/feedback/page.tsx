@@ -9,7 +9,7 @@ const page = () => {
     <div>
       <PageTemplate title="Feedback" className="mt-5">
         <PreviewCodeCard path="app/(docs)/docs/feedback/feedbackdemo.tsx"
-        cli="http://localhost:3000/r/feedback_demo.json">
+        cli="https://ui.spectrumhq.in/r/feedback_demo.json">
           <Feedback />
         </PreviewCodeCard>
 
