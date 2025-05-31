@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -17,9 +17,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Roboat from "@/components/roboat";
 
-
-
-const Homepage = () =>{
+const Homepage = () => {
   const [star, setStar] = useState(0);
   const fetchGithubData = () => {
     axios
@@ -33,18 +31,16 @@ const Homepage = () =>{
       });
   };
 
- 
- 
   useEffect(() => {
     fetchGithubData();
   }, []);
   return (
     <>
       {/* <Homepage /> */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 container-wrapper">
+      <div className="flex justify-center min-h-[60vh] container-wrapper">
         <div className=" py-5 flex flex-col items-center justify-center">
-          <Sponserbutton/>
-          <h1 className="text-center text-2xl font-bold  mt-4 md:mt-12 md:text-5xl">
+          <Sponserbutton />
+          <h1 className="text-center text-2xl font-bold  mt-4 md:mt-12 md:text-5xl lg:text-6xl">
             Instant UI Components <br /> Just{" "}
             <Cover>
               <span className="dark:text-neutral-100">
@@ -52,47 +48,60 @@ const Homepage = () =>{
               </span>
             </Cover>
           </h1>
+          <p className="text-center text-sm md:text-lg mt-4 md:mt-8 text-neutral-500 dark:text-neutral-500 max-w-2xl">
+          250+ free and open-source animated components and effects built with Next Js, Typescript, Tailwind CSS, and Motion.Perfect companion for shadcn/ui.
+          </p>
           <h1 className="mt-6 text-center text-lg md:text-2xl font-bold text-gray-400">
             Built With
           </h1>
           <div className="my-4 flex items-center justify-center gap-5  md:ml-8">
-            <Image src="./nextjs.svg" height={40} width={90}  className="w-[50px] md:w-[90px]" alt="next js" />
-            <Image src="./shadcn.svg" height={40} width={140}  className="w-[90px] md:w-[140px]" alt="shadcn ui" />
+            <Image
+              src="./nextjs.svg"
+              height={40}
+              width={90}
+              className="w-[50px] md:w-[90px]"
+              alt="next js"
+            />
+            <Image
+              src="./shadcn.svg"
+              height={40}
+              width={140}
+              className="w-[90px] md:w-[140px]"
+              alt="shadcn ui"
+            />
             <Image
               src="./tailwind.svg"
               height={40}
               width={120}
-               className="w-[80px] md:w-[120px]"
+              className="w-[80px] md:w-[120px]"
               alt="tailwind css"
             />
             <Image
               src="./aceternity.svg"
               height={40}
               width={160}
-               className="w-[90px] md:w-[160px]"
+              className="w-[90px] md:w-[160px]"
               alt="acternity ui"
             />
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-5">
-              <Link href="/docs/installation" className="w-full sm:w-auto">
-                <Button size="lg" className="rounded-2xl w-full sm:w-auto px-8">
-                  Explore Components
-                </Button>
-              </Link>
+            <Link href="/docs/installation" className="w-full sm:w-auto">
+              <Button size="lg" className="rounded-xl w-full sm:w-auto px-8">
+                Explore Components
+              </Button>
+            </Link>
 
-              <div className="w-full sm:w-auto">
+            <div className="w-full sm:w-auto">
               <Link target="_blank" href={siteConfig.links.github}>
                 <Button
-                variant="secondary"
-               className="rounded-2xl w-full sm:w-auto px-8 h-11"
+                  variant="secondary"
+                  className="rounded-xl w-full sm:w-auto px-8 h-11"
                 >
                   <div className="flex items-center">
                     <Icons.gitHub className="size-4" />
 
-                    <span className="ml-1 ">
-                      Star on GitHub
-                    </span>
+                    <span className="ml-1 ">Star on GitHub</span>
                   </div>
                   <div className="ml-1 flex items-center gap-1 text-sm md:flex">
                     🌟
@@ -101,10 +110,7 @@ const Homepage = () =>{
                 </Button>
               </Link>
             </div>
-            </div>
-        </div>
-        <div className="hidden md:block">
-          <Roboat/>
+          </div>
         </div>
       </div>
 
@@ -140,7 +146,6 @@ const Homepage = () =>{
       </div>
     </>
   );
-}
-
+};
 
 export default Homepage;
