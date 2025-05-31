@@ -5,7 +5,7 @@
   "title": "Multiple Selector Demo",
   "description": "component for the Multiple Selector Demo",
   "registryDependencies": [
-    "http://localhost:3000/r/multiple_selector_dependencies.json"
+    "http://localhost:3000/r/multiple-selector-dependencies.json"
   ],
   "files": [
     {

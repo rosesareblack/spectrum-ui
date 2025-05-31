@@ -1187,6 +1187,21 @@
     
 
     },{
+       "name":"inline-code",
+      "type":"registry:ui",
+      "title":"Inline Code",
+      "description": "component for the Inline Code",
+      "files":[
+          {
+              "path":"app/registry/spectrumui/inline-code.tsx",
+              "type": "registry:ui",
+              "target": "components/spectrumui/inline-code.tsx"
+          }
+      ]
+      
+     
+
+    },{
       "name":"multiple-selector-demo",
       "type":"registry:ui",
       "title":"Multiple Selector Demo",
@@ -1200,7 +1215,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1219,7 +1234,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1238,7 +1253,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1257,7 +1272,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1276,7 +1291,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1295,7 +1310,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1314,7 +1329,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
       ]
       
     
@@ -1333,7 +1348,8 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
+        "http://localhost:3000/r/inline-code.json"
       ]
       
     
@@ -1352,7 +1368,8 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
+        "http://localhost:3000/r/inline-code.json"
       ]
       
     
@@ -1371,7 +1388,8 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
+        "http://localhost:3000/r/inline-code.json"
       ]
       
     
@@ -1390,26 +1408,8 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
-      ]
-      
-    
-
-    },{
-      "name":"multiple-selector-with-async-search-and-creatable-and-group",
-      "type":"registry:ui",
-      "title":"Multiple Selector With Async Search And Creatable And Group",
-      "description": "component for the Multiple Selector With Async Search And Creatable And Group",
-      "files":[
-          {
-              "path":"app/registry/multiple-selector/usage/multiple-selector-with-async-search-and-creatable-and-group.tsx",
-              "type": "registry:ui",
-              "target": "components/spectrumui/multiple-selector-with-async-search-and-creatable-and-group.tsx"
-          }
-      ],
-      
-      "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
+        "http://localhost:3000/r/inline-code.json"
       ]
       
     
@@ -1449,7 +1449,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json",
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
         "http://localhost:3000/r/heading_with_anchor.json"
       ]
       
@@ -1469,7 +1469,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json",
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
         "http://localhost:3000/r/loading_button_dependencies.json"
         
       ]
@@ -1490,7 +1490,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
         
       ]
 
@@ -1523,7 +1523,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json",
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
         "http://localhost:3000/r/use-toast.json"
         
       ]
@@ -1542,7 +1542,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
         
         
       ]
@@ -1561,7 +1561,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
         
         
       ]
@@ -1580,7 +1580,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json"
         
         
       ]
@@ -1599,26 +1599,12 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json",
-        "http://localhost:3000/r/use-toast.json"
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
+        "http://localhost:3000/r/use-toast.json",
+        "http://localhost:3000/r/loading_button_dependencies.json"
         
         
       ]
-
-    },{
-       "name":"inline-code",
-      "type":"registry:ui",
-      "title":"Inline Code",
-      "description": "component for the Inline Code",
-      "files":[
-          {
-              "path":"app/registry/spectrumui/inline-code.tsx",
-              "type": "registry:ui",
-              "target": "components/spectrumui/inline-code.tsx"
-          }
-      ]
-      
-     
 
     },{
        "name":"multiple-selector-commandprops",
@@ -1634,7 +1620,7 @@
       ],
       
       "registryDependencies": [
-        "http://localhost:3000/r/multiple_selector_dependencies.json",
+        "http://localhost:3000/r/multiple-selector-dependencies.json",
         "http://localhost:3000/r/inline-code.json"
         
         
@@ -1656,7 +1642,7 @@
       "registryDependencies": [
         "form",
         "http://localhost:3000/r/use-toast.json",
-        "http://localhost:3000/r/loading-button.json",
+        "http://localhost:3000/r/loading_button_dependencies.json",
         "http://localhost:3000/r/multiple-selector-dependencies.json",
         ""
 
@@ -2170,6 +2156,7 @@
       ]
 
     }
+    
 
 
 

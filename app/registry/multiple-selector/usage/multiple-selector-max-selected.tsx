@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import MultipleSelector, { Option } from '@/components/ui/multiple-selector';
-import { toast } from '@/components/ui/use-toast';
+
+import MultipleSelector, { Option } from '@/app/registry/spectrumui/multiple-selector-dependencies';
+import { toast } from '@/app/registry/spectrumui/use-toast';
 
 const OPTIONS: Option[] = [
   { label: 'nextjs', value: 'Nextjs' },

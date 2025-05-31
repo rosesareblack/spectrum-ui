@@ -1,5 +1,7 @@
 import React from 'react';
-import MultipleSelector, { Option } from '@/components/ui/multiple-selector';
+
+import MultipleSelector, { Option } from '@/app/registry/spectrumui/multiple-selector-dependencies';
+
 
 const OPTIONS: Option[] = [
   { label: 'nextjs', value: 'Nextjs' },

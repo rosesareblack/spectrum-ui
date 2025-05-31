@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import MultipleSelector, { Option } from '@/components/ui/multiple-selector';
-import { InlineCode } from '@/components/ui/inline-code';
+import MultipleSelector, { Option } from '@/app/registry/spectrumui/multiple-selector-dependencies';
+import { InlineCode } from '@/app/registry/spectrumui/inline-code';
 
 const OPTIONS: Option[] = [
   { label: 'nextjs', value: 'Nextjs' },

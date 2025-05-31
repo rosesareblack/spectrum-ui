@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import MultipleSelector, { Option } from '@/components/ui/multiple-selector';
-import { H4 } from '@/components/ui/heading-with-anchor';
+import MultipleSelector, { Option } from '@/app/registry/spectrumui/multiple-selector-dependencies';
+import { H4 } from '@/app/registry/spectrumui/heading-with-anchor';
 
 const OPTIONS: Option[] = [
   { label: 'nextjs', value: 'nextjs' },
