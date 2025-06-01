@@ -21,7 +21,9 @@ export const metadata: Metadata = baseMetadata({
 const DualRangeSliderPage = () => {
   return (
     <PageTemplate title="Status Badge">
-      <PreviewCodeCard path="app/(docs)/docs/status-badge/statusdemo.tsx">
+      <PreviewCodeCard
+       cli='https://ui.spectrumhq.in/r/status_badge.json'
+      path="app/(docs)/docs/status-badge/statusdemo.tsx">
        <StatusDemo/>
       </PreviewCodeCard>
 

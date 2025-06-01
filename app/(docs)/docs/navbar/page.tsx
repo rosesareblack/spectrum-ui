@@ -15,7 +15,7 @@ import DualRangeSliderSingle from "@/app/(docs)/docs/dual-range-slider/usage/dua
 import Navbardemo from "./navbardemo";
 import CircularNavbar from "./usage/circular";
 import Tabnavbar from "./usage/tabnavbar";
-import Floatingnavbar from "./usage/flotingnavbar";
+import Floatingnavbar from "./usage/floatingnavbar";
 import Sidenavbar from "./usage/sidenav";
 
 export const metadata: Metadata = baseMetadata({
@@ -56,9 +56,9 @@ const DualRangeSliderPage = () => {
         <Tabnavbar />
       </Usage>
       <Usage
-        title="Floting Navbar"
-        path="app/(docs)/docs/navbar/usage/flotingnavbar.tsx"
-        cli="https://ui.spectrumhq.in/r/floting-navbar.json"
+        title="Floating Navbar"
+        path="app/(docs)/docs/navbar/usage/floatingnavbar.tsx"
+        cli="https://ui.spectrumhq.in/r/floating-navbar.json"
 
       >
         <Floatingnavbar />
