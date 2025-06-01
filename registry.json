@@ -640,19 +640,7 @@
       "registryDependencies": ["button", "input", "label"],
       "dependencies": ["lucide-react"]
     },
-    {
-      "name": "icon_dependencies",
-      "type": "registry:ui",
-      "title": "Icon Dependencies",
-      "description": "component for the Icon Dependencies",
-      "files": [
-        {
-          "path": "app/registry/icon.tsx",
-          "type": "registry:ui",
-          "target": "components/spectrumui/icon.tsx"
-        }
-      ]
-    },
+    
     {
       "name": "footer",
       "type": "registry:ui",

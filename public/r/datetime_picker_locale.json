@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-locale.tsx",
-      "content": "'use client';\r\nimport React, { useState } from 'react';\r\nimport { DateTimePicker } from '@/components/ui/datetime-picker';\r\nimport { zhTW } from 'date-fns/locale';\r\nimport { InlineCode } from '@/components/ui/inline-code';\r\nconst DatetimePickerLocale = () => {\r\n  const [date, setDate] = useState<Date | undefined>(undefined);\r\n  return (\r\n    <div className=\"flex w-72 flex-col gap-3\">\r\n      <p>\r\n        The following example is <InlineCode>zhTW</InlineCode> from{' '}\r\n        <InlineCode>date-fns</InlineCode>.\r\n      </p>\r\n      <DateTimePicker locale={zhTW} value={date} onChange={setDate} weekStartsOn={undefined} showWeekNumber={undefined} showOutsideDays={undefined} />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DatetimePickerLocale;\r\n",
+      "content": "'use client';\nimport React, { useState } from 'react';\nimport { DateTimePicker } from '@/components/ui/datetime-picker';\nimport { zhTW } from 'date-fns/locale';\nimport { InlineCode } from '@/components/ui/inline-code';\nconst DatetimePickerLocale = () => {\n  const [date, setDate] = useState<Date | undefined>(undefined);\n  return (\n    <div className=\"flex w-72 flex-col gap-3\">\n      <p>\n        The following example is <InlineCode>zhTW</InlineCode> from{' '}\n        <InlineCode>date-fns</InlineCode>.\n      </p>\n      <DateTimePicker locale={zhTW} value={date} onChange={setDate} weekStartsOn={undefined} showWeekNumber={undefined} showOutsideDays={undefined} />\n    </div>\n  );\n};\n\nexport default DatetimePickerLocale;\n",
       "type": "registry:ui",
       "target": "components/spectrumui/datetime-picker-locale.tsx"
     }
