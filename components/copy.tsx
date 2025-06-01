@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCheck,  Clipboard,  } from "lucide-react";
+import { Check, CheckCheck,  Clipboard,  } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 
@@ -19,7 +19,7 @@ export default function Copy({ content }: { content: string }) {
   return (
     <Button variant="secondary" size="sm" onClick={handleCopy}>
       {isCopied ? (
-        <CheckCheck className="w-3 h-3 text-green-400" />
+        <Check className="w-3 h-3 " />
       ) : (
         <Clipboard className="w-3 h-3" />
       )}

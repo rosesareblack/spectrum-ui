@@ -7,7 +7,7 @@ import Spline from "@splinetool/react-spline/next";
 import { Cover } from "@/components/ui/cover";
 
 import { Button } from "@/components/ui/button";
-
+import CardCollection from "@/components/spectrumui/cards";
 import { CardsDemo } from "@/components/cards";
 import Sponserbutton from "@/components/sponserbutton";
 import { siteConfig } from "@/config/site";
@@ -136,11 +136,11 @@ const Homepage = () => {
             className="hidden md:block [&>div]:p-0"
             style={
               {
-                "--radius": "0.75rem",
+                "--radius": "1rem",
               } as React.CSSProperties
             }
           >
-            <CardsDemo />
+            <CardCollection />
           </section>
         </div>
       </div>
