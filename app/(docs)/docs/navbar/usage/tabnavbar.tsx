@@ -1,8 +1,5 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,14 +8,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Search } from "lucide-react"
-import Link from "next/link"
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { Search } from "lucide-react";
+import Link from "next/link";
+import * as React from "react";
 
 export default function Tabnavbar() {
   return (
     <nav className="border-b">
-      <div className="container mx-auto flex items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex items-center space-x-4 justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-4">
           <Link href="#" className="text-2xl font-bold">
             Logo
@@ -41,7 +40,7 @@ export default function Tabnavbar() {
                           <p className="text-sm leading-tight text-muted-foreground">
                             Check out our latest and greatest offering
                           </p>
-                          </Link>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <ListItem href="#" title="Product 1">
@@ -57,12 +56,18 @@ export default function Tabnavbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#">
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  href="#"
+                >
                   About
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#">
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  href="#"
+                >
                   Contact
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -72,17 +77,13 @@ export default function Tabnavbar() {
         <div className="flex items-center space-x-4">
           <form className="relative">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search..."
-              className="pl-8"
-            />
+            <Input type="search" placeholder="Search..." className="pl-8" />
           </form>
           <Button>Sign In</Button>
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -104,9 +105,9 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-          </a>
+        </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";
