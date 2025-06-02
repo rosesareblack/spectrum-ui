@@ -151,12 +151,12 @@ export default function RootLayout({
           
           </Link>
           </div>
-          <RainbowButton variant="outline" className="fixed bottom-4 right-6 w-[100px] rounded-lg">
             <Link href="https://x.com/arihantCodes" className="flex items-center gap-2">
+          <RainbowButton variant="outline" className="fixed bottom-4 right-6 w-[100px] rounded-lg">
 
               Hire Me
-            </Link>
           </RainbowButton>
+            </Link>
 
           <SiteHeader />
           <main className="flex flex-1 flex-col">{children}</main>
