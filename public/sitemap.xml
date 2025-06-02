@@ -216,12 +216,4 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Social -->
-  <url>
-    <loc>https://x.com/arihantCodes</loc>
-    <lastmod>2025-06-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-</urlset>
+ 
