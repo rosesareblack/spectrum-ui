@@ -13,6 +13,9 @@ import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
+
+
 
 inject();
 
@@ -148,6 +151,12 @@ export default function RootLayout({
           
           </Link>
           </div>
+          <RainbowButton variant="outline" className="fixed bottom-4 right-6 w-[100px] rounded-lg">
+            <Link href="https://x.com/arihantCodes" className="flex items-center gap-2">
+
+              Hire Me
+            </Link>
+          </RainbowButton>
 
           <SiteHeader />
           <main className="flex flex-1 flex-col">{children}</main>

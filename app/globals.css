@@ -38,6 +38,11 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     --elegant-font: 'Great Vibes';
+    --color-1: oklch(66.2% 0.225 25.9);
+    --color-2: oklch(60.4% 0.26 302);
+    --color-3: oklch(69.6% 0.165 251);
+    --color-4: oklch(80.2% 0.134 225);
+    --color-5: oklch(90.7% 0.231 133);
   }
 
   .dark {
@@ -73,6 +78,14 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --color-1: oklch(66.2% 0.225 25.9);
+    --color-2: oklch(60.4% 0.26 302);
+    --color-3: oklch(69.6% 0.165 251);
+    --color-4: oklch(80.2% 0.134 225);
+    --color-5: oklch(90.7% 0.231 133);
+  }
+  .theme {
+    --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
   }
 }
 
@@ -156,8 +169,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -170,7 +181,6 @@
 .prose {
   margin: 0 !important;
 }
-
 
 pre {
   padding: 12px !important;
@@ -185,11 +195,7 @@ pre > code {
   font-size: 14px;
   font-family: "Geist Mono", monospace;
 
-
-
 }
-
-
 
 .code-line {
   padding: 0.75px 12.5px;
@@ -205,7 +211,6 @@ pre > code {
   font-size: 13.5px;
   text-align: right;
 }
-
 
 .highlight-line {
   @apply dark:bg-neutral-800/90;
@@ -323,4 +328,13 @@ pre > code {
   width: 1.5rem;
 }
 
-
+@theme inline {
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
+  }
+}
