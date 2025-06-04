@@ -9,13 +9,13 @@ import { Cover } from "@/components/ui/cover";
 import { Button } from "@/components/ui/button";
 import CardCollection from "@/components/spectrumui/cards";
 import { CardsDemo } from "@/components/cards";
-import Sponserbutton from "@/components/sponserbutton";
+import  { Fomo } from "@/components/sponserbutton";
 import { siteConfig } from "@/config/site";
 import { Icons } from "@/components/icon";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Roboat from "@/components/roboat";
+
 
 const Homepage = () => {
   const [star, setStar] = useState(0);
@@ -39,7 +39,7 @@ const Homepage = () => {
       {/* <Homepage /> */}
       <div className="flex justify-center min-h-[60vh] container-wrapper">
         <div className=" py-5 flex flex-col items-center justify-center">
-          <Sponserbutton />
+          <Fomo />
           <h1 className="text-center text-2xl font-bold  mt-4 md:mt-12 md:text-5xl lg:text-6xl">
             Instant UI Components <br /> Just{" "}
             <Cover>
