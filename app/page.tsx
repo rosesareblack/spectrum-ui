@@ -120,7 +120,7 @@ const Homepage = () => {
           <Link href={siteConfig.links.twitter} className="flex justify-center items-center mb-12">
           
           <Button className="px-12 rounded-2xl" variant="outline">
-          Need a Frontend Dev?
+          Need a Frontend Developer?
             <ArrowRight className="ml-2 size-4" />
           </Button>
           </Link>
