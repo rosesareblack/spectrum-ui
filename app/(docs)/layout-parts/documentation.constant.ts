@@ -102,6 +102,12 @@ export const DOCS: Documentation[] = [
       },
       { label: "Footer", value: "footer", url: "/docs/footer" ,},
       {
+        label:"GitHub Card",
+        value: "github-card",
+        url: "/docs/github-card",
+        new: true,
+      },
+      {
         label: "HTTP Status Code",
         value: "statuscode",
         url: "/docs/statuscode",
@@ -132,7 +138,7 @@ export const DOCS: Documentation[] = [
         label: "Multistep Form",
         value: "multistepform",
         url: "/docs/multistepform",
-        new: true,
+
       },
       { label: "Navbar", value: "navbar", url: "/docs/navbar" ,},
       {
