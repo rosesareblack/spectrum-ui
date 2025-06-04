@@ -15,6 +15,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import Cta from "@/components/cta";
+import CrispChat from "@/components/crips-chat";
 
 
 
@@ -155,7 +156,10 @@ export default function RootLayout({
            
 
           <SiteHeader />
-          <main className="flex flex-1 flex-col">{children}</main>
+          <main className="flex flex-1 flex-col">{children}
+
+          </main>
+          <CrispChat/>
 
           <Toaster />
           <Cta />
