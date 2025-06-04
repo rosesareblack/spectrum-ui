@@ -15,6 +15,7 @@ import { Icons } from "@/components/icon";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 
 const Homepage = () => {
@@ -116,6 +117,13 @@ const Homepage = () => {
 
       <div className="container-wrapper mt-20">
         <div className="container py-6">
+          <Link href={siteConfig.links.twitter} className="flex justify-center items-center mb-12">
+          
+          <Button className="px-12 rounded-2xl" variant="outline">
+          Need a Frontend Dev?
+            <ArrowRight className="ml-2 size-4" />
+          </Button>
+          </Link>
           <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
             <Image
               src="/examples/cards-light.png"
