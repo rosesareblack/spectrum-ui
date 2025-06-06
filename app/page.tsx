@@ -2,13 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Spline from "@splinetool/react-spline/next";
-
 import { Cover } from "@/components/ui/cover";
-
 import { Button } from "@/components/ui/button";
 import CardCollection from "@/components/spectrumui/cards";
-import { CardsDemo } from "@/components/cards";
 import  { Fomo } from "@/components/sponserbutton";
 import { siteConfig } from "@/config/site";
 import { Icons } from "@/components/icon";
@@ -119,8 +115,8 @@ const Homepage = () => {
         <div className="container py-6">
           <Link href={siteConfig.links.twitter} className="flex justify-center items-center mb-12">
           
-          <Button className="px-12 rounded-2xl" variant="outline">
-          Need a Frontend Developer?
+          <Button className="px-8 rounded-2xl" variant="outline">
+          Need custom components? Let’s talk
             <ArrowRight className="ml-2 size-4" />
           </Button>
           </Link>
