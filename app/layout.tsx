@@ -13,7 +13,6 @@ import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { RainbowButton } from "@/components/magicui/rainbow-button";
 import Cta from "@/components/cta";
 import CrispChat from "@/components/crips-chat";
 
