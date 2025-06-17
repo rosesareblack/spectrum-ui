@@ -1,5 +1,5 @@
 "use client";
-
+import { Check, Stars } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Cover } from "@/components/ui/cover";
@@ -12,8 +12,24 @@ import { NumberTicker } from "@/components/magicui/number-ticker";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-
-
+import { Particles } from "@/components/particles";
+import { ShinyCardGroup } from "@/components/shiny-cards";
+import {
+  BelowEnterpriseSvg,
+  Bullet,
+  Bullets,
+  PricingButton,
+  Color,
+  Cost,
+  EnterpriseCardHighlight,
+  FreeCardHighlight,
+  PricingCard,
+  PricingCardContent,
+  PricingCardFooter,
+  PricingCardHeader,
+  ProCardHighlight,
+  Separator,
+} from "@/components/pricing";
 const Homepage = () => {
   const [star, setStar] = useState(0);
   const fetchGithubData = () => {
@@ -115,12 +131,89 @@ const Homepage = () => {
         <div className="container py-6">
           <Link href={siteConfig.links.twitter} className="flex justify-center items-center mb-12">
           
-          <Button className="px-8 rounded-2xl" variant="outline">
-          Need custom components? Let’s talk
-            <ArrowRight className="ml-2 size-4" />
-          </Button>
+          <div className="px-8 rounded-2xl text-center text-2xl md:text-4xl mb-8">
+         Feature Your Product on Spectrum UI
+
+          </div>
           </Link>
-          <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
+            <ShinyCardGroup className="grid h-full max-w-4xl grid-cols-2 gap-6 mx-auto group">
+        <PricingCard color={Color.White} className="col-span-2 md:col-span-1 ">
+          <FreeCardHighlight className="absolute top-0 right-0 pointer-events-none" />
+
+          <PricingCardHeader
+            title="💜 Support Spectrum UI"
+            description="Support Spectrum UI and get early access + your name on the wall."
+            className="bg-gradient-to-tr from-transparent to-[#ffffff]/10 "
+            color={Color.White}
+          />
+          <Separator />
+
+          <PricingCardContent>
+            <Cost dollar="$49" />
+            <PricingButton
+           productId="656c8573-32fe-4433-a0d9-ddd45ae267c6"
+            label="Become a Supporter" />
+            <Bullets>
+              <li>
+                <Bullet Icon={Check} label="Show your support for Spectrum UI" color={Color.White} />
+              </li>
+
+              <li>
+                <Bullet Icon={Check} label="Get your name listed on our Supporter Wall" color={Color.White} />
+              </li>
+              <li>
+                {" "}
+                <Bullet Icon={Check} label="Priority access to new components & updates" color={Color.White} />
+              </li>
+              <li>
+                <Bullet Icon={Check} label="Warm fuzzy feeling ❤️" color={Color.White} />
+              </li>
+             
+            
+            </Bullets>
+          </PricingCardContent>
+         
+        </PricingCard>
+        <PricingCard color={Color.Yellow} className="col-span-2 md:col-span-1">
+          <ProCardHighlight className="absolute top-0 right-0 pointer-events-none" />
+
+          <PricingCardHeader
+            title="Golden Banner Promotion"
+            description="Promote your product at the top of every page "
+            className="bg-gradient-to-tr from-black/50 to-[#FFD600]/10 "
+            color={Color.Yellow}
+          />
+          <Separator />
+
+          <PricingCardContent>
+          <Cost dollar="$199" />
+            <PricingButton
+            productId="f0a5e414-d0aa-4f1c-9822-ce9e24f00faf"
+           
+            label="Book the Banner Slot" />
+            <Bullets>
+              <li>
+                <Bullet Icon={Check} label="Banner on all pages" color={Color.Yellow} />
+              </li>
+             
+              <li>
+                <Bullet Icon={Check} label="Custom link + message" color={Color.Yellow} />
+              </li>
+              <li>
+                <Bullet Icon={Check} label="3 slots only" color={Color.Yellow} />
+              </li>
+              <li>
+                <Bullet Icon={Check} label="Seen by 10,000+ devs/month" color={Color.Yellow} />
+              </li>
+              
+            </Bullets>
+          </PricingCardContent>
+         
+        </PricingCard>
+
+        
+      </ShinyCardGroup>
+          <section className="overflow-hidden  rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
             <Image
               src="/examples/cards-light.png"
               width={1280}
@@ -137,7 +230,7 @@ const Homepage = () => {
             />
           </section>
           <section
-            className="hidden md:block [&>div]:p-0"
+            className="hidden md:block [&>div]:p-0 mt-36"
             style={
               {
                 "--radius": "1rem",

@@ -2,10 +2,12 @@
 type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
-  logo: (props: IconProps) => (
-    <svg 
-    fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M4.207 13.207l1.586 1.586c.391.391 1.024.391 1.414 0L17.805 4.195C18.246 3.754 17.934 3 17.31 3h-3.896c-.265 0-.52.105-.707.293l-8.5 8.5C3.817 12.183 3.817 12.817 4.207 13.207zM17.31 12h-3.896c-.265 0-.52.105-.707.293l-4 4c-.391.391-.391 1.024 0 1.414l4 4C12.895 21.895 13.149 22 13.414 22h3.896c.624 0 .936-.754.495-1.195l-3.098-3.098c-.391-.391-.391-1.024 0-1.414l3.098-3.098C18.246 12.754 17.934 12 17.31 12z"/></svg>
+   logo: (props: IconProps) => (
+    <svg width="36" height="41" viewBox="0 0 36 41" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.641 33.4291L11.563 27.3511C7.26395 23.052 0 26.091 0 32.169V40.1001H35.2821V15.7881L17.641 33.4291Z" fill="black"/>
+    <path d="M17.641 6.67098L23.719 12.749C28.0181 17.0481 35.2821 14.0091 35.2821 7.93105V0H0V24.312L17.641 6.67098Z" fill="black"/>
+    </svg>
+    
   ),
   twitter: (props: IconProps) => (
     <svg

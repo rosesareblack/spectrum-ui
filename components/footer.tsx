@@ -10,10 +10,16 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
-            <Link href="/" className="flex items-center gap-2">
-              <Icons.logo className="icon-class w-2" />
-              <h2 className="text-lg font-bold">Spectrum UI</h2>
-            </Link>
+            <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
+
+              <div className="h-6 w-6 bg-neutral-100 border-neutral-300 border dark:bg-white rounded-md flex items-center justify-center p-1">
+                <Icons.logo className="h-5 w-5 text-black " />
+              </div>
+
+              <span className=" font-bold lg:inline-block">
+               Spectrum UI
+              </span>
+      </Link>
 
             <h1 className="dark:text-gray-300 mt-4">
               Build by{" "}
