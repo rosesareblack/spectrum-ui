@@ -149,7 +149,7 @@ const Homepage = () => {
           <Separator />
 
           <PricingCardContent>
-            <Cost dollar="$49" />
+            <Cost dollar="$20" />
             <PricingButton
            productId="656c8573-32fe-4433-a0d9-ddd45ae267c6"
             label="Become a Supporter" />
