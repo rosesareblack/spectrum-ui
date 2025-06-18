@@ -68,7 +68,7 @@ export const Cost: React.FC<{ dollar: string; className?: string }> = ({ dollar,
         {dollar}
       </span>
       {
-        dollar ==="$49" ? 
+        dollar ==="$20" ? 
       <span className=" text-white/60">/ One-Time</span>
         
         :
