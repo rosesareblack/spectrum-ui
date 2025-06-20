@@ -66,7 +66,7 @@ const DualRangeSliderPage = () => {
       <Usage
         title="Sidebar Navbar"
         path="app/(docs)/docs/navbar/usage/sidenav.tsx"
-        cli="https://ui.spectrumhq.in/r/sidenav-navbar.json"
+        cli="https://ui.spectrumhq.in/r/sidebar-navbar.json"
 
       >
         <Sidenavbar />
