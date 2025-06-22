@@ -2,9 +2,7 @@
 import createMDX from "@next/mdx";
 
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
     domains: [
@@ -16,9 +14,7 @@ const nextConfig = {
       "res.cloudinary.com",
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+ 
 };
 
 const withMDX = createMDX({
