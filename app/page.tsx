@@ -25,6 +25,8 @@ import {
   ProCardHighlight,
   Separator,
 } from "@/components/pricing";
+
+
 const Homepage = () => {
   const [star, setStar] = useState(0);
   const fetchGithubData = () => {
@@ -147,20 +149,16 @@ const Homepage = () => {
               />
               <Separator />
 
-              <PricingCardContent>
-                <Cost dollar="$20" />
-                <PricingButton
-                  productId="656c8573-32fe-4433-a0d9-ddd45ae267c6"
-                  label="Become a Supporter"
-                />
-                <Bullets>
-                  <li>
-                    <Bullet
-                      Icon={Check}
-                      label="Show your support for Spectrum UI"
-                      color={Color.White}
-                    />
-                  </li>
+          <PricingCardContent>
+            <Cost dollar="$20" />
+            <PricingButton
+           
+           productId="656c8573-32fe-4433-a0d9-ddd45ae267c6"
+            label="Become a Supporter" />
+            <Bullets>
+              <li>
+                <Bullet Icon={Check} label="Show your support for Spectrum UI" color={Color.White} />
+              </li>
 
                   <li>
                     <Bullet

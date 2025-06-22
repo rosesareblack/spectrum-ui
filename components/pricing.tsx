@@ -1,6 +1,7 @@
 import { Particles } from "@/components/particles";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import posthog from "posthog-js";
 import type { PropsWithChildren } from "react";
 
 export enum Color {
@@ -99,6 +100,10 @@ export const PricingButton: React.FC<{ label: string; productId: string }> = ({
     <div>
       <Link href={`/checkout?products=${productId}`}>
         <button
+           onClick={() => {
+            posthog.capture("supporter_click");
+          }
+          }
           type="button"
           className="block w-full h-10 text-sm font-semibold text-center text-black duration-500 bg-white border border-white rounded-lg hover:bg-transparent hover:text-white"
         >
