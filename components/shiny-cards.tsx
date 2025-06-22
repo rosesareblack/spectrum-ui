@@ -2,7 +2,13 @@
 
 import { useMousePosition } from "@/lib/mouse";
 import type React from "react";
-import { type PropsWithChildren, useCallback, useEffect, useRef, useState } from "react";
+import {
+  type PropsWithChildren,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type ShinyCardGroupProps = {
   children: React.ReactNode;
@@ -21,9 +27,20 @@ export const ShinyCardGroup: React.FC<ShinyCardGroupProps> = ({
   const containerSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const [boxes, setBoxes] = useState<Array<HTMLElement>>([]);
 
+  const initContainer = useCallback(() => {
+    if (containerRef.current) {
+      containerSize.current.w = containerRef.current.offsetWidth;
+      containerSize.current.h = containerRef.current.offsetHeight;
+    }
+  }, []);
+
   useEffect(() => {
     containerRef.current &&
-      setBoxes(Array.from(containerRef.current.children).map((el) => el as HTMLElement));
+      setBoxes(
+        Array.from(containerRef.current.children).map(
+          (el) => el as HTMLElement,
+        ),
+      );
   }, []);
 
   useEffect(() => {
@@ -33,14 +50,7 @@ export const ShinyCardGroup: React.FC<ShinyCardGroupProps> = ({
     return () => {
       window.removeEventListener("resize", initContainer);
     };
-  }, []);
-
-  const initContainer = useCallback(() => {
-    if (containerRef.current) {
-      containerSize.current.w = containerRef.current.offsetWidth;
-      containerSize.current.h = containerRef.current.offsetHeight;
-    }
-  }, []);
+  }, [initContainer]);
 
   const onMouseMove = useCallback(() => {
     if (containerRef.current) {
@@ -53,8 +63,10 @@ export const ShinyCardGroup: React.FC<ShinyCardGroupProps> = ({
         mouse.current.x = x;
         mouse.current.y = y;
         boxes.forEach((box) => {
-          const boxX = -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
-          const boxY = -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
+          const boxX =
+            -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
+          const boxY =
+            -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
           box.style.setProperty("--mouse-x", `${boxX}px`);
           box.style.setProperty("--mouse-y", `${boxY}px`);
         });

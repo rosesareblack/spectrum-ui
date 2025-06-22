@@ -4,15 +4,8 @@
   "type": "registry:ui",
   "title": "Stacked Circular Footer",
   "description": "component for the Stacked Circular Footer",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "icon",
-    "button",
-    "input",
-    "label"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["icon", "button", "input", "label"],
   "files": [
     {
       "path": "app/registry/footer/usage/stackedfooter.tsx",

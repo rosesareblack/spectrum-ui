@@ -1,35 +1,32 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import * as React from "react";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/components/ui/toggle-group"
+} from "@/components/ui/select";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-import { FaCircle } from "react-icons/fa"
+import { FaCircle } from "react-icons/fa";
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
   { date: "2024-04-02", desktop: 97, mobile: 180 },
@@ -122,7 +119,7 @@ const chartData = [
   { date: "2024-06-28", desktop: 149, mobile: 200 },
   { date: "2024-06-29", desktop: 103, mobile: 160 },
   { date: "2024-06-30", desktop: 446, mobile: 400 },
-]
+];
 
 const chartConfig = {
   visitors: {
@@ -136,31 +133,31 @@ const chartConfig = {
     label: "Mobile",
     color: "hsl(var(--chart-2))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function ChartAreaInteractive() {
-  const isMobile = useIsMobile()
-  const [timeRange, setTimeRange] = React.useState("30d")
+  const isMobile = useIsMobile();
+  const [timeRange, setTimeRange] = React.useState("30d");
 
   React.useEffect(() => {
     if (isMobile) {
-      setTimeRange("7d")
+      setTimeRange("7d");
     }
-  }, [isMobile])
+  }, [isMobile]);
 
   const filteredData = chartData.filter((item) => {
-    const date = new Date(item.date)
-    const referenceDate = new Date("2024-06-30")
-    let daysToSubtract = 90
+    const date = new Date(item.date);
+    const referenceDate = new Date("2024-06-30");
+    let daysToSubtract = 90;
     if (timeRange === "30d") {
-      daysToSubtract = 30
+      daysToSubtract = 30;
     } else if (timeRange === "7d") {
-      daysToSubtract = 7
+      daysToSubtract = 7;
     }
-    const startDate = new Date(referenceDate)
-    startDate.setDate(startDate.getDate() - daysToSubtract)
-    return date >= startDate
-  })
+    const startDate = new Date(referenceDate);
+    startDate.setDate(startDate.getDate() - daysToSubtract);
+    return date >= startDate;
+  });
 
   return (
     <Card className="@container/card p-0 rounded-none">
@@ -170,23 +167,19 @@ export function ChartAreaInteractive() {
           <span className="@[540px]/card:block hidden">
             Total for the last 3 months
           </span>
-          <span className="@[540px]/card:hidden">Overall performance of your email campaign trends</span>
+          <span className="@[540px]/card:hidden">
+            Overall performance of your email campaign trends
+          </span>
         </CardDescription>
         <div className="flex items-center gap-4">
-        <div className="mt-4 flex items-center gap-1">
-          <FaCircle 
-          className="h-3 w-3 text-sky-400"  />
-          <p className="text-[12px]">
-          Email open rate
-          </p>
-        </div>
-        <div className="mt-4 flex items-center gap-1">
-          <FaCircle 
-          className="h-3 w-3 text-sky-400"  />
-          <p className="text-[12px]">
-          Avg click rate
-          </p>
-        </div>
+          <div className="mt-4 flex items-center gap-1">
+            <FaCircle className="h-3 w-3 text-sky-400" />
+            <p className="text-[12px]">Email open rate</p>
+          </div>
+          <div className="mt-4 flex items-center gap-1">
+            <FaCircle className="h-3 w-3 text-sky-400" />
+            <p className="text-[12px]">Avg click rate</p>
+          </div>
         </div>
         <div className="absolute right-4 top-4">
           <ToggleGroup
@@ -267,11 +260,11 @@ export function ChartAreaInteractive() {
               tickMargin={8}
               minTickGap={32}
               tickFormatter={(value) => {
-                const date = new Date(value)
+                const date = new Date(value);
                 return date.toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
-                })
+                });
               }}
             />
             <ChartTooltip
@@ -282,7 +275,7 @@ export function ChartAreaInteractive() {
                     return new Date(value).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
-                    })
+                    });
                   }}
                   indicator="dot"
                 />
@@ -306,5 +299,5 @@ export function ChartAreaInteractive() {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import { PageSubTitle, PageTemplate } from "../components/page-template";
@@ -14,7 +13,6 @@ const page = () => {
           withInstall
           codePath="components/spectrumui/cards.tsx"
           installScript="npx shadcn@latest add card"
-         
           withEnd
         />
         <PageSubTitle>Usage</PageSubTitle>

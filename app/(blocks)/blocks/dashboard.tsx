@@ -11,17 +11,14 @@ import {
   Pill,
   GitBranch,
   UserCheck,
-  Shield,
   Settings,
   Globe,
   HelpCircle,
-  ChevronLeft,
   ChevronRight,
   MoreHorizontal,
   Plus,
   Clock,
   Package,
-  Filter,
   Menu,
   X,
   Bell,
@@ -33,7 +30,6 @@ import {
   Gauge,
   Clock4,
   KeyRound,
-  ChevronsRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -93,7 +89,6 @@ interface OrderColumnProps {
   orders: Order[];
   onOrderClick: (order: Order) => void;
   selectedOrder: Order | undefined;
-  isActive?: boolean;
 }
 
 interface OrderCardProps {
@@ -243,7 +238,7 @@ const vehicles = [
 
 export default function Dashboardblock() {
   const [selectedOrder, setSelectedOrder] = useState<Order | undefined>(
-    orders.find((order) => order.id === "#WLS392493")
+    orders.find((order) => order.id === "#WLS392493"),
   );
   const [collapsed, setCollapsed] = useState(false);
 
@@ -275,13 +270,6 @@ export default function Dashboardblock() {
     toast({
       title: "Auto-assignment complete",
       description: `Vehicle and driver automatically assigned to order ${selectedOrder.id}`,
-    });
-  };
-
-  const handleNewOrder = () => {
-    toast({
-      title: "New order",
-      description: "Creating a new order...",
     });
   };
 
@@ -403,7 +391,6 @@ export default function Dashboardblock() {
                 orders={orders.filter((o) => o.status === "ready")}
                 onOrderClick={handleOrderClick}
                 selectedOrder={selectedOrder}
-                isActive={true}
               />
             </div>
 
@@ -423,6 +410,7 @@ export default function Dashboardblock() {
                     onClose={() => setSelectedOrder(undefined)}
                     onAssign={handleAssign}
                     onAutoAssign={handleAutoAssign}
+                    isMobile={isMobile}
                   />
                 </motion.div>
               )}
@@ -438,7 +426,7 @@ export default function Dashboardblock() {
                     onClose={() => setAssignmentOpen(false)}
                     onAssign={handleAssign}
                     onAutoAssign={handleAutoAssign}
-                    isMobile={true}
+                    isMobile={isMobile}
                   />
                 )}
               </SheetContent>
@@ -673,7 +661,6 @@ function OrderColumn({
   orders,
   onOrderClick,
   selectedOrder,
-  isActive = false,
 }: OrderColumnProps): JSX.Element {
   return (
     <div className="flex-1 min-w-[350px] flex flex-col border-r border-border bg-[#F8F8F8] dark:bg-card">
@@ -749,7 +736,7 @@ function OrderCard({ order, isSelected }: OrderCardProps): JSX.Element {
       <Card
         className={cn(
           "mb-2 cursor-pointer",
-          isSelected ? "border-primary shadow-sm" : "border-border"
+          isSelected ? "border-primary shadow-sm" : "border-border",
         )}
       >
         <CardHeader className="p-3 pb-0">
@@ -972,7 +959,7 @@ function VehicleCard({ vehicle, isSelected }: VehicleCardProps): JSX.Element {
       <Card
         className={cn(
           "mb-4 cursor-pointer",
-          isSelected ? "border-primary shadow-sm" : "border-border"
+          isSelected ? "border-primary shadow-sm" : "border-border",
         )}
       >
         <CardHeader className="p-3 pb-0">

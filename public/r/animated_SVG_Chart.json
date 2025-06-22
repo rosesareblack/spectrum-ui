@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Animated SVG Chart",
   "description": "component for the Animated SVG Chart",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "files": [
     {
       "path": "app/registry/animatedchart/animateddemo.tsx",

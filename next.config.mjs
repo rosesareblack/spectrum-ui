@@ -7,7 +7,6 @@ const nextConfig = {
   },
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
-
     domains: [
       "lh3.googleusercontent.com",
       "img.freepik.com",
@@ -15,8 +14,6 @@ const nextConfig = {
       "source.unsplash.com",
       "plus.unsplash.com",
       "res.cloudinary.com",
-
-
     ],
   },
   eslint: {

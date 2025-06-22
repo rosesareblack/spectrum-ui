@@ -1,18 +1,16 @@
-"use client"
+"use client";
 
-import { Check, Clipboard } from "lucide-react"
-import { toast } from "sonner"
+import { Check, Copy } from "lucide-react";
+import { toast } from "sonner";
 
-
-import { type Color } from "@/lib/colors"
-import { trackEvent } from "@/lib/events"
-import { useColors } from "@/hooks/use-colors"
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { copyToClipboardWithMeta } from "@/components/copy-button"
+import { type Color } from "@/lib/colors";
+import { trackEvent } from "@/lib/events";
+import { useColors } from "@/hooks/use-colors";
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 
 export function Color({ color }: { color: Color }) {
-  const { format } = useColors()
-  const { isCopied, copyToClipboard } = useCopyToClipboard()
+  const { format } = useColors();
+  const { isCopied, copyToClipboard } = useCopyToClipboard();
 
   return (
     <button
@@ -25,7 +23,7 @@ export function Color({ color }: { color: Color }) {
         } as React.CSSProperties
       }
       onClick={() => {
-        copyToClipboard(color[format])
+        copyToClipboard(color[format]);
         trackEvent({
           name: "copy_color",
           properties: {
@@ -33,14 +31,14 @@ export function Color({ color }: { color: Color }) {
             value: color[format],
             format,
           },
-        })
-        toast.success(`Copied ${color[format]} to clipboard.`)
+        });
+        toast.success(`Copied ${color[format]} to clipboard.`);
       }}
     >
       {isCopied ? (
         <Check className="group-hover:opacity-100" />
       ) : (
-        <Clipboard className="group-hover:opacity-100" />
+        <Copy className="group-hover:opacity-100" />
       )}
       <div className="w-full flex-1 rounded-md bg-[--bg] md:rounded-lg" />
       <div className="flex w-full flex-col items-center justify-center gap-1">
@@ -52,5 +50,5 @@ export function Color({ color }: { color: Color }) {
         </span>
       </div>
     </button>
-  )
+  );
 }

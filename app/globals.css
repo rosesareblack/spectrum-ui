@@ -37,7 +37,7 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --elegant-font: 'Great Vibes';
+    --elegant-font: "Great Vibes";
     --color-1: oklch(66.2% 0.225 25.9);
     --color-2: oklch(60.4% 0.26 302);
     --color-3: oklch(69.6% 0.165 251);
@@ -195,7 +195,6 @@ pre > code {
   padding: 18px 0;
   font-size: 14px;
   font-family: "Geist Mono", monospace;
-
 }
 
 .code-line {
@@ -227,11 +226,11 @@ pre > code {
 }
 
 .keyword {
-  color: rgb(255, 50, 115)
+  color: rgb(255, 50, 115);
 }
 
 .function {
-  color: hsla(210, 100%, 66%, 1)
+  color: hsla(210, 100%, 66%, 1);
 }
 
 .string,
@@ -239,7 +238,7 @@ pre > code {
 .annotation,
 .boolean,
 .number {
-  color: hsl(0, 0%, 29%)
+  color: hsl(0, 0%, 29%);
 }
 
 .dark .string,
@@ -247,19 +246,19 @@ pre > code {
 .dark .annotation,
 .dark .boolean,
 .dark.number {
-  color: hsl(0, 0%, 71%)
+  color: hsl(0, 0%, 71%);
 }
 
 .dark .keyword {
-  color: hsla(341, 90%, 67%, 1)
+  color: hsla(341, 90%, 67%, 1);
 }
 
 .attr-value {
-  color: hsla(131, 43%, 57%, 1)
+  color: hsla(131, 43%, 57%, 1);
 }
 
 .tag {
-  color: hsla(341, 90%, 67%, 1)
+  color: hsla(341, 90%, 67%, 1);
 }
 
 .attr-name {
@@ -268,7 +267,6 @@ pre > code {
 
 .dark .attr-name {
   color: #cacaca;
-
 }
 
 .rehype-code-title {
@@ -284,7 +282,7 @@ pre > code {
   font-family: var(--font-code) !important;
 }
 
-.highlight-comp>code {
+.highlight-comp > code {
   background-color: transparent !important;
 }
 
@@ -331,19 +329,22 @@ pre > code {
 
 @theme inline {
   @keyframes rainbow {
-  0% {
-    background-position: 0%;
+    0% {
+      background-position: 0%;
     }
-  100% {
-    background-position: 200%;
+    100% {
+      background-position: 200%;
     }
   }
   @keyframes shiny-text {
-  0%, 90%, 100% {
-    background-position: calc(-100% - var(--shiny-width)) 0;
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
     }
-  30%, 60% {
-    background-position: calc(100% + var(--shiny-width)) 0;
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
 }

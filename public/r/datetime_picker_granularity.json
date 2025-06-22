@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Picker Granularity",
   "description": "component for the Datetime Picker Granularity",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-granularity.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:ui",
   "title": "Feedback Demo",
   "description": "component for the Feedback Demo",
-  "dependencies": [
-    "framer-motion",
-    "lucide-react",
-    "tailwind-merge"
-  ],
+  "dependencies": ["framer-motion", "lucide-react", "tailwind-merge"],
   "files": [
     {
       "path": "app/registry/feedback/feedbackdemo.tsx",

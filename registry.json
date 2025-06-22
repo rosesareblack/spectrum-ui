@@ -640,7 +640,7 @@
       "registryDependencies": ["button", "input", "label"],
       "dependencies": ["lucide-react"]
     },
-    
+
     {
       "name": "footer",
       "type": "registry:ui",

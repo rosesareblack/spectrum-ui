@@ -1,4 +1,3 @@
-import React from "react";
 import {
   PageSubTitle,
   PageTemplate,
@@ -7,11 +6,7 @@ import { Steppers } from "@/components/ui/steppers";
 import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
 import { Metadata } from "next";
 import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
-import DualRangeSliderDemo from "@/app/(docs)/docs/dual-range-slider/dual-range-slider-demo";
-import DualRangeSliderCustomLabel from "@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-custom-label";
 import Usage from "@/app/(docs)/docs/components/usage";
-import DualRangeSliderLabelPosition from "@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-label-position";
-import DualRangeSliderSingle from "@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-single";
 import Navbardemo from "./navbardemo";
 import CircularNavbar from "./usage/circular";
 import Tabnavbar from "./usage/tabnavbar";
@@ -27,8 +22,10 @@ export const metadata: Metadata = baseMetadata({
 const DualRangeSliderPage = () => {
   return (
     <PageTemplate title="Navbars">
-      <PreviewCodeCard path="app/(docs)/docs/navbar/navbardemo.tsx"
-      cli="https://ui.spectrumhq.in/r/navbar-demo.json">
+      <PreviewCodeCard
+        path="app/(docs)/docs/navbar/navbardemo.tsx"
+        cli="https://ui.spectrumhq.in/r/navbar-demo.json"
+      >
         <Navbardemo />
       </PreviewCodeCard>
 
@@ -59,7 +56,6 @@ const DualRangeSliderPage = () => {
         title="Floating Navbar"
         path="app/(docs)/docs/navbar/usage/floatingnavbar.tsx"
         cli="https://ui.spectrumhq.in/r/floating-navbar.json"
-
       >
         <Floatingnavbar />
       </Usage>
@@ -67,7 +63,6 @@ const DualRangeSliderPage = () => {
         title="Sidebar Navbar"
         path="app/(docs)/docs/navbar/usage/sidenav.tsx"
         cli="https://ui.spectrumhq.in/r/sidebar-navbar.json"
-
       >
         <Sidenavbar />
       </Usage>

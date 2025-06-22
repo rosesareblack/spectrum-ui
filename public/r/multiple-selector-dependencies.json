@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Multiple Selector Dependencies",
   "description": "component for the Multiple Selector Dependencies",
-  "dependencies": [
-    "cmdk",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "badge",
-    "command"
-  ],
+  "dependencies": ["cmdk", "lucide-react"],
+  "registryDependencies": ["badge", "command"],
   "files": [
     {
       "path": "app/registry/spectrumui/multiple-selector-dependencies.tsx",

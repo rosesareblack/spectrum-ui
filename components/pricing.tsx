@@ -1,6 +1,5 @@
 import { Particles } from "@/components/particles";
 import { cn } from "@/lib/utils";
-import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import type { PropsWithChildren } from "react";
 
@@ -36,23 +35,36 @@ export const PricingCardHeader: React.FC<{
             "relative z-30 flex items-center justify-center ring-1 h-14 min-w-14 w-14 duration-150 rounded-xl backdrop-blur rounded-2 overflow-hidden drop-shadow-[0_20px_20px_rgba(256,0,0,1) ]",
             {
               " ring-white/10 hover:ring-white/25 ": color === Color.White,
-              " ring-[#FFD600]/10 hover:ring-[#FFD600]/25": color === Color.Yellow,
-              " ring-[#9D72FF]/10 hover:ring-[#9D72FF]/25": color === Color.Purple,
+              " ring-[#FFD600]/10 hover:ring-[#FFD600]/25":
+                color === Color.Yellow,
+              " ring-[#9D72FF]/10 hover:ring-[#9D72FF]/25":
+                color === Color.Purple,
             },
           )}
         >
           <Particles
             className="absolute inset-0 duration-500 opacity-50 -z-10 group-hover:opacity-100"
-            quantity={color === Color.White ? 10 : color === Color.Yellow ? 20 : 40}
+            quantity={
+              color === Color.White ? 10 : color === Color.Yellow ? 20 : 40
+            }
             color={color}
-            vy={color === Color.White ? -0.05 : color === Color.Yellow ? -0.1 : -0.15}
+            vy={
+              color === Color.White
+                ? -0.05
+                : color === Color.Yellow
+                  ? -0.1
+                  : -0.15
+            }
           />
           <div
-            className={cn("absolute -top-1  bg-gradient-radial  blur h-6 w-8 ", {
-              "from-white/50": color === Color.White,
-              "from-[#FFD600]/50": color === Color.Yellow,
-              "from-[#9D72FF]/50": color === Color.Purple,
-            })}
+            className={cn(
+              "absolute -top-1  bg-gradient-radial  blur h-6 w-8 ",
+              {
+                "from-white/50": color === Color.White,
+                "from-[#FFD600]/50": color === Color.Yellow,
+                "from-[#9D72FF]/50": color === Color.Purple,
+              },
+            )}
           />
           <KeyIcon color={color} />
         </div>
@@ -61,30 +73,32 @@ export const PricingCardHeader: React.FC<{
   );
 };
 
-export const Cost: React.FC<{ dollar: string; className?: string }> = ({ dollar, className }) => {
+export const Cost: React.FC<{ dollar: string; className?: string }> = ({
+  dollar,
+  className,
+}) => {
   return (
     <div className={cn("flex items-center gap-4", className)}>
       <span className="text-4xl font-semibold text-transparent bg-gradient-to-br bg-clip-text from-white via-white to-white/30">
         {dollar}
       </span>
-      {
-        dollar ==="$20" ? 
-      <span className=" text-white/60">/ One-Time</span>
-        
-        :
-      <span className=" text-white/60">/ Month</span>
-
-      }
+      {dollar === "$20" ? (
+        <span className=" text-white/60">/ One-Time</span>
+      ) : (
+        <span className=" text-white/60">/ Month</span>
+      )}
     </div>
   );
 };
 
-export const PricingButton: React.FC<{ label: string,productId:string }> = ({ label ,productId}) => {
+export const PricingButton: React.FC<{ label: string; productId: string }> = ({
+  label,
+  productId,
+}) => {
   return (
     <div>
       <Link href={`/checkout?products=${productId}`}>
         <button
-
           type="button"
           className="block w-full h-10 text-sm font-semibold text-center text-black duration-500 bg-white border border-white rounded-lg hover:bg-transparent hover:text-white"
         >
@@ -98,14 +112,14 @@ export const PricingButton: React.FC<{ label: string,productId:string }> = ({ la
 export const Bullets: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div>
-      <p className="text-white/50">What's included:</p>
+      <p className="text-white/50">What&apos;s included:</p>
       <ul className="flex flex-col gap-4 mt-6">{children}</ul>
     </div>
   );
 };
 
 export const Bullet: React.FC<{
-  Icon: LucideIcon;
+  Icon: React.ElementType;
   label: string;
   color: Color;
   textColor?: string;
@@ -114,15 +128,23 @@ export const Bullet: React.FC<{
   return (
     <div className={cn("flex items-center gap-4", className)}>
       <div
-        className={cn("h-6 min-w-6 w-6 flex items-center justify-center rounded-md", {
-          "text-[#FFFFFF] bg-[#FFFFFF]/10": color === Color.White,
-          "text-[#FFD600] bg-[#FFD600]/10": color === Color.Yellow,
-          "text-[#9D72FF] bg-[#9D72FF]/10": color === Color.Purple,
-        })}
+        className={cn(
+          "h-6 min-w-6 w-6 flex items-center justify-center rounded-md",
+          {
+            "text-[#FFFFFF] bg-[#FFFFFF]/10": color === Color.White,
+            "text-[#FFD600] bg-[#FFD600]/10": color === Color.Yellow,
+            "text-[#9D72FF] bg-[#9D72FF]/10": color === Color.Purple,
+          },
+        )}
       >
         <Icon className="w-3 h-3" />
       </div>
-      <span className={cn("text-sm text-white md:whitespace-nowrap sm:text-xs", textColor)}>
+      <span
+        className={cn(
+          "text-sm text-white md:whitespace-nowrap sm:text-xs",
+          textColor,
+        )}
+      >
         {label}
       </span>
     </div>
@@ -143,28 +165,35 @@ export const PricingCardContent: React.FC<
   );
 };
 
-export const PricingCardFooter: React.FC<PropsWithChildren> = ({ children }) => {
+export const PricingCardFooter: React.FC<PropsWithChildren> = ({
+  children,
+}) => {
   return <div className="p-8 border-t border-white/10">{children}</div>;
 };
 
-export const Asterisk: React.FC<{ tag: string; label?: string }> = ({ tag, label }) => {
+export const Asterisk: React.FC<{ tag: string; label?: string }> = ({
+  tag,
+  label,
+}) => {
   return (
     <div className="flex items-center gap-2">
       <span className="flex items-center justify-start w-20 h-6 px-2 text-sm font-semibold text-white rounded bg-white/10">
         {tag}
       </span>
-      <span className="flex-grow w-full col-span-1 text-sm text-white/60">{label}</span>
+      <span className="flex-grow w-full col-span-1 text-sm text-white/60">
+        {label}
+      </span>
     </div>
   );
 };
 
-export const PricingCard: React.FC<PropsWithChildren<{ color: Color; className?: string }>> = ({
-  children,
-  color,
-  className,
-}) => {
+export const PricingCard: React.FC<
+  PropsWithChildren<{ color: Color; className?: string }>
+> = ({ children, color, className }) => {
   return (
-    <div className={cn("relative h-full overflow-hidden  group/item", className)}>
+    <div
+      className={cn("relative h-full overflow-hidden  group/item", className)}
+    >
       <div
         className={cn(
           "h-full relative bg-neutral-800 rounded-[2rem] p-px after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500  after:group-hover:opacity-100 after:z-10 overflow-hidden",
@@ -187,7 +216,10 @@ export const PricingCard: React.FC<PropsWithChildren<{ color: Color; className?:
   );
 };
 
-export const KeyIcon: React.FC<{ className?: string; color: Color }> = ({ className, color }) => {
+export const KeyIcon: React.FC<{ className?: string; color: Color }> = ({
+  className,
+  color,
+}) => {
   return (
     <svg
       className={className}
@@ -235,7 +267,9 @@ export const KeyIcon: React.FC<{ className?: string; color: Color }> = ({ classN
     </svg>
   );
 };
-export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }) => {
+export const FreeCardHighlight: React.FC<{ className: string }> = ({
+  className,
+}) => {
   return (
     <svg
       className={className}
@@ -246,7 +280,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
       xmlns="http://www.w3.org/2000/svg"
     >
       <g opacity="0.4">
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter0_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter0_f_2076_3302)"
+        >
           <ellipse
             cx="16.3892"
             cy="146.673"
@@ -257,7 +294,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "color-dodge" }} filter="url(#filter1_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "color-dodge" }}
+          filter="url(#filter1_f_2076_3302)"
+        >
           <ellipse
             cx="13.25"
             cy="146.625"
@@ -268,7 +308,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter2_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter2_f_2076_3302)"
+        >
           <ellipse
             cx="11.1897"
             cy="190.642"
@@ -279,7 +322,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter3_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter3_f_2076_3302)"
+        >
           <ellipse
             cx="11.1897"
             cy="90.3336"
@@ -290,7 +336,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter4_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter4_f_2076_3302)"
+        >
           <ellipse
             cx="11.125"
             cy="190.75"
@@ -301,7 +350,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter5_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter5_f_2076_3302)"
+        >
           <ellipse
             cx="160.75"
             cy="93.75"
@@ -312,7 +364,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter6_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter6_f_2076_3302)"
+        >
           <ellipse
             cx="80.25"
             cy="47.75"
@@ -323,7 +378,10 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter7_f_2076_3302)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter7_f_2076_3302)"
+        >
           <ellipse
             cx="67.5"
             cy="40.125"
@@ -346,8 +404,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter1_f_2076_3302"
@@ -359,8 +425,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter2_f_2076_3302"
@@ -372,8 +446,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter3_f_2076_3302"
@@ -385,8 +467,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter4_f_2076_3302"
@@ -398,8 +488,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter5_f_2076_3302"
@@ -411,8 +509,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter6_f_2076_3302"
@@ -424,8 +530,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <filter
           id="filter7_f_2076_3302"
@@ -437,8 +551,16 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3302" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3302"
+          />
         </filter>
         <linearGradient
           id="paint0_linear_2076_3302"
@@ -533,7 +655,9 @@ export const FreeCardHighlight: React.FC<{ className: string }> = ({ className }
   );
 };
 
-export const ProCardHighlight: React.FC<{ className: string }> = ({ className }) => {
+export const ProCardHighlight: React.FC<{ className: string }> = ({
+  className,
+}) => {
   return (
     <svg
       className={className}
@@ -544,7 +668,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
       xmlns="http://www.w3.org/2000/svg"
     >
       <g opacity="0.4">
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter0_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter0_f_2076_3350)"
+        >
           <ellipse
             cx="16.3892"
             cy="146.673"
@@ -555,7 +682,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "color-dodge" }} filter="url(#filter1_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "color-dodge" }}
+          filter="url(#filter1_f_2076_3350)"
+        >
           <ellipse
             cx="13.25"
             cy="146.625"
@@ -566,7 +696,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter2_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter2_f_2076_3350)"
+        >
           <ellipse
             cx="11.1897"
             cy="190.642"
@@ -577,7 +710,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter3_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter3_f_2076_3350)"
+        >
           <ellipse
             cx="11.1897"
             cy="90.3336"
@@ -588,7 +724,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter4_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter4_f_2076_3350)"
+        >
           <ellipse
             cx="11.125"
             cy="190.75"
@@ -599,7 +738,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter5_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter5_f_2076_3350)"
+        >
           <ellipse
             cx="160.75"
             cy="93.75"
@@ -610,7 +752,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter6_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter6_f_2076_3350)"
+        >
           <ellipse
             cx="80.25"
             cy="47.75"
@@ -621,7 +766,10 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter7_f_2076_3350)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter7_f_2076_3350)"
+        >
           <ellipse
             cx="67.5"
             cy="40.125"
@@ -644,8 +792,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter1_f_2076_3350"
@@ -657,8 +813,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter2_f_2076_3350"
@@ -670,8 +834,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter3_f_2076_3350"
@@ -683,8 +855,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter4_f_2076_3350"
@@ -696,8 +876,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter5_f_2076_3350"
@@ -709,8 +897,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter6_f_2076_3350"
@@ -722,8 +918,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <filter
           id="filter7_f_2076_3350"
@@ -735,8 +939,16 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3350" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3350"
+          />
         </filter>
         <linearGradient
           id="paint0_linear_2076_3350"
@@ -831,7 +1043,9 @@ export const ProCardHighlight: React.FC<{ className: string }> = ({ className })
   );
 };
 
-export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ className }) => {
+export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({
+  className,
+}) => {
   return (
     <svg
       className={className}
@@ -842,7 +1056,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
       xmlns="http://www.w3.org/2000/svg"
     >
       <g opacity="0.4">
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter0_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter0_f_2076_3437)"
+        >
           <ellipse
             cx="16.3892"
             cy="146.673"
@@ -853,7 +1070,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "color-dodge" }} filter="url(#filter1_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "color-dodge" }}
+          filter="url(#filter1_f_2076_3437)"
+        >
           <ellipse
             cx="13.25"
             cy="146.625"
@@ -864,7 +1084,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter2_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter2_f_2076_3437)"
+        >
           <ellipse
             cx="11.1897"
             cy="190.642"
@@ -875,7 +1098,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter3_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter3_f_2076_3437)"
+        >
           <ellipse
             cx="11.1897"
             cy="90.3336"
@@ -886,7 +1112,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter4_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter4_f_2076_3437)"
+        >
           <ellipse
             cx="11.125"
             cy="190.75"
@@ -897,7 +1126,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter5_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter5_f_2076_3437)"
+        >
           <ellipse
             cx="160.75"
             cy="93.75"
@@ -908,7 +1140,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter6_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter6_f_2076_3437)"
+        >
           <ellipse
             cx="80.25"
             cy="47.75"
@@ -919,7 +1154,10 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter7_f_2076_3437)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter7_f_2076_3437)"
+        >
           <ellipse
             cx="67.5"
             cy="40.125"
@@ -942,8 +1180,16 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter1_f_2076_3437"
@@ -955,8 +1201,16 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter2_f_2076_3437"
@@ -968,8 +1222,16 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter3_f_2076_3437"
@@ -981,8 +1243,16 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter4_f_2076_3437"
@@ -994,47 +1264,79 @@ export const EnterpriseCardHighlight: React.FC<{ className: string }> = ({ class
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter5_f_2076_3437"
-          x="68.9412"
-          y="-176.546"
-          width="443.867"
-          height="378.49"
+          x="-5.34058e-05"
+          y="121.5"
+          width="471.5"
+          height="337.5"
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter6_f_2076_3437"
-          x="165.37"
-          y="-159.758"
-          width="297.01"
-          height="265.24"
+          x="80.4999"
+          y="121.5"
+          width="310.5"
+          height="245.5"
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <filter
           id="filter7_f_2076_3437"
-          x="175.242"
-          y="-147.441"
-          width="273.641"
-          height="246.883"
+          x="93.2499"
+          y="132.75"
+          width="285"
+          height="230.25"
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_3437" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_3437"
+          />
         </filter>
         <linearGradient
           id="paint0_linear_2076_3437"
@@ -1142,7 +1444,9 @@ export const Separator: React.FC<{
   />
 );
 
-export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className }) => {
+export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({
+  className,
+}) => {
   return (
     <svg
       className={className}
@@ -1153,7 +1457,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
       xmlns="http://www.w3.org/2000/svg"
     >
       <g opacity="0.4">
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter0_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter0_f_2076_2453)"
+        >
           <ellipse
             cx="184.597"
             cy="353.647"
@@ -1164,7 +1471,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "color-dodge" }} filter="url(#filter1_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "color-dodge" }}
+          filter="url(#filter1_f_2076_2453)"
+        >
           <ellipse
             cx="237.5"
             cy="343.125"
@@ -1174,7 +1484,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter2_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter2_f_2076_2453)"
+        >
           <ellipse
             cx="289.17"
             cy="378.792"
@@ -1185,7 +1498,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter3_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter3_f_2076_2453)"
+        >
           <ellipse
             cx="263.208"
             cy="281.902"
@@ -1196,7 +1512,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter4_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter4_f_2076_2453)"
+        >
           <ellipse
             cx="235.875"
             cy="402.5"
@@ -1206,7 +1525,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter5_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter5_f_2076_2453)"
+        >
           <ellipse
             cx="235.75"
             cy="290.25"
@@ -1216,7 +1538,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter6_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter6_f_2076_2453)"
+        >
           <ellipse
             cx="235.75"
             cy="244.25"
@@ -1226,7 +1551,10 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
             fillOpacity="0.5"
           />
         </g>
-        <g style={{ mixBlendMode: "lighten" }} filter="url(#filter7_f_2076_2453)">
+        <g
+          style={{ mixBlendMode: "lighten" }}
+          filter="url(#filter7_f_2076_2453)"
+        >
           <ellipse
             cx="235.75"
             cy="247.875"
@@ -1293,8 +1621,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter1_f_2076_2453"
@@ -1306,8 +1642,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter2_f_2076_2453"
@@ -1319,8 +1663,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter3_f_2076_2453"
@@ -1332,8 +1684,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter4_f_2076_2453"
@@ -1345,8 +1705,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="22.25" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="22.25"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter5_f_2076_2453"
@@ -1358,8 +1726,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter6_f_2076_2453"
@@ -1371,8 +1747,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <filter
           id="filter7_f_2076_2453"
@@ -1384,8 +1768,16 @@ export const BelowEnterpriseSvg: React.FC<{ className?: string }> = ({ className
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_2076_2453" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="37.5"
+            result="effect1_foregroundBlur_2076_2453"
+          />
         </filter>
         <linearGradient
           id="paint0_linear_2076_2453"

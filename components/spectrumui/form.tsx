@@ -1,10 +1,8 @@
-
 "use client";
 import React from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
@@ -16,7 +14,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Card } from "../ui/card";
 import { Check, Eye, EyeOff, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import EmojiPicker from "emoji-picker-react";
@@ -26,7 +23,9 @@ export default function Inputcollection() {
   const [isPickerOpen, setIsPickerOpen] = useState(false);
   const [chosenEmoji, setChosenEmoji] = useState("");
 
-  const onEmojiClick = (emojiObject: { emoji: React.SetStateAction<string>; }) => {
+  const onEmojiClick = (emojiObject: {
+    emoji: React.SetStateAction<string>;
+  }) => {
     setChosenEmoji(emojiObject.emoji);
     setIsPickerOpen(false); // close picker after selecting
   };
@@ -96,7 +95,9 @@ export default function Inputcollection() {
         <div className="space-y-2">
           <Label htmlFor="helper">Input with Helper Text</Label>
           <Input id="helper" placeholder="Enter email" />
-          <p className="text-sm text-gray-500">We'll never share your email.</p>
+          <p className="text-sm text-gray-500">
+            We&apos;ll never share your email.
+          </p>
         </div>
 
         {/* 5. Input with Error */}
@@ -266,7 +267,7 @@ export default function Inputcollection() {
           >
             <div
               className={`h-full ${getStrengthColor(
-                strengthScore
+                strengthScore,
               )} transition-all duration-500 ease-out`}
               style={{ width: `${(strengthScore / 4) * 100}%` }}
             ></div>

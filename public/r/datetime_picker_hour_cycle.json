@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Picker Hour",
   "description": "component for the Datetime Picker Hour",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-hour-cycle.tsx",

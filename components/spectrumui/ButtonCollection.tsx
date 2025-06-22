@@ -5,8 +5,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Copy from "@/components/copy";
 import {
-  RiCloseCircleLine,
-  RiDeleteBin5Fill,
   RiFacebookFill,
   RiGithubFill,
   RiGoogleFill,
@@ -22,7 +20,6 @@ import {
   Edit,
   ExternalLink,
   Eye,
-  EyeOff,
   Filter,
   Heart,
   HelpCircle,
@@ -342,18 +339,17 @@ export default function ImportantButtons() {
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 grid-cols-1 ml-6">
-    {buttons.map(({ name, component: ButtonComponent, code }) => (
-      <div key={name} className="relative group">
-        <Card className="w-[240px] h-[100px] flex items-center justify-center">
-          <ButtonComponent />
-        </Card>
-        <div className="absolute top-2 left-48 hidden group-hover:flex">
-          <Copy content={code} />
+      {buttons.map(({ name, component: ButtonComponent, code }) => (
+        <div key={name} className="relative group">
+          <Card className="w-[240px] h-[100px] flex items-center justify-center">
+            <ButtonComponent />
+          </Card>
+          <div className="absolute top-2 left-48 hidden group-hover:flex">
+            <Copy content={code} />
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-  
+      ))}
+    </div>
   );
 }
 
@@ -803,5 +799,3 @@ export function LoginGithub() {
     </Button>
   );
 }
-
-

@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ChevronDown, ChevronRight, Search } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Collapsible,
@@ -19,35 +18,29 @@ import { DOCS } from "@/app/(docs)/layout-parts/documentation.constant";
 
 export default function Mobiledocs() {
   const [openGroups, setOpenGroups] = useState<string[]>(
-    DOCS.map((group) => group.groupKey)
+    DOCS.map((group) => group.groupKey),
   );
-  const [searchTerm, setSearchTerm] = useState("");
   const pathname = usePathname();
 
   useEffect(() => {
     // Ensure the group of the active link is open
     const activeGroup = DOCS.find((group) =>
-      group.children.some((child) => child.url === pathname)
+      group.children.some((child) => child.url === pathname),
     );
     if (activeGroup && !openGroups.includes(activeGroup.groupKey)) {
       setOpenGroups((prev) => [...prev, activeGroup.groupKey]);
     }
-  }, [pathname]);
+  }, [pathname, openGroups]);
 
   const toggleGroup = (groupKey: string) => {
     setOpenGroups((prev) =>
       prev.includes(groupKey)
         ? prev.filter((key) => key !== groupKey)
-        : [...prev, groupKey]
+        : [...prev, groupKey],
     );
   };
 
-  const filteredDocs = DOCS.map((group) => ({
-    ...group,
-    children: group.children.filter((child) =>
-      child.label.toLowerCase().includes(searchTerm.toLowerCase())
-    ),
-  })).filter((group) => group.children.length > 0);
+  const filteredDocs = DOCS;
 
   return (
     <aside className="flex lg:hidden flex-col items-center   top-0 ">
@@ -81,7 +74,7 @@ export default function Mobiledocs() {
                       "flex items-center gap-2 px-4 py-2 text-sm rounded-md transition-colors",
                       pathname === child.url
                         ? "text-green-400"
-                        : "hover:text-green-400"
+                        : "hover:text-green-400",
                     )}
                   >
                     {child.label}

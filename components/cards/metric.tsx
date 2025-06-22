@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Line, LineChart } from "recharts"
+import { Line, LineChart } from "recharts";
 
 import {
   Card,
@@ -8,13 +8,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
 const data = [
   {
@@ -45,7 +45,7 @@ const data = [
     average: 349,
     today: 430,
   },
-]
+];
 
 const chartConfig = {
   today: {
@@ -56,7 +56,7 @@ const chartConfig = {
     label: "Average",
     color: "hsl(var(--primary))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function CardsMetric() {
   return (
@@ -104,5 +104,5 @@ export function CardsMetric() {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Animated Wave Footer",
   "description": "component for the Animated Wave Footer",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button",
-    "input",
-    "label"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "input", "label"],
   "files": [
     {
       "path": "app/registry/footer/usage/animatefooter.tsx",

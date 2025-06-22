@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Image Preview Dependencies",
   "description": "component for the Image Preview Dependencies",
-  "dependencies": [
-    "lucide-react",
-    "@radix-ui/react-dialog"
-  ],
+  "dependencies": ["lucide-react", "@radix-ui/react-dialog"],
   "files": [
     {
       "path": "app/registry/imagepreview/image-preview-dependecies.tsx",

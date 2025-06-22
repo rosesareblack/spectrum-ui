@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Dual Range Slider Dependencies",
   "description": "component for the Dual Range Slider Dependencies",
-  "dependencies": [
-    "@radix-ui/react-slider"
-  ],
+  "dependencies": ["@radix-ui/react-slider"],
   "files": [
     {
       "path": "app/registry/spectrumui/dual-range-slider-dependecies.tsx",

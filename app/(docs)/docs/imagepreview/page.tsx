@@ -8,14 +8,17 @@ const page = () => {
   return (
     <div>
       <PageTemplate title="Image Preview" className="mt-5">
-        <PreviewCodeCard path="app/(docs)/docs/imagepreview/usages/useone.tsx" 
-        cli="https://ui.spectrumhq.in/r/image_preview.json">
-        <Demoimages/>
+        <PreviewCodeCard
+          path="app/(docs)/docs/imagepreview/usages/useone.tsx"
+          cli="https://ui.spectrumhq.in/r/image_preview.json"
+        >
+          <Demoimages />
         </PreviewCodeCard>
 
         <PageSubTitle>Installation</PageSubTitle>
         <p>
-          Create a new file called <code>ImagePreview.tsx</code> in the{" components"} 
+          Create a new file called <code>ImagePreview.tsx</code> in the
+          {" components"}
         </p>
 
         <Steppers
@@ -26,8 +29,6 @@ const page = () => {
           withInstall
           codePath="app/(docs)/docs/imagepreview/ImagePreview.tsx"
         />
-
-       
       </PageTemplate>
     </div>
   );

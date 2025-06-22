@@ -4,11 +4,7 @@
   "type": "registry:ui",
   "title": "Multiple Selector With Form",
   "description": "component for the Multiple Selector With Form",
-  "dependencies": [
-    "react-hook-form",
-    "zod",
-    "@hookform/resolvers"
-  ],
+  "dependencies": ["react-hook-form", "zod", "@hookform/resolvers"],
   "registryDependencies": [
     "form",
     "https://ui.spectrumhq.in/r/use-toast.json",

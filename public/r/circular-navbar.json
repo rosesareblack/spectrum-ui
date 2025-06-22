@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Circular Navbar",
   "description": "component for the Circular Navbar",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "avatar",
-    "button"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["avatar", "button"],
   "files": [
     {
       "path": "app/registry/navbar/usage/circular.tsx",

@@ -4,17 +4,8 @@
   "type": "registry:ui",
   "title": "Event Calendar",
   "description": "component for the Event Calendar",
-  "dependencies": [
-    "framer-motion",
-    "lucide-react",
-    "date-fns"
-  ],
-  "registryDependencies": [
-    "button",
-    "dialog",
-    "input",
-    "label"
-  ],
+  "dependencies": ["framer-motion", "lucide-react", "date-fns"],
+  "registryDependencies": ["button", "dialog", "input", "label"],
   "files": [
     {
       "path": "app/registry/eventcalendar/demoevent.tsx",

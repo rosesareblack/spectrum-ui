@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Copy from "../copy";
@@ -30,30 +30,24 @@ import {
   Bell,
   Calendar,
   Check,
-  Clock,
   Cloud,
   CreditCard,
   Download,
-  Heart,
   LucideBarChart,
   LucideLineChart,
   LucidePieChart,
-  Mail,
   Map,
-  MessageSquare,
   Mic,
   Moon,
   Music,
   Phone,
   Search,
-  Settings,
   Star,
   Sun,
   Zap,
 } from "lucide-react";
-import { DollarSign, PieChart, TrendingUp, Users } from "lucide-react";
+import { DollarSign, TrendingUp, Users } from "lucide-react";
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
@@ -245,7 +239,7 @@ export default function CardCollection() {
     )
   }`,
     },
-   
+
     {
       name: "SettingsCard",
       component: SettingsCard,
@@ -531,58 +525,7 @@ export default function CardCollection() {
     {
       name: "TaskCard",
       component: TaskCard,
-      code: `
-  function TaskCard() {
-    return (
-      <Card className="w-[310px]">
-        <CardHeader>
-          <CardTitle>Current Tasks</CardTitle>
-          <CardDescription>Your team's ongoing tasks</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {["Design system update", "API integration", "User testing"].map(
-              (task, index) => (
-                <div key={index} className="flex items-center">
-                  <input type="checkbox" id={\`task-\${index}\`} className="mr-2" />
-                  <label htmlFor={\`task-\${index}\`} className="flex-1">
-                    {task}
-                  </label>
-                  <Badge
-                    variant={
-                      index === 0
-                        ? "default"
-                        : index === 1
-                        ? "secondary"
-                        : "outline"
-                    }
-                    
-                    export default CardCollection;
-                    
-                    export default CardCollection;
-                    
-                    export default CardCollection;
-                  >
-                    {index === 0
-                      ? "In Progress"
-                      : index === 1
-                      ? "Pending"
-                      : "Completed"}
-                  </Badge>
-                </div>
-              )
-            )}
-          </div>
-        </CardContent>
-        <CardFooter>
-          <Button variant="outline" className="w-full">
-            View All Tasks
-          </Button>
-        </CardFooter>
-      
-      </Card>
-    )
-  }`,
+      code: 'function TaskCard() {\n  return (\n    <Card className="w-[310px]">\n      <CardHeader>\n        <CardTitle>Current Tasks</CardTitle>\n        <CardDescription>Your team&apos;s ongoing tasks</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <div className="space-y-4">\n          {["Design system update", "API integration", "User testing"].map(\n            (task, index) => (\n              <div key={index} className="flex items-center">\n                <input type="checkbox" id={`task-${index}`} className="mr-2" />\n                <label htmlFor={`task-${index}`} className="flex-1">\n                  {task}\n                </label>\n                <Badge\n                  variant={\n                    index === 0\n                      ? "default"\n                      : index === 1\n                      ? "secondary"\n                      : "outline"\n                  }\n                >\n                  {index === 0\n                    ? "In Progress"\n                    : index === 1\n                    ? "Pending"\n                    : "Completed"}\n                </Badge>\n              </div>\n            )\n          )}\n        </div>\n      </CardContent>\n      <CardFooter>\n        <Button variant="outline" className="w-full">\n          View All Tasks\n        </Button>\n      </CardFooter>\n    </Card>\n  )\n}',
     },
     {
       name: "CalendarCard",
@@ -706,8 +649,7 @@ export default function CardCollection() {
     )
   }`,
     },
-    
-   
+
     {
       name: "TeamCollaborationCard",
       component: TeamCollaborationCard,
@@ -801,7 +743,7 @@ export default function CardCollection() {
     )
   }`,
     },
-    
+
     {
       name: "ProductivityTrackerCard",
       component: ProductivityTrackerCard,
@@ -1467,16 +1409,15 @@ function QuickNoteCard() {
   ];
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12  grid-cols-1 ml-2">
-    {cardComponents.map(({ name, component: CardComponent, code }) => (
-      <div key={name} className="relative group">
-        <CardComponent />
-        <div className="absolute top-1 right-5 hidden group-hover:flex">
-          <Copy content={code} />
+      {cardComponents.map(({ name, component: CardComponent, code }) => (
+        <div key={name} className="relative group">
+          <CardComponent />
+          <div className="absolute top-1 right-5 hidden group-hover:flex">
+            <Copy content={code} />
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-  
+      ))}
+    </div>
   );
 }
 
@@ -1780,7 +1721,7 @@ export function TaskCard() {
     <Card className="w-[310px]">
       <CardHeader>
         <CardTitle>Current Tasks</CardTitle>
-        <CardDescription>Your team's ongoing tasks</CardDescription>
+        <CardDescription>Your team&apos;s ongoing tasks</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -1796,18 +1737,18 @@ export function TaskCard() {
                     index === 0
                       ? "default"
                       : index === 1
-                      ? "secondary"
-                      : "outline"
+                        ? "secondary"
+                        : "outline"
                   }
                 >
                   {index === 0
                     ? "In Progress"
                     : index === 1
-                    ? "Pending"
-                    : "Completed"}
+                      ? "Pending"
+                      : "Completed"}
                 </Badge>
               </div>
-            )
+            ),
           )}
         </div>
       </CardContent>
@@ -1952,9 +1893,7 @@ export function AIAssistantCard() {
           <div
             key={index}
             className={`mb-2 ${
-              msg.role === "ai"
-                ? "text-blue-600 text-left"
-                : "text-right"
+              msg.role === "ai" ? "text-blue-600 text-left" : "text-right"
             }`}
           >
             <strong>{msg.role === "ai" ? "AI: " : "You: "}</strong>

@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Alert 2",
   "description": "component for the alert-2",
-  "registryDependencies": [
-    "alert",
-    "button"
-  ],
+  "registryDependencies": ["alert", "button"],
   "files": [
     {
       "path": "app/registry/alerttwo.tsx",

@@ -9,14 +9,11 @@ import {
   File,
   Folder,
   FolderOpen,
-  icons,
 } from "lucide-react";
-import { codeToHtml } from "shiki";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Monitor, Tablet, Smartphone, Printer, Move } from "lucide-react";
 
 interface FileNode {
   name: string;
@@ -47,17 +44,16 @@ export function BlocksPage({
   shikiTheme = "github-dark",
 }: BlocksPageProps) {
   const [activeTab, setActiveTab] = React.useState<"preview" | "code">(
-    "preview"
+    "preview",
   );
   const [selectedFile, setSelectedFile] = React.useState<string>(
-    defaultFile || files.find((f) => f.type === "file")?.path || ""
+    defaultFile || files.find((f) => f.type === "file")?.path || "",
   );
   const [expandedFolders, setExpandedFolders] = React.useState<Set<string>>(
-    new Set(["app", "components"])
+    new Set(["app", "components"]),
   );
   const [highlightedCode, setHighlightedCode] = React.useState<string>("");
-  const [selectedDevice, setSelectedDevice] =
-    React.useState<DeviceType>("desktop");
+  const [selectedDevice] = React.useState<DeviceType>("desktop");
   const [customWidth, setCustomWidth] = React.useState(1200);
   const [customHeight, setCustomHeight] = React.useState(800);
   const [isResizing, setIsResizing] = React.useState(false);
@@ -73,16 +69,19 @@ export function BlocksPage({
     setExpandedFolders(newExpanded);
   };
 
-  const findFileByPath = (nodes: FileNode[], path: string): FileNode | null => {
-    for (const node of nodes) {
-      if (node.path === path) return node;
-      if (node.children) {
-        const found = findFileByPath(node.children, path);
-        if (found) return found;
+  const findFileByPath = React.useCallback(
+    (nodes: FileNode[], path: string): FileNode | null => {
+      for (const node of nodes) {
+        if (node.path === path) return node;
+        if (node.children) {
+          const found = findFileByPath(node.children, path);
+          if (found) return found;
+        }
       }
-    }
-    return null;
-  };
+      return null;
+    },
+    [],
+  );
 
   const getFileExtension = (filename: string): string => {
     return filename.split(".").pop() || "";
@@ -124,23 +123,6 @@ export function BlocksPage({
     }
   };
 
-  const getDeviceIcon = (device: DeviceType) => {
-    switch (device) {
-      case "desktop":
-        return Monitor;
-      case "tablet":
-        return Tablet;
-      case "mobile":
-        return Smartphone;
-      case "print":
-        return Printer;
-      case "resizable":
-        return Move;
-      default:
-        return Monitor;
-    }
-  };
-
   // Handle mouse resize for resizable mode
   const handleMouseDown = (e: React.MouseEvent) => {
     if (selectedDevice !== "resizable") return;
@@ -178,6 +160,7 @@ export function BlocksPage({
       }
 
       try {
+        const { codeToHtml } = await import("shiki");
         const ext = getFileExtension(file.name);
         const language = file.language || getLanguageFromExtension(ext);
 
@@ -195,7 +178,6 @@ export function BlocksPage({
         });
         setHighlightedCode(html);
       } catch (error) {
-        console.error("Error highlighting code:", error);
         setHighlightedCode(`<pre><code>${file.content}</code></pre>`);
       }
     };
@@ -203,7 +185,7 @@ export function BlocksPage({
     if (activeTab === "code" && selectedFile) {
       highlightCode();
     }
-  }, [selectedFile, activeTab, files, shikiTheme]);
+  }, [selectedFile, activeTab, files, shikiTheme, findFileByPath]);
 
   const renderFileTree = (nodes: FileNode[], level = 0) => {
     return nodes.map((node) => (
@@ -212,7 +194,7 @@ export function BlocksPage({
           className={cn(
             "flex items-center gap-1 px-2 py-2 text-sm cursor-pointer hover:bg-muted/50 rounded-sm",
             selectedFile === node.path && "bg-muted",
-            level > 0 && "ml-4"
+            level > 0 && "ml-4",
           )}
           style={{ paddingLeft: `${8 + level * 16}px` }}
           onClick={() => {
@@ -290,7 +272,7 @@ export function BlocksPage({
                     "transition-all duration-300 ease-in-out relative",
                     getDeviceStyles(selectedDevice),
                     selectedDevice === "resizable" &&
-                      "resize-both overflow-auto min-w-[200px] min-h-[200px]"
+                      "resize-both overflow-auto min-w-[200px] min-h-[200px]",
                   )}
                   style={
                     selectedDevice === "resizable"
@@ -309,7 +291,7 @@ export function BlocksPage({
                           "w-full h-full relative",
                           selectedDevice === "mobile" && "device-mobile",
                           selectedDevice === "tablet" && "device-tablet",
-                          selectedDevice === "resizable" && "device-resizable"
+                          selectedDevice === "resizable" && "device-resizable",
                         )}
                         style={{
                           transform: "translateZ(0)",
@@ -327,7 +309,7 @@ export function BlocksPage({
                           "absolute bottom-0 right-0 w-4 h-4 cursor-se-resize",
                           "bg-muted border-l border-t border-border",
                           "hover:bg-muted-foreground/20 transition-colors",
-                          isResizing && "bg-muted-foreground/30"
+                          isResizing && "bg-muted-foreground/30",
                         )}
                         onMouseDown={handleMouseDown}
                         style={{
@@ -368,7 +350,7 @@ export function BlocksPage({
                       onClick={() => {
                         if (selectedFileNode?.content) {
                           navigator.clipboard.writeText(
-                            selectedFileNode.content
+                            selectedFileNode.content,
                           );
                           setCopied(true);
                           setTimeout(() => setCopied(false), 1000); // 1 second delay

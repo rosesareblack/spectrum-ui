@@ -13,7 +13,6 @@ const page = () => {
           withInstall
           codePath="components/spectrumui/form.tsx"
           installScript="npx shadcn@latest add input"
-         
           withEnd
         />
         <PageSubTitle>Usage</PageSubTitle>

@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Picker Disabled",
   "description": "component for the Datetime Picker Disabled",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-disabled.tsx",

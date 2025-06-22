@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronsUpDown, Inbox, MailIcon, PlusCircleIcon } from "lucide-react";
+import { ChevronsUpDown, Inbox } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -26,14 +26,13 @@ export function NavMain({
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
             <Button
-              
               className=" shrink-0 group-data-[collapsible=icon]:opacity-0"
               variant="ghost"
             >
               <Inbox />
-              Arihant's Newsletter
+              Arihant&apos;s Newsletter
             </Button>
-          <ChevronsUpDown className="h-4 w-4"/>
+            <ChevronsUpDown className="h-4 w-4" />
           </SidebarMenuItem>
         </SidebarMenu>
         <SidebarMenu>

@@ -81,7 +81,7 @@ export const ROUTES: RoutesProps[] = [
         tag: {
           label: "new",
           color: "bg-lime-400",
-        }
+        },
       },
       {
         label: "Event Calendar",
@@ -130,7 +130,7 @@ export const ROUTES: RoutesProps[] = [
         tag: {
           label: "new",
           color: "bg-lime-400",
-        }
+        },
       },
       {
         label: "Multiple Selector",
@@ -149,7 +149,7 @@ export const ROUTES: RoutesProps[] = [
         tag: {
           label: "new",
           color: "bg-lime-400",
-        }
+        },
       },
       {
         label: "Progress With Value",
@@ -171,7 +171,7 @@ export const ROUTES: RoutesProps[] = [
         value: "spinner",
         url: `${BASE_PATH}/spinner`,
       },
-    ]
+    ],
   },
   {
     groupKey: "founder",
@@ -181,10 +181,10 @@ export const ROUTES: RoutesProps[] = [
       {
         label: "Arihant Jain",
         value: "arihant-jain",
-        url: siteConfig.links.twitter
-      }
-    ]
-  }
+        url: siteConfig.links.twitter,
+      },
+    ],
+  },
 ];
 
 // Flatten routes for simpler navigation

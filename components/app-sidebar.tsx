@@ -2,22 +2,11 @@
 
 import * as React from "react";
 import {
-  ArrowUpCircleIcon,
   BarChartIcon,
   CameraIcon,
-  ClipboardListIcon,
-  DatabaseIcon,
   FileCodeIcon,
-  FileIcon,
   FileTextIcon,
-  FolderIcon,
-  HelpCircleIcon,
-  LayoutDashboardIcon,
-
-  ListIcon,
-  SearchIcon,
   SettingsIcon,
-  LayoutGrid,
   UsersIcon,
   Wallet,
 } from "lucide-react";
@@ -163,7 +152,11 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="offcanvas" {...props} className="bg-[#f4f4f4] dark:bg-black border border-zinc-100 dark:border-[#18181B]">
+    <Sidebar
+      collapsible="offcanvas"
+      {...props}
+      className="bg-[#f4f4f4] dark:bg-black border border-zinc-100 dark:border-[#18181B]"
+    >
       <SidebarHeader className="bg-[#f4f4f4] dark:bg-black">
         <SidebarMenu>
           <SidebarMenuItem>
@@ -179,12 +172,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className="bg-[#f4f4f4] dark:bg-black flex justify-between flex-col" >
+      <SidebarContent className="bg-[#f4f4f4] dark:bg-black flex justify-between flex-col">
         <NavMain items={data.navMain} />
         <div>
           <div className="w-[238px] rounded-lg overflow-hidden shadow">
-          <div className="h-[60px] p-4 bg-gradient-to-b from-[#0AA6FA]/30 to-[#0AA6FA]/0 dark:from-[#141414] dark:to-[#141414] dark:bg-gradient-to-b">
-
+            <div className="h-[60px] p-4 bg-gradient-to-b from-[#0AA6FA]/30 to-[#0AA6FA]/0 dark:from-[#141414] dark:to-[#141414] dark:bg-gradient-to-b">
               <h1 className="font-semibold  text-base flex gap-2 items-center">
                 <svg
                   data-testid="geist-icon"

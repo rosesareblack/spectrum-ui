@@ -1,22 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Check, ChevronUp, BarChart3, Settings, Grid3X3, Crown, DoorOpen, Sun, Moon } from "lucide-react"
-import { useTheme } from "next-themes"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import {
+  Check,
+  ChevronUp,
+  BarChart3,
+  Settings,
+  Grid3X3,
+  Crown,
+  DoorOpen,
+  Sun,
+  Moon,
+} from "lucide-react";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function WalletProfile() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-  const [isOpen, setIsOpen] = useState(true)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   const menuItems = [
@@ -34,7 +44,7 @@ export default function WalletProfile() {
       label: "Sign out",
       danger: true,
     },
-  ]
+  ];
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -56,13 +66,21 @@ export default function WalletProfile() {
             >
               <div className="absolute inset-1 rounded-full overflow-hidden">
                 <div className="w-full h-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
-                  <Image className="rounded-full" alt="Profile Picture" width={40} height={40} src="/arihanticon.jpg" />
+                  <Image
+                    className="rounded-full"
+                    alt="Profile Picture"
+                    width={40}
+                    height={40}
+                    src="/arihanticon.jpg"
+                  />
                 </div>
               </div>
             </motion.div>
             <div className="flex-1">
               <div className="flex items-center">
-                <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Arihant Jain</h2>
+                <h2 className="text-xl font-bold text-neutral-900 dark:text-white">
+                  Arihant Jain
+                </h2>
                 <motion.div
                   className="ml-2 flex items-center justify-center w-5 h-5 bg-blue-500 rounded-full"
                   whileHover={{ scale: 1.1 }}
@@ -71,7 +89,9 @@ export default function WalletProfile() {
                   <Check className="w-3 h-3 text-white" />
                 </motion.div>
               </div>
-              <p className="text-neutral-500 dark:text-neutral-400 text-sm">Product Designer • hey@arihantcodes.in</p>
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+                Product Designer • hey@arihantcodes.in
+              </p>
             </div>
             <motion.button
               className="text-neutral-500 dark:text-neutral-400"
@@ -79,7 +99,10 @@ export default function WalletProfile() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.div animate={{ rotate: isOpen ? 0 : 180 }} transition={{ duration: 0.3 }}>
+              <motion.div
+                animate={{ rotate: isOpen ? 0 : 180 }}
+                transition={{ duration: 0.3 }}
+              >
                 <ChevronUp className="w-5 h-5" />
               </motion.div>
             </motion.button>
@@ -107,7 +130,11 @@ export default function WalletProfile() {
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 >
                   <div className="flex justify-between mb-16">
-                    <div className={theme === "light" ? "text-neutral-800" : "text-white"}>
+                    <div
+                      className={
+                        theme === "light" ? "text-neutral-800" : "text-white"
+                      }
+                    >
                       <svg
                         fill="currentColor"
                         width="30px"
@@ -118,7 +145,11 @@ export default function WalletProfile() {
                         <path d="M19.665 16.811a10.316 10.316 0 0 1-1.021 1.837c-.537.767-.978 1.297-1.316 1.592-.525.482-1.089.73-1.692.744-.432 0-.954-.123-1.562-.373-.61-.249-1.17-.371-1.683-.371-.537 0-1.113.122-1.73.371-.616.25-1.114.381-1.495.393-.577.025-1.154-.229-1.729-.764-.367-.32-.826-.87-1.377-1.648-.59-.829-1.075-1.794-1.455-2.891-.407-1.187-.611-2.335-.611-3.447 0-1.273.275-2.372.826-3.292a4.857 4.857 0 0 1 1.73-1.751 4.65 4.65 0 0 1 2.34-.662c.46 0 1.063.142 1.81.422s1.227.422 1.436.422c.158 0 .689-.167 1.593-.498.853-.307 1.573-.434 2.163-.384 1.6.129 2.801.759 3.6 1.895-1.43.867-2.137 2.08-2.123 3.637.012 1.213.453 2.222 1.317 3.023a4.33 4.33 0 0 0 1.315.863c-.106.307-.218.6-.336.882zM15.998 2.38c0 .95-.348 1.838-1.039 2.659-.836.976-1.846 1.541-2.941 1.452a2.955 2.955 0 0 1-.021-.36c0-.913.396-1.889 1.103-2.688.352-.404.8-.741 1.343-1.009.542-.264 1.054-.41 1.536-.435.013.128.019.255.019.381z" />
                       </svg>
                     </div>
-                    <div className={theme === "light" ? "text-neutral-800" : "text-white"}>
+                    <div
+                      className={
+                        theme === "light" ? "text-neutral-800" : "text-white"
+                      }
+                    >
                       <svg
                         fill="currentColor"
                         width="50px"
@@ -132,10 +163,14 @@ export default function WalletProfile() {
                   </div>
 
                   <div className="flex items-center mb-4">
-                    <div className={`font-mono ${theme === "light" ? "text-neutral-800" : "text-white"}`}>
+                    <div
+                      className={`font-mono ${theme === "light" ? "text-neutral-800" : "text-white"}`}
+                    >
                       Arihant Jain
                     </div>
-                    <div className={`ml-auto font-mono ${theme === "light" ? "text-neutral-800" : "text-white"}`}>
+                    <div
+                      className={`ml-auto font-mono ${theme === "light" ? "text-neutral-800" : "text-white"}`}
+                    >
                       10/28
                     </div>
                   </div>
@@ -153,7 +188,9 @@ export default function WalletProfile() {
                 <div className="flex bg-neutral-100 dark:bg-neutral-700 rounded-lg p-1">
                   <motion.button
                     className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md ${
-                      theme === "light" ? "bg-white dark:bg-neutral-600 shadow-sm" : ""
+                      theme === "light"
+                        ? "bg-white dark:bg-neutral-600 shadow-sm"
+                        : ""
                     }`}
                     onClick={() => setTheme("light")}
                     whileHover={{ scale: theme !== "light" ? 1.03 : 1 }}
@@ -162,7 +199,9 @@ export default function WalletProfile() {
                   >
                     <Sun
                       className={`w-4 h-4 mr-2 ${
-                        theme === "light" ? "text-amber-500" : "text-neutral-500 dark:text-neutral-400"
+                        theme === "light"
+                          ? "text-amber-500"
+                          : "text-neutral-500 dark:text-neutral-400"
                       }`}
                     />
                     <span
@@ -186,11 +225,17 @@ export default function WalletProfile() {
                   >
                     <Moon
                       className={`w-4 h-4 mr-2 ${
-                        theme === "dark" ? "text-indigo-300" : "text-neutral-500 dark:text-neutral-400"
+                        theme === "dark"
+                          ? "text-indigo-300"
+                          : "text-neutral-500 dark:text-neutral-400"
                       }`}
                     />
                     <span
-                      className={theme === "dark" ? "text-white font-medium" : "text-neutral-500 dark:text-neutral-400"}
+                      className={
+                        theme === "dark"
+                          ? "text-white font-medium"
+                          : "text-neutral-500 dark:text-neutral-400"
+                      }
                     >
                       Dark mode
                     </span>
@@ -236,7 +281,13 @@ export default function WalletProfile() {
                     whileHover={{ scale: 1.1, rotate: 10 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
                         fill={theme === "light" ? "black" : "white"}
@@ -247,14 +298,18 @@ export default function WalletProfile() {
                       />
                     </svg>
                   </motion.div>
-                  <span className="text-neutral-900 dark:text-white font-medium">Spectrum UI</span>
+                  <span className="text-neutral-900 dark:text-white font-medium">
+                    Spectrum UI
+                  </span>
                 </div>
-                <div className="text-neutral-500 dark:text-neutral-400 text-sm">v1.2</div>
+                <div className="text-neutral-500 dark:text-neutral-400 text-sm">
+                  v1.2
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.div>
     </div>
-  )
+  );
 }

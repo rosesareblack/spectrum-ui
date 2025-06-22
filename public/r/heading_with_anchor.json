@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Heading With Anchor",
   "description": "component for the Heading With Anchor",
-  "dependencies": [
-    "@radix-ui/react-slot",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
   "files": [
     {
       "path": "app/registry/spectrumui/heading-with-anchor.tsx",

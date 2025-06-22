@@ -2,11 +2,7 @@
 
 import { TweetProps, useTweet } from "react-tweet";
 
-import {
-  MagicTweet,
-  TweetNotFound,
-  TweetSkeleton,
-} from "@/components/tweet";
+import { MagicTweet, TweetNotFound, TweetSkeleton } from "@/components/tweet";
 
 const ClientTweetCard = ({
   id,

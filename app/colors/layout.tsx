@@ -1,29 +1,27 @@
-import { Metadata } from "next"
-import Link from "next/link"
+import { Metadata } from "next";
+import Link from "next/link";
 
-import { Announcement } from "@/components/announcement"
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@/components/page-header"
-import {Button} from "@/components/ui/button"
+} from "@/components/page-header";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Tailwind Colors",
   description: "All colors in all formats.",
-}
+};
 
 export default function ChartsLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div className="container relative">
       <PageHeader>
-        
         <PageHeaderHeading>Tailwind Colors</PageHeaderHeading>
         <PageHeaderDescription>
           Tailwind CSS colors in HSL, RGB, and HEX formats.
@@ -41,5 +39,5 @@ export default function ChartsLayout({
         {children}
       </section>
     </div>
-  )
+  );
 }

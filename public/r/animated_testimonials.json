@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Animated Testimonials",
   "description": "component for the Animated Testimonials",
-  "dependencies": [
-    "framer-motion"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["framer-motion"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "app/registry/demousages.tsx",

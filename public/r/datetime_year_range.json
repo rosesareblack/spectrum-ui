@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Year Range",
   "description": "component for the Datetime Year Range",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-year-range.tsx",

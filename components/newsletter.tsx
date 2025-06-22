@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "./ui/badge";
 import { Check, FileText, Mail, MessageSquare, Users } from "lucide-react";
 const Newsletter = () => {

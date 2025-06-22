@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Picker and Time Input",
   "description": "component for the Datetime Picker and Time Input",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/date-picker-and-time-input.tsx",

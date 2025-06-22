@@ -43,7 +43,7 @@ export const DOCS: Documentation[] = [
     groupKey: "components",
     groupValue: "Components",
     children: [
-      { label: "Alert", value: "alert", url: "/docs/alert",  },
+      { label: "Alert", value: "alert", url: "/docs/alert" },
       {
         label: "Animated SVG Chart",
         value: "animatedchart",
@@ -59,8 +59,8 @@ export const DOCS: Documentation[] = [
         value: "autosize-textarea",
         url: "/docs/autosize-textarea",
       },
-      { label: "Button", value: "button", url: "/docs/button", },
-      { label: "Card", value: "card", url: "/docs/card" ,    },
+      { label: "Button", value: "button", url: "/docs/button" },
+      { label: "Card", value: "card", url: "/docs/card" },
       {
         label: "Datetime Picker",
         value: "datetime-picker",
@@ -80,29 +80,26 @@ export const DOCS: Documentation[] = [
         label: "Event Calendar",
         value: "eventcalendar",
         url: "/docs/eventcalendar",
-   
       },
       {
         label: "Event Badge",
         value: "eventbadge",
         url: "/docs/badge",
         new: true,
-   
       },
       {
         label: "Feedback Card",
         value: "feedback",
         url: "/docs/feedback",
-
       },
       {
         label: "Floating Label Input",
         value: "floating-label-input",
         url: "/docs/floating-label-input",
       },
-      { label: "Footer", value: "footer", url: "/docs/footer" ,},
+      { label: "Footer", value: "footer", url: "/docs/footer" },
       {
-        label:"GitHub Card",
+        label: "GitHub Card",
         value: "github-card",
         url: "/docs/github-card",
         new: true,
@@ -116,14 +113,13 @@ export const DOCS: Documentation[] = [
         label: "Image Preview",
         value: "imagepreview",
         url: "/docs/imagepreview",
-
       },
       {
         label: "Infinite Scroll",
         value: "infiniteScroll",
         url: "/docs/infinite-scroll",
       },
-      { label: "Input", value: "input", url: "/docs/input", },
+      { label: "Input", value: "input", url: "/docs/input" },
       {
         label: "Loading Button",
         value: "loading-button",
@@ -138,11 +134,10 @@ export const DOCS: Documentation[] = [
         label: "Multistep Form",
         value: "multistepform",
         url: "/docs/multistepform",
-
       },
-      { label: "Navbar", value: "navbar", url: "/docs/navbar" ,},
+      { label: "Navbar", value: "navbar", url: "/docs/navbar" },
       {
-        label:"Profile Dropdown",
+        label: "Profile Dropdown",
         value: "profile-dropdown",
         url: "/docs/profile",
         new: true,
@@ -162,14 +157,13 @@ export const DOCS: Documentation[] = [
         label: "Skeleton",
         value: "skeleton",
         url: "/docs/skeleton",
-     
       },
       {
-        label:"Status Badge",
+        label: "Status Badge",
         value: "status-badge",
         url: "/docs/status-badge",
         new: true,
-      }
+      },
     ],
   },
 ];
