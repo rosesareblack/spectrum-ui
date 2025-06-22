@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Alert 4",
   "description": "component for the alert-4",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "alert"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["alert"],
   "files": [
     {
       "path": "app/registry/alertfour.tsx",

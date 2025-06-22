@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Footers Demo",
   "description": "component for the Footers Demo",
-  "dependencies": [
-    "lucide-react"
-  ],
+  "dependencies": ["lucide-react"],
   "registryDependencies": [
     "button",
     "input",

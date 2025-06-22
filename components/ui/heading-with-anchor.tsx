@@ -3,8 +3,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { LinkIcon } from "lucide-react";
-import Link from "next/link";
 
 type AnchorProps = {
   anchor?: string;
@@ -31,11 +29,9 @@ const Anchor = ({
         "ms-2 pt-1",
         anchorVisibility === "always" && "visible",
         anchorVisibility === "never" && "hidden",
-        anchorVisibility === "hover" && "invisible group-hover:visible"
+        anchorVisibility === "hover" && "invisible group-hover:visible",
       )}
-    >
-   
-    </div>
+    ></div>
   );
 };
 
@@ -89,7 +85,7 @@ const BaseHeading = ({
           anchor && "flex scroll-m-20 items-center gap-1", // modify `scroll-m-20` according to your header height.
           anchorAlignment === "spaced" && "justify-between",
           anchorVisibility === "hover" && "group",
-          headingVariants({ variant, className })
+          headingVariants({ variant, className }),
         )}
       >
         {children}

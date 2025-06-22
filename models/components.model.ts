@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model, models } from "mongoose";
+import { Schema, Document, model, models } from "mongoose";
 
 // Define TypeScript Interface for the Component
 export interface IComponent extends Document {
@@ -62,4 +62,5 @@ const componentSchema = new Schema<IComponent>({
 });
 
 // Export the Mongoose model (with type safety)
-export default models.Component || model<IComponent>("Component", componentSchema);
+export default models.Component ||
+  model<IComponent>("Component", componentSchema);

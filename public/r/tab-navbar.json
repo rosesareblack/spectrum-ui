@@ -4,15 +4,8 @@
   "type": "registry:ui",
   "title": "Tab Navbar",
   "description": "component for the Tab Navbar",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "avatar",
-    "input",
-    "label",
-    "navigation-menu"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["avatar", "input", "label", "navigation-menu"],
   "files": [
     {
       "path": "app/registry/navbar/usage/tabnavbar.tsx",

@@ -1,10 +1,8 @@
 "use client";
 
-import { toast } from "@/hooks/use-toast";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 import InstallCommand from "@/app/(docs)/docs/components/code-card/parts/installcommand";
-
 
 const packageManagers = [
   {
@@ -34,22 +32,6 @@ interface PackageManagerTabsProps {
 }
 
 export default function PackageManagerTabs({ CLI }: PackageManagerTabsProps) {
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      toast({
-        title: "Copied to clipboard",
-        description: "Command copied successfully",
-      });
-    } catch (err) {
-      toast({
-        title: "Failed to copy",
-        description: "Could not copy to clipboard",
-        variant: "destructive",
-      });
-    }
-  };
-
   return (
     <div className="w-full mt-5">
       <Tabs defaultValue="bun" className="w-full">
@@ -74,12 +56,8 @@ export default function PackageManagerTabs({ CLI }: PackageManagerTabsProps) {
 
           {/* Command Display */}
           {packageManagers.map((pm) => (
-            <TabsContent
-              key={pm.id}
-              value={pm.id}
-              className="rounded-2xl  "
-            >
-              <InstallCommand code={`${pm.command} ${CLI}` } lang="bash" inTab />
+            <TabsContent key={pm.id} value={pm.id} className="rounded-2xl  ">
+              <InstallCommand code={`${pm.command} ${CLI}`} lang="bash" inTab />
             </TabsContent>
           ))}
         </div>

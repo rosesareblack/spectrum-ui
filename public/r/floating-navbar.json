@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Floating Navbar",
   "description": "component for the Floating Navbar",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button",
-    "dropdown-menu"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "dropdown-menu"],
   "files": [
     {
       "path": "app/registry/navbar/usage/floatingnavbar.tsx",

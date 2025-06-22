@@ -42,7 +42,7 @@ interface SubscriptionDay {
 function EventCalendar() {
   const [subscriptions, setSubscriptions] = React.useState<Subscription[]>([]);
   const [currentMonth, setCurrentMonth] = React.useState(
-    format(new Date(), "MMM-yyyy")
+    format(new Date(), "MMM-yyyy"),
   );
   const [isAddModalOpen, setIsAddModalOpen] = React.useState(false);
   const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
@@ -53,10 +53,10 @@ function EventCalendar() {
       (day): SubscriptionDay => ({
         date: day,
         subscriptions: subscriptions.filter(
-          (subscription) => subscription.date === day.getDate()
+          (subscription) => subscription.date === day.getDate(),
         ),
         isCurrentMonth: isSameMonth(day, firstDayCurrentMonth),
-      })
+      }),
     );
   }, [firstDayCurrentMonth, subscriptions]);
   function previousMonth() {
@@ -127,7 +127,7 @@ function EventCalendar() {
               className={cn(
                 "relative p-2 bg-background min-h-[100px]",
                 !day.isCurrentMonth && "bg-muted/50",
-                isEqual(day.date, new Date()) && "bg-accent"
+                isEqual(day.date, new Date()) && "bg-accent",
               )}
             >
               <time
@@ -135,7 +135,7 @@ function EventCalendar() {
                 className={cn(
                   "text-sm",
                   isToday(day.date) && "font-semibold text-primary",
-                  !day.isCurrentMonth && "text-muted-foreground"
+                  !day.isCurrentMonth && "text-muted-foreground",
                 )}
               >
                 {format(day.date, "d")}
@@ -150,7 +150,7 @@ function EventCalendar() {
                   >
                     <div className="relative w-4 h-4">
                       <Image
-                        src={subscription.icon }
+                        src={subscription.icon}
                         alt={subscription.name}
                         className="rounded-sm object-cover"
                         fill
@@ -222,5 +222,4 @@ function EventCalendar() {
   );
 }
 
-
-export default EventCalendar
+export default EventCalendar;

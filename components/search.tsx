@@ -35,7 +35,7 @@ export default function Search() {
   const filteredResults = useMemo(() => {
     return ROUTES.map((group) => {
       const matchingChildren = group.children.filter((item) =>
-        item.label.toLowerCase().includes(searchedInput.toLowerCase())
+        item.label.toLowerCase().includes(searchedInput.toLowerCase()),
       );
 
       return {

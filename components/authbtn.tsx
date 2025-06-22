@@ -1,6 +1,7 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-
-import { signIn, signOut, useSession } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 import {
   DropdownMenu,
@@ -9,16 +10,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import Link from "next/link";
 
 const AuthButton: React.FC = () => {
-  const { data: session, status } = useSession();
-  if (!session?.user) return( 
-  <Link href="/signin" >
-    <Button >Sign in</Button>
-    </Link>
-  )
+  const { data: session } = useSession();
+  if (!session?.user)
+    return (
+      <Link href="/signin">
+        <Button>Sign in</Button>
+      </Link>
+    );
   return (
     <div className="flex gap-2 items-center">
       <span className="hidden text-sm sm:inline-flex">

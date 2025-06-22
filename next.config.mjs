@@ -2,12 +2,9 @@
 import createMDX from "@next/mdx";
 
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
-
     domains: [
       "lh3.googleusercontent.com",
       "img.freepik.com",
@@ -15,13 +12,9 @@ const nextConfig = {
       "source.unsplash.com",
       "plus.unsplash.com",
       "res.cloudinary.com",
-
-
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+ 
 };
 
 const withMDX = createMDX({

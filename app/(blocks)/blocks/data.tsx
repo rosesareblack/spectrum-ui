@@ -1,6 +1,5 @@
 import { Subscriber } from "@/components/data-table";
 
-
 export const subscriberData: Subscriber[] = [
   {
     id: 1,
@@ -227,4 +226,4 @@ export const subscriberData: Subscriber[] = [
     signupDate: "2024-05-20",
     source: "Website",
   },
-]
+];

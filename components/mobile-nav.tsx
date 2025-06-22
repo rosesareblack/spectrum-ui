@@ -15,11 +15,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { siteConfig } from "@/config/site";
-
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-
+import { Button } from "@/components/ui/button";
 
 interface NavItem {
   title?: string;
@@ -204,7 +201,7 @@ const sidebarNav: NavSection[] = [
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = React.useState(false);
-  
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
@@ -262,31 +259,38 @@ export function MobileNav() {
               {mainNav?.map(
                 (item) =>
                   item.href && (
-                    <MobileLink 
-                      key={item.href} 
+                    <MobileLink
+                      key={item.href}
                       href={item.href}
                       onOpenChange={setIsOpen}
                     >
                       {item.title}
                     </MobileLink>
-                  )
+                  ),
               )}
             </div>
-            
+
             {/* Sidebar Navigation */}
             <div className="flex flex-col space-y-6">
               {sidebarNav.map((section, sectionIndex) => (
-                <div key={section.title || `section-${sectionIndex}`} className="space-y-2">
+                <div
+                  key={section.title || `section-${sectionIndex}`}
+                  className="space-y-2"
+                >
                   {section.title && (
                     <h4 className="font-medium text-sm text-muted-foreground px-2">
                       {section.title}
                     </h4>
                   )}
-                  
+
                   <div className="flex flex-col space-y-1">
                     {section.items.map((item) => (
                       <MobileLink
-                        key={item.value || item.href || `item-${item.title || item.label}`}
+                        key={
+                          item.value ||
+                          item.href ||
+                          `item-${item.title || item.label}`
+                        }
                         href={item.url || item.href || "#"}
                         onOpenChange={setIsOpen}
                         className={item.new ? "relative" : ""}
@@ -326,7 +330,7 @@ function MobileLink({
   const router = useRouter();
   const pathname = usePathname();
   const isActive = pathname === href;
-  
+
   return (
     <SheetClose asChild>
       <Link
@@ -340,7 +344,7 @@ function MobileLink({
           isActive
             ? "bg-secondary font-medium text-primary border-l-2 border-primary/70"
             : "text-foreground hover:bg-secondary/50",
-          className
+          className,
         )}
         {...props}
       >

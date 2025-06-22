@@ -38,7 +38,6 @@ import {
 import {
   ArrowUpRight,
   CalendarDays,
-  CheckCircle2Icon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -47,7 +46,6 @@ import {
   GripVerticalIcon,
   MoreVerticalIcon,
   SearchIcon,
-  XCircleIcon,
   UserIcon,
   MailIcon,
 } from "lucide-react";
@@ -313,7 +311,7 @@ export function SubscriberDataTable({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
+    [],
   );
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [pagination, setPagination] = React.useState({
@@ -329,12 +327,12 @@ export function SubscriberDataTable({
   const sensors = useSensors(
     useSensor(MouseSensor, {}),
     useSensor(TouchSensor, {}),
-    useSensor(KeyboardSensor, {})
+    useSensor(KeyboardSensor, {}),
   );
 
   const dataIds = React.useMemo<UniqueIdentifier[]>(
     () => data?.map(({ id }) => id) || [],
-    [data]
+    [data],
   );
 
   // Apply filters
@@ -392,7 +390,7 @@ export function SubscriberDataTable({
   }
 
   const activeSubscribers = data.filter(
-    (sub) => sub.status === "Active"
+    (sub) => sub.status === "Active",
   ).length;
 
   return (
@@ -424,9 +422,9 @@ export function SubscriberDataTable({
             </div>
 
             {/* Date Filter */}
-          <div className="flex items-center rounded-md bg-muted border h-9 px-3 text-sm shadow-sm dark:bg-neutral-900 outline-none">
+            <div className="flex items-center rounded-md bg-muted border h-9 px-3 text-sm shadow-sm dark:bg-neutral-900 outline-none">
               <CalendarDays className="h-4 w-4 mr-2 outline-none" />
-             <Select value={dateFilter} onValueChange={setDateFilter}>
+              <Select value={dateFilter} onValueChange={setDateFilter}>
                 <SelectTrigger className="border-none bg-transparent p-0 h-auto shadow-none outline-none">
                   <SelectValue
                     placeholder="Signup Date"
@@ -477,14 +475,14 @@ export function SubscriberDataTable({
                             setStatusFilter([...statusFilter, status]);
                           } else {
                             setStatusFilter(
-                              statusFilter.filter((s) => s !== status)
+                              statusFilter.filter((s) => s !== status),
                             );
                           }
                         }}
                       >
                         {status}
                       </DropdownMenuCheckboxItem>
-                    )
+                    ),
                   )}
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -517,7 +515,7 @@ export function SubscriberDataTable({
                           setSourceFilter([...sourceFilter, source]);
                         } else {
                           setSourceFilter(
-                            sourceFilter.filter((s) => s !== source)
+                            sourceFilter.filter((s) => s !== source),
                           );
                         }
                       }}
@@ -546,7 +544,7 @@ export function SubscriberDataTable({
                   .filter(
                     (column) =>
                       typeof column.accessorFn !== "undefined" &&
-                      column.getCanHide()
+                      column.getCanHide(),
                   )
                   .map((column) => {
                     return (
@@ -593,7 +591,7 @@ export function SubscriberDataTable({
                               ? null
                               : flexRender(
                                   header.column.columnDef.header,
-                                  header.getContext()
+                                  header.getContext(),
                                 )}
                           </TableHead>
                         );

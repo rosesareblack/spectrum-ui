@@ -5,16 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
-import { Button, buttonVariants } from "./ui/button";
-import { Icons } from "./icon";
+import { Icons } from "@/components/icon";
+import { MobileNav } from "@/components/mobile-nav";
 import { MainNav } from "./main-nav";
-import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "./theme-toggle";
-import { NumberTicker } from "./magicui/number-ticker";
 
 export function SiteHeader() {
   const pathname = usePathname();
- 
 
   return (
     <header className="border-grid sticky top-0 z-[50]  w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -31,7 +28,9 @@ export function SiteHeader() {
               >
                 <Icons.shadcnblock className="h-4 w-4" />
                 <div className="flex flex-col xl:flex-row gap-3 items-center">
-                  <p className="text-sm font-medium hidden lg:block">Shadcnblocks.com</p>
+                  <p className="text-sm font-medium hidden lg:block">
+                    Shadcnblocks.com
+                  </p>
                   <p className="text-[11px] text-neutral-700 dark:text-neutral-400 hidden xl:block">
                     [ 600+ extra shadcn blocks]
                   </p>
@@ -40,13 +39,19 @@ export function SiteHeader() {
             )}
 
             <div className="hidden md:flex items-center gap-2">
-              <Link href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
-              <Icons.gitHub className="h-5 w-4 mr-2" />
-              
+              <Link
+                href={siteConfig.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icons.gitHub className="h-5 w-4 mr-2" />
               </Link>
-              <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer">
-              <Icons.twitter className="h-3 w-4 mr-2" />
-              
+              <Link
+                href={siteConfig.links.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icons.twitter className="h-3 w-4 mr-2" />
               </Link>
             </div>
 

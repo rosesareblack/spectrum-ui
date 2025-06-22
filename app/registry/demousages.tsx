@@ -1,11 +1,10 @@
-
 "use client";
 import { Button } from "@/components/ui/button";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import react, { useEffect, useState } from "react";
+import { useState } from "react";
 type Testimonial = {
   quote: string;
   name: string;

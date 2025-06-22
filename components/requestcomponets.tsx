@@ -63,7 +63,6 @@ const RequestForm = () => {
 
       setSubmitted(true);
     } catch (error) {
-      console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
     }

@@ -12,7 +12,6 @@ const page = () => {
           withInstall
           codePath="components/spectrumui/ButtonCollection.tsx"
           installScript="npx shadcn@latest add button"
-         
           withEnd
         />
         <PageSubTitle>Usage</PageSubTitle>

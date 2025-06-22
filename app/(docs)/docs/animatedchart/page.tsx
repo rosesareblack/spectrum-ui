@@ -6,28 +6,31 @@ import { Steppers } from "@/components/ui/steppers";
 import { Chart } from "./animateddemo";
 
 const page = () => {
-    let baseurl = process.env.NODE_ENV === "development" ? "https://ui.spectrumhq.in" : "https://ui.spectrumhq.in";
+  let baseurl =
+    process.env.NODE_ENV === "development"
+      ? "https://ui.spectrumhq.in"
+      : "https://ui.spectrumhq.in";
 
   return (
     <div>
       <PageTemplate title="Animated SVG Chart" className="mt-5">
         <PreviewCodeCard
-        className=""
-        path="app/(docs)/docs/animatedchart/animateddemo.tsx"  cli={`${baseurl}/r/animated_SVG_Chart.json`}>
-          <Chart/> 
+          className=""
+          path="app/(docs)/docs/animatedchart/animateddemo.tsx"
+          cli={`${baseurl}/r/animated_SVG_Chart.json`}
+        >
+          <Chart />
         </PreviewCodeCard>
 
         <PageSubTitle>Installation</PageSubTitle>
-        
+
         <Steppers
           className=""
-          
           installScript="npm i framer-motion mini-svg-data-uri"
           steps={[{ title: "Create feedback component & paste the code" }]}
           withInstall
           codePath="lib/sample.ts"
         />
-        
       </PageTemplate>
     </div>
   );

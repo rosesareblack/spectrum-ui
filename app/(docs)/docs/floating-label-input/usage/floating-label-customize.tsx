@@ -1,5 +1,8 @@
-import React from 'react';
-import { FloatingInput, FloatingLabel } from '@/components/ui/floating-label-input';
+import React from "react";
+import {
+  FloatingInput,
+  FloatingLabel,
+} from "@/components/ui/floating-label-input";
 
 const FloatingLabelInputCustomize = () => {
   return (

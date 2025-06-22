@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Alert demo",
   "description": "component for the alert-demo",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "alert"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["alert"],
   "files": [
     {
       "path": "app/registry/alertdemo.tsx",

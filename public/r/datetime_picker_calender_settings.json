@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Picker Calendar Settings",
   "description": "component for the Datetime Picker Calendar Settings",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-calendar-settings.tsx",

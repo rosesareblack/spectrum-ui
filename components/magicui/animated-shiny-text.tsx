@@ -15,7 +15,7 @@ export const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
   ...props
 }) => {
   return (
-<FomoButton
+    <FomoButton
       style={
         {
           "--shiny-width": `${shimmerWidth}px`,
@@ -35,7 +35,6 @@ export const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
       {...props}
     >
       {children}
-      </FomoButton>
-
+    </FomoButton>
   );
 };

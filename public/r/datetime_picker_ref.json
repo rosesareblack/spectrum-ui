@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Datetime Picker Ref",
   "description": "component for the Datetime Picker Ref",
-  "registryDependencies": [
-    "datetime-picker"
-  ],
+  "registryDependencies": ["datetime-picker"],
   "files": [
     {
       "path": "app/registry/datetime-picker/usage/datetime-picker-ref.tsx",

@@ -52,7 +52,7 @@ export default function Alert02() {
                 "hover:bg-emerald-50 dark:hover:bg-emerald-950/50",
                 "text-zinc-400 hover:text-emerald-600",
                 "dark:text-zinc-500 dark:hover:text-emerald-400",
-                "transition-colors"
+                "transition-colors",
               )}
             >
               <Check className="h-4 w-4" />

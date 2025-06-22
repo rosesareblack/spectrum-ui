@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "HTTP Status Code",
   "description": "component for the HTTP Status Code",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "card",
-    "input",
-    "button"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["card", "input", "button"],
   "files": [
     {
       "path": "app/registry/statuscode/demostatus.tsx",

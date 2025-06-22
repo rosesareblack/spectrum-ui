@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Progress With Value Dependencies",
   "description": "component for the Progress With Value Dependencies",
-  "dependencies": [
-    "@radix-ui/react-progress"
-  ],
+  "dependencies": ["@radix-ui/react-progress"],
   "files": [
     {
       "path": "app/registry/spectrumui/progress-with-value-dependencies.tsx",

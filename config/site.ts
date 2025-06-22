@@ -74,7 +74,7 @@ export const siteConfig = {
       },
     },
     verification: {
-      google: "", // Add your Google Search Console verification code
+      google: "", // Add your Google Search
       yandex: "", // Add if needed
       yahoo: "", // Add if needed
     },
@@ -133,14 +133,14 @@ export const siteConfig = {
       },
     ],
   },
-}
+};
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const META_THEME_COLORS = {
   light: "#ffffff",
   dark: "#09090b",
-}
+};
 
 // Navigation structure for sitemap generation
 export const navigation = {
@@ -198,8 +198,16 @@ export const navigation = {
     // Navigation
     { name: "Navbar", category: "Navigation", href: "/components/navbar" },
     { name: "Sidebar", category: "Navigation", href: "/components/sidebar" },
-    { name: "Breadcrumb", category: "Navigation", href: "/components/breadcrumb" },
-    { name: "Pagination", category: "Navigation", href: "/components/pagination" },
+    {
+      name: "Breadcrumb",
+      category: "Navigation",
+      href: "/components/breadcrumb",
+    },
+    {
+      name: "Pagination",
+      category: "Navigation",
+      href: "/components/pagination",
+    },
     { name: "Tabs", category: "Navigation", href: "/components/tabs" },
 
     // Data Display
@@ -234,8 +242,16 @@ export const navigation = {
     { name: "Dropdown", category: "Overlay", href: "/components/dropdown" },
 
     // Disclosure
-    { name: "Accordion", category: "Disclosure", href: "/components/accordion" },
-    { name: "Collapsible", category: "Disclosure", href: "/components/collapsible" },
+    {
+      name: "Accordion",
+      category: "Disclosure",
+      href: "/components/accordion",
+    },
+    {
+      name: "Collapsible",
+      category: "Disclosure",
+      href: "/components/collapsible",
+    },
 
     // Media
     { name: "Image", category: "Media", href: "/components/image" },
@@ -250,4 +266,4 @@ export const navigation = {
     { name: "Blog", href: "/examples/blog" },
     { name: "Portfolio", href: "/examples/portfolio" },
   ],
-}
+};

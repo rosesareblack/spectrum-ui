@@ -1,7 +1,7 @@
 // components/code-card-wrapper.tsx
-'use client';
+"use client";
 
-import CodeCard from '@/app/(docs)/docs/components/code-card/code-card';
+import CodeCard from "@/app/(docs)/docs/components/code-card/code-card";
 
 interface Props {
   code: string;

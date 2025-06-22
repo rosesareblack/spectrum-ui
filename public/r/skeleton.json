@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Skeleton",
   "description": "component for the Skeleton",
-  "registryDependencies": [
-    "skeleton"
-  ],
+  "registryDependencies": ["skeleton"],
   "files": [
     {
       "path": "app/registry/skeleton/skeleton-demo.tsx",

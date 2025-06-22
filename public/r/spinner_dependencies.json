@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Skeleton Card",
   "description": "component for the Skeleton Card",
-  "dependencies": [
-    "class-variance-authority",
-    "lucide-react"
-  ],
+  "dependencies": ["class-variance-authority", "lucide-react"],
   "files": [
     {
       "path": "app/registry/spectrumui/spinner-dependencies.tsx",

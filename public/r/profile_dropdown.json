@@ -4,11 +4,7 @@
   "type": "registry:ui",
   "title": "Profile Dropdown",
   "description": "component for the Profile Dropdown",
-  "dependencies": [
-    "lucide-react",
-    "next-themes",
-    "framer-motion"
-  ],
+  "dependencies": ["lucide-react", "next-themes", "framer-motion"],
   "files": [
     {
       "path": "app/registry/profile/profiledemo.tsx",

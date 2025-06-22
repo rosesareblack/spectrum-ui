@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Status Badge",
   "description": "component for the Status Badge",
-  "dependencies": [
-    "lucide-react"
-  ],
+  "dependencies": ["lucide-react"],
   "files": [
     {
       "path": "app/registry/status-badge/statusdemo.tsx",

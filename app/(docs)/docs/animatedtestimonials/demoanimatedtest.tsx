@@ -6,13 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import react, { useEffect, useState } from "react";
-type Testimonial = {
-  quote: string;
-  name: string;
-  designation: string;
-  src: string;
-};
+import { useState } from "react";
 
 const AnimatedTestimonialsDemo = () => {
   const [active, setActive] = useState(testimonials[0]);

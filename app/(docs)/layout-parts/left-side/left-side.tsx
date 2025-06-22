@@ -20,7 +20,7 @@ import { DOCS } from "@/app/(docs)/layout-parts/documentation.constant";
 
 export default function EnhancedSidebar() {
   const [openGroups, setOpenGroups] = useState<string[]>(
-    DOCS.map((group) => group.groupKey)
+    DOCS.map((group) => group.groupKey),
   );
   const [searchTerm, setSearchTerm] = useState("");
   const pathname = usePathname();
@@ -28,7 +28,7 @@ export default function EnhancedSidebar() {
   useEffect(() => {
     // Ensure the group of the active link is open
     const activeGroup = DOCS.find((group) =>
-      group.children.some((child) => child.url === pathname)
+      group.children.some((child) => child.url === pathname),
     );
     if (activeGroup && !openGroups.includes(activeGroup.groupKey)) {
       setOpenGroups((prev) => [...prev, activeGroup.groupKey]);
@@ -39,7 +39,7 @@ export default function EnhancedSidebar() {
     setOpenGroups((prev) =>
       prev.includes(groupKey)
         ? prev.filter((key) => key !== groupKey)
-        : [...prev, groupKey]
+        : [...prev, groupKey],
     );
   };
 
@@ -47,7 +47,7 @@ export default function EnhancedSidebar() {
     ...group,
     children: group.children
       .filter((child) =>
-        child.label.toLowerCase().includes(searchTerm.toLowerCase())
+        child.label.toLowerCase().includes(searchTerm.toLowerCase()),
       )
       .sort((a, b) => a.label.localeCompare(b.label)),
   })).filter((group) => group.children.length > 0);
@@ -88,7 +88,7 @@ export default function EnhancedSidebar() {
                         "flex items-center gap-2 px-4 py-2 text-sm rounded-md transition-colors",
                         pathname === child.url
                           ? "dark:text-neutral-200"
-                          : "hover:text-neutral-500 dark:hover:text-neutral-100"
+                          : "hover:text-neutral-500 dark:hover:text-neutral-100",
                       )}
                     >
                       {child.label}

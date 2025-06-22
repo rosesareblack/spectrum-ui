@@ -16,9 +16,7 @@ const Cta = () => {
           <p className="text-muted-foreground md:text-lg max-w-[300px] md:max-w-xl md:mx-auto mt-5 text-center">
             I help companies ship fast, clean UIs that users love.
           </p>
-          <Link href="https://x.com/arihantcodes"
-          className="flex"
-          >
+          <Link href="https://x.com/arihantcodes" className="flex">
             <RainbowButton
               variant="outline"
               className=" px-7 rounded-3xl mt-5 flex items-center"

@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Floating Label Input",
   "description": "component for the Floating Label Input",
-  "registryDependencies": [
-    "input",
-    "label"
-  ],
+  "registryDependencies": ["input", "label"],
   "files": [
     {
       "path": "app/registry/spectrumui/floating-label-input.tsx",

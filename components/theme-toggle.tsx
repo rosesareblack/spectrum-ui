@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { Moon, Sun, Monitor } from "lucide-react"
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Moon, Sun, Monitor } from "lucide-react";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   // Prevent hydration mismatch
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <motion.div
@@ -25,17 +25,29 @@ export function ThemeToggle() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <ThemeButton active={theme === "light"} onClick={() => setTheme("light")} icon={<Sun size={16} />} />
-      <ThemeButton active={theme === "system"} onClick={() => setTheme("system")} icon={<Monitor size={16} />} />
-      <ThemeButton active={theme === "dark"} onClick={() => setTheme("dark")} icon={<Moon size={16} />} />
+      <ThemeButton
+        active={theme === "light"}
+        onClick={() => setTheme("light")}
+        icon={<Sun size={16} />}
+      />
+      <ThemeButton
+        active={theme === "system"}
+        onClick={() => setTheme("system")}
+        icon={<Monitor size={16} />}
+      />
+      <ThemeButton
+        active={theme === "dark"}
+        onClick={() => setTheme("dark")}
+        icon={<Moon size={16} />}
+      />
     </motion.div>
-  )
+  );
 }
 
 interface ThemeButtonProps {
-  active: boolean
-  onClick: () => void
-  icon: React.ReactNode
+  active: boolean;
+  onClick: () => void;
+  icon: React.ReactNode;
 }
 
 function ThemeButton({ active, onClick, icon }: ThemeButtonProps) {
@@ -59,5 +71,5 @@ function ThemeButton({ active, onClick, icon }: ThemeButtonProps) {
       )}
       <span className="relative z-10">{icon}</span>
     </motion.button>
-  )
+  );
 }

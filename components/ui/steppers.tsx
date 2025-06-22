@@ -1,13 +1,12 @@
-import React from "react";
-import fs from "fs/promises";
 import dynamic from "next/dynamic";
+import fs from "fs/promises";
 
-
-const CodeHighlight = dynamic(() => import('@/app/(docs)/docs/components/code-card/parts/code-highlight'), {
-  ssr: false,
-});
-
-
+const CodeHighlight = dynamic(
+  () => import("@/app/(docs)/docs/components/code-card/parts/code-highlight"),
+  {
+    ssr: false,
+  },
+);
 
 interface StepperProps {
   title?: string;
@@ -53,14 +52,11 @@ export async function Steppers({
   withEnd = false,
 }: SteppersProps) {
   let codeFromFile = "";
-  let fileName = "";
 
   if (withInstall && codePath) {
     try {
       codeFromFile = await fs.readFile(codePath, "utf8");
-      fileName = codePath.split(".").pop() || "ts";
     } catch (error) {
-      console.error("Failed to read file:", error);
       codeFromFile = "// Could not load file";
     }
   }

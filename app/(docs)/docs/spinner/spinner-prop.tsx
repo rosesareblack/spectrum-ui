@@ -1,19 +1,19 @@
-import { Props } from '@/app/(docs)/docs/components/props-table/props-table';
-import React from 'react';
+import { Props } from "@/app/(docs)/docs/components/props-table/props-table";
+import React from "react";
 
 export const spinnerProp: Props[] = [
   {
-    prop: 'className',
+    prop: "className",
     required: false,
     description: (
       <>
         <p>Customize the style by adding tailwind.</p>
       </>
     ),
-    type: 'string',
+    type: "string",
   },
   {
-    prop: 'size',
+    prop: "size",
     required: false,
     description: (
       <>
@@ -21,21 +21,21 @@ export const spinnerProp: Props[] = [
       </>
     ),
     type: `'small' | 'medium' | 'large'`,
-    default: 'medium',
+    default: "medium",
   },
   {
-    prop: 'show',
+    prop: "show",
     required: false,
-    default: 'true',
+    default: "true",
     description: (
       <>
         <p>Visibility of spinner.</p>
       </>
     ),
-    type: 'boolean',
+    type: "boolean",
   },
   {
-    prop: 'children',
+    prop: "children",
     required: false,
     description: (
       <>

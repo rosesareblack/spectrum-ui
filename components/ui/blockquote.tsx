@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { cn } from "@/lib/utils";
 
 type BlockquoteProps = {
   children?: React.ReactNode;
@@ -21,7 +21,12 @@ const Blockquote = ({ children, className }: BlockquoteProps) => {
 
 const BlockquoteAuthor = ({ children, className }: BlockquoteProps) => {
   return (
-    <p className={cn('mt-5 pr-4 text-right font-bold not-italic text-gray-700', className)}>
+    <p
+      className={cn(
+        "mt-5 pr-4 text-right font-bold not-italic text-gray-700",
+        className,
+      )}
+    >
       {children}
     </p>
   );
