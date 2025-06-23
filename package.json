@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write .",
     "lint": "next lint",
+    "lint:fix": "eslint src --fix && npm run format",
+    "format:check": "prettier -c .",
+    "format": "prettier --write .",
     "prepare": "husky",
-     "test": "echo \"No tests yet\""
+    "test": "node tests/dummy.test.js"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

@@ -45,6 +45,18 @@ export const DOCS: Documentation[] = [
     children: [
       { label: "Alert", value: "alert", url: "/docs/alert" },
       {
+        label: "Animated Card",
+        value: "animatedcard",
+        url: "/docs/animatedcard",
+        new: true,
+      },
+      {
+        label: "Animated Carousel",
+        value: "animatedcarousel",
+        url: "/docs/animatedcarousel",
+       
+      },
+      {
         label: "Animated SVG Chart",
         value: "animatedchart",
         url: "/docs/animatedchart",

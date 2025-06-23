@@ -78,10 +78,10 @@ const CodeHighlight = ({
   }, [highlighter, code, lang, theme, resolvedTheme]); // Add theme dependencies
 
   return (
-    <div className="relative mt- rounded-lg border border-neutral-200 dark:border-neutral-800 transition-all">
-      <div className="bg-neutral-50 dark:bg-neutral-900 px-4 py-2 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800">
-        <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
-          {title || ""}
+    <div className="relative  rounded-lg border border-neutral-200 dark:border-neutral-800 transition-all">
+      <div className="bg-neutral-100 dark:bg-neutral-900 px-4 py-2 flex items-center justify-between ">
+        <span>
+
         </span>
         <div className="flex items-center space-x-3">
           <Button
@@ -124,7 +124,7 @@ const CodeHighlight = ({
             )}
           />
         ) : (
-          <div className="px-4 py-3 bg-neutral-100 dark:bg-neutral-900text-muted-foreground rounded-md">
+          <div className="px-4 py-3 bg-neutral-100 dark:bg-neutral-900 text-muted-foreground rounded-md">
             <pre className="">{code}</pre>
           </div>
         )}

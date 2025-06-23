@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "app/registry/floating-label-input/usage/floating-label-customize.tsx",
-      "content": "import React from 'react';\nimport { FloatingInput, FloatingLabel } from '@/components/ui/floating-label-input';\n\nconst FloatingLabelInputCustomize = () => {\n  return (\n    <div className=\"relative\">\n      <FloatingInput id=\"floating-customize\" />\n      <FloatingLabel htmlFor=\"floating-customize\">Customize</FloatingLabel>\n    </div>\n  );\n};\n\nexport default FloatingLabelInputCustomize;\n",
+      "content": "import React from \"react\";\nimport {\n  FloatingInput,\n  FloatingLabel,\n} from \"@/components/ui/floating-label-input\";\n\nconst FloatingLabelInputCustomize = () => {\n  return (\n    <div className=\"relative\">\n      <FloatingInput id=\"floating-customize\" />\n      <FloatingLabel htmlFor=\"floating-customize\">Customize</FloatingLabel>\n    </div>\n  );\n};\n\nexport default FloatingLabelInputCustomize;\n",
       "type": "registry:ui",
       "target": "components/spectrumui/floating-label-customize.tsx"
     }

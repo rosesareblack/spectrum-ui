@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "app/registry/autosize-textarea/usage/autosize-textarea-with-ref.tsx",
-      "content": "'use client';\nimport React, { useState } from 'react';\nimport { AutosizeTextarea, AutosizeTextAreaRef } from '@/components/ui/autosize-textarea';\n\nconst AutosizeTextareaWithRef = () => {\n  const ref = React.useRef<AutosizeTextAreaRef>(null);\n  const [currMaxHeight, setCurrMaxHeight] = useState(0);\n  React.useEffect(() => {\n    if (ref.current) {\n      setCurrMaxHeight(ref.current.maxHeight);\n    }\n  }, []);\n  return (\n    <div className=\"flex w-full flex-col gap-2 px-10\">\n      <p>current max height from ref: {currMaxHeight}</p>\n      <AutosizeTextarea ref={ref} maxHeight={200} placeholder=\"with ref example.\" />\n    </div>\n  );\n};\n\nexport default AutosizeTextareaWithRef;\n",
+      "content": "\"use client\";\nimport React, { useState } from \"react\";\nimport {\n  AutosizeTextarea,\n  AutosizeTextAreaRef,\n} from \"@/components/ui/autosize-textarea\";\n\nconst AutosizeTextareaWithRef = () => {\n  const ref = React.useRef<AutosizeTextAreaRef>(null);\n  const [currMaxHeight, setCurrMaxHeight] = useState(0);\n  React.useEffect(() => {\n    if (ref.current) {\n      setCurrMaxHeight(ref.current.maxHeight);\n    }\n  }, []);\n  return (\n    <div className=\"flex w-full flex-col gap-2 px-10\">\n      <p>current max height from ref: {currMaxHeight}</p>\n      <AutosizeTextarea\n        ref={ref}\n        maxHeight={200}\n        placeholder=\"with ref example.\"\n      />\n    </div>\n  );\n};\n\nexport default AutosizeTextareaWithRef;\n",
       "type": "registry:ui",
       "target": "components/spectrumui/autosize-textarea-with-ref.tsx"
     }

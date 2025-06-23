@@ -4,7 +4,9 @@
   "type": "registry:ui",
   "title": "Skeleton Card",
   "description": "component for the Skeleton Card",
-  "registryDependencies": ["skeleton"],
+  "registryDependencies": [
+    "skeleton"
+  ],
   "files": [
     {
       "path": "app/registry/skeleton/usage/skeleton-card.tsx",

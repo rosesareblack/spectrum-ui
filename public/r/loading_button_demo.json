@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "app/registry/loading-button/loading-button-demo.tsx",
-      "content": "import React from 'react';\n// import { LoadingButton } from '@/components/ui/loading-button';\nimport { LoadingButton } from '@/app/registry/spectrumui/loading-button-dependencies';\n\nconst LoadingButtonDemo = () => {\n  return <LoadingButton loading>loading button</LoadingButton>;\n};\n\nexport default LoadingButtonDemo;\n",
+      "content": "import React from \"react\";\n// import { LoadingButton } from '@/components/ui/loading-button';\nimport { LoadingButton } from \"@/app/registry/spectrumui/loading-button-dependencies\";\n\nconst LoadingButtonDemo = () => {\n  return <LoadingButton loading>loading button</LoadingButton>;\n};\n\nexport default LoadingButtonDemo;\n",
       "type": "registry:ui",
       "target": "components/spectrumui/loading-button-demo.tsx"
     }

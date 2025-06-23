@@ -4,8 +4,14 @@
   "type": "registry:ui",
   "title": "Navbar Demo",
   "description": "component for the Navbar Demo",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["button", "scroll-area", "sheet"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "scroll-area",
+    "sheet"
+  ],
   "files": [
     {
       "path": "app/registry/navbar/navbardemo.tsx",

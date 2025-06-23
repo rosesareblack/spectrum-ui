@@ -63,6 +63,25 @@
       "registryDependencies": ["alert"]
     },
     {
+      "name":"animated_card",
+      "type": "registry:ui",
+      "title": "Animated Card",
+      "description": "component for the Animated Card",
+      "files": [
+        {
+          "path": "app/registry/animatedcard/animatedcard.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/animatedcard.tsx"
+        },
+        {
+          "path": "app/registry/animatedcard/animatedcarddemo.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/animatedcarddemo.tsx"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
       "name": "animated_SVG_Chart",
       "type": "registry:ui",
       "title": "Animated SVG Chart",
