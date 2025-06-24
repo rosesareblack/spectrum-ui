@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Cover } from '@/components/ui/cover';
 import { Button } from '@/components/ui/button';
-import CardCollection from '@/components/spectrumui/cards';
+
 import { Fomo } from '@/components/sponserbutton';
 import { siteConfig } from '@/config/site';
 import { Icons } from '@/components/icon';
@@ -25,6 +25,7 @@ import {
   ProCardHighlight,
   Separator,
 } from '@/components/pricing';
+import HomeCardCollection from '@/components/homecard';
 
 const Homepage = () => {
   const [star, setStar] = useState(0);
@@ -155,7 +156,7 @@ const Homepage = () => {
               </div>
             </Link>
 
-            <CardCollection />
+            <HomeCardCollection />
           </section>
         </div>
         <Link href={siteConfig.links.twitter} className="flex justify-center items-center mb-12">

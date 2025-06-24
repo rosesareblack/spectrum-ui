@@ -51,10 +51,7 @@ const page = () => {
         >
           <Alert04 />
         </Usage>
-        <div className="font-bold text-neutral-500 flex gap-4">
-          <h1>Credits -</h1>
-          <Link href="https://kokonut.dev/">kokonut UI</Link>
-        </div>
+     
       </PageTemplate>
     </div>
   );

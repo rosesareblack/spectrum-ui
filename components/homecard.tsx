@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Copy from '../copy';
+
 import {
   Card,
   CardContent,
@@ -50,8 +50,9 @@ import { DollarSign, TrendingUp, Users } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
+import Copy from './copy';
 
-export default function CardCollection() {
+export default function HomeCardCollection() {
   const cardComponents = [
     {
       name: 'LoginCard',
@@ -1404,11 +1405,11 @@ function QuickNoteCard() {
     },
   ];
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12  grid-cols-1 ml-2">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12  grid-cols-1 ml-2">
       {cardComponents.map(({ name, component: CardComponent, code }) => (
         <div key={name} className="relative group">
           <CardComponent />
-          <div className="absolute top-1 right-5 hidden group-hover:flex">
+          <div className="absolute top-2 right-0 hidden group-hover:flex">
             <Copy content={code} />
           </div>
         </div>
