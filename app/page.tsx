@@ -144,17 +144,17 @@ const Homepage = () => {
               } as React.CSSProperties
             }
           >
-            <Link
-              href={siteConfig.links.twitter}
-              className="flex flex-col justify-center items-center mb-12"
-            >
+            <div className="flex flex-col justify-center items-center my-12">
               <div className="px-8 rounded-2xl text-center">
-                <div className="font-semibold text-2xl md:text-4xl mb-4">Component Demos</div>
-                <p className="text-center text-sm md:text-lg mt-4 md:mt-8 text-neutral-500 dark:text-neutral-500 max-w-2xl">
-                  Here are some of the components that you can use to build your landing pages.
+                <h2 className="font-bold text-2xl md:text-4xl mb-4 tracking-tight text-neutral-900 dark:text-white">
+                  Ready-to-Use UI Blocks
+                </h2>
+                <p className="text-center text-sm md:text-lg mt-4 md:mt-8 text-neutral-600 dark:text-neutral-400 max-w-2xl">
+                  Pre-built sections you can drop into any project — login forms, payment flows, AI
+                  widgets, and more. Just copy, paste, and ship fast.
                 </p>
               </div>
-            </Link>
+            </div>
 
             <HomeCardCollection />
           </section>
