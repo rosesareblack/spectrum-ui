@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Copy from "../copy";
+import { useState } from 'react';
+import Copy from '../copy';
 import {
   Card,
   CardContent,
@@ -9,23 +9,23 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { Slider } from "@/components/ui/slider";
+} from '@/components/ui/select';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
+import { Slider } from '@/components/ui/slider';
 import {
   Bell,
   Calendar,
@@ -45,20 +45,16 @@ import {
   Star,
   Sun,
   Zap,
-} from "lucide-react";
-import { DollarSign, TrendingUp, Users } from "lucide-react";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
-import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from "recharts";
+} from 'lucide-react';
+import { DollarSign, TrendingUp, Users } from 'lucide-react';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 
 export default function CardCollection() {
   const cardComponents = [
     {
-      name: "LoginCard",
+      name: 'LoginCard',
       component: LoginCard,
       code: `
   function LoginCard() {
@@ -97,7 +93,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "SignUpCard",
+      name: 'SignUpCard',
       component: SignUpCard,
       code: `
   function SignUpCard() {
@@ -141,7 +137,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "PaymentCard",
+      name: 'PaymentCard',
       component: PaymentCard,
       code: `
   function PaymentCard() {
@@ -185,7 +181,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "AIAssistantCard",
+      name: 'AIAssistantCard',
       component: AIAssistantCard,
       code: `
   function AIAssistantCard() {
@@ -241,7 +237,7 @@ export default function CardCollection() {
     },
 
     {
-      name: "SettingsCard",
+      name: 'SettingsCard',
       component: SettingsCard,
       code: `
   function SettingsCard() {
@@ -312,7 +308,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "DataVisualizationCard",
+      name: 'DataVisualizationCard',
       component: DataVisualizationCard,
       code: `
   function DataVisualizationCard() {
@@ -440,7 +436,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "MetricsCard",
+      name: 'MetricsCard',
       component: MetricsCard,
       code: `
   function MetricsCard() {
@@ -483,7 +479,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "SubscriptionCard",
+      name: 'SubscriptionCard',
       component: SubscriptionCard,
       code: `
   function SubscriptionCard() {
@@ -523,12 +519,12 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "TaskCard",
+      name: 'TaskCard',
       component: TaskCard,
       code: 'function TaskCard() {\n  return (\n    <Card className="w-[310px]">\n      <CardHeader>\n        <CardTitle>Current Tasks</CardTitle>\n        <CardDescription>Your team&apos;s ongoing tasks</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <div className="space-y-4">\n          {["Design system update", "API integration", "User testing"].map(\n            (task, index) => (\n              <div key={index} className="flex items-center">\n                <input type="checkbox" id={`task-${index}`} className="mr-2" />\n                <label htmlFor={`task-${index}`} className="flex-1">\n                  {task}\n                </label>\n                <Badge\n                  variant={\n                    index === 0\n                      ? "default"\n                      : index === 1\n                      ? "secondary"\n                      : "outline"\n                  }\n                >\n                  {index === 0\n                    ? "In Progress"\n                    : index === 1\n                    ? "Pending"\n                    : "Completed"}\n                </Badge>\n              </div>\n            )\n          )}\n        </div>\n      </CardContent>\n      <CardFooter>\n        <Button variant="outline" className="w-full">\n          View All Tasks\n        </Button>\n      </CardFooter>\n    </Card>\n  )\n}',
     },
     {
-      name: "CalendarCard",
+      name: 'CalendarCard',
       component: CalendarCard,
       code: `
   function CalendarCard() {
@@ -571,7 +567,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "BillingCard",
+      name: 'BillingCard',
       component: BillingCard,
       code: `
   function BillingCard() {
@@ -616,7 +612,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "FeedbackCard",
+      name: 'FeedbackCard',
       component: FeedbackCard,
       code: `
   function FeedbackCard() {
@@ -651,7 +647,7 @@ export default function CardCollection() {
     },
 
     {
-      name: "TeamCollaborationCard",
+      name: 'TeamCollaborationCard',
       component: TeamCollaborationCard,
       code: `
   function TeamCollaborationCard() {
@@ -694,7 +690,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "ProfileCard",
+      name: 'ProfileCard',
       component: ProfileCard,
       code: `
   function ProfileCard() {
@@ -745,7 +741,7 @@ export default function CardCollection() {
     },
 
     {
-      name: "ProductivityTrackerCard",
+      name: 'ProductivityTrackerCard',
       component: ProductivityTrackerCard,
       code: `
   function ProductivityTrackerCard() {
@@ -795,7 +791,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "QuickActionCard",
+      name: 'QuickActionCard',
       component: QuickActionCard,
       code: `
   function QuickActionCard() {
@@ -829,7 +825,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "NotificationCard",
+      name: 'NotificationCard',
       component: NotificationCard,
       code: `
   function NotificationCard() {
@@ -882,7 +878,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "WeatherMiniCard",
+      name: 'WeatherMiniCard',
       component: WeatherMiniCard,
       code: `
   function WeatherMiniCard() {
@@ -903,7 +899,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "QuickSettingsCard",
+      name: 'QuickSettingsCard',
       component: QuickSettingsCard,
       code: `
   function QuickSettingsCard() {
@@ -938,7 +934,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "MusicPlayerCard",
+      name: 'MusicPlayerCard',
       component: MusicPlayerCard,
       code: `
   function MusicPlayerCard() {
@@ -982,7 +978,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "TaskProgressCard",
+      name: 'TaskProgressCard',
       component: TaskProgressCard,
       code: `
   function TaskProgressCard() {
@@ -1025,7 +1021,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "QuickSearchCard",
+      name: 'QuickSearchCard',
       component: QuickSearchCard,
       code: `
   function QuickSearchCard() {
@@ -1057,7 +1053,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "UpcomingEventCard",
+      name: 'UpcomingEventCard',
       component: UpcomingEventCard,
       code: `
   function UpcomingEventCard() {
@@ -1099,7 +1095,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "QuickExpenseCard",
+      name: 'QuickExpenseCard',
       component: QuickExpenseCard,
       code: `
   function QuickExpenseCard() {
@@ -1148,7 +1144,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "DeviceStatusCard",
+      name: 'DeviceStatusCard',
       component: DeviceStatusCard,
       code: `
  function DeviceStatusCard() {
@@ -1168,7 +1164,7 @@ export default function CardCollection() {
   }`,
     },
     {
-      name: "QuickPollCard",
+      name: 'QuickPollCard',
       component: QuickPollCard,
       code: `
   function QuickPollCard() {
@@ -1192,7 +1188,7 @@ export default function CardCollection() {
   `,
     },
     {
-      name: "DataUsageCard",
+      name: 'DataUsageCard',
       component: DataUsageCard,
       code: `
   function DataUsageCard() {
@@ -1214,7 +1210,7 @@ export default function CardCollection() {
   `,
     },
     {
-      name: "QuickNoteCard",
+      name: 'QuickNoteCard',
       component: QuickNoteCard,
       code: `
 function QuickNoteCard() {
@@ -1235,7 +1231,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "SocialShareCard",
+      name: 'SocialShareCard',
       component: SocialShareCard,
       code: `
  function SocialShareCard() {
@@ -1257,7 +1253,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "QuickContactCard",
+      name: 'QuickContactCard',
       component: QuickContactCard,
       code: `
  function QuickContactCard() {
@@ -1283,7 +1279,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "LocationCard",
+      name: 'LocationCard',
       component: LocationCard,
       code: `
  function LocationCard() {
@@ -1303,7 +1299,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "VoiceCommandCard",
+      name: 'VoiceCommandCard',
       component: VoiceCommandCard,
       code: `
  function VoiceCommandCard() {
@@ -1323,7 +1319,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "DownloadProgressCard",
+      name: 'DownloadProgressCard',
       component: DownloadProgressCard,
       code: `
  function DownloadProgressCard() {
@@ -1345,7 +1341,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "ThemeToggleCard",
+      name: 'ThemeToggleCard',
       component: ThemeToggleCard,
       code: `
  function ThemeToggleCard() {
@@ -1372,7 +1368,7 @@ function QuickNoteCard() {
   `,
     },
     {
-      name: "QuickRatingCard",
+      name: 'QuickRatingCard',
       component: QuickRatingCard,
       code: `
       function QuickRatingCard() {
@@ -1408,7 +1404,7 @@ function QuickNoteCard() {
     },
   ];
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12  grid-cols-1 ml-2">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12  grid-cols-1 ml-2">
       {cardComponents.map(({ name, component: CardComponent, code }) => (
         <div key={name} className="relative group">
           <CardComponent />
@@ -1426,9 +1422,7 @@ export function LoginCard() {
     <Card className="w-[310px]">
       <CardHeader>
         <CardTitle>Login</CardTitle>
-        <CardDescription>
-          Enter your credentials to access your account.
-        </CardDescription>
+        <CardDescription>Enter your credentials to access your account.</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
@@ -1439,11 +1433,7 @@ export function LoginCard() {
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                placeholder="Enter your password"
-                type="password"
-              />
+              <Input id="password" placeholder="Enter your password" type="password" />
             </div>
           </div>
         </form>
@@ -1475,11 +1465,7 @@ export function SignUpCard() {
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                placeholder="Choose a password"
-                type="password"
-              />
+              <Input id="password" placeholder="Choose a password" type="password" />
             </div>
             <div className="flex items-center space-x-2">
               <Switch id="terms" />
@@ -1499,9 +1485,7 @@ export function PaymentCard() {
     <Card className="w-[310px]">
       <CardHeader>
         <CardTitle>Payment Details</CardTitle>
-        <CardDescription>
-          Enter your payment information to complete the purchase.
-        </CardDescription>
+        <CardDescription>Enter your payment information to complete the purchase.</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
@@ -1564,8 +1548,7 @@ export function ProfileCard() {
           <div className="flex flex-col space-y-1.5">
             <Label>Bio</Label>
             <p className="text-sm">
-              Software developer passionate about creating user-friendly
-              applications.
+              Software developer passionate about creating user-friendly applications.
             </p>
           </div>
         </div>
@@ -1579,14 +1562,12 @@ export function ProfileCard() {
   );
 }
 export function SettingsCard() {
-  const [activeTab, setActiveTab] = useState("account");
+  const [activeTab, setActiveTab] = useState('account');
   return (
     <Card className="w-[310px]">
       <CardHeader>
         <CardTitle>Settings</CardTitle>
-        <CardDescription>
-          Manage your account settings and preferences.
-        </CardDescription>
+        <CardDescription>Manage your account settings and preferences.</CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -1670,9 +1651,7 @@ export function MetricsCard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <BarChart className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
-                Conversion Rate
-              </span>
+              <span className="text-sm text-muted-foreground">Conversion Rate</span>
             </div>
             <div className="text-2xl font-bold">3.8%</div>
           </div>
@@ -1725,31 +1704,17 @@ export function TaskCard() {
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {["Design system update", "API integration", "User testing"].map(
-            (task, index) => (
-              <div key={index} className="flex items-center">
-                <input type="checkbox" id={`task-${index}`} className="mr-2" />
-                <label htmlFor={`task-${index}`} className="flex-1">
-                  {task}
-                </label>
-                <Badge
-                  variant={
-                    index === 0
-                      ? "default"
-                      : index === 1
-                        ? "secondary"
-                        : "outline"
-                  }
-                >
-                  {index === 0
-                    ? "In Progress"
-                    : index === 1
-                      ? "Pending"
-                      : "Completed"}
-                </Badge>
-              </div>
-            ),
-          )}
+          {['Design system update', 'API integration', 'User testing'].map((task, index) => (
+            <div key={index} className="flex items-center">
+              <input type="checkbox" id={`task-${index}`} className="mr-2" />
+              <label htmlFor={`task-${index}`} className="flex-1">
+                {task}
+              </label>
+              <Badge variant={index === 0 ? 'default' : index === 1 ? 'secondary' : 'outline'}>
+                {index === 0 ? 'In Progress' : index === 1 ? 'Pending' : 'Completed'}
+              </Badge>
+            </div>
+          ))}
         </div>
       </CardContent>
       <CardFooter>
@@ -1770,12 +1735,12 @@ export function CalendarCard() {
       <CardContent>
         <div className="space-y-4">
           {[
-            { date: "Today", event: "Team standup", time: "10:00 AM" },
-            { date: "Tomorrow", event: "Client meeting", time: "2:00 PM" },
+            { date: 'Today', event: 'Team standup', time: '10:00 AM' },
+            { date: 'Tomorrow', event: 'Client meeting', time: '2:00 PM' },
             {
-              date: "Fri, Jun 12",
-              event: "Project deadline",
-              time: "11:59 PM",
+              date: 'Fri, Jun 12',
+              event: 'Project deadline',
+              time: '11:59 PM',
             },
           ].map((item, index) => (
             <div key={index} className="flex items-center">
@@ -1803,9 +1768,7 @@ export function BillingCard() {
     <Card className="w-[310px]">
       <CardHeader>
         <CardTitle>Billing Information</CardTitle>
-        <CardDescription>
-          Manage your billing details and payment method
-        </CardDescription>
+        <CardDescription>Manage your billing details and payment method</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -1868,18 +1831,16 @@ export function FeedbackCard() {
   );
 }
 export function AIAssistantCard() {
-  const [message, setMessage] = useState("");
-  const [conversation, setConversation] = useState<
-    { role: "user" | "ai"; content: string }[]
-  >([]);
+  const [message, setMessage] = useState('');
+  const [conversation, setConversation] = useState<{ role: 'user' | 'ai'; content: string }[]>([]);
   const handleSend = () => {
     if (message.trim()) {
       setConversation([
         ...conversation,
-        { role: "user", content: message },
-        { role: "ai", content: "This is a simulated AI response." },
+        { role: 'user', content: message },
+        { role: 'ai', content: 'This is a simulated AI response.' },
       ]);
-      setMessage("");
+      setMessage('');
     }
   };
   return (
@@ -1892,11 +1853,9 @@ export function AIAssistantCard() {
         {conversation.map((msg, index) => (
           <div
             key={index}
-            className={`mb-2 ${
-              msg.role === "ai" ? "text-blue-600 text-left" : "text-right"
-            }`}
+            className={`mb-2 ${msg.role === 'ai' ? 'text-blue-600 text-left' : 'text-right'}`}
           >
-            <strong>{msg.role === "ai" ? "AI: " : "You: "}</strong>
+            <strong>{msg.role === 'ai' ? 'AI: ' : 'You: '}</strong>
             {msg.content}
           </div>
         ))}
@@ -1906,7 +1865,7 @@ export function AIAssistantCard() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type your message..."
-          onKeyPress={(e) => e.key === "Enter" && handleSend()}
+          onKeyPress={(e) => e.key === 'Enter' && handleSend()}
         />
         <Button onClick={handleSend}>Send</Button>
       </CardFooter>
@@ -1916,9 +1875,9 @@ export function AIAssistantCard() {
 
 export function TeamCollaborationCard() {
   const teamMembers = [
-    { name: "Alice", avatar: "A", status: "online" },
-    { name: "Bob", avatar: "B", status: "offline" },
-    { name: "Charlie", avatar: "C", status: "away" },
+    { name: 'Alice', avatar: 'A', status: 'online' },
+    { name: 'Bob', avatar: 'B', status: 'offline' },
+    { name: 'Charlie', avatar: 'C', status: 'away' },
   ];
   return (
     <Card className="w-[310px]">
@@ -1939,9 +1898,7 @@ export function TeamCollaborationCard() {
             <Badge variant="outline">3 Active Members</Badge>
           </div>
           <Progress value={65} className="w-full" />
-          <div className="text-sm text-muted-foreground">
-            Project Progress: 65%
-          </div>
+          <div className="text-sm text-muted-foreground">Project Progress: 65%</div>
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
@@ -1988,9 +1945,9 @@ export function WeatherCard() {
 }
 export function ProductivityTrackerCard() {
   const tasks = [
-    { name: "Complete project proposal", completed: true },
-    { name: "Review team submissions", completed: false },
-    { name: "Prepare for client meeting", completed: false },
+    { name: 'Complete project proposal', completed: true },
+    { name: 'Review team submissions', completed: false },
+    { name: 'Prepare for client meeting', completed: false },
   ];
   return (
     <Card className="w-[310px]">
@@ -2008,11 +1965,7 @@ export function ProductivityTrackerCard() {
                 onChange={() => {}}
                 className="mr-2"
               />
-              <span
-                className={
-                  task.completed ? "line-through text-muted-foreground" : ""
-                }
-              >
+              <span className={task.completed ? 'line-through text-muted-foreground' : ''}>
                 {task.name}
               </span>
             </div>
@@ -2020,9 +1973,7 @@ export function ProductivityTrackerCard() {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <div className="text-sm text-muted-foreground">
-          2 of 3 tasks completed
-        </div>
+        <div className="text-sm text-muted-foreground">2 of 3 tasks completed</div>
         <Button variant="outline">Add Task</Button>
       </CardFooter>
     </Card>
@@ -2035,7 +1986,7 @@ export function QuickActionCard() {
         <CardTitle className="text-sm">Quick Actions</CardTitle>
       </CardHeader>
       <CardContent className="p-4 pt-0 grid grid-cols-3 gap-2">
-        {["New", "Upload", "Share"].map((action, index) => (
+        {['New', 'Upload', 'Share'].map((action, index) => (
           <Button key={index} variant="outline" size="sm" className="w-full">
             {action}
           </Button>
@@ -2117,9 +2068,7 @@ export function TaskProgressCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={60} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">
-          12 of 20 tasks completed
-        </p>
+        <p className="text-xs text-muted-foreground mt-2">12 of 20 tasks completed</p>
       </CardContent>
     </Card>
   );
@@ -2193,7 +2142,7 @@ export function QuickPollCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0 space-y-2">
         <div className="text-sm font-medium">Favorite feature?</div>
-        {["Dashboard", "Reports", "Settings"].map((option, index) => (
+        {['Dashboard', 'Reports', 'Settings'].map((option, index) => (
           <div key={index} className="flex items-center space-x-2">
             <input type="radio" id={option} name="poll" className="radio" />
             <Label htmlFor={option}>{option}</Label>
@@ -2212,9 +2161,7 @@ export function DataUsageCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={75} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">
-          7.5 GB of 10 GB used
-        </p>
+        <p className="text-xs text-muted-foreground mt-2">7.5 GB of 10 GB used</p>
       </CardContent>
     </Card>
   );
@@ -2241,7 +2188,7 @@ export function SocialShareCard() {
         <CardTitle className="text-sm">Share</CardTitle>
       </CardHeader>
       <CardContent className="p-4 pt-0 flex justify-between">
-        {["Twitter", "Facebook", "LinkedIn"].map((platform, index) => (
+        {['Twitter', 'Facebook', 'LinkedIn'].map((platform, index) => (
           <Button key={index} variant="outline" size="sm" className="w-16">
             {platform.charAt(0)}
           </Button>
@@ -2307,9 +2254,7 @@ export function DownloadProgressCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={40} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">
-          2 of 5 files downloaded
-        </p>
+        <p className="text-xs text-muted-foreground mt-2">2 of 5 files downloaded</p>
       </CardContent>
     </Card>
   );
@@ -2344,16 +2289,9 @@ export function QuickRatingCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0 flex justify-between">
         {[1, 2, 3, 4, 5].map((star) => (
-          <Button
-            key={star}
-            variant="ghost"
-            size="sm"
-            onClick={() => setStarRating(star)}
-          >
+          <Button key={star} variant="ghost" size="sm" onClick={() => setStarRating(star)}>
             <Star
-              className={`h-4 w-4 ${
-                starRating >= star ? "text-yellow-500" : "text-gray-400"
-              }`}
+              className={`h-4 w-4 ${starRating >= star ? 'text-yellow-500' : 'text-gray-400'}`}
             />
           </Button>
         ))}
@@ -2363,30 +2301,30 @@ export function QuickRatingCard() {
 }
 
 export function DataVisualizationCard() {
-  const [activeChart, setActiveChart] = useState<ChartType>("bar");
+  const [activeChart, setActiveChart] = useState<ChartType>('bar');
   const chartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
+    { month: 'January', desktop: 186, mobile: 80 },
+    { month: 'February', desktop: 305, mobile: 200 },
+    { month: 'March', desktop: 237, mobile: 120 },
+    { month: 'April', desktop: 73, mobile: 190 },
+    { month: 'May', desktop: 209, mobile: 130 },
+    { month: 'June', desktop: 214, mobile: 140 },
   ];
   const chartConfig = {
     desktop: {
-      label: "Desktop",
-      color: "hsl(var(--chart-1))",
+      label: 'Desktop',
+      color: 'hsl(var(--chart-1))',
     },
     mobile: {
-      label: "Mobile",
-      color: "hsl(var(--chart-2))",
+      label: 'Mobile',
+      color: 'hsl(var(--chart-2))',
     },
   };
-  type ChartType = "bar" | "line" | "radar";
+  type ChartType = 'bar' | 'line' | 'radar';
 
   const renderChart = (type: ChartType) => {
     switch (type) {
-      case "bar":
+      case 'bar':
         return (
           <BarChart data={chartData}>
             <CartesianGrid vertical={false} />
@@ -2397,15 +2335,12 @@ export function DataVisualizationCard() {
               axisLine={false}
               tickFormatter={(value) => value.slice(0, 3)}
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="dashed" />}
-            />
+            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />
             <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
             <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
           </BarChart>
         );
-      case "line":
+      case 'line':
         return (
           <LineChart data={chartData} margin={{ left: 12, right: 12 }}>
             <CartesianGrid vertical={false} />
@@ -2416,10 +2351,7 @@ export function DataVisualizationCard() {
               tickMargin={8}
               tickFormatter={(value) => value.slice(0, 3)}
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
+            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
             <Line
               dataKey="desktop"
               type="natural"
@@ -2436,22 +2368,14 @@ export function DataVisualizationCard() {
             />
           </LineChart>
         );
-      case "radar":
+      case 'radar':
         return (
           <RadarChart data={chartData}>
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <PolarAngleAxis dataKey="month" />
             <PolarGrid />
-            <Radar
-              dataKey="desktop"
-              fill="var(--color-desktop)"
-              fillOpacity={0.6}
-            />
-            <Radar
-              dataKey="mobile"
-              fill="var(--color-mobile)"
-              fillOpacity={0.6}
-            />
+            <Radar dataKey="desktop" fill="var(--color-desktop)" fillOpacity={0.6} />
+            <Radar dataKey="mobile" fill="var(--color-mobile)" fillOpacity={0.6} />
           </RadarChart>
         );
     }
@@ -2463,10 +2387,7 @@ export function DataVisualizationCard() {
         <CardDescription>Interactive chart types</CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs
-          value={activeChart}
-          onValueChange={(value) => setActiveChart(value as ChartType)}
-        >
+        <Tabs value={activeChart} onValueChange={(value) => setActiveChart(value as ChartType)}>
           <TabsList className="grid w-full grid-cols-3 mb-4">
             <TabsTrigger value="bar" aria-label="Bar Chart">
               <LucideBarChart className="h-4 w-4 mr-2" />
@@ -2485,8 +2406,7 @@ export function DataVisualizationCard() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  {activeChart.charAt(0).toUpperCase() + activeChart.slice(1)}{" "}
-                  Chart
+                  {activeChart.charAt(0).toUpperCase() + activeChart.slice(1)} Chart
                 </CardTitle>
                 <CardDescription>January - June 2024</CardDescription>
               </CardHeader>
@@ -2497,8 +2417,7 @@ export function DataVisualizationCard() {
               </CardContent>
               <CardFooter className="flex-col items-start gap-2 text-sm">
                 <div className="flex gap-2 font-medium leading-none">
-                  Trending up by 5.2% this month{" "}
-                  <TrendingUp className="h-4 w-4" />
+                  Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
                   Showing total visitors for the last 6 months
