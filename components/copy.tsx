@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Clipboard, Copy as CopyIcon } from "lucide-react";
+import { Check, Clipboard } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 

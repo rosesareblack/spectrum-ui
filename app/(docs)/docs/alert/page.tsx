@@ -8,7 +8,6 @@ import Usage from "../components/usage";
 import Alert02 from "./usage/alerttwo";
 import Alert03 from "./usage/alertthree";
 import Alert04 from "./usage/alertfour";
-import Link from "next/link";
 
 const page = () => {
   return (
