@@ -21,6 +21,13 @@ const DualRangeSliderPage = () => {
       >
         <LoginPage />
       </PreviewCodeCard>
+      <PageSubTitle>Installation</PageSubTitle>
+      <Steppers
+        withInstall
+        codePath="app/(docs)/docs/login/login-demo.tsx"
+        withEnd
+        installScript="npm i lucide-react framer-motion"
+      />
     </PageTemplate>
   );
 };
