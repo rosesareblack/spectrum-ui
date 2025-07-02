@@ -63,7 +63,7 @@
       "registryDependencies": ["alert"]
     },
     {
-      "name":"animated_card",
+      "name": "animated_card",
       "type": "registry:ui",
       "title": "Animated Card",
       "description": "component for the Animated Card",
@@ -135,9 +135,7 @@
           "target": "components/spectrumui/autosize-textarea-demo.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"]
     },
     {
       "name": "autosize_textarea_max_height",
@@ -151,9 +149,7 @@
           "target": "components/spectrumui/autosize-textarea-with-max-height.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"]
     },
     {
       "name": "autosize_textarea_ref",
@@ -167,9 +163,7 @@
           "target": "components/spectrumui/autosize-textarea-with-ref.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"]
     },
     {
       "name": "autosize_textarea_form",
@@ -183,9 +177,7 @@
           "target": "components/spectrumui/autosize-textarea-form.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"]
     },
     {
       "name": "autosize_textarea_customize",
@@ -199,9 +191,7 @@
           "target": "components/spectrumui/autosize-textarea-customize.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"]
     },
     {
       "name": "autosize_textarea_customize",
@@ -215,9 +205,7 @@
           "target": "components/spectrumui/autosize-textarea-customize.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/autosize_textarea_dependecies.json"]
     },
     {
       "name": "datetime_picker_demo",
@@ -413,9 +401,7 @@
           "target": "components/spectrumui/dual-range-slider-demo.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"]
     },
     {
       "name": "dual_range_slider_custom_label",
@@ -429,9 +415,7 @@
           "target": "components/spectrumui/dual-range-slider-custom-label.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"]
     },
     {
       "name": "dual_range_slider_label_position",
@@ -445,9 +429,7 @@
           "target": "components/spectrumui/dual-range-slider-label-position.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"]
     },
     {
       "name": "dual_range_slider_single",
@@ -461,9 +443,7 @@
           "target": "components/spectrumui/dual-range-slider-single.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/dual_range_slider_dependecies.json"]
     },
     {
       "name": "event_badge_3d",
@@ -541,9 +521,7 @@
           "target": "components/spectrumui/floating-label-input-demo.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/floating_label_input.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/floating_label_input.json"]
     },
     {
       "name": "floating_label_customize",
@@ -557,9 +535,7 @@
           "target": "components/spectrumui/floating-label-customize.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/floating_label_input.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/floating_label_input.json"]
     },
     {
       "name": "floating_label_form",
@@ -573,9 +549,7 @@
           "target": "components/spectrumui/floating-label-input-form.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/floating_label_input.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/floating_label_input.json"]
     },
     {
       "name": "footers_demo",
@@ -589,14 +563,7 @@
           "target": "components/spectrumui/footer-demo.tsx"
         }
       ],
-      "registryDependencies": [
-        "button",
-        "input",
-        "label",
-        "switch",
-        "textarea",
-        "tooltip"
-      ],
+      "registryDependencies": ["button", "input", "label", "switch", "textarea", "tooltip"],
       "dependencies": ["lucide-react"]
     },
     {
@@ -672,10 +639,7 @@
           "target": "components/spectrumui/footer.tsx"
         }
       ],
-      "registryDependencies": [
-        "button",
-        "https://ui.spectrumhq.in/r/icon_dependencies.json"
-      ]
+      "registryDependencies": ["button", "https://ui.spectrumhq.in/r/icon_dependencies.json"]
     },
     {
       "name": "http_status_code",
@@ -719,9 +683,7 @@
           "target": "components/spectrumui/image-preview.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/image_preview_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/image_preview_dependencies.json"]
     },
 
     {
@@ -749,9 +711,7 @@
           "target": "components/spectrumui/infinite-scroll.tsx"
         }
       ],
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/infinite_scroll_dependecies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/infinite_scroll_dependecies.json"]
     },
     {
       "name": "loading_button_dependencies",
@@ -766,11 +726,7 @@
         }
       ],
 
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "lucide-react"
-      ]
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "lucide-react"]
     },
     {
       "name": "loading_button_demo",
@@ -785,9 +741,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/loading_button_dependencies.json"]
     },
     {
       "name": "loading_button_usage",
@@ -802,9 +756,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/loading_button_dependencies.json"]
     },
     {
       "name": "loading_button_as_child",
@@ -819,9 +771,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/loading_button_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/loading_button_dependencies.json"]
     },
     {
       "name": "multiple-selector-dependencies",
@@ -865,9 +815,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-with-disable-options",
@@ -882,9 +830,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-disabled",
@@ -899,9 +845,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-no-default-select",
@@ -916,9 +860,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-controlled",
@@ -933,9 +875,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-hide-clear-all",
@@ -950,9 +890,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-creatable",
@@ -967,9 +905,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-with-async-search",
@@ -1106,9 +1042,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "use-toast",
@@ -1154,9 +1088,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-no-placeholder-when-selected",
@@ -1171,9 +1103,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-fixed-option",
@@ -1188,9 +1118,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/multiple-selector-dependencies.json"]
     },
     {
       "name": "multiple-selector-ref",
@@ -1356,6 +1284,21 @@
       "dependencies": ["lucide-react"]
     },
     {
+      "name": "login_card",
+      "type": "registry:ui",
+      "title": "Login Card",
+      "description": "component for the Login Card",
+      "files": [
+        {
+          "path": "app/registry/login-card/logincard.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/logincard.tsx"
+        }
+      ],
+
+      "dependencies": ["lucide-react", "next-themes", "framer-motion"]
+    },
+    {
       "name": "profile_dropdown",
       "type": "registry:ui",
       "title": "Profile Dropdown",
@@ -1398,9 +1341,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"]
     },
     {
       "name": "value_position",
@@ -1415,9 +1356,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"]
     },
     {
       "name": "custom_label",
@@ -1432,9 +1371,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/progress_with_value_dependencies.json"]
     },
     {
       "name": "responsive_modal_dependencies",
@@ -1449,11 +1386,7 @@
         }
       ],
 
-      "dependencies": [
-        "@radix-ui/react-dialog",
-        "class-variance-authority",
-        "lucide-react"
-      ]
+      "dependencies": ["@radix-ui/react-dialog", "class-variance-authority", "lucide-react"]
     },
     {
       "name": "responsive_modal",
@@ -1549,9 +1482,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/spinner_dependencies.json"]
     },
     {
       "name": "spinner_size",
@@ -1566,9 +1497,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/spinner_dependencies.json"]
     },
     {
       "name": "spinner_with_text",
@@ -1583,9 +1512,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/spinner_dependencies.json"]
     },
     {
       "name": "spinner_toggle",
@@ -1600,9 +1527,7 @@
         }
       ],
 
-      "registryDependencies": [
-        "https://ui.spectrumhq.in/r/spinner_dependencies.json"
-      ]
+      "registryDependencies": ["https://ui.spectrumhq.in/r/spinner_dependencies.json"]
     },
     {
       "name": "status_badge",
