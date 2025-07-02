@@ -15,7 +15,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-// Assuming DOCS is imported from your constant file
+
 import { DOCS } from "@/app/(docs)/layout-parts/documentation.constant";
 
 export default function EnhancedSidebar() {

@@ -142,6 +142,13 @@ export const DOCS: Documentation[] = [
         value: 'multistepform',
         url: '/docs/multistepform',
       },
+      {
+        label:'Login Card',
+        value: 'login-card',
+        url: '/docs/login',
+        new: true,
+
+      },
       { label: 'Navbar', value: 'navbar', url: '/docs/navbar' },
       {
         label: 'Profile Dropdown',
