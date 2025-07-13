@@ -802,6 +802,21 @@
         }
       ]
     },
+
+    {
+      "name": "input-model",
+      "type": "registry:ui",
+      "title": "Input Model",
+      "description": "component for the Input Model Demo",
+      "files": [
+        {
+          "path": "app/registry/input-model/inputmodel.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/inputmodel.tsx"
+        }
+      ],
+      "registryDependencies": ["input", "label", "select", "button", "tab", "avatar", "badge"]
+    },
     {
       "name": "multiple-selector-demo",
       "type": "registry:ui",

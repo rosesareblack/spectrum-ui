@@ -122,6 +122,12 @@ export const DOCS: Documentation[] = [
         url: '/docs/imagepreview',
       },
       {
+        label:'Input Model',
+        value: 'inputmodel',
+        url: '/docs/input-model',
+        new: true,
+      },
+      {
         label: 'Infinite Scroll',
         value: 'infiniteScroll',
         url: '/docs/infinite-scroll',
