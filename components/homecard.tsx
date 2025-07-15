@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   Card,
@@ -51,9 +51,13 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 import Copy from './copy';
-import MasonryGrid from '@/utils/MasonryGrid';
+import { GetDimensions, GridStyle, GridColumns, addGridStyle, addGridBorders } from '@/utils/GridStyle';
 
 export default function HomeCardCollection() {
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const cardComponents = [
     {
       name: 'LoginCard',
@@ -309,7 +313,7 @@ export default function HomeCardCollection() {
     )
   }`,
     },
-    
+
     {
       name: 'DataVisualizationCard',
       component: DataVisualizationCard,
@@ -1363,17 +1367,42 @@ function QuickNoteCard() {
   `,
     },
   ];
+  const componentsLength = cardComponents.length
+
+  
+  useEffect(() => {
+    const handleResize = () => {
+      const [heights, widths] = GetDimensions(itemsRef);
+      const columns = GridColumns(gridRef,containerRef)
+      const gridTemplateRows = GridStyle(heights ?? [], columns)
+      addGridStyle(gridTemplateRows, columns, widths ?? [], gridRef)
+      addGridBorders(containerRef,columns,widths??[],gridTemplateRows)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  },[componentsLength]);
+
+
   return (
-    <MasonryGrid>
-        {cardComponents.map(({ name, component: CardComponent, code },index) => (
-        <div key={name} className="relative grid-item mb-[2rem] max-[619px]:w-full flex justify-center group">
-          <CardComponent />
-          <div className="absolute top-1 right-5 hidden group-hover:flex">
-            <Copy content={code} />
+    <div ref={containerRef} className="relative max-w-screen-xl mx-auto">
+      <canvas width={100} height={90} className='absolute left-1/2 -translate-x-1/2 z-10'></canvas>
+      <div ref={gridRef} className="grid gap-8 justify-center">
+          {cardComponents.map(({ name, component: CardComponent, code }, index: number) => (
+          <div
+            key={name}
+            ref={(elem: HTMLDivElement | null) => { itemsRef.current[index] = elem; }}
+            className="relative grid-item mb-[2rem] self-start flex justify-center group"
+          >
+            <CardComponent />
+            <div className="absolute top-1 right-5 hidden group-hover:flex">
+              <Copy content={code} />
+            </div>
           </div>
-        </div>
-      ))}
-    </MasonryGrid>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -2341,7 +2370,7 @@ export function DataVisualizationCard() {
     }
   };
   return (
-    <Card className="max-[1380px]:w-[310px] w-[650px] max-w-3xl mx-auto">
+    <Card className="w-[310px] max-w-3xl mx-auto">
       <CardHeader>
         <CardTitle>Data Visualization</CardTitle>
         <CardDescription>Interactive chart types</CardDescription>
