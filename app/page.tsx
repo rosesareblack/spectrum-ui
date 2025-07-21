@@ -30,8 +30,8 @@ const Homepage = () => {
   }, []);
   return (
     <>
-      {/* <Homepage /> */}
-      <div className="flex justify-center min-h-[60vh] container-wrapper">
+
+      <div className="flex justify-center md:min-h-[80vh] container-wrapper">
         <div className=" py-5 flex flex-col items-center justify-center">
           <Fomo />
           <h1 className="text-center text-2xl font-bold  mt-4 md:mt-12 md:text-5xl lg:text-6xl">
@@ -40,7 +40,7 @@ const Homepage = () => {
               <span className="dark:text-neutral-100">Copy, Paste &amp; Done</span>
             </Cover>
           </h1>
-          <p className="text-center text-sm md:text-lg mt-4 md:mt-8 text-neutral-500 dark:text-neutral-500 max-w-2xl">
+          <p className=" hidden md:flex text-center text-sm md:text-base mt-4 md:mt-8 text-neutral-500 dark:text-neutral-500 max-w-2xl">
             250+ free and open-source animated components and effects built with Next Js,
             Typescript, Tailwind CSS, and Motion.Perfect companion for shadcn/ui.
           </p>
@@ -78,7 +78,7 @@ const Homepage = () => {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto px-5">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 md:mt-6 w-full sm:w-auto px-5">
             <Link href="/docs/installation" className="w-full sm:w-auto">
               <Button size="lg" className="rounded-2xl w-full sm:w-auto px-8">
                 Explore Components
@@ -135,10 +135,7 @@ const Homepage = () => {
                 <h2 className="font-bold text-2xl md:text-4xl mb-4 tracking-tight text-neutral-900 dark:text-white">
                   Ready-to-Use UI Blocks
                 </h2>
-                <p className="text-center text-sm md:text-lg mt-4 md:mt-8 text-neutral-600 dark:text-neutral-400 max-w-2xl">
-                  Pre-built sections you can drop into any project — login forms, payment flows, AI
-                  widgets, and more. Just copy, paste, and ship fast.
-                </p>
+              
               </div>
             </div>
 

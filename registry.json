@@ -1310,7 +1310,7 @@
           "target": "components/spectrumui/logincard.tsx"
         }
       ],
-
+      
       "dependencies": ["lucide-react", "next-themes", "framer-motion"]
     },
     {
@@ -1327,6 +1327,21 @@
       ],
 
       "dependencies": ["lucide-react", "next-themes", "framer-motion"]
+    },
+    {
+      "name": "product_card",
+      "type": "registry:ui",
+      "title": "Product Card",
+      "description": "component for the Product Card",
+      "files": [
+        {
+          "path": "app/registry/product-card/product-card.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/product-card.tsx"
+        }
+      ],
+      "registryDependencies": ["button", "select", "card"],
+      "dependencies": ["lucide-react", "next-themes"]
     },
     {
       "name": "progress_with_value_dependencies",

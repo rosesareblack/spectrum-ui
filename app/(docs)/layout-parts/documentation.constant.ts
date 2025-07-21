@@ -92,7 +92,7 @@ export const DOCS: Documentation[] = [
         label: 'Event Badge',
         value: 'eventbadge',
         url: '/docs/badge',
-        new: true,
+
       },
       {
         label: 'Feedback Card',
@@ -125,7 +125,7 @@ export const DOCS: Documentation[] = [
         label:'Input Model',
         value: 'inputmodel',
         url: '/docs/input-model',
-        new: true,
+
       },
       {
         label: 'Infinite Scroll',
@@ -163,10 +163,12 @@ export const DOCS: Documentation[] = [
         new: true,
       },
       {
-        label: 'Progress With Value',
-        value: 'progress-with-value',
-        url: '/docs/progress-with-value',
+        label: 'Product Card',
+        value: 'product-card',
+        url: '/docs/product-card',
+        new: true,
       },
+     
       {
         label: 'Responsive Modal',
         value: 'responsive-modal',
@@ -182,7 +184,7 @@ export const DOCS: Documentation[] = [
         label: 'Status Badge',
         value: 'status-badge',
         url: '/docs/status-badge',
-        new: true,
+
       },
     ],
   },
