@@ -7,7 +7,6 @@ import { Steppers } from "@/components/ui/steppers";
 import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
 import { Metadata } from "next";
 import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
-import Link from "next/link";
 import Productcard from "./product-card";
 
 
