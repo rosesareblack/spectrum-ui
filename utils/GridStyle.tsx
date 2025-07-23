@@ -144,26 +144,31 @@ export const addGridBorders = (
   });
   if (canvas && height) canvas.height = height + (rows - 1) * 32;
 
+  // Clear canvas before drawing
+  if (ctx && canvas) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
   if (ctx && width && canvas) {
     ctx.strokeStyle = '#262626';
     ctx.lineWidth = 1;
     for (let i = 1; i < columns; i++) {
       const point1 = width + 16;
       const point2 = 16 + width + 16;
-      drawVerticalLine(ctx,point1,point2,canvas.height,i,columns)
+      drawVerticalLine(ctx, point1, point2, canvas.height, i, columns);
     }
   }
 
-  if(ctx && canvas && heights){
+  if (ctx && canvas && heights) {
     ctx.strokeStyle = '#262626';
-    let offset = 0
+    let offset = 0;
     heights.map((h, index) => {
-      if (index === heights.length-1) return;
+      if (index === heights.length - 1) return;
       const point1 = Number(heights[0]) + 16;
-      const point2 = index!==0 ? Number(heights[index]) + 32 : 0;
-      offset += (index===0 ? point1 : 0 + point2);
-      
-      index!==heights.length-2 ? drawHorizontalLine(ctx,offset, canvas.width) : null
-    } )
+      const point2 = index !== 0 ? Number(heights[index]) + 32 : 0;
+      offset += index === 0 ? point1 : 0 + point2;
+
+      index !== heights.length - 2 ? drawHorizontalLine(ctx, offset, canvas.width) : null;
+    });
   }
 };

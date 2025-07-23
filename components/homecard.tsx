@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 import {
   Card,
@@ -53,10 +53,12 @@ import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 import Copy from './copy';
 import { GetDimensions, GridStyle, GridColumns, addGridStyle, addGridBorders } from '@/utils/GridStyle';
 
+
 export default function HomeCardCollection() {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const gridRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isResizing, setIsResizing] = useState(false);
 
   const cardComponents = [
     {
@@ -1125,7 +1127,7 @@ export default function HomeCardCollection() {
       </Card>
     );
   }
-  }`,
+  `,
     },
     {
       name: 'QuickPollCard',
@@ -1367,33 +1369,99 @@ function QuickNoteCard() {
   `,
     },
   ];
-  const componentsLength = cardComponents.length
 
+  const updateGrid = useCallback(() => {
+    if (!gridRef.current || !containerRef.current) return;
+
+    gridRef.current.style.gridTemplateColumns = '';
+    gridRef.current.style.gridTemplateRows = '';
+
+    void gridRef.current.offsetHeight;
+
+    const [heights, widths] = GetDimensions(itemsRef);
+    const columns = GridColumns(gridRef, containerRef);
+    const gridTemplateRows = GridStyle(heights ?? [], columns);
+    addGridStyle(gridTemplateRows, columns, widths ?? [], gridRef);
+    addGridBorders(containerRef, columns, widths ?? [], gridTemplateRows);
+  }, []);
+
+  // useLayoutEffect(() => {
+  //   let resizeTimeout: NodeJS.Timeout;
+    
+
+  //   const handleResize = () => {
+  //     if (!isResizing) {
+  //       setIsResizing(true);
+  //     }
+
+  //     clearTimeout(resizeTimeout);
+  //     resizeTimeout = setTimeout(() => {
+  //       updateGrid();
+  //       setIsResizing(false);
+  //     }, 100);
+  //   };
+
+  //   updateGrid();
+  //   const resizeObserver = new ResizeObserver(() => {
+  //     handleResize();
+  //   });
+
+  //   return () => {
+  //     clearTimeout(resizeTimeout);
+  //     resizeObserver.disconnect();
+  //   };
+  // }, [updateGrid, isResizing]);
+
+  useLayoutEffect(() => {
+    let resizeTimeout: NodeJS.Timeout;
+    let observer: ResizeObserver;
   
-  useEffect(() => {
     const handleResize = () => {
-      const [heights, widths] = GetDimensions(itemsRef);
-      const columns = GridColumns(gridRef,containerRef)
-      const gridTemplateRows = GridStyle(heights ?? [], columns)
-      addGridStyle(gridTemplateRows, columns, widths ?? [], gridRef)
-      addGridBorders(containerRef,columns,widths??[],gridTemplateRows)
+      if (!isResizing) {
+        setIsResizing(true);
+      }
+  
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateGrid();
+        setIsResizing(false);
+      }, 100);
+    };
+  
+  
+    updateGrid();
+  
+    try {
+      observer = new ResizeObserver(handleResize);
+  
+      window.addEventListener('resize', handleResize);
+    } catch (error) {
+      console.error('ResizeObserver error:', error);
     }
-    handleResize()
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  },[componentsLength]);
-
+  
+    // Cleanup
+    return () => {
+      clearTimeout(resizeTimeout);
+      if (observer) {
+        observer.disconnect();
+      }
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [updateGrid, isResizing, itemsRef.current.length]); 
 
   return (
     <div ref={containerRef} className="relative max-w-screen-xl mx-auto">
-      <canvas width={100} height={90} className='absolute left-1/2 -translate-x-1/2 z-10'></canvas>
-      <div ref={gridRef} className="grid gap-8 justify-center">
-          {cardComponents.map(({ name, component: CardComponent, code }, index: number) => (
+      <canvas width={100} height={90} className="absolute left-1/2 -translate-x-1/2 z-0"></canvas>
+      <div 
+        ref={gridRef} 
+        className={`grid gap-8 justify-center transition-all duration-200 relative z-10 ${isResizing ? 'overflow-hidden' : ''}`}
+      >
+        {cardComponents.map(({ name, component: CardComponent, code }, index: number) => (
           <div
             key={name}
             ref={(elem: HTMLDivElement | null) => { itemsRef.current[index] = elem; }}
             className="relative grid-item mb-[2rem] self-start flex justify-center group"
+            style={{ minWidth: '310px' }}
           >
             <CardComponent />
             <div className="absolute top-1 right-5 hidden group-hover:flex">
@@ -1640,7 +1708,9 @@ export function MetricsCard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <BarChart className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">Conversion Rate</span>
+              <span className="text-sm text-muted-foreground">
+                Conversion Rate
+              </span>
             </div>
             <div className="text-2xl font-bold">3.8%</div>
           </div>
@@ -1887,7 +1957,9 @@ export function TeamCollaborationCard() {
             <Badge variant="outline">3 Active Members</Badge>
           </div>
           <Progress value={65} className="w-full" />
-          <div className="text-sm text-muted-foreground">Project Progress: 65%</div>
+          <div className="text-sm text-muted-foreground">
+            Project Progress: 65%
+          </div>
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
@@ -1954,7 +2026,9 @@ export function ProductivityTrackerCard() {
                 onChange={() => {}}
                 className="mr-2"
               />
-              <span className={task.completed ? 'line-through text-muted-foreground' : ''}>
+              <span
+                className={task.completed ? "line-through text-muted-foreground" : ""}
+              >
                 {task.name}
               </span>
             </div>
@@ -2150,7 +2224,9 @@ export function DataUsageCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={75} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">7.5 GB of 10 GB used</p>
+        <p className="text-xs text-muted-foreground mt-2">
+          7.5 GB of 10 GB used
+        </p>
       </CardContent>
     </Card>
   );
@@ -2243,7 +2319,9 @@ export function DownloadProgressCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={40} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">2 of 5 files downloaded</p>
+        <p className="text-xs text-muted-foreground mt-2">
+          2 of 5 files downloaded
+        </p>
       </CardContent>
     </Card>
   );
