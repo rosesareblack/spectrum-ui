@@ -20,8 +20,12 @@ export default function Footer() {
 
             <h1 className="dark:text-gray-300 mt-4">
               Build by{" "}
-              <span className="dark:text-[#039ee4]">
-                <Link href="https://x.com/arihantCodes">@Arihantjain</Link>
+              <span className="dark:text-[#039ee4] gap-2">
+                <Link className="underline" href="https://x.com/arihantCodes">@Arihantjain</Link>
+                <span>{" & "}</span>
+                <Link href="https://linkedin.com/in/itzamanjain" className="underline">
+                @itzamanjain
+                </Link>
               </span>
             </h1>
             <div className="mt-2">
