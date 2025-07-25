@@ -1,3 +1,10 @@
+<br />
+<br />
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+</a>
+
+
 ## Contributing to Spectrum UI
 
 Thank you for your interest in contributing to Spectrum UI! 🎉  
