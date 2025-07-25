@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 import {
   Card,
@@ -51,8 +51,20 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 import Copy from './copy';
+import {  GetDimensions,
+  GridColumns,
+  GridStyle,
+  addGridStyle,
+  addGridBorders,} from '@/utils/GridStyle';
+import { useTheme } from 'next-themes';
 
 export default function HomeCardCollection() {
+  const { theme } = useTheme();
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isResizing, setIsResizing] = useState(false);
+
   const cardComponents = [
     {
       name: 'LoginCard',
@@ -308,6 +320,7 @@ export default function HomeCardCollection() {
     )
   }`,
     },
+
     {
       name: 'DataVisualizationCard',
       component: DataVisualizationCard,
@@ -523,49 +536,6 @@ export default function HomeCardCollection() {
       name: 'TaskCard',
       component: TaskCard,
       code: 'function TaskCard() {\n  return (\n    <Card className="w-[310px]">\n      <CardHeader>\n        <CardTitle>Current Tasks</CardTitle>\n        <CardDescription>Your team&apos;s ongoing tasks</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <div className="space-y-4">\n          {["Design system update", "API integration", "User testing"].map(\n            (task, index) => (\n              <div key={index} className="flex items-center">\n                <input type="checkbox" id={`task-${index}`} className="mr-2" />\n                <label htmlFor={`task-${index}`} className="flex-1">\n                  {task}\n                </label>\n                <Badge\n                  variant={\n                    index === 0\n                      ? "default"\n                      : index === 1\n                      ? "secondary"\n                      : "outline"\n                  }\n                >\n                  {index === 0\n                    ? "In Progress"\n                    : index === 1\n                    ? "Pending"\n                    : "Completed"}\n                </Badge>\n              </div>\n            )\n          )}\n        </div>\n      </CardContent>\n      <CardFooter>\n        <Button variant="outline" className="w-full">\n          View All Tasks\n        </Button>\n      </CardFooter>\n    </Card>\n  )\n}',
-    },
-    {
-      name: 'CalendarCard',
-      component: CalendarCard,
-      code: `
-  function CalendarCard() {
-    return (
-      <Card className="w-[310px]">
-        <CardHeader>
-          <CardTitle>Upcoming Events</CardTitle>
-          <CardDescription>Your schedule for the next 7 days</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {[
-              { date: "Today", event: "Team standup", time: "10:00 AM" },
-              { date: "Tomorrow", event: "Client meeting", time: "2:00 PM" },
-              {
-                date: "Fri, Jun 12",
-                event: "Project deadline",
-                time: "11:59 PM",
-              },
-            ].map((item, index) => (
-              <div key={index} className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4 text-muted-foreground" />
-                <div className="flex-1">
-                  <p className="text-sm font-medium">{item.event}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {item.date} at {item.time}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-        <CardFooter>
-          <Button variant="outline" className="w-full">
-            View Full Calendar
-          </Button>
-        </CardFooter>
-      </Card>
-    )
-  }`,
     },
     {
       name: 'BillingCard',
@@ -1162,7 +1132,7 @@ export default function HomeCardCollection() {
       </Card>
     );
   }
-  }`,
+  `,
     },
     {
       name: 'QuickPollCard',
@@ -1404,16 +1374,88 @@ function QuickNoteCard() {
   `,
     },
   ];
+
+  const updateGrid = useCallback(() => {
+    if (!gridRef.current || !containerRef.current) return;
+
+    gridRef.current.style.gridTemplateColumns = '';
+    gridRef.current.style.gridTemplateRows = '';
+    void gridRef.current.offsetHeight;
+
+    const [heights, widths] = GetDimensions({ current: itemsRef.current });
+    const columns = GridColumns(gridRef, containerRef);
+    const gridTemplateRows = GridStyle(heights ?? [], columns);
+    addGridStyle(gridTemplateRows, columns, widths ?? [], gridRef);
+
+    // Pass current theme for border color
+    addGridBorders(
+      containerRef,
+      columns,
+      widths ?? [],
+      gridTemplateRows,
+      theme === 'dark' ? 'dark' : 'light'
+    );
+  }, [theme]);
+
+
+  useLayoutEffect(() => {
+    let resizeTimeout: NodeJS.Timeout;
+    let observer: ResizeObserver;
+  
+    const handleResize = () => {
+      if (!isResizing) {
+        setIsResizing(true);
+      }
+  
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateGrid();
+        setIsResizing(false);
+      }, 100);
+    };
+  
+  
+    updateGrid();
+  
+    try {
+      observer = new ResizeObserver(handleResize);
+  
+      window.addEventListener('resize', handleResize);
+    } catch (error) {
+      console.error('ResizeObserver error:', error);
+    }
+  
+    // Cleanup
+    return () => {
+      clearTimeout(resizeTimeout);
+      if (observer) {
+        observer.disconnect();
+      }
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [updateGrid, isResizing, itemsRef.current.length]); 
+
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12  grid-cols-1 ml-2">
-      {cardComponents.map(({ name, component: CardComponent, code }) => (
-        <div key={name} className="relative group">
-          <CardComponent />
-          <div className="absolute top-2 right-0 hidden group-hover:flex">
-            <Copy content={code} />
+    <div ref={containerRef} className="relative max-w-screen-xl mx-auto">
+      <canvas width={100} height={90} className="absolute left-1/2 -translate-x-1/2 z-0"></canvas>
+      <div 
+        ref={gridRef} 
+        className={`grid gap-8 justify-center transition-all duration-200 relative z-10 ${isResizing ? 'overflow-hidden' : ''}`}
+      >
+        {cardComponents.map(({ name, component: CardComponent, code }, index: number) => (
+          <div
+            key={name}
+            ref={(elem: HTMLDivElement | null) => { itemsRef.current[index] = elem; }}
+            className="relative grid-item mb-[2rem] self-start flex justify-center group"
+            style={{ minWidth: '310px' }}
+          >
+            <CardComponent />
+            <div className="absolute top-1 right-5 hidden group-hover:flex">
+              <Copy content={code} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -1652,7 +1694,9 @@ export function MetricsCard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <BarChart className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">Conversion Rate</span>
+              <span className="text-sm text-muted-foreground">
+                Conversion Rate
+              </span>
             </div>
             <div className="text-2xl font-bold">3.8%</div>
           </div>
@@ -1899,7 +1943,9 @@ export function TeamCollaborationCard() {
             <Badge variant="outline">3 Active Members</Badge>
           </div>
           <Progress value={65} className="w-full" />
-          <div className="text-sm text-muted-foreground">Project Progress: 65%</div>
+          <div className="text-sm text-muted-foreground">
+            Project Progress: 65%
+          </div>
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
@@ -1966,7 +2012,9 @@ export function ProductivityTrackerCard() {
                 onChange={() => {}}
                 className="mr-2"
               />
-              <span className={task.completed ? 'line-through text-muted-foreground' : ''}>
+              <span
+                className={task.completed ? "line-through text-muted-foreground" : ""}
+              >
                 {task.name}
               </span>
             </div>
@@ -2162,7 +2210,9 @@ export function DataUsageCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={75} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">7.5 GB of 10 GB used</p>
+        <p className="text-xs text-muted-foreground mt-2">
+          7.5 GB of 10 GB used
+        </p>
       </CardContent>
     </Card>
   );
@@ -2255,7 +2305,9 @@ export function DownloadProgressCard() {
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <Progress value={40} className="w-full" />
-        <p className="text-xs text-muted-foreground mt-2">2 of 5 files downloaded</p>
+        <p className="text-xs text-muted-foreground mt-2">
+          2 of 5 files downloaded
+        </p>
       </CardContent>
     </Card>
   );
@@ -2382,7 +2434,7 @@ export function DataVisualizationCard() {
     }
   };
   return (
-    <Card className="w-full max-w-3xl mx-auto">
+    <Card className="w-[310px] max-w-3xl mx-auto">
       <CardHeader>
         <CardTitle>Data Visualization</CardTitle>
         <CardDescription>Interactive chart types</CardDescription>
