@@ -1,8 +1,17 @@
+<div align="center">
+  <h1>Spectrum UI</h1>
+</div>
+<div align="center">
 <br />
 <br />
 <a href="https://vercel.com/oss">
   <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
 </a>
+</div>
+<br />
+
+
+![ui.spectrumhq.in](public/og.png)
 
 
 ## Contributing to Spectrum UI
@@ -108,6 +117,13 @@ git push origin feature-name
 
 ---
 
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=arihantcodes/spectrum-ui&type=Date)](https://www.star-history.com/#arihantcodes/spectrum-ui&Date)
+
+
 ### Contributors
 
 Thanks to all the amazing contributors who have helped improve Spectrum UI! 💖
@@ -118,15 +134,3 @@ Thanks to all the amazing contributors who have helped improve Spectrum UI! 💖
 
 </div>
 
-#### List of Contributors:
-
-1. [arihantcodes](https://github.com/arihantcodes)
-2. [itzamanjain](https://github.com/itzamanjain)
-3. [Harsha-10](https://github.com/Harsha-10)
-4. [Prince5723](https://github.com/Prince5723)
-5. [Pratiyankkumar](https://github.com/Pratiyankkumar)
-6. [veerendra19codes](https://github.com/veerendra19codes)
-7. [0xKafkaa](https://github.com/0xKafkaa)
-8. [AayushVinayDev](https://github.com/AayushVinayDev)
-
-Want to see your name here? Follow the steps above and contribute today! 🚀
