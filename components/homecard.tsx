@@ -51,10 +51,15 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 import Copy from './copy';
-import { GetDimensions, GridStyle, GridColumns, addGridStyle, addGridBorders } from '@/utils/GridStyle';
-
+import {  GetDimensions,
+  GridColumns,
+  GridStyle,
+  addGridStyle,
+  addGridBorders,} from '@/utils/GridStyle';
+import { useTheme } from 'next-themes';
 
 export default function HomeCardCollection() {
+  const { theme } = useTheme();
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const gridRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -1375,42 +1380,23 @@ function QuickNoteCard() {
 
     gridRef.current.style.gridTemplateColumns = '';
     gridRef.current.style.gridTemplateRows = '';
-
     void gridRef.current.offsetHeight;
 
-    const [heights, widths] = GetDimensions(itemsRef);
+    const [heights, widths] = GetDimensions({ current: itemsRef.current });
     const columns = GridColumns(gridRef, containerRef);
     const gridTemplateRows = GridStyle(heights ?? [], columns);
     addGridStyle(gridTemplateRows, columns, widths ?? [], gridRef);
-    addGridBorders(containerRef, columns, widths ?? [], gridTemplateRows);
-  }, []);
 
-  // useLayoutEffect(() => {
-  //   let resizeTimeout: NodeJS.Timeout;
-    
+    // Pass current theme for border color
+    addGridBorders(
+      containerRef,
+      columns,
+      widths ?? [],
+      gridTemplateRows,
+      theme === 'dark' ? 'dark' : 'light'
+    );
+  }, [theme]);
 
-  //   const handleResize = () => {
-  //     if (!isResizing) {
-  //       setIsResizing(true);
-  //     }
-
-  //     clearTimeout(resizeTimeout);
-  //     resizeTimeout = setTimeout(() => {
-  //       updateGrid();
-  //       setIsResizing(false);
-  //     }, 100);
-  //   };
-
-  //   updateGrid();
-  //   const resizeObserver = new ResizeObserver(() => {
-  //     handleResize();
-  //   });
-
-  //   return () => {
-  //     clearTimeout(resizeTimeout);
-  //     resizeObserver.disconnect();
-  //   };
-  // }, [updateGrid, isResizing]);
 
   useLayoutEffect(() => {
     let resizeTimeout: NodeJS.Timeout;

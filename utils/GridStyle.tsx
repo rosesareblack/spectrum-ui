@@ -5,7 +5,6 @@ import { RefObject } from 'react';
 export const GetDimensions = (refs: RefObject<(HTMLDivElement | null)[]>) => {
   const w = refs.current?.map((div) => (div ? div.clientWidth : 0));
   const h = refs.current?.map((div) => (div ? div.clientHeight : 0)).filter((w) => w !== undefined);
-
   return [h, w];
 };
 
@@ -15,21 +14,11 @@ export const GridColumns = (
 ) => {
   const parentWidth = containerRef.current?.offsetWidth || 0;
 
-  let columnWidth = '';
   let columns = 0;
-  if (parentWidth >= 1200) {
-    columnWidth = '23%';
-    columns = 4;
-  } else if (parentWidth >= 990) {
-    columnWidth = '30.3333%';
-    columns = 3;
-  } else if (parentWidth >= 700) {
-    columnWidth = '50%';
-    columns = 2;
-  } else if (parentWidth <= 619) {
-    columnWidth = '100%';
-    columns = 1;
-  }
+  if (parentWidth >= 1200) columns = 4;
+  else if (parentWidth >= 990) columns = 3;
+  else if (parentWidth >= 700) columns = 2;
+  else if (parentWidth <= 619) columns = 1;
 
   return columns;
 };
@@ -39,13 +28,13 @@ export const GridStyle = (heights: number[], columns: number) => {
     let gridHeights = [];
     let col2 = columns;
 
-    for (let i = 0; i < heights.length; i = i + columns) {
+    for (let i = 0; i < heights.length; i += columns) {
       const slicedArr = heights.slice(i, col2);
       gridHeights.push(slicedArr);
-      col2 = col2 + columns;
+      col2 += columns;
     }
 
-    const rows: number = gridHeights.length;
+    const rows = gridHeights.length;
     gridHeights = gridHeights.map((heights) => Math.max(...heights));
 
     return [rows, gridHeights];
@@ -53,17 +42,11 @@ export const GridStyle = (heights: number[], columns: number) => {
 
   function styling() {
     const [rows, rowHeights] = getRowsAndHeights() as [number, number[]];
-    const heights: string[] = [];
-    for (let i = 0; i < rows; i++) {
-      heights.push(`${rowHeights[i]}px`);
-    }
-    return heights;
+    return rowHeights.map((h) => `${h}px`);
   }
 
-  const heightsArr: string[] = styling();
-  const gridTemplateRows = heightsArr.join(' ');
-
-  return gridTemplateRows;
+  const heightsArr = styling();
+  return heightsArr.join(' ');
 };
 
 function mostCommonWidth(widths: number[]): number | null {
@@ -92,10 +75,9 @@ export const addGridStyle = (
   const colWidth = mostCommonWidth(columnsWidth);
   const colArr: string[] = [];
   for (let i = 0; i < columns; i++) {
-    colArr[i] = colWidth !== null && colWidth !== undefined ? `${colWidth.toString()}px` : '';
+    colArr[i] = colWidth !== null ? `${colWidth}px` : '';
   }
   const colsTemplate = colArr.join(' ');
-
 
   if (gridRef.current) {
     gridRef.current.style.gridTemplateRows = rowsTemplate;
@@ -103,23 +85,27 @@ export const addGridStyle = (
   }
 };
 
-function drawVerticalLine(ctx:CanvasRenderingContext2D , p1: number, p2: number , cHeight:number , index:number , columns:number) {
-  p2 = p2 * (index - 1)
-  const offset = p1 + (index!==1 ? p2 : 0) 
-  console.log(offset)
+function drawVerticalLine(
+  ctx: CanvasRenderingContext2D,
+  p1: number,
+  p2: number,
+  cHeight: number,
+  index: number,
+  columns: number,
+) {
+  p2 = p2 * (index - 1);
+  const offset = p1 + (index !== 1 ? p2 : 0);
   ctx.beginPath();
   ctx.moveTo(offset, 10);
-  ctx.lineTo(offset , cHeight - 10);
+  ctx.lineTo(offset, cHeight - 10);
   ctx.stroke();
 }
 
-function drawHorizontalLine(ctx:CanvasRenderingContext2D , offset:number , cWidth:number ) {
-  const off = offset
+function drawHorizontalLine(ctx: CanvasRenderingContext2D, offset: number, cWidth: number) {
   ctx.beginPath();
-  ctx.moveTo(10, off);
-  ctx.lineTo(cWidth - 10, off);
+  ctx.moveTo(10, offset);
+  ctx.lineTo(cWidth - 10, offset);
   ctx.stroke();
-  
 }
 
 export const addGridBorders = (
@@ -127,48 +113,57 @@ export const addGridBorders = (
   columns: number,
   widths: number[],
   gridTemplateRows: string,
+  theme: 'light' | 'dark'
 ) => {
   const canvas = containerRef.current?.children[0] as HTMLCanvasElement | undefined;
   const ctx = canvas?.getContext('2d');
-
   const width = mostCommonWidth(widths);
+
   if (canvas && width) canvas.width = width * columns + (columns - 1) * 32;
 
   const heights = gridTemplateRows.split('px');
-
   let height = 0;
   let rows = 0;
-  heights.map((h) => {
-    height = height + Number(h);
+
+  heights.forEach((h) => {
+    height += Number(h);
     rows++;
   });
+
   if (canvas && height) canvas.height = height + (rows - 1) * 32;
 
-  // Clear canvas before drawing
   if (ctx && canvas) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
 
-  if (ctx && width && canvas) {
-    ctx.strokeStyle = '#262626';
+
+    ctx.strokeStyle =
+      theme === 'dark'
+        ? 'rgba(255, 255, 255, 0.3)' // like neutral-700
+        : 'rgba(0, 0, 0, 0.3)';     // like neutral-300
+
     ctx.lineWidth = 1;
+    ctx.setLineDash([2, 4]); // Dotted lines
+
+    // Vertical lines
     for (let i = 1; i < columns; i++) {
-      const point1 = width + 16;
-      const point2 = 16 + width + 16;
+      const point1 = width! + 16;
+      const point2 = 16 + width! + 16;
       drawVerticalLine(ctx, point1, point2, canvas.height, i, columns);
     }
-  }
 
-  if (ctx && canvas && heights) {
-    ctx.strokeStyle = '#262626';
+    // Horizontal lines
     let offset = 0;
-    heights.map((h, index) => {
+    heights.forEach((h, index) => {
       if (index === heights.length - 1) return;
       const point1 = Number(heights[0]) + 16;
       const point2 = index !== 0 ? Number(heights[index]) + 32 : 0;
-      offset += index === 0 ? point1 : 0 + point2;
+      offset += index === 0 ? point1 : point2;
 
-      index !== heights.length - 2 ? drawHorizontalLine(ctx, offset, canvas.width) : null;
+      if (index !== heights.length - 2) {
+        drawHorizontalLine(ctx, offset, canvas.width);
+      }
     });
+
+    ctx.setLineDash([]); // Reset
   }
 };
