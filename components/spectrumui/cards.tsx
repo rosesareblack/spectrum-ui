@@ -51,13 +51,14 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 import { GetDimensions, GridStyle, GridColumns, addGridStyle, addGridBorders } from '@/utils/GridStyle';
+import { useTheme } from 'next-themes';
 
 export default function CardCollection() {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const gridRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isResizing, setIsResizing] = useState(false);
-
+  const { theme } = useTheme();
   const cardComponents = [
     {
       name: 'LoginCard',
@@ -1373,15 +1374,23 @@ function QuickNoteCard() {
 
     gridRef.current.style.gridTemplateColumns = '';
     gridRef.current.style.gridTemplateRows = '';
-
     void gridRef.current.offsetHeight;
 
-    const [heights, widths] = GetDimensions(itemsRef);
+    const [heights, widths] = GetDimensions({ current: itemsRef.current });
     const columns = GridColumns(gridRef, containerRef);
     const gridTemplateRows = GridStyle(heights ?? [], columns);
     addGridStyle(gridTemplateRows, columns, widths ?? [], gridRef);
-    addGridBorders(containerRef, columns, widths ?? [], gridTemplateRows);
-  }, []);
+
+    // Pass current theme for border color
+    addGridBorders(
+      containerRef,
+      columns,
+      widths ?? [],
+      gridTemplateRows,
+      theme === 'dark' ? 'dark' : 'light'
+    );
+  }, [theme]);
+
 
   useLayoutEffect(() => {
     let resizeTimeout: NodeJS.Timeout;
