@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 import { Icons } from "./icon";
-import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
