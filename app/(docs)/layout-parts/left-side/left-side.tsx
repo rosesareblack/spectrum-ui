@@ -93,8 +93,9 @@ export default function EnhancedSidebar() {
                     >
                       {child.label}
                       {child.new && (
-                        <span className="text-xs text-black bg-lime-400 px-1.5 py-0.5 rounded-full">
+                        <span className="text-xs  px-1.5 py-0.5 rounded-full  bg-yellow-400/30 dark:bg-[#eaec8a]/16 text-yellow-600 dark:text-[#eaec8a] [text-shadow:0_1px_1.5px_rgb(0,0,0,0.16)]">
                           New
+                       
                         </span>
                       )}
                     </Link>

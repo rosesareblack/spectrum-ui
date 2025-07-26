@@ -109,7 +109,7 @@ export const DOCS: Documentation[] = [
         label: 'GitHub Card',
         value: 'github-card',
         url: '/docs/github-card',
-        new: true,
+
       },
       {
         label: 'HTTP Status Code',
@@ -134,6 +134,12 @@ export const DOCS: Documentation[] = [
       },
       { label: 'Input', value: 'input', url: '/docs/input' },
       {
+        label: 'Kanban Board',
+        value: 'kanban',
+        url: '/docs/kanban',
+        new: true,
+      } ,
+      {
         label: 'Loading Button',
         value: 'loading-button',
         url: '/docs/loading-button',
@@ -152,7 +158,7 @@ export const DOCS: Documentation[] = [
         label:'Login Card',
         value: 'login-card',
         url: '/docs/login',
-        new: true,
+
 
       },
       { label: 'Navbar', value: 'navbar', url: '/docs/navbar' },
@@ -160,13 +166,13 @@ export const DOCS: Documentation[] = [
         label: 'Profile Dropdown',
         value: 'profile-dropdown',
         url: '/docs/profile',
-        new: true,
+
       },
       {
         label: 'Product Card',
         value: 'product-card',
         url: '/docs/product-card',
-        new: true,
+
       },
      
       {

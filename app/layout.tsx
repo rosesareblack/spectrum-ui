@@ -11,8 +11,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import Cta from "@/components/cta";
 import CrispChat from "@/components/crips-chat";
 import { PostHogProvider } from "@/components/provider";
@@ -144,7 +142,7 @@ export default function RootLayout({
         >
           <Analytics />
 
-          <div className="bg-gradient-to-b from-blue-500 to-blue-600 px-4 py-3 text-left font-sans text-base font-medium tracking-tight text-white md:text-center">
+          {/* <div className="bg-gradient-to-b from-blue-500 to-blue-600 px-4 py-3 text-left font-sans text-base font-medium tracking-tight text-white md:text-center">
             <Link
               href="/docs/profile"
               className="flex items-center justify-center"
@@ -153,7 +151,7 @@ export default function RootLayout({
               one command away.
               <ChevronRight className=" h-4 w-4 mt-1 ml-2 " />
             </Link>
-          </div>
+          </div> */}
 
           <SiteHeader />
           <main className="flex flex-1 flex-col">

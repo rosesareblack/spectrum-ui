@@ -12,7 +12,7 @@ export const metadata: Metadata = baseMetadata({
     'Spectrum UI Login page is a simple and elegant login form that allows users to sign in to their accounts. It is designed to be easy to use and visually appealing, with a clean and modern interface.',
 });
 
-const DualRangeSliderPage = () => {
+const Loginpage = () => {
   return (
     <PageTemplate title="Login Card">
       <PreviewCodeCard
@@ -32,4 +32,4 @@ const DualRangeSliderPage = () => {
   );
 };
 
-export default DualRangeSliderPage;
+export default Loginpage;

@@ -1310,7 +1310,22 @@
           "target": "components/spectrumui/logincard.tsx"
         }
       ],
-      
+
+      "dependencies": ["lucide-react", "next-themes", "framer-motion"]
+    },
+    {
+      "name": "kanbanboard",
+      "type": "registry:ui",
+      "title": "Kanban Board",
+      "description": "component for the Kanban Board",
+      "files": [
+        {
+          "path": "app/registry/kanban/kanbanboard.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/kanbanboard.tsx"
+        }
+      ],
+      "registryDependencies": ["card", "button", "select", "input", "label", "textarea"],
       "dependencies": ["lucide-react", "next-themes", "framer-motion"]
     },
     {
