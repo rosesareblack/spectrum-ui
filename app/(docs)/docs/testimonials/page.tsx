@@ -14,7 +14,7 @@ export const metadata: Metadata = baseMetadata({
 
 const DualRangeSliderPage = () => {
   return (
-    <PageTemplate title="Profile Dropdown">
+    <PageTemplate title="Testimonials" className='mt-5'>
       <PreviewCodeCard
         path="app/(docs)/docs/testimonials/testimonialsdemo.tsx"
         cli="https://ui.spectrumhq.in/r/testimonials.json"
@@ -25,15 +25,12 @@ const DualRangeSliderPage = () => {
       <PageSubTitle>Installation</PageSubTitle>
       <Steppers
         withInstall
-        codePath="app/(docs)/docs/profile/profiledemo.tsx"
+        codePath="app/(docs)/docs/testimonials/testimonialsdemo.tsx"
         withEnd
-        installScript="npm i lucide-react framer-motion"
+        installScript="npx shadcn@latest add https://ui.spectrumhq.in/r/testimonials.json"
       />
 
-      <div className="flex items-center gap-2">
-        <h1 className="text-neutral-700 dark:text-neutral-400">Design Credit -</h1>
-        <Link href="https://x.com/_heyrico">@heyrico</Link>
-      </div>
+     
     </PageTemplate>
   );
 };
