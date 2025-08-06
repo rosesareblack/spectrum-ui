@@ -1588,6 +1588,22 @@
       ],
 
       "dependencies": ["lucide-react"]
+    },
+    {
+      "name": "testimonials",
+      "type": "registry:ui",
+      "title": "Testimonials",
+      "description": "component for the Testimonials",
+
+      "files": [
+        {
+          "path": "app/registry/testimonials/testimonials.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/testimonials.tsx"
+        }
+      ],
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react","framer-motion"]
     }
   ]
 }

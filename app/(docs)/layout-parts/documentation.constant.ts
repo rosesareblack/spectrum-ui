@@ -192,6 +192,14 @@ export const DOCS: Documentation[] = [
         url: '/docs/status-badge',
 
       },
+      {
+        label: 'Testimonials',
+        value: 'testimonials',
+        url: '/docs/testimonials',
+        new: true,
+      
+      }
+
     ],
   },
 ];
