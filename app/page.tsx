@@ -16,14 +16,14 @@ const Homepage = () => {
         <div className="container py-6">
           <section className="overflow-hidden  rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
             <Image
-              src="/examples/cards-light.png"
+              src="/cards-light.png"
               width={1280}
               height={1214}
               alt="Cards"
               className="block dark:hidden"
             />
             <Image
-              src="/examples/cards-dark.png"
+              src="/cards-dark.png"
               width={1280}
               height={1214}
               alt="Cards"
