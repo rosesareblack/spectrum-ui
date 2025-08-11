@@ -138,6 +138,7 @@ const CodeHighlight = ({
       >
         <Button
           variant="outline"
+          className="rounded-xl"
           onClick={() => {
             setExpanded((prev) => !prev);
           }}

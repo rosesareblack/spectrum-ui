@@ -44,17 +44,24 @@ export const DOCS: Documentation[] = [
     groupValue: 'Components',
     children: [
       { label: 'Alert', value: 'alert', url: '/docs/alert' },
+      
       {
         label: 'Animated Card',
         value: 'animatedcard',
         url: '/docs/animatedcard',
-        new: true,
+
       },
 
       {
         label: 'Animated SVG Chart',
         value: 'animatedchart',
         url: '/docs/animatedchart',
+      },
+      {
+        label: 'Animated Text',
+        value: 'animatedtext',
+        url: '/docs/animatedtext',
+        new: true,
       },
       {
         label: 'Animated Testimonials',

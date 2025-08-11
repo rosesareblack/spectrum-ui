@@ -1,15 +1,14 @@
-import React from "react";
-import fs from "fs/promises";
-import dynamic from "next/dynamic";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import fs from 'fs/promises';
+import dynamic from 'next/dynamic';
+import { cn } from '@/lib/utils';
 
-// ✅ Dynamically import the client component (no SSR)
-const CodeCardWrapper = dynamic(
-  () => import("@/app/(docs)/docs/components/code-card-wrapper"),
-  {
-    ssr: false,
-  },
-);
+
+
+
+const CodeCardWrapper = dynamic(() => import('@/app/(docs)/docs/components/code-card-wrapper'), {
+  ssr: false,
+});
 
 interface PreviewCodeCardProps {
   className?: string;
@@ -18,13 +17,8 @@ interface PreviewCodeCardProps {
   cli?: string;
 }
 
-const PreviewCodeCard = async ({
-  className,
-  path,
-  children,
-  cli,
-}: PreviewCodeCardProps) => {
-  const demoCode = await fs.readFile(path, "utf8");
+const PreviewCodeCard = async ({ className, path, children, cli }: PreviewCodeCardProps) => {
+  const demoCode = await fs.readFile(path, 'utf8');
 
   if (!demoCode) {
     return null;
@@ -33,9 +27,11 @@ const PreviewCodeCard = async ({
   return (
     <CodeCardWrapper
       code={demoCode}
-      className={cn("mb-14 mt-5", className)}
+      className={cn('relative mb-14 mt-5', className)} // relative so absolute works inside
       CLI={cli}
     >
+
+
       <div className="flex items-center justify-center py-10">{children}</div>
     </CodeCardWrapper>
   );

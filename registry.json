@@ -1603,7 +1603,60 @@
         }
       ],
       "registryDependencies": ["card"],
-      "dependencies": ["lucide-react","framer-motion"]
+      "dependencies": ["lucide-react", "framer-motion"]
+    },
+    {
+      "name": "holographic",
+      "type": "registry:ui",
+      "title": "Holographic Scan Reveal",
+      "description": "component for the Holographic Scan Reveal",
+
+      "files": [
+        {
+          "path": "app/registry/animatedtext/components/hologram-text.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/hologram-text.tsx"
+        }
+      ],
+
+      "dependencies": ["next-themes", "framer-motion"]
+    },
+    {
+      "name": "orbital-letters",
+      "type": "registry:ui",
+      "title": "Orbital Letters",
+      "description": "component for the Orbital Letters",
+
+      "files": [
+        {
+          "path": "app/registry/animatedtext/components/orbital-text.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/orbital-text.tsx"
+        },
+        {
+          "path": "app/registry/animatedtext/components/orbital-char.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/orbital-char.tsx"
+        }
+      ],
+
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "ink",
+      "type": "registry:ui",
+      "title": "Fluid Ink Morph",
+      "description": "component for the Fluid Ink Morph",
+
+      "files": [
+        {
+          "path": "app/registry/animatedtext/components/ink-morph.tsx",
+          "type": "registry:ui",
+          "target": "components/spectrumui/ink-morph.tsx"
+        }
+      ],
+
+      "dependencies": ["framer-motion"]
     }
   ]
 }
