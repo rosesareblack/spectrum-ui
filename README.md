@@ -1,5 +1,9 @@
 <div align="center">
   <h1>Spectrum UI</h1>
+<a href="https://x.com/arihantCodes">
+Follow Us on X
+</a>
+  
 </div>
 <div align="center">
 <br />
