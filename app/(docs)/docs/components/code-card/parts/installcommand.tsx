@@ -25,11 +25,7 @@ const InstallCommand = ({
   const [highlightedCode, setHighlightedCode] = useState<string>("");
   const { theme, resolvedTheme } = useTheme();
 
-  // Determine which theme to use based on current theme
-  // const getShikiTheme = () => {
-  //   const currentTheme = resolvedTheme || theme
-  //   return currentTheme === "dark" ? "vesper" : "min-light"
-  // }
+  
 
   useEffect(() => {
     const loadHighlighter = async () => {

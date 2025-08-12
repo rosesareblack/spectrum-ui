@@ -109,7 +109,7 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "resend": "^4.0.1-alpha.0",
-    "shiki": "^3.4.0",
+    "shiki": "^3.9.2",
     "sonner": "^2.0.3",
     "streamifier": "^0.1.1",
     "stripe": "^17.2.1",
