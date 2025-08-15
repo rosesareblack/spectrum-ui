@@ -18,7 +18,7 @@ export function ReloadableOrbital() {
       >
         <RotateCcw />
       </Button>
-      <OrbitalText key={reloadKey} text="SPECTRUM UI" radius={18} duration={2000} decay={0.9} />
+      <OrbitalText key={reloadKey} text="Hover Me" radius={18} duration={2000} decay={0.9} />
     </>
   );
 }
