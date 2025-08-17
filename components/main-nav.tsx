@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { cn } from "@/lib/utils";
-import { Icons } from "./icon";
+import { cn } from '@/lib/utils';
+import { Icons } from './icon';
 
 export function MainNav() {
   const pathname = usePathname();
@@ -22,10 +22,8 @@ export function MainNav() {
         <Link
           href="/docs/installation"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === "/docs/installation"
-              ? "text-foreground"
-              : "text-foreground/80",
+            'transition-colors hover:text-foreground/80',
+            pathname === '/docs/installation' ? 'text-foreground' : 'text-foreground/80',
           )}
         >
           Docs
@@ -34,10 +32,8 @@ export function MainNav() {
         <Link
           href="/blocks"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/blocks")
-              ? "text-foreground"
-              : "text-foreground/80",
+            'transition-colors hover:text-foreground/80',
+            pathname?.startsWith('/blocks') ? 'text-foreground' : 'text-foreground/80',
           )}
         >
           Blocks
@@ -46,25 +42,24 @@ export function MainNav() {
         <Link
           href="/colors"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/colors")
-              ? "text-foreground"
-              : "text-foreground/80",
+            'transition-colors hover:text-foreground/80',
+            pathname?.startsWith('/colors') ? 'text-foreground' : 'text-foreground/80',
           )}
         >
           Colors
         </Link>
-        {/* <Link
-          href="/blog"
+        <Link
+          href="https://json.spectrumhq.in/"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/colors")
-              ? "text-foreground"
-              : "text-foreground/80",
+            'transition-colors hover:text-foreground/80',
+          
           )}
         >
-          Blog
-        </Link> */}
+          Api Testing
+          <span className="text-xs ml-1  px-1.5 py-0.5 rounded-full  bg-yellow-400/30 dark:bg-[#eaec8a]/16 text-yellow-600 dark:text-[#eaec8a] [text-shadow:0_1px_1.5px_rgb(0,0,0,0.16)]">
+            New
+          </span>
+        </Link>
       </nav>
     </div>
   );
