@@ -113,10 +113,6 @@ git push origin feature-name
 
 ---
 
-
-
-
-
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=arihantcodes/spectrum-ui&type=Date)](https://www.star-history.com/#arihantcodes/spectrum-ui&Date)
