@@ -1,8 +1,11 @@
 'use client';
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 
 import HomeCardCollection from '@/components/homecard';
 import { HeroSection } from './home';
+
+import Homeform from '@/components/homeform';
 
 const Homepage = () => {
   return (
@@ -31,12 +34,22 @@ const Homepage = () => {
             />
           </section>
           <section
+            style={{
+              '--radius': '1rem',
+            } as CSSProperties}
+          className='flex flex-col items-center justify-center '>
+            <h1 className="font-bold text-2xl md:text-4xl text-center  text-neutral-900 dark:text-white mb-12">
+            Want to Collaborate or
+            <br />
+             Work With Me ? Let’s Talk
+            </h1>
+            <Homeform/>
+          </section>
+          <section
             className="hidden md:block  [&>div]:p-0 "
-            style={
-              {
-                '--radius': '1rem',
-              } as React.CSSProperties
-            }
+            style={{
+              '--radius': '1rem',
+            } as CSSProperties}
           >
             <div className="flex flex-col justify-center items-center my-12">
               <div className="px-8 rounded-2xl text-center">
