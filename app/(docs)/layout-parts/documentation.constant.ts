@@ -51,6 +51,12 @@ export const DOCS: Documentation[] = [
         url: '/docs/animatedcard',
 
       },
+      {
+        label: 'Animated Drawer',
+        value: 'animateddrawer',
+        url: '/docs/animateddrawer',
+        new: true,
+      },
 
       {
         label: 'Animated SVG Chart',

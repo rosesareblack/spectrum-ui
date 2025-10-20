@@ -17,7 +17,7 @@ import {
   ShieldIcon,
   WarningIcon,
 } from '@/components/demo';
-const Page = () => {
+export const AnimatedDrawer = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [view, setView] = useState('default');
   const [elementRef, bounds] = useMeasure();
@@ -207,10 +207,10 @@ const Page = () => {
   return (
     <>
       <Button
-        className="h-[44px] fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 px-6 rounded-full bg-white dark:bg-neutral-800 py-2 font-medium text-black dark:text-white border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700 focus-visible:shadow-focus-ring-button md:font-medium"
+        className="mt-5 px-6 rounded-full bg-white dark:bg-neutral-800 py-2 font-medium text-black dark:text-white border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700 focus-visible:shadow-focus-ring-button md:font-medium"
         onClick={() => setIsOpen(true)}
       >
-        Open Wallet Demo
+        Click Me To Open Drawer
       </Button>
       <Drawer.Root open={isOpen} onOpenChange={setIsOpen}>
         <Drawer.Portal>
@@ -231,4 +231,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+
