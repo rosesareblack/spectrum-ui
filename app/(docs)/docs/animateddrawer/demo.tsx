@@ -28,7 +28,9 @@ export const AnimatedDrawer = () => {
         return (
           <div className="">
             <div className="flex items-center justify-between w-full">
-              <h1 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Wallet Settings</h1>
+              <h1 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
+                Wallet Settings
+              </h1>
               <Button
                 variant="secondary"
                 size="icon"
@@ -78,11 +80,14 @@ export const AnimatedDrawer = () => {
                 <X className="text-neutral-600 dark:text-neutral-400" size="18" />
               </Button>
             </div>
-            <h1 className="font-medium text-xl text-neutral-900 dark:text-neutral-100">Remove Wallet?</h1>
+            <h1 className="font-medium text-xl text-neutral-900 dark:text-neutral-100">
+              Remove Wallet?
+            </h1>
 
             <p className="text-neutral-500 dark:text-neutral-400 font-light text-lg">
-              This action cannot be undone. Make sure you&apos;ve backed up your recovery phrase before proceeding. 
-              You&apos;ll lose access to all funds if you don&apos;t have a backup.
+              This action cannot be undone. Make sure you&apos;ve backed up your recovery phrase
+              before proceeding. You&apos;ll lose access to all funds if you don&apos;t have a
+              backup.
             </p>
             <div className="flex items-center justify-start gap-4">
               <Button
@@ -114,10 +119,12 @@ export const AnimatedDrawer = () => {
                 <X className="text-neutral-600 dark:text-neutral-400" size="18" />
               </Button>
             </div>
-            <h1 className="font-medium text-xl text-neutral-900 dark:text-neutral-100">Recovery Phrase</h1>
+            <h1 className="font-medium text-xl text-neutral-900 dark:text-neutral-100">
+              Recovery Phrase
+            </h1>
             <p className="text-neutral-500 dark:text-neutral-400 font-light text-lg">
-              Your recovery phrase is the master key to your wallet. Write it down and store it securely. 
-              Anyone with this phrase can access your funds.
+              Your recovery phrase is the master key to your wallet. Write it down and store it
+              securely. Anyone with this phrase can access your funds.
             </p>
             <div className="border-t border-neutral-200 dark:border-neutral-700 space-y-5 text-neutral-500 dark:text-neutral-400 text-lg">
               <div className="flex items-center gap-4 mt-5">
@@ -153,7 +160,7 @@ export const AnimatedDrawer = () => {
       case 'key':
         return (
           <div className="space-y-4">
-             <div className="flex justify-between">
+            <div className="flex justify-between">
               <RecoveryPhraseIcon />
               <Button
                 variant="secondary"
@@ -164,10 +171,12 @@ export const AnimatedDrawer = () => {
                 <X className="text-neutral-600 dark:text-neutral-400" size="18" />
               </Button>
             </div>
-            <h1 className="font-medium text-xl text-neutral-900 dark:text-neutral-100">Private Key</h1>
+            <h1 className="font-medium text-xl text-neutral-900 dark:text-neutral-100">
+              Private Key
+            </h1>
             <p className="text-neutral-500 dark:text-neutral-400 font-light text-lg">
-              Your private key is a cryptographic key that proves ownership of your wallet. 
-              Treat it with the same security as your bank account details.
+              Your private key is a cryptographic key that proves ownership of your wallet. Treat it
+              with the same security as your bank account details.
             </p>
 
             <div className="border-t border-neutral-200 dark:border-neutral-700 space-y-5 text-neutral-500 dark:text-neutral-400 text-lg">
@@ -230,5 +239,3 @@ export const AnimatedDrawer = () => {
     </>
   );
 };
-
-
