@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
 import { getAllBlogPosts } from '@/lib/blog';
+import { Icons } from '@/components/icon';
 
 const categories = [
   'All Posts',
@@ -71,9 +72,9 @@ export default async function BlogPage() {
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <div className="border-r border-b border-dashed border-neutral-200 dark:border-neutral-800 p-8 hover:bg-accent/20 transition-colors cursor-pointer group min-h-[400px] flex flex-col">
                   <div className="flex items-start justify-between mb-6">
-                    <div className="text-3xl opacity-80 group-hover:opacity-100 transition-opacity">
-                      {post.icon}
-                    </div>
+                  <div className="h-6 w-6 bg-neutral-100 border-neutral-300 border dark:bg-white rounded-md flex items-center justify-center p-1">
+          <Icons.logo className="h-5 w-5 text-black " />
+        </div>
                     <span className="text-sm text-muted-foreground font-mono">{post.date}</span>
                   </div>
 
@@ -82,7 +83,7 @@ export default async function BlogPage() {
                   </h3>
 
                   <p className="text-sm text-muted-foreground mb-6 line-clamp-6">
-                    {post.content || 'No excerpt available for this post.'}
+                    {post.excerpt || 'No excerpt available for this post.'}
                   </p>
                   <div className="flex items-center space-x-3 mt-auto">
                     <Avatar className="h-7 w-7">

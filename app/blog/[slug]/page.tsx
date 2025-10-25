@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       {/* Article Header */}
       <article>
         <header className="text-center mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-snug sm:leading-tight">
+          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl mx-auto font-bold text-foreground mb-6 leading-snug sm:leading-tight">
             {post.title}
           </h1>
   
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             </Avatar>
             <div className="text-sm text-center sm:text-left">
               <span className="text-foreground font-medium">{post.author.name}</span>
-              <span className="text-muted-foreground ml-2">{post.author.role}</span>
+              <span className="text-muted-foreground ml-2">Design Engineer</span>
             </div>
           </div>
         </header>
