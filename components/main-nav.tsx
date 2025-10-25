@@ -38,6 +38,12 @@ export function MainNav() {
         >
           Blocks
         </Link>
+        <Link href="/blog" className={cn(
+          'transition-colors hover:text-foreground/80',
+          pathname === '/blog' ? 'text-foreground' : 'text-foreground/80',
+        )}>
+          Blogs
+        </Link>
 
         <Link
           href="/colors"
