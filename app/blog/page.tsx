@@ -5,6 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
 import { getAllBlogPosts } from '@/lib/blog';
 import { Icons } from '@/components/icon';
+import { Metadata } from 'next';
+import { generateBlogListingStructuredData, generateBlogBreadcrumbs } from '@/lib/seo-utils';
 
 const categories = [
   'All Posts',
@@ -14,6 +16,67 @@ const categories = [
   'Press',
 ];
 
+export const metadata: Metadata = {
+  title: 'Blog | Spectrum UI - UI Components & Design System',
+  description: 'Learn about UI components, React development, design systems, and frontend best practices. Expert insights on building scalable web applications with modern tools.',
+  keywords: [
+    'UI components blog',
+    'React development',
+    'design system',
+    'frontend development',
+    'web development',
+    'UI/UX',
+    'component library',
+    'Tailwind CSS',
+    'Next.js',
+    'shadcn/ui',
+    'engineering blog',
+    'web design',
+    'user interface',
+    'frontend engineering',
+  ].join(', '),
+  authors: [{ name: 'Arihant Jain', url: 'https://ui.spectrumhq.in' }],
+  creator: 'Arihant Jain',
+  publisher: 'Spectrum UI',
+  openGraph: {
+    title: 'Blog | Spectrum UI - UI Components & Design System',
+    description: 'Learn about UI components, React development, design systems, and frontend best practices. Expert insights on building scalable web applications.',
+    url: 'https://ui.spectrumhq.in/blog',
+    siteName: 'Spectrum UI',
+    images: [
+      {
+        url: 'https://ui.spectrumhq.in/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Spectrum UI Blog - UI Components & Design System',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Spectrum UI - UI Components & Design System',
+    description: 'Learn about UI components, React development, design systems, and frontend best practices.',
+    creator: '@arihantcodes',
+    images: ['https://ui.spectrumhq.in/og.png'],
+  },
+  alternates: {
+    canonical: 'https://ui.spectrumhq.in/blog',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default async function BlogPage() {
   const blogPosts = await getAllBlogPosts();
 
@@ -22,8 +85,41 @@ export default async function BlogPage() {
     blogPosts.map((post) => post),
   );
 
+  const baseUrl = "https://ui.spectrumhq.in";
+  
+  // Generate structured data for blog listing
+  const structuredData = generateBlogListingStructuredData(
+    blogPosts.map(post => ({
+      title: post.title,
+      description: post.excerpt,
+      url: `${baseUrl}/blog/${post.slug}`,
+      datePublished: post.date,
+      author: { name: post.author.name },
+    }))
+  );
+
+  const breadcrumbData = generateBlogBreadcrumbs([
+    { name: "Home", url: baseUrl },
+    { name: "Blog", url: `${baseUrl}/blog` },
+  ]);
+
   return (
-    <div className="min-h-screen bg-background text-foreground container-wrapper">
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbData),
+        }}
+      />
+      
+      <div className="min-h-screen bg-background text-foreground container-wrapper">
       {/* Navigation */}
       <div className="mt-12">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -55,6 +151,19 @@ export default async function BlogPage() {
              
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Blog Introduction */}
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Spectrum UI Blog
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Learn about UI components, React development, design systems, and frontend best practices. 
+            Expert insights on building scalable web applications with modern tools like Next.js, Tailwind CSS, and shadcn/ui.
+          </p>
         </div>
       </div>
 
@@ -103,6 +212,32 @@ export default async function BlogPage() {
           </div>
         )}
       </div>
+
+      {/* Call to Action Section */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Ready to Build Amazing UIs?
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Explore our collection of React components and start building faster with Spectrum UI. 
+            Copy, paste, and customize components for your Next.js applications.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/">
+              <Button size="lg" className="w-full sm:w-auto">
+                Browse Components
+              </Button>
+            </Link>
+            <Link href="/colors">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                View Color Palette
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
+    </>
   );
 }

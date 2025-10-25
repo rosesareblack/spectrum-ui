@@ -180,13 +180,13 @@ export const siteConfig = {
   },
   author: {
     name: "Arihant Jain",
-    url: "https://arihantcodes.in",
+    url: "https://ui.spectrumhq.in",
     twitter: "@arihantcodes",
     github: "arihantcodes",
   },
   creator: {
     name: "Arihant Jain",
-    url: "https://arihantcodes.in",
+    url: "https://ui.spectrumhq.in",
   },
   locale: "en-US",
   version: "1.0.0",

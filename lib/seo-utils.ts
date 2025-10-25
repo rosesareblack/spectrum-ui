@@ -65,7 +65,7 @@ export function generateComponentStructuredData(component: {
     author: {
       "@type": "Person",
       name: "Arihant Jain",
-      url: "https://arihantcodes.in",
+      url: "https://ui.spectrumhq.in",
     },
     about: {
       "@type": "Thing",
@@ -164,5 +164,132 @@ export function generateSEODescription(component: {
 }): string {
   const base = `Learn how to use the ${component.name} component in React. ${component.shortDescription || ''} Built with Tailwind CSS and fully accessible.`;
   return `${base} Copy, paste, and customize for your Next.js applications. Free and open source.`;
+}
+
+// Generate blog post structured data
+export function generateBlogStructuredData(blogPost: {
+  title: string;
+  description: string;
+  author: { name: string; avatar?: string };
+  datePublished: string;
+  url: string;
+  image: string;
+  category: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blogPost.title,
+    description: blogPost.description,
+    image: blogPost.image,
+    url: blogPost.url,
+    datePublished: blogPost.datePublished,
+    dateModified: blogPost.datePublished,
+    author: {
+      "@type": "Person",
+      name: blogPost.author.name,
+      image: blogPost.author.avatar || "https://ui.spectrumhq.in/arihant.jpeg",
+      url: "https://ui.spectrumhq.in",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Spectrum UI",
+      url: "https://ui.spectrumhq.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://ui.spectrumhq.in/logo.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": blogPost.url,
+    },
+    articleSection: blogPost.category,
+    keywords: [
+      "UI components",
+      "React components",
+      "Tailwind CSS",
+      "Next.js",
+      "shadcn/ui",
+      "design system",
+      "frontend development",
+      "web development",
+      "UI/UX",
+      "component library",
+      blogPost.category.toLowerCase(),
+    ],
+    about: {
+      "@type": "Thing",
+      name: "UI Component Development",
+    },
+    mentions: [
+      {
+        "@type": "SoftwareApplication",
+        name: "React",
+        url: "https://reactjs.org",
+      },
+      {
+        "@type": "SoftwareApplication", 
+        name: "Next.js",
+        url: "https://nextjs.org",
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "Tailwind CSS",
+        url: "https://tailwindcss.com",
+      },
+    ],
+  };
+}
+
+// Generate blog breadcrumb structured data
+export function generateBlogBreadcrumbs(items: Array<{ name: string; url: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+// Generate blog listing structured data
+export function generateBlogListingStructuredData(posts: Array<{
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  author: { name: string };
+}>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Spectrum UI Blog",
+    description: "Learn about UI components, React development, and design systems with Spectrum UI",
+    url: "https://ui.spectrumhq.in/blog",
+    publisher: {
+      "@type": "Organization",
+      name: "Spectrum UI",
+      url: "https://ui.spectrumhq.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://ui.spectrumhq.in/logo.svg",
+      },
+    },
+    blogPost: posts.map(post => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      url: post.url,
+      datePublished: post.datePublished,
+      author: {
+        "@type": "Person",
+        name: post.author.name,
+      },
+    })),
+  };
 }
 

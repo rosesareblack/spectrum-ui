@@ -104,7 +104,7 @@ export function baseMetadata({
     description: fullDescription,
     keywords: seoKeywords,
     authors: [
-      { name: "Arihant Jain", url: "https://arihantcodes.in/" },
+      { name: "Arihant Jain", url: "https://ui.spectrumhq.in/" },
       { name: "Spectrum UI", url: siteConfig.url },
     ],
     creator: "Arihant Jain",
