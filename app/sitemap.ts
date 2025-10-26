@@ -55,21 +55,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ROUTES.forEach((route) => {
     if (route.groupKey === 'components' && route.children) {
       route.children.forEach((child) => {
-        componentPages.push({
-          url: `${baseUrl}${child.url}`,
-          lastModified: new Date(),
-          changeFrequency: 'weekly',
-          priority: 0.8,
-        });
+        // Only include internal URLs in sitemap
+        if (!child.url.startsWith('http')) {
+          componentPages.push({
+            url: `${baseUrl}${child.url}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+          });
+        }
       });
     } else if (route.children) {
       route.children.forEach((child) => {
-        componentPages.push({
-          url: `${baseUrl}${child.url}`,
-          lastModified: new Date(),
-          changeFrequency: 'monthly',
-          priority: 0.6,
-        });
+        // Only include internal URLs in sitemap
+        if (!child.url.startsWith('http')) {
+          componentPages.push({
+            url: `${baseUrl}${child.url}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+          });
+        }
       });
     }
   });
