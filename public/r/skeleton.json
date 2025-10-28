@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "skeleton",
-  "type": "registry:ui",
+  "type": "registry:component",
   "title": "Skeleton",
   "description": "component for the Skeleton",
   "registryDependencies": [
@@ -11,7 +11,7 @@
     {
       "path": "app/registry/skeleton/skeleton-demo.tsx",
       "content": "import { Skeleton } from \"@/components/ui/skeleton\";\n\nexport default function SkeletonDemo() {\n  return (\n    <div className=\"flex items-center space-x-4\">\n      <Skeleton className=\"h-12 w-12 rounded-full\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-[250px]\" />\n        <Skeleton className=\"h-4 w-[200px]\" />\n      </div>\n    </div>\n  );\n}\n",
-      "type": "registry:ui",
+      "type": "registry:component",
       "target": "components/spectrumui/skeleton-demo.tsx"
     }
   ]
