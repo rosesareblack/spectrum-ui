@@ -16,55 +16,42 @@ export function MainNav() {
           <Icons.logo className="h-5 w-5 text-black " />
         </div>
 
-        <span className=" font-bold lg:inline-block">Spectrum UI</span>
-      </Link>
-      <nav className=" items-center gap-4 text-sm xl:gap-6 hidden md:flex">
+        <span className=" font-bold lg:inline-block">ADHD Focus Hub</span>
+      </Link>      <nav className=" items-center gap-4 text-sm xl:gap-6 hidden md:flex">
         <Link
-          href="/docs/installation"
+          href="/resources"
           className={cn(
             'transition-colors hover:text-foreground/80',
-            pathname === '/docs/installation' ? 'text-foreground' : 'text-foreground/80',
+            pathname === '/resources' ? 'text-foreground' : 'text-foreground/80',
           )}
         >
-          Docs
+          Resources
         </Link>
 
         <Link
-          href="/blocks"
+          href="/community"
           className={cn(
             'transition-colors hover:text-foreground/80',
-            pathname?.startsWith('/blocks') ? 'text-foreground' : 'text-foreground/80',
+            pathname?.startsWith('/community') ? 'text-foreground' : 'text-foreground/80',
           )}
         >
-          Blocks
+          Community
         </Link>
         <Link href="/blog" className={cn(
           'transition-colors hover:text-foreground/80',
           pathname === '/blog' ? 'text-foreground' : 'text-foreground/80',
         )}>
-          Blogs
+          Blog
         </Link>
 
         <Link
-          href="/colors"
+          href="/about"
           className={cn(
             'transition-colors hover:text-foreground/80',
-            pathname?.startsWith('/colors') ? 'text-foreground' : 'text-foreground/80',
+            pathname?.startsWith('/about') ? 'text-foreground' : 'text-foreground/80',
           )}
         >
-          Colors
-        </Link>
-        <Link
-          href="https://json.spectrumhq.in/"
-          className={cn(
-            'transition-colors hover:text-foreground/80',
-          
-          )}
-        >
-          Api Testing
-          <span className="text-xs ml-1  px-1.5 py-0.5 rounded-full  bg-yellow-400/30 dark:bg-[#eaec8a]/16 text-yellow-600 dark:text-[#eaec8a] [text-shadow:0_1px_1.5px_rgb(0,0,0,0.16)]">
-            New
-          </span>
+          About
         </Link>
       </nav>
     </div>

@@ -1,175 +1,26 @@
 export const siteConfig = {
-  name: "Spectrum UI - Best React UI Component Library for Next.js",
+  name: "ADHD Focus Hub",
   url: "https://ui.spectrumhq.in",
   ogImage: {
     url: "https://ui.spectrumhq.in/og.png",
     width: 1200,
     height: 630,
-    alt: "Spectrum UI - React UI Components Library for Next.js with Tailwind CSS",
+    alt: "ADHD Focus Hub - Your guide to understanding and managing ADHD",
   },
   description:
-    "The best React UI component library for Next.js. 250+ beautifully designed, accessible components built with Tailwind CSS and TypeScript. Copy, paste, and ship faster. Perfect for dashboards, SaaS, and modern web applications. Free and open source alternative to shadcn/ui, Material UI, and Chakra UI.",
-  shortDescription: "Best React UI component library for Next.js with Tailwind CSS - Free, accessible, and production-ready",
+    "Your guide to understanding and managing ADHD. We provide resources, tools, and a supportive community to help you thrive with ADHD.",
+  shortDescription: "Your guide to understanding and managing ADHD.",
   keywords: [
-    // Primary Keywords
-    "React UI components",
-    "React component library",
-    "UI library",
-    "design system",
-    "modern UI components",
-    "Spectrum UI",
-    
-    // Next.js Keywords
-    "Next.js components",
-    "Next.js UI library",
-    "Next.js 14 components",
-    "Next.js app router components",
-    "Next.js Tailwind components",
-    "Next.js design system",
-    "Next.js component library",
-    "Next.js UI kit",
-    "Next.js starter template",
-    "Next.js dashboard components",
-    
-    // Tailwind CSS Keywords
-    "Tailwind CSS components",
-    "Tailwind UI library",
-    "Tailwind component library",
-    "Tailwind CSS UI kit",
-    "Tailwind React components",
-    "Tailwind design system",
-    "Tailwind CSS templates",
-    "Tailwind UI templates",
-    "Tailwind CSS dashboard",
-    "custom Tailwind components",
-    
-    // React Keywords
-    "React UI library",
-    "React design system",
-    "React UI kit",
-    "React component library",
-    "React Tailwind components",
-    "React TypeScript components",
-    "React hooks components",
-    "React server components",
-    "React components 2024",
-    "best React UI library",
-    
-    // Frontend Development Keywords
-    "frontend components",
-    "frontend UI library",
-    "frontend design system",
-    "web components",
-    "web UI library",
-    "modern web components",
-    "responsive components",
-    "mobile-first components",
-    "progressive web app components",
-    
-    // Vercel Keywords
-    "Vercel components",
-    "Vercel Next.js components",
-    "Vercel deployment",
-    "Vercel UI library",
-    "Vercel design system",
-    "deploy with Vercel",
-    
-    // Component-Specific Keywords
-    "React button component",
-    "React card component",
-    "React modal component",
-    "React accordion component",
-    "React form components",
-    "React table component",
-    "React navbar component",
-    "React sidebar component",
-    "React dropdown component",
-    "React tooltip component",
-    "React alert component",
-    "React tabs component",
-    "React input component",
-    "React select component",
-    "React datepicker component",
-    
-    // Use Case Keywords
-    "dashboard components",
-    "admin panel components",
-    "SaaS UI components",
-    "e-commerce components",
-    "landing page components",
-    "portfolio components",
-    "blog components",
-    "authentication components",
-    "form components",
-    "data table components",
-    
-    // Feature Keywords
-    "accessible components",
-    "WCAG compliant components",
-    "dark mode components",
-    "responsive UI components",
-    "animated components",
-    "interactive components",
-    "customizable components",
-    "TypeScript components",
-    "server-side components",
-    "client-side components",
-    
-    // Comparison Keywords
-    "shadcn alternative",
-    "shadcn ui alternative",
-    "Material UI alternative",
-    "Chakra UI alternative",
-    "Ant Design alternative",
-    "better than shadcn",
-    "best UI library 2024",
-    "UI library comparison",
-    
-    // Action Keywords
-    "copy paste components",
-    "free UI components",
-    "open source UI library",
-    "download UI components",
-    "UI component templates",
-    "ready-to-use components",
-    "production-ready components",
-    "plug-and-play components",
-    
-    // Technology Stack Keywords
-    "TypeScript UI library",
-    "Radix UI components",
-    "Framer Motion components",
-    "React Hook Form components",
-    "Zod validation components",
-    "Prisma UI components",
-    
-    // Learning Keywords
-    "React components tutorial",
-    "how to build UI components",
-    "React UI examples",
-    "component library guide",
-    "UI design patterns",
-    "React best practices",
-    
-    // Quality Keywords
-    "professional UI components",
-    "enterprise UI library",
-    "high-quality components",
-    "production-grade components",
-    "battle-tested components",
-    "performance-optimized components",
-    
-    // Additional Long-tail Keywords
-    "React component library with Tailwind",
-    "Next.js component library free",
-    "best React component library for startups",
-    "accessible React UI components",
-    "React components for dashboards",
-    "modern design system for React",
-    "copy paste React components",
-    "free Tailwind components",
-    "React UI components with TypeScript",
-    "Next.js 14 app router components",
+    "ADHD",
+    "Attention Deficit Hyperactivity Disorder",
+    "ADHD resources",
+    "ADHD tools",
+    "ADHD community",
+    "ADHD help",
+    "ADHD support",
+    "ADHD tips",
+    "ADHD management",
+    "neurodiversity",
   ],
   links: {
     twitter: "https://x.com/arihantcodes",
@@ -179,13 +30,13 @@ export const siteConfig = {
     discord: "https://discord.gg/spectrum-ui", // Add if you have one
   },
   author: {
-    name: "Arihant Jain",
+    name: "ADHD Focus Hub",
     url: "https://ui.spectrumhq.in",
     twitter: "@arihantcodes",
     github: "arihantcodes",
   },
   creator: {
-    name: "Arihant Jain",
+    name: "ADHD Focus Hub",
     url: "https://ui.spectrumhq.in",
   },
   locale: "en-US",
@@ -198,8 +49,8 @@ export const siteConfig = {
   // Enhanced SEO metadata
   seo: {
     title: {
-      default: "Spectrum UI - Beautiful React Components",
-      template: "%s | Spectrum UI",
+      default: "ADHD Focus Hub - Thriving with ADHD",
+      template: "%s | ADHD Focus Hub",
     },
     robots: {
       index: true,
@@ -220,19 +71,15 @@ export const siteConfig = {
   },
   // Categories for better organization
   categories: [
-    "Layout",
-    "Navigation",
-    "Data Display",
-    "Data Input",
-    "Feedback",
-    "Overlay",
-    "Disclosure",
-    "Media",
-    "Typography",
-    "Utilities",
+    "Understanding ADHD",
+    "ADHD in Adults",
+    "ADHD in Children",
+    "Treatment & Strategies",
+    "Lifestyle & Wellness",
+    "Community & Support",
   ],
   // Featured components for homepage
-  featured: ["Button", "Card", "Modal", "Form", "Table", "Navigation"],
+  featured: ["Resources", "Community", "Blog", "About"],
   // Social media handles
   social: {
     twitter: {
@@ -252,9 +99,9 @@ export const siteConfig = {
   },
   // Manifest data for PWA
   manifest: {
-    name: "Spectrum UI",
-    shortName: "SpectrumUI",
-    description: "Beautiful React components for modern web applications",
+    name: "ADHD Focus Hub",
+    shortName: "ADHDHub",
+    description: "Your guide to understanding and managing ADHD.",
     startUrl: "/",
     display: "standalone",
     backgroundColor: "#ffffff",
@@ -285,24 +132,24 @@ export const META_THEME_COLORS = {
 export const navigation = {
   main: [
     {
-      title: "Components",
-      href: "/components",
-      description: "Browse all available components",
+      title: "Resources",
+      href: "/resources",
+      description: "Browse all available resources",
     },
     {
-      title: "Examples",
-      href: "/examples",
-      description: "See components in action",
+      title: "Community",
+      href: "/community",
+      description: "Connect with our community",
     },
     {
-      title: "Documentation",
-      href: "/docs",
-      description: "Learn how to use Spectrum UI",
+      title: "Blog",
+      href: "/blog",
+      description: "Read our latest articles",
     },
     {
-      title: "Templates",
-      href: "/templates",
-      description: "Ready-to-use page templates",
+      title: "About",
+      href: "/about",
+      description: "Learn more about us",
     },
   ],
   docs: [
@@ -403,6 +250,6 @@ export const navigation = {
     { name: "Authentication", href: "/examples/authentication" },
     { name: "E-commerce", href: "/examples/ecommerce" },
     { name: "Blog", href: "/examples/blog" },
-    { name: "Portfolio", href: "/examples/portfolio" },
+    { name: "Portfolio", href: "https" },
   ],
 };
